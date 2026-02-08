@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GraduationCap, Github, Search, LayoutDashboard, Bookmark, Settings, RotateCcw } from 'lucide-react';
+import { GraduationCap, Github, Search, LayoutDashboard, Bookmark, Settings, RotateCcw, UserCheck, Briefcase } from 'lucide-react';
 import { resetData } from '../data/dataManager';
 
 const Navbar = () => {
@@ -41,13 +41,19 @@ const Navbar = () => {
                     </span>
                 </Link>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '2.5rem' }}>
-                    <div style={{ display: 'flex', gap: '1.75rem', alignItems: 'center' }}>
-                        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none', color: 'var(--text-main)', fontWeight: '600', fontSize: '0.9rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
+                    <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none', color: 'var(--text-main)', fontWeight: '600', fontSize: '0.85rem' }}>
                             <LayoutDashboard size={16} /> Dashboard
                         </Link>
-                        <Link to="/library" style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none', color: 'var(--text-muted)', fontWeight: '500', fontSize: '0.9rem' }}>
+                        <Link to="/library" style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none', color: 'var(--text-muted)', fontWeight: '500', fontSize: '0.85rem' }}>
                             <Bookmark size={16} /> Library
+                        </Link>
+                        <Link to="/interview-vault" style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none', color: 'var(--text-muted)', fontWeight: '500', fontSize: '0.85rem' }}>
+                            <UserCheck size={16} /> HR Vault
+                        </Link>
+                        <Link to="/company-sheets" style={{ display: 'flex', alignItems: 'center', gap: '6px', textDecoration: 'none', color: 'var(--text-muted)', fontWeight: '500', fontSize: '0.85rem' }}>
+                            <Briefcase size={16} /> Cheat Sheets
                         </Link>
                     </div>
 

@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import SubjectDetail from './pages/SubjectDetail';
 import Library from './pages/Library';
+import InterviewVault from './pages/InterviewVault';
+import CompanySheets from './pages/CompanySheets';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/subject/:id" element={<SubjectDetail />} />
         <Route path="/library" element={<Library />} />
+        <Route path="/interview-vault" element={<InterviewVault />} />
+        <Route path="/company-sheets" element={<CompanySheets />} />
       </Routes>
 
       {/* Premium Footer */}
