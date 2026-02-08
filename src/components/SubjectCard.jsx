@@ -27,102 +27,98 @@ const SubjectCard = ({ subject, index }) => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ y: -8, transition: { duration: 0.2 } }}
-            transition={{ delay: index * 0.05 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -10 }}
+            transition={{ delay: index * 0.05, duration: 0.5 }}
             style={{ height: '100%' }}
         >
             <Link to={`/subject/${subject.id}`} style={{ textDecoration: 'none', color: 'inherit', display: 'block', height: '100%' }}>
                 <div className="glass-card" style={{
-                    padding: '2.5rem',
+                    padding: '3rem 2.5rem',
                     height: '100%',
-                    cursor: 'pointer',
-                    position: 'relative',
-                    overflow: 'hidden',
                     display: 'flex',
                     flexDirection: 'column',
-                    border: '1px solid var(--border-glass)',
-                    background: `linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.01) 100%)`
+                    position: 'relative'
                 }}>
-                    {/* Glowing background hint */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '-20%',
-                        right: '-20%',
-                        width: '150px',
-                        height: '150px',
-                        background: c.shadow,
-                        filter: 'blur(60px)',
-                        borderRadius: '50%',
-                        zIndex: 0,
-                        opacity: 0.4
-                    }} />
-
-                    <div style={{ position: 'relative', zIndex: 1 }}>
+                    <div style={{ position: 'relative', zIndex: 2 }}>
                         <div style={{
-                            width: '64px',
-                            height: '64px',
-                            borderRadius: '18px',
+                            width: '72px',
+                            height: '72px',
+                            borderRadius: '24px',
                             background: c.iconBg,
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            marginBottom: '2rem',
+                            marginBottom: '2.5rem',
                             border: `1px solid ${c.shadow}`,
                             color: c.text,
-                            boxShadow: `0 8px 16px ${c.shadow}`
+                            boxShadow: `0 12px 24px -5px ${c.shadow}`
                         }}>
-                            <Icon size={32} />
+                            <Icon size={36} strokeWidth={1.5} />
                         </div>
 
-                        <div style={{ marginBottom: '1.5rem' }}>
-                            <span style={{
-                                fontSize: '0.65rem',
-                                fontWeight: '900',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.15em',
-                                color: 'var(--text-muted)',
-                                marginBottom: '0.5rem',
-                                display: 'block'
-                            }}>
-                                Engineering Core
-                            </span>
-                            <h3 style={{ fontSize: '1.6rem', fontWeight: '800', letterSpacing: '-0.02em', marginBottom: '0.75rem' }}>
+                        <div style={{ marginBottom: '2rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.75rem' }}>
+                                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: c.text }}></div>
+                                <span style={{
+                                    fontSize: '0.7rem',
+                                    fontWeight: '900',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.2em',
+                                    color: 'var(--text-muted)'
+                                }}>
+                                    Core Engineering
+                                </span>
+                            </div>
+                            <h3 style={{ fontSize: '1.8rem', fontWeight: '900', letterSpacing: '-0.03em', marginBottom: '1rem', fontFamily: 'var(--font-heading)' }}>
                                 {subject.title}
                             </h3>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.6', height: '3.2rem', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: '2', WebkitBoxOrient: 'vertical' }}>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.7', opacity: 0.8 }}>
                                 {subject.description}
                             </p>
                         </div>
                     </div>
 
-                    <div style={{ marginTop: 'auto', position: 'relative', zIndex: 1 }}>
-                        <div style={{ display: 'flex', gap: '2rem', marginBottom: '1.5rem', padding: '1rem 0', borderTop: '1px solid rgba(255,255,255,0.03)' }}>
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                <span style={{ fontSize: '1.2rem', fontWeight: '900', color: 'var(--text-main)' }}>{subject.concepts.length}</span>
-                                <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontWeight: '800', textTransform: 'uppercase' }}>Notes</span>
+                    <div style={{ marginTop: 'auto', position: 'relative', zIndex: 2 }}>
+                        <div style={{ display: 'flex', gap: '3rem', marginBottom: '2rem', padding: '1.5rem 0', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                            <div>
+                                <div style={{ fontSize: '1.4rem', fontWeight: '900', color: 'white' }}>{subject.concepts.length}</div>
+                                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Modules</div>
                             </div>
-                            <div style={{ display: 'flex', flexDirection: 'column' }}>
-                                <span style={{ fontSize: '1.2rem', fontWeight: '900', color: 'var(--text-main)' }}>{subject.mcqs.length}</span>
-                                <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontWeight: '800', textTransform: 'uppercase' }}>MCQs</span>
+                            <div>
+                                <div style={{ fontSize: '1.4rem', fontWeight: '900', color: 'white' }}>{subject.mcqs.length}</div>
+                                <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Questions</div>
                             </div>
                         </div>
 
-                        <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
+                        <div className="btn-secondary" style={{
+                            width: '100%',
                             justifyContent: 'space-between',
-                            padding: '12px 16px',
+                            padding: '14px 24px',
+                            borderRadius: '16px',
                             background: 'rgba(255,255,255,0.02)',
-                            borderRadius: '12px',
-                            border: '1px solid var(--border-glass)',
-                            transition: 'tasks 0.3s'
+                            fontSize: '0.9rem',
+                            borderColor: 'transparent'
                         }}>
-                            <span style={{ fontSize: '0.85rem', fontWeight: '700', color: c.text }}>Explore Module</span>
-                            <LucideIcons.ArrowUpRight size={18} style={{ color: c.text }} />
+                            <span style={{ fontWeight: '800' }}>Explore Subject</span>
+                            <LucideIcons.ArrowRight size={20} />
                         </div>
                     </div>
+
+                    {/* Background Accent */}
+                    <div style={{
+                        position: 'absolute',
+                        bottom: '-10%',
+                        right: '-10%',
+                        width: '200px',
+                        height: '200px',
+                        background: c.shadow,
+                        filter: 'blur(80px)',
+                        borderRadius: '50%',
+                        opacity: 0.25,
+                        zIndex: 1
+                    }}></div>
                 </div>
             </Link>
         </motion.div>

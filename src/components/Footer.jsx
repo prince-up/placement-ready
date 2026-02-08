@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 import { GraduationCap, Github, Linkedin, Twitter, Mail, ExternalLink, ChevronRight } from 'lucide-react';
 
 const Footer = () => {
-    const githubUrl = "https://github.com/prince-up";
-    const linkedinUrl = "https://www.linkedin.com/in/prince-up"; // Update with your actual LinkedIn username
 
     return (
         <footer style={{
@@ -57,10 +55,10 @@ const Footer = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '15px' }}>
                             {[
-                                { icon: Github, url: githubUrl },
-                                { icon: Linkedin, url: linkedinUrl },
-                                { icon: Twitter, url: '#' },
-                                { icon: Mail, url: '#' }
+                                { icon: Github, url: "https://github.com/prince-up" },
+                                { icon: Linkedin, url: "https://www.linkedin.com/in/prince-yadav-4t/" },
+                                { icon: Twitter, url: "https://x.com/prince__up" },
+                                { icon: Mail, url: "mailto:princeyadav76001@gmail.com" }
                             ].map((social, i) => (
                                 <a
                                     key={i}
