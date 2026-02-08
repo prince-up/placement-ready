@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { companySheets } from '../data/interviewData';
 import { Target, ShieldCheck, Briefcase, Zap, Rocket, ChevronRight, Check } from 'lucide-react';
+import { useCohort } from '../context/CohortContext';
 
 const CompanySheets = () => {
+    const { openCohortModal } = useCohort();
     return (
         <div style={{ paddingTop: '140px', minHeight: '100vh', paddingBottom: '120px' }}>
             <div className="bg-mesh"></div>
@@ -76,7 +78,7 @@ const CompanySheets = () => {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.8 }} style={{ marginTop: '5rem', textAlign: 'center', background: 'var(--bg-card)', padding: '3rem', borderRadius: '24px', border: '1px solid var(--border-glass)' }}>
                     <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>Need a personalized roadmap?</h3>
                     <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>Our expert algorithm can generate a study plan based on your target company list.</p>
-                    <button className="btn-primary" style={{ padding: '14px 28px' }}>Join Cohort Program <ChevronRight size={18} /></button>
+                    <button onClick={openCohortModal} className="btn-primary" style={{ padding: '14px 28px' }}>Join Cohort Program <ChevronRight size={18} /></button>
                 </motion.div>
             </div>
         </div>

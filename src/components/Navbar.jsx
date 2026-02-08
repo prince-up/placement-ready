@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { GraduationCap, Github, Search, LayoutDashboard, Bookmark, Settings, RotateCcw, UserCheck, Briefcase } from 'lucide-react';
+import { GraduationCap, Github, Search, LayoutDashboard, Bookmark, Settings, RotateCcw, UserCheck, Briefcase, Zap } from 'lucide-react';
 import { resetData } from '../data/dataManager';
+import { useCohort } from '../context/CohortContext';
 
 const Navbar = () => {
+    const { openCohortModal } = useCohort();
     const [showSettings, setShowSettings] = useState(false);
     const navigate = useNavigate();
 
@@ -59,8 +61,26 @@ const Navbar = () => {
 
                     <div style={{ width: '1px', height: '24px', background: 'var(--border-glass)' }}></div>
 
-                    <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center' }}>
-                        <div style={{ position: 'relative' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }}>
+                        <button
+                            onClick={openCohortModal}
+                            style={{
+                                background: 'rgba(14, 165, 233, 0.1)',
+                                border: '1px solid rgba(14, 165, 233, 0.2)',
+                                color: 'var(--primary)',
+                                padding: '8px 16px',
+                                borderRadius: '10px',
+                                fontSize: '0.8rem',
+                                fontWeight: '800',
+                                cursor: 'pointer',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px'
+                            }}
+                        >
+                            <Zap size={14} fill="currentColor" /> Join Cohort
+                        </button>
+                        <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                             <Search size={16} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
                             <input
                                 type="text"
