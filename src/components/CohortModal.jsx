@@ -44,7 +44,7 @@ const CohortModal = ({ isOpen, onClose }) => {
                         style={{
                             position: 'fixed',
                             top: 0, left: 0, right: 0, bottom: 0,
-                            background: 'rgba(5, 6, 12, 0.95)',
+                            background: 'rgba(255, 255, 255, 0.9)',
                             backdropFilter: 'blur(10px)',
                             zIndex: 5000
                         }}
@@ -61,20 +61,20 @@ const CohortModal = ({ isOpen, onClose }) => {
                             width: isMobile ? '95%' : 'max(450px, 40%)',
                             maxWidth: '650px',
                             background: 'var(--bg-dark)',
-                            border: '1px solid rgba(255,255,255,0.05)',
+                            border: '1px solid rgba(0,0,0,0.1)',
                             borderRadius: '16px',
                             zIndex: 5001,
                             overflow: 'hidden',
                             display: 'flex',
                             flexDirection: 'column',
-                            boxShadow: '0 40px 100px rgba(0,0,0,0.8)'
+                            boxShadow: '0 40px 100px rgba(0,0,0,0.2)'
                         }}
                     >
                         {/* Header */}
                         <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid rgba(255,255,255,0.02)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                                 <Rocket size={16} color="var(--primary)" />
-                                <h2 style={{ fontSize: '0.9rem', fontWeight: '900', color: 'white', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                <h2 style={{ fontSize: '0.9rem', fontWeight: '900', color: 'var(--text-main)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                     {step === 'offer' ? 'Premium Track' : 'Enrollment'}
                                 </h2>
                             </div>
@@ -88,7 +88,7 @@ const CohortModal = ({ isOpen, onClose }) => {
                             {step === 'offer' && (
                                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
                                     <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                                        <div style={{ fontSize: '3rem', fontWeight: '950', color: 'white', letterSpacing: '-0.02em' }}>{price}</div>
+                                        <div style={{ fontSize: '3rem', fontWeight: '950', color: 'var(--text-main)', letterSpacing: '-0.02em' }}>{price}</div>
                                         <div style={{ fontSize: '0.65rem', color: 'var(--primary)', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.15em' }}>
                                             One-time fee • {duration} Mentorship
                                         </div>
@@ -143,7 +143,7 @@ const CohortModal = ({ isOpen, onClose }) => {
 
                                     <div style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.02)', border: '1px solid var(--primary)', borderRadius: '12px', display: 'inline-block', width: '100%' }}>
                                         <div style={{ fontSize: '0.6rem', fontWeight: '900', color: 'var(--primary)', textTransform: 'uppercase', marginBottom: '0.5rem' }}>Official Support</div>
-                                        <div style={{ fontSize: '1.75rem', fontWeight: '950', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
+                                        <div style={{ fontSize: '1.75rem', fontWeight: '950', color: 'var(--text-main)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '15px' }}>
                                             {phone}
                                             <button onClick={handleCopy} style={{ background: 'none', border: 'none', color: 'var(--primary)', cursor: 'pointer' }}>
                                                 {copied ? <Check size={18} /> : <Copy size={18} />}
@@ -155,7 +155,7 @@ const CohortModal = ({ isOpen, onClose }) => {
                         </div>
 
                         {/* Footer */}
-                        <div style={{ padding: '1.25rem 1.5rem', background: 'rgba(0,0,0,0.2)', display: 'flex', gap: '12px', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
+                        <div style={{ padding: '1.25rem 1.5rem', background: 'rgba(0,0,0,0.02)', display: 'flex', gap: '12px', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
                             {step !== 'verification' ? (
                                 <>
                                     <button

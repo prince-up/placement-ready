@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ChevronRight, ArrowRight, ShieldCheck, Zap, Star, Code, Terminal, Brain, Cpu, BookOpen } from 'lucide-react';
 import { useCohort } from '../context/CohortContext';
 
@@ -32,9 +33,9 @@ const Hero = () => {
                             alignItems: 'center',
                             gap: '10px',
                             padding: '8px 20px',
-                            background: 'rgba(255, 255, 255, 0.03)',
+                            background: 'var(--bg-card)',
                             borderRadius: '8px',
-                            border: '1px solid rgba(255, 255, 255, 0.05)',
+                            border: '1px solid var(--border-glass)',
                             color: 'var(--primary)',
                             marginBottom: '2.5rem',
                             fontSize: '0.8rem',
@@ -55,7 +56,7 @@ const Hero = () => {
                             lineHeight: '1.05',
                             marginBottom: '2rem',
                             letterSpacing: '-0.05em',
-                            color: 'white'
+                            color: 'var(--text-main)'
                         }}
                     >
                         Last Minute <br />
@@ -96,23 +97,36 @@ const Hero = () => {
                             padding: '16px 36px',
                             fontSize: '1rem',
                             borderRadius: '10px',
-                            width: isMobile ? '100%' : 'auto'
+                            width: isMobile ? '100%' : 'auto',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '8px',
+                            textDecoration: 'none'
                         }}>
                             Browse Curriculum <ArrowRight size={20} />
                         </a>
-                        <button
-                            onClick={openCohortModal}
-                            className="btn-secondary"
+                        <Link
+                            to="/buy-premium"
                             style={{
                                 padding: '16px 36px',
                                 fontSize: '1rem',
                                 borderRadius: '10px',
-                                border: '1px solid rgba(255, 255, 255, 0.1)',
-                                width: isMobile ? '100%' : 'auto'
+                                border: '1px solid var(--border-glass)',
+                                background: 'var(--bg-card)',
+                                color: 'var(--text-main)',
+                                fontWeight: '800',
+                                cursor: 'pointer',
+                                transition: 'var(--transition)',
+                                width: isMobile ? '100%' : 'auto',
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                justifyContent: 'center'
                             }}
                         >
                             Learning Cohorts 2026
-                        </button>
+                        </Link>
                     </motion.div>
 
                     {/* Trust Indicators */}

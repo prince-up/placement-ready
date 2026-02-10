@@ -24,7 +24,7 @@ const CompanySheets = () => {
                         <Briefcase size={16} />
                         <span style={{ fontWeight: '900', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Tailored Strategy</span>
                     </div>
-                    <h1 style={{ fontSize: isMobile ? '2.2rem' : '3.5rem', fontWeight: '900', letterSpacing: '-0.02em', color: 'white' }}>
+                    <h1 style={{ fontSize: isMobile ? '2.2rem' : '3.5rem', fontWeight: '900', letterSpacing: '-0.02em', color: 'var(--text-main)' }}>
                         Industry Briefings
                     </h1>
                     <p style={{ color: 'var(--text-muted)', fontSize: isMobile ? '1rem' : '1.1rem', marginTop: '1rem', maxWidth: '750px', margin: isMobile ? '1rem 0 0' : '1rem auto 0', lineHeight: '1.6' }}>
@@ -42,8 +42,8 @@ const CompanySheets = () => {
                             transition={{ delay: index * 0.1 }}
                             style={{
                                 padding: isMobile ? '1.5rem' : '2.5rem',
-                                background: 'rgba(255, 255, 255, 0.01)',
-                                border: '1px solid rgba(255, 255, 255, 0.03)',
+                                background: 'rgba(0, 0, 0, 0.01)',
+                                border: '1px solid rgba(0, 0, 0, 0.05)',
                                 borderRadius: '16px',
                                 display: 'flex',
                                 flexDirection: 'column',
@@ -61,7 +61,7 @@ const CompanySheets = () => {
                                 {sheet.level}
                             </div>
 
-                            <h2 style={{ fontSize: '1.5rem', fontWeight: '900', marginBottom: '0.75rem', color: 'white' }}>
+                            <h2 style={{ fontSize: '1.5rem', fontWeight: '900', marginBottom: '0.75rem', color: 'var(--text-main)' }}>
                                 {sheet.name}
                             </h2>
                             <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6', marginBottom: '2rem' }}>
@@ -74,7 +74,7 @@ const CompanySheets = () => {
                                 </h4>
                                 <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '10px' }}>
                                     {sheet.mustKnow.map((item, i) => (
-                                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
+                                        <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', color: 'var(--text-main)', opacity: 0.8 }}>
                                             <Check size={14} color={sheet.color} />
                                             {item}
                                         </div>
@@ -105,12 +105,12 @@ const CompanySheets = () => {
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} style={{
                     marginTop: isMobile ? '3rem' : '5rem',
                     textAlign: 'center',
-                    background: 'rgba(255, 255, 255, 0.01)',
+                    background: 'rgba(0, 0, 0, 0.01)',
                     padding: isMobile ? '2.5rem 1.5rem' : '4rem 2rem',
                     borderRadius: '24px',
-                    border: '1px solid rgba(255, 255, 255, 0.03)',
+                    border: '1px solid rgba(0, 0, 0, 0.05)',
                 }}>
-                    <h3 style={{ fontSize: isMobile ? '1.25rem' : '1.75rem', fontWeight: '900', marginBottom: '1rem', color: 'white' }}>
+                    <h3 style={{ fontSize: isMobile ? '1.25rem' : '1.75rem', fontWeight: '900', marginBottom: '1rem', color: 'var(--text-main)' }}>
                         Ready for a comprehensive drills?
                     </h3>
                     <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', maxWidth: '600px', margin: '0 auto 2.5rem', fontSize: '0.95rem' }}>

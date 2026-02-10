@@ -41,7 +41,7 @@ const AddContentModal = ({ isOpen, onClose, subjectId, onAdded }) => {
                         style={{
                             position: 'fixed',
                             top: 0, left: 0, right: 0, bottom: 0,
-                            background: 'rgba(5, 6, 10, 0.9)',
+                            background: 'rgba(255, 255, 255, 0.9)',
                             backdropFilter: 'blur(8px)',
                             zIndex: 4000
                         }}
@@ -60,10 +60,10 @@ const AddContentModal = ({ isOpen, onClose, subjectId, onAdded }) => {
                             width: 'min(92%, 580px)',
                             maxHeight: '75vh', // Tighter height to force scroll away from taskbar
                             background: 'var(--bg-dark)',
-                            border: '1px solid var(--border-glass)',
+                            border: '1px solid rgba(0,0,0,0.1)',
                             borderRadius: '24px',
                             zIndex: 4001,
-                            boxShadow: '0 50px 100px rgba(0, 0, 0, 0.9)',
+                            boxShadow: '0 50px 100px rgba(0, 0, 0, 0.1)',
                             display: 'flex',
                             flexDirection: 'column',
                             overflow: 'hidden'
@@ -75,8 +75,8 @@ const AddContentModal = ({ isOpen, onClose, subjectId, onAdded }) => {
                             display: 'flex',
                             justifyContent: 'space-between',
                             alignItems: 'center',
-                            borderBottom: '1px solid var(--border-glass)',
-                            background: 'rgba(255,255,255,0.02)'
+                            borderBottom: '1px solid rgba(0,0,0,0.05)',
+                            background: 'rgba(0,0,0,0.02)'
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
                                 <Sparkles size={18} className="glow-text" />
@@ -129,7 +129,7 @@ const AddContentModal = ({ isOpen, onClose, subjectId, onAdded }) => {
                                                 value={formData.title}
                                                 onChange={e => setFormData({ ...formData, title: e.target.value })}
                                                 placeholder="e.g., Dijkstra's Algorithm"
-                                                style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', background: 'rgba(255,255,255,0.01)', border: '1px solid var(--border-glass)', color: 'white', outline: 'none', fontSize: '0.9rem' }}
+                                                style={{ width: '100%', padding: '10px 14px', borderRadius: '10px', background: 'rgba(0,0,0,0.01)', border: '1px solid rgba(0,0,0,0.05)', color: 'var(--text-main)', outline: 'none', fontSize: '0.9rem' }}
                                             />
                                         </div>
                                         <div style={{ display: 'grid', gap: '6px' }}>
@@ -140,7 +140,7 @@ const AddContentModal = ({ isOpen, onClose, subjectId, onAdded }) => {
                                                 value={formData.content}
                                                 onChange={e => setFormData({ ...formData, content: e.target.value })}
                                                 placeholder="Enter key points to remember..."
-                                                style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'rgba(255,255,255,0.01)', border: '1px solid var(--border-glass)', color: 'white', outline: 'none', fontSize: '0.9rem', lineHeight: '1.5' }}
+                                                style={{ width: '100%', padding: '12px 14px', borderRadius: '10px', background: 'rgba(0,0,0,0.01)', border: '1px solid rgba(0,0,0,0.05)', color: 'var(--text-main)', outline: 'none', fontSize: '0.9rem', lineHeight: '1.5' }}
                                             />
                                         </div>
                                     </>

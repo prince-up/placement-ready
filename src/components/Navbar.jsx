@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { GraduationCap, Github, Search, LayoutDashboard, Bookmark, Settings, RotateCcw, UserCheck, Briefcase, Zap, Menu, X, BookOpen } from 'lucide-react';
+import { GraduationCap, Github, Search, LayoutDashboard, Bookmark, Settings, RotateCcw, UserCheck, Briefcase, Zap, Menu, X, BookOpen, Sun, Moon, User } from 'lucide-react';
 import { resetData } from '../data/dataManager';
-import { useCohort } from '../context/CohortContext';
+import { useTheme } from '../context/ThemeContext';
+import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
-    const { openCohortModal } = useCohort();
+    const { isDark, toggleTheme } = useTheme();
+    const { user, signOut } = useAuth();
     const [showSettings, setShowSettings] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +41,19 @@ const Navbar = () => {
         { path: '/company-sheets', label: 'Resources', icon: Briefcase },
     ];
 
+    const handleBuyPremium = () => {
+        navigate('/buy-premium');
+    };
+
+    const handleAuth = () => {
+        navigate('/auth');
+    };
+
+    const handleSignOut = async () => {
+        await signOut();
+        navigate('/');
+    };
+
     return (
         <nav style={{
             height: '80px',
@@ -46,9 +61,9 @@ const Navbar = () => {
             width: '100%',
             top: 0,
             zIndex: 1000,
-            background: isScrolled ? 'rgba(10, 11, 15, 0.9)' : 'transparent',
+            background: isScrolled ? 'var(--bg-dark)' : 'transparent',
             backdropFilter: isScrolled ? 'blur(20px)' : 'none',
-            borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.05)' : '1px solid transparent',
+            borderBottom: isScrolled ? '1px solid var(--border-glass)' : '1px solid transparent',
             transition: 'all 0.3s ease'
         }}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '100%' }}>
@@ -66,7 +81,7 @@ const Navbar = () => {
                     }}>
                         <Zap size={18} fill="white" />
                     </div>
-                    <span style={{ fontSize: '1.25rem', fontWeight: '950', letterSpacing: '-0.04em', color: 'white' }}>
+                    <span style={{ fontSize: '1.25rem', fontWeight: '950', letterSpacing: '-0.04em', color: 'var(--text-main)' }}>
                         Sylla<span style={{ color: 'var(--primary)' }}>blink</span>
                     </span>
                 </Link>
@@ -94,28 +109,100 @@ const Navbar = () => {
                             ))}
                         </div>
 
-                        <div style={{ width: '1px', height: '20px', background: 'rgba(255, 255, 255, 0.1)' }}></div>
+                        <div style={{ width: '1px', height: '20px', background: 'rgba(0, 0, 0, 0.1)' }}></div>
 
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                             <button
-                                onClick={openCohortModal}
+                                onClick={handleBuyPremium}
                                 style={{
-                                    background: 'rgba(16, 185, 129, 0.1)',
+                                    background: 'var(--primary)',
                                     border: '1px solid rgba(16, 185, 129, 0.2)',
-                                    color: 'var(--primary)',
+                                    color: 'white',
                                     padding: '8px 16px',
                                     borderRadius: '8px',
                                     fontSize: '0.75rem',
                                     fontWeight: '900',
+                                    cursor: 'pointer',
+                                    transition: 'var(--transition)'
+                                }}
+                            >
+                                BUY PREMIUM
+                            </button>
+                            <button
+                                onClick={handleAuth}
+                                title={user?.email || 'Profile'}
+                                style={{
+                                    width: '34px',
+                                    height: '34px',
+                                    borderRadius: '50%',
+                                    border: '1px solid var(--border-glass)',
+                                    background: user ? 'rgba(16, 185, 129, 0.12)' : 'rgba(0,0,0,0.04)',
+                                    color: user ? 'var(--primary)' : 'var(--text-muted)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontWeight: '900',
+                                    fontSize: '0.8rem',
                                     cursor: 'pointer'
                                 }}
                             >
-                                START COHORT
+                                {user?.email ? user.email.charAt(0).toUpperCase() : <User size={16} />}
                             </button>
-                            <button onClick={handleReset} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.2)', cursor: 'pointer' }}>
+                            {user ? (
+                                <button
+                                    onClick={handleSignOut}
+                                    title={user.email || 'Account'}
+                                    style={{
+                                        background: 'rgba(16, 185, 129, 0.12)',
+                                        border: '1px solid rgba(16, 185, 129, 0.2)',
+                                        color: 'var(--primary)',
+                                        padding: '8px 12px',
+                                        borderRadius: '8px',
+                                        fontSize: '0.7rem',
+                                        fontWeight: '900',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    LOG OUT
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={handleAuth}
+                                    style={{
+                                        background: 'rgba(0,0,0,0.04)',
+                                        border: '1px solid rgba(0,0,0,0.08)',
+                                        color: 'var(--text-main)',
+                                        padding: '8px 12px',
+                                        borderRadius: '8px',
+                                        fontSize: '0.7rem',
+                                        fontWeight: '900',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    LOGIN
+                                </button>
+                            )}
+                            <button
+                                onClick={toggleTheme}
+                                style={{
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid var(--border-glass)',
+                                    color: 'var(--text-main)',
+                                    cursor: 'pointer',
+                                    padding: '8px',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    transition: 'var(--transition)'
+                                }}
+                            >
+                                {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                            </button>
+                            <button onClick={handleReset} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', opacity: 0.5 }}>
                                 <RotateCcw size={18} />
                             </button>
-                            <a href="https://github.com" target="_blank" rel="noreferrer" style={{ color: 'rgba(255,255,255,0.4)' }}>
+                            <a href="https://github.com" target="_blank" rel="noreferrer" style={{ color: 'var(--text-muted)', opacity: 0.6 }}>
                                 <Github size={20} />
                             </a>
                         </div>
@@ -126,7 +213,7 @@ const Navbar = () => {
                 {isMobile && (
                     <button
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        style={{ background: 'none', border: 'none', color: 'white', padding: '8px' }}
+                        style={{ background: 'none', border: 'none', color: 'var(--text-main)', padding: '8px' }}
                     >
                         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
@@ -145,9 +232,10 @@ const Navbar = () => {
                             top: '80px',
                             left: 0,
                             right: 0,
-                            background: '#0a0b0f',
+                            background: 'var(--bg-dark)',
+                            backdropFilter: 'blur(20px)',
                             padding: '2rem 1.5rem',
-                            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+                            borderBottom: '1px solid var(--border-glass)',
                             display: 'flex',
                             flexDirection: 'column',
                             gap: '1.5rem',
@@ -161,7 +249,7 @@ const Navbar = () => {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 style={{
                                     textDecoration: 'none',
-                                    color: 'white',
+                                    color: 'var(--text-main)',
                                     fontWeight: '800',
                                     fontSize: '1rem',
                                     display: 'flex',
@@ -173,7 +261,7 @@ const Navbar = () => {
                             </Link>
                         ))}
                         <button
-                            onClick={() => { openCohortModal(); setIsMobileMenuOpen(false); }}
+                            onClick={() => { navigate('/buy-premium'); setIsMobileMenuOpen(false); }}
                             style={{
                                 background: 'var(--primary)',
                                 color: 'white',
@@ -184,7 +272,39 @@ const Navbar = () => {
                                 width: '100%'
                             }}
                         >
-                            ENROLL IN COHORT
+                            BUY PREMIUM
+                        </button>
+                        <button
+                            onClick={() => { user ? handleSignOut() : handleAuth(); setIsMobileMenuOpen(false); }}
+                            style={{
+                                background: user ? 'rgba(16, 185, 129, 0.12)' : 'var(--bg-card)',
+                                color: user ? 'var(--primary)' : 'var(--text-main)',
+                                padding: '14px',
+                                borderRadius: '10px',
+                                border: '1px solid var(--border-glass)',
+                                fontWeight: '800'
+                            }}
+                        >
+                            {user ? 'LOG OUT' : 'LOGIN'}
+                        </button>
+                        <button
+                            onClick={toggleTheme}
+                            style={{
+                                background: 'var(--bg-card)',
+                                color: 'var(--text-main)',
+                                padding: '14px',
+                                borderRadius: '10px',
+                                border: '1px solid var(--border-glass)',
+                                fontWeight: '800',
+                                width: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                gap: '8px'
+                            }}
+                        >
+                            {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                            {isDark ? 'Light Mode' : 'Dark Mode'}
                         </button>
                     </motion.div>
                 )}

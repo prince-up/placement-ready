@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="720" viewBox="0 0 720 720">
+  <rect width="720" height="720" fill="#f3f4f6" />
+  <rect x="60" y="60" width="600" height="600" fill="#ffffff" stroke="#e5e7eb" stroke-width="4" />
+  <text x="360" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#6b7280">Replace with your QR</text>
+  <text x="360" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#9ca3af">public/qr-premium.svg</text>
+</svg>

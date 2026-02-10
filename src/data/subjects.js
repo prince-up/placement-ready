@@ -91,7 +91,7 @@ export const subjects = [
             },
             {
                 title: '1.4 Process – Basics',
-                content: 'A process is a program in execution with its own address space, registers, and execution context.'
+                content: 'A process is a program in execution with its own address space, registers, and execution context.\n[DIAGRAM:PROCESS_STATES]'
             },
             {
                 title: '1.4.1 Types of Processes',
@@ -320,6 +320,130 @@ export const subjects = [
             {
                 title: 'Worksheet 4 – Subjective Questions',
                 content: '• Explain LRU page replacement, pros/cons, and where it performs well/poorly.\n• Describe disk structure (tracks, sectors, cylinders) and its impact on access time.\n• Discuss disk partitioning benefits for organization and security.\n• Practice: LRU page faults for a given reference string and frame count.\n• Explain RAID and at least three RAID levels.\n• Practice: SSTF total head movement for a given request sequence.'
+            },
+            {
+                title: 'Inter-Process Communication (IPC)',
+                content: 'Processes communicate using shared memory, message queues, pipes, sockets, and signals. IPC needs synchronization to avoid race conditions.'
+            },
+            {
+                title: 'Deadlock Handling Strategies',
+                content: 'Approaches: prevention (break Coffman conditions), avoidance (Banker\'s algorithm), detection (wait-for graph), and recovery (rollback/kill).' 
+            },
+            {
+                title: 'File Systems & Journaling',
+                content: 'File systems manage directories, metadata, and allocation. Journaling improves crash recovery by logging updates before applying them.'
+            },
+            {
+                title: 'I/O Systems & Disk Scheduling',
+                content: 'I/O includes buffering, caching, spooling, and device drivers. Disk scheduling: FCFS, SSTF, SCAN, C-SCAN, LOOK.'
+            },
+            {
+                title: 'Virtual Memory Metrics',
+                content: 'Key terms: page fault rate, effective access time (EAT), working set, thrashing detection and control.'
+            },
+            {
+                title: 'Scheduling Queues and Schedulers',
+                content: 'Job queue holds all processes, ready queue holds processes in memory, and device queues hold processes waiting for I/O. Schedulers: long-term (admission), short-term (CPU), and medium-term (swapping).' 
+            },
+            {
+                title: 'Context Switching',
+                content: 'Context switch saves the CPU state of a running process and restores another. It adds overhead but enables multitasking.'
+            },
+            {
+                title: 'User Mode vs Kernel Mode',
+                content: 'User mode has restricted privileges. Kernel mode has full access to hardware and critical instructions. System calls switch from user to kernel mode.'
+            },
+            {
+                title: 'Scheduling Algorithms (Advanced)',
+                content: 'Priority Based Scheduling (PBS), Multilevel Queue (MLQ), and Multilevel Feedback Queue (MLFQ) handle mixed workloads using priorities and multiple queues.'
+            },
+            {
+                title: 'Process Synchronization Tools',
+                content: 'Mutexes, semaphores, condition variables, and monitors coordinate access to shared resources.'
+            },
+            {
+                title: 'IPC Mechanisms and Signals',
+                content: 'IPC uses message passing, shared memory, pipes, sockets, and signals. Signals notify processes of events (e.g., SIGINT, SIGKILL).'
+            },
+            {
+                title: 'File System Components',
+                content: 'Boot block, superblock, inode table (or FCB table), data blocks, and directories. Metadata tracks size, ownership, and permissions.'
+            },
+            {
+                title: 'Types of File Systems',
+                content: 'Common types: FAT32, NTFS, ext4, APFS, XFS. Choose based on platform, journaling, and performance requirements.'
+            },
+            {
+                title: 'File Allocation and Fragmentation',
+                content: 'Allocation methods: contiguous, linked, and indexed. Fragmentation can be internal or external and impacts performance.'
+            },
+            {
+                title: 'File Control Block (FCB) and ACL',
+                content: 'FCB stores file metadata. Access Control Lists (ACLs) define fine-grained permissions for users and groups.'
+            },
+            {
+                title: 'User Authentication and Encryption',
+                content: 'Authentication uses passwords, hashes, and multi-factor methods. File systems may use encryption for data at rest.'
+            },
+            {
+                title: 'Backup and Recovery',
+                content: 'Full, incremental, and differential backups. Recovery uses logs, checkpoints, and journaling to restore consistency.'
+            },
+            {
+                title: 'Disk Management and Scheduling',
+                content: 'Disk scheduling algorithms include FCFS, SSTF, SCAN, C-SCAN, LOOK, and C-LOOK to reduce seek time.'
+            },
+            {
+                title: 'System Calls and Boot Process',
+                content: 'System calls provide OS services. Boot process: firmware -> bootloader -> kernel init -> user space.'
+            },
+            {
+                title: 'Interrupts and Event Handling',
+                content: 'Hardware and software interrupts signal events to the CPU. Interrupt handlers prioritize and service events.'
+            },
+            {
+                title: 'Resource Management',
+                content: 'OS manages CPU, memory, I/O, and storage resources to maximize throughput and fairness.'
+            },
+            {
+                title: 'Priority Inversion',
+                content: 'Low-priority tasks block high-priority tasks due to resource locks. Priority inheritance can mitigate this.'
+            },
+            {
+                title: 'Load Balancing in OS',
+                content: 'Distributes workloads across CPUs/cores to improve utilization and reduce latency.'
+            },
+            {
+                title: 'Performance Measurement and Tuning',
+                content: 'Use metrics like CPU utilization, throughput, latency, and context-switch rate to tune system performance.'
+            },
+            {
+                title: 'Cache Mapping Techniques',
+                content: 'Direct mapping uses a fixed cache line for each memory block. Fully associative mapping allows any block in any line.'
+            },
+            {
+                title: 'Virtual Machines and Hypervisors',
+                content: 'Virtual machines run isolated OS instances. Hypervisors (Type 1/2) allocate hardware resources to VMs.'
+            },
+            {
+                title: 'Spooling',
+                content: 'Spooling buffers I/O (e.g., print jobs) by storing data temporarily for later processing.'
+            },
+            {
+                title: 'Network File Systems (NFS)',
+                content: 'NFS enables file sharing over a network, allowing remote access as if files were local.'
+            },
+            {
+                title: 'Thread Safety and Reentrancy',
+                content: 'Thread safety prevents data corruption in concurrent access. Reentrancy allows safe re-entry into functions before previous calls finish.'
+            },
+            {
+                title: 'OS Security Mechanisms',
+                content: 'Authentication, authorization, auditing, encryption, and sandboxing protect system resources.'
+            },
+            {
+                title: 'Future Trends in OS',
+                content: 'Microkernels, containers, and stronger isolation focus on security, scalability, and maintainability.'
             },
             {
                 title: 'Most Important Interview Concepts',
@@ -650,6 +774,86 @@ export const subjects = [
                 options: ['20 bits, 12 bits', '10 bits, 22 bits', '12 bits, 20 bits', '14 bits, 18 bits'],
                 answer: 0,
                 explanation: 'Offset = 12 bits, so page number = 32 − 12 = 20 bits.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'In direct mapping for cache memory, each block of main memory is mapped to:',
+                options: ['Any cache block', 'A random cache block', 'Multiple cache blocks', 'A specific cache block based on the memory address'],
+                answer: 3,
+                explanation: 'Direct mapping uses index bits from the address to choose a specific cache line.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'In associative mapping for cache memory, a block of memory can be mapped to:',
+                options: ['Only one specific cache block', 'A cache block based on the address size', 'Any cache block', 'A cache block determined by the processor'],
+                answer: 2,
+                explanation: 'Fully associative caches allow a block to be placed in any cache line.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'A virtual machine is an abstraction that allows:',
+                options: ['Running multiple instances of an operating system on a single physical machine', 'Direct communication between different operating systems', 'Direct interaction with the hardware', 'None of the above'],
+                answer: 0,
+                explanation: 'VMs allow multiple OS instances to run on shared hardware with isolation.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'A hypervisor is responsible for:',
+                options: ['Managing the hardware resources and virtual machines', 'Handling user input and system interrupts', 'Managing memory allocation within a single virtual machine', 'Securing data transmission between virtual machine'],
+                answer: 0,
+                explanation: 'The hypervisor allocates hardware resources to VMs and enforces isolation.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'In spooling, data is temporarily stored:',
+                options: ['In memory until it can be processed', 'In the CPU cache to improve execution speed', 'In a buffer and then printed or processed later', 'In a secondary storage device only'],
+                answer: 2,
+                explanation: 'Spooling queues jobs in a buffer (often on disk) for later processing.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'Network File Systems (NFS) allow:',
+                options: ['File sharing between multiple computers over a network', 'Direct access to files from remote servers without caching', 'Encrypting files on remote systems', 'None of the above'],
+                answer: 0,
+                explanation: 'NFS provides shared access to files over a network.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'Thread safety ensures that:',
+                options: ['Multiple threads can safely execute in parallel without causing data corruption', 'Threads can access shared resources without any synchronization', 'Threads can be executed in a non-blocking manner', 'Threads are prevented from accessing shared resources'],
+                answer: 0,
+                explanation: 'Thread-safe code prevents data races and inconsistent state.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'Reentrancy in operating systems means that:',
+                options: ['A function can be safely interrupted and called again before its previous executions are complete', 'A resource is shared by multiple threads at the same time', 'A process can handle multiple signals simultaneously', 'Threads can execute in parallel without any synchronization'],
+                answer: 0,
+                explanation: 'Reentrant functions are safe to call while already executing.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'Operating system security mechanisms include:',
+                options: ['Authentication and access control', 'Encryption and secure communication', 'Auditing and logging', 'All of the above'],
+                answer: 3,
+                explanation: 'OS security relies on all these mechanisms together.'
+            },
+            {
+                worksheet: 'Worksheet 5',
+                difficulty: 'basic',
+                question: 'Future trends in operating systems, such as microkernels and containers, focus on:',
+                options: ['Increasing the size of the kernel to include more features', 'Reducing the kernel\'s complexity and improving system security and scalability', 'Running multiple applications on a single operating system instance', 'Using virtual machines exclusively for isolation'],
+                answer: 1,
+                explanation: 'Modern trends reduce kernel complexity and improve isolation and scalability.'
             }
         ]
     },
@@ -661,7 +865,7 @@ export const subjects = [
         concepts: [
             {
                 title: '1. Introduction to DBMS',
-                content: 'A Database Management System (DBMS) is a software application that facilitates the creation, management, and manipulation of databases.\n\nKey Components:\n• Data Definition Language (DDL): Defines structure and schema.\n• Data Manipulation Language (DML): Used to retrieve, insert, update, and delete data.\n• Data Control Language (DCL): Controls access and permissions.\n• Transaction Management: Ensures ACID properties.\n• Concurrency Control: Manages simultaneous access.\n• Backup and Recovery: Ensures data availability and integrity.'
+                content: 'A Database Management System (DBMS) is a software application that facilitates the creation, management, and manipulation of databases.\n[DIAGRAM:DB_ARCH]\n\nKey Components:\n• Data Definition Language (DDL): Defines structure and schema.\n• Data Manipulation Language (DML): Used to retrieve, insert, update, and delete data.\n• Data Control Language (DCL): Controls access and permissions.\n• Transaction Management: Ensures ACID properties.\n• Concurrency Control: Manages simultaneous access.\n• Backup and Recovery: Ensures data availability and integrity.'
             },
             {
                 title: '2. SQL Command Categories',
@@ -730,6 +934,154 @@ export const subjects = [
             {
                 title: '18. Database Security & Backup',
                 content: 'Key terms:\n• Authentication vs Authorization.\n• SQL Injection: Vulnerability where malicious SQL is executed.\n• RAID: Redundant Array of Independent Disks (Data protection).\n• WAL: Write-Ahead Logging (Durability).\n• Cold vs Hot Backup: Backing up while DB is offline vs online.'
+            },
+            {
+                title: '19. ER Modeling & Keys',
+                content: 'ER modeling covers entities, attributes, relationships, cardinality, and participation. Keys: super key, candidate key, primary key, and foreign key.'
+            },
+            {
+                title: '20. SQL Joins & Subqueries',
+                content: 'Join types: INNER, LEFT, RIGHT, FULL. Subqueries can be correlated or non-correlated, and used in SELECT/WHERE/HAVING.'
+            },
+            {
+                title: '21. Index Internals (B-Tree/B+Tree)',
+                content: 'B-Tree/B+Tree indexes keep data sorted for fast lookup. B+Tree stores all records in leaves with linked leaf nodes for range scans.'
+            },
+            {
+                title: '22. Isolation Anomalies',
+                content: 'Common anomalies: dirty read, non-repeatable read, and phantom read. Isolation levels trade off consistency vs performance.'
+            },
+            {
+                title: '23. Transaction States',
+                content: 'States: Active, Partially Committed, Committed, Failed, Aborted. Recovery ensures database consistency after failure.'
+            },
+            {
+                title: '24. DBMS Interfaces',
+                content: 'Interfaces include command-line, GUI, forms, report writers, and application APIs (ODBC/JDBC).'
+            },
+            {
+                title: '25. Data Models and Their Types',
+                content: 'Hierarchical, network, relational, object-oriented, and semi-structured (JSON/XML) models.'
+            },
+            {
+                title: '26. ER Model Components',
+                content: 'Entities, attributes, relationships, cardinality, and participation constraints.'
+            },
+            {
+                title: '27. Relationship Types and Inheritance',
+                content: '1:1, 1:N, M:N relationships. Inheritance includes specialization and generalization.'
+            },
+            {
+                title: '28. Extended ER Features',
+                content: 'Weak entities, aggregation, composite attributes, multivalued attributes, and ISA hierarchies.'
+            },
+            {
+                title: '29. ER Diagram Design',
+                content: 'Create ER diagrams using entity sets, relationship sets, and appropriate cardinalities.'
+            },
+            {
+                title: '30. Relational Model Concepts',
+                content: 'Relation schema, tuples, attributes, domain, and integrity constraints.'
+            },
+            {
+                title: '31. Intension vs Extension',
+                content: 'Intension is schema/definition; extension is the actual data (instances) at a time.'
+            },
+            {
+                title: '32. Keys in DBMS',
+                content: 'Super key, candidate key, primary key, alternate key, and foreign key.'
+            },
+            {
+                title: '33. Functional Dependencies',
+                content: 'FDs describe attribute relationships. Used to find keys and normalize schemas.'
+            },
+            {
+                title: '34. Armstrong\'s Axioms and Inference Rules',
+                content: 'Reflexivity, augmentation, transitivity, plus union, decomposition, and pseudotransitivity.'
+            },
+            {
+                title: '35. Closure and Denormalization',
+                content: 'Attribute closure helps find keys. Denormalization trades redundancy for read performance.'
+            },
+            {
+                title: '36. SQL Operators and Clauses',
+                content: 'Operators (arithmetic, comparison, logical) and clauses (SELECT, WHERE, GROUP BY, HAVING, ORDER BY).'
+            },
+            {
+                title: '37. SQL Joins (Advanced)',
+                content: 'Self-join, cross join, natural join, and join conditions for complex queries.'
+            },
+            {
+                title: '38. Unions and Views',
+                content: 'UNION/UNION ALL merge result sets. Views and materialized views provide abstraction and performance.'
+            },
+            {
+                title: '39. SQL Subqueries',
+                content: 'Correlated and non-correlated subqueries in SELECT/WHERE/HAVING.'
+            },
+            {
+                title: '40. Query Processing and Optimization',
+                content: 'Parsing, rewriting, plan selection, and cost-based optimization with indexes and statistics.'
+            },
+            {
+                title: '41. NoSQL Databases and BASE',
+                content: 'NoSQL types: key-value, document, column-family, graph. BASE: Basically Available, Soft state, Eventually consistent.'
+            },
+            {
+                title: '42. Partitioning and Sharding',
+                content: 'Horizontal vs vertical partitioning. Sharding distributes data across nodes for scale.'
+            },
+            {
+                title: '43. Distributed Database Architecture',
+                content: 'Data distribution, replication, and coordination across nodes with fault tolerance.'
+            },
+            {
+                title: '44. Load Balancing and Replication',
+                content: 'Read replicas, leader-follower, multi-leader, and quorum-based replication.'
+            },
+            {
+                title: '45. Transactions and Concurrency Control',
+                content: 'Locking protocols (shared/exclusive), timestamp ordering, and MVCC.'
+            },
+            {
+                title: '46. Serialization and Schedules',
+                content: 'Serial and serializable schedules; conflict and view serializability with serialization graphs.'
+            },
+            {
+                title: '47. Isolation Levels',
+                content: 'Read Uncommitted, Read Committed, Repeatable Read, Serializable with related anomalies.'
+            },
+            {
+                title: '48. Deadlock and Starvation in DBMS',
+                content: 'Deadlock detection/prevention and starvation avoidance using fair scheduling.'
+            },
+            {
+                title: '49. Recovery and Backup',
+                content: 'WAL, checkpoints, undo/redo, and full/incremental backups.'
+            },
+            {
+                title: '50. Triggers and Stored Procedures',
+                content: 'Triggers fire on data changes; stored procedures encapsulate reusable logic.'
+            },
+            {
+                title: '51. Indexing Techniques and B-Trees',
+                content: 'Clustered vs non-clustered indexes, B-Tree/B+Tree internals, and index selection.'
+            },
+            {
+                title: '52. Monitoring and Caching',
+                content: 'Monitor query latency, cache hit rate, and use caching strategies for performance.'
+            },
+            {
+                title: '53. Security and Access Control',
+                content: 'RBAC models, encryption at rest/in transit, masking, and auditing.'
+            },
+            {
+                title: '54. Scalability and DBaaS',
+                content: 'Scaling strategies, big data systems, and managed DBaaS offerings.'
+            },
+            {
+                title: '55. Data Warehousing and Migration',
+                content: 'Data warehousing (ETL/ELT), migration strategies, and event-driven pipelines.'
             }
         ],
         mcqs: [
@@ -964,8 +1316,228 @@ export const subjects = [
                 content: '• **Composition**: "Has-A" relationship (Car has an Engine).\n• **Constructor**: Special method to initialize objects.\n• **Destructor**: Method to release resources (important in C++).\n• **Static**: Belongs to class, not instance.\n• **Final**: Prevents overriding or subclassing.\n• **Immutable**: State cannot change after creation.'
             },
             {
-                title: '11. High-Frequency Interview Questions',
+                title: '11. SOLID in Practice',
+                content: 'Apply SOLID with examples: SRP (split responsibilities), OCP (extend without modifying), DIP (depend on interfaces), etc.'
+            },
+            {
+                title: '12. Interface vs Abstract Class',
+                content: 'Interfaces define contracts; abstract classes can share implementation. Use interfaces for capabilities and abstract classes for shared behavior.'
+            },
+            {
+                title: '13. Composition Over Inheritance',
+                content: 'Favor composition for flexibility and lower coupling. Inheritance is best for true "is-a" relationships.'
+            },
+            {
+                title: '14. Common Design Patterns (Examples)',
+                content: 'Singleton (single instance), Factory (object creation), Observer (pub/sub), Strategy (swap algorithms), Decorator (add behavior).' 
+            },
+            {
+                title: '15. High-Frequency Interview Questions',
                 content: '1. Difference between Abstraction and Encapsulation?\n2. Why does Java not support multiple inheritance with classes? (Diamond Problem).\n3. Difference between `this` and `super`?\n4. What is a Singleton class and how to implement it?\n5. Explain Shallow Copy vs Deep Copy.'
+            },
+            {
+                title: '16. Java Basics',
+                content: 'JVM, JRE, and JDK roles, basic syntax, data types, control flow, and class structure.'
+            },
+            {
+                title: '17. What is OOPS',
+                content: 'OOP models real-world entities as objects with state and behavior to improve modularity and reuse.'
+            },
+            {
+                title: '18. Classes and Objects',
+                content: 'Define classes with fields and methods, then create objects using constructors.'
+            },
+            {
+                title: '19. Quiz: Classes and Objects',
+                content: 'Focus on class vs object, instance creation, and constructor roles.'
+            },
+            {
+                title: '20. Practice: Classes and Objects',
+                content: 'Create a Student class with fields and methods. Instantiate multiple objects and print details.'
+            },
+            {
+                title: '21. Attributes and Methods',
+                content: 'Attributes store state. Methods define behavior and can be instance or static.'
+            },
+            {
+                title: '22. Quiz: Attributes and Methods',
+                content: 'Identify attribute vs method, instance vs static members, and method signatures.'
+            },
+            {
+                title: '23. Practice: Attributes and Methods',
+                content: 'Build a BankAccount class with deposit, withdraw, and balance methods.'
+            },
+            {
+                title: '24. Constructors',
+                content: 'Constructors initialize objects. Types include default, parameterized, and copy constructors.'
+            },
+            {
+                title: '25. Quiz: Constructors',
+                content: 'Focus on constructor overloading, default constructors, and constructor chaining.'
+            },
+            {
+                title: '26. Practice: Constructors',
+                content: 'Create a Car class with multiple constructors and demonstrate constructor chaining.'
+            },
+            {
+                title: '27. Encapsulation',
+                content: 'Use private fields with getters/setters to control access and preserve invariants.'
+            },
+            {
+                title: '28. Quiz: Encapsulation',
+                content: 'Focus on data hiding, accessors, and benefits of encapsulation.'
+            },
+            {
+                title: '29. Practice: Encapsulation',
+                content: 'Create an Employee class with private fields and validation inside setters.'
+            },
+            {
+                title: '30. Access Modifiers',
+                content: 'public, private, protected, and package-private determine visibility.'
+            },
+            {
+                title: '31. Quiz: Access Modifiers',
+                content: 'Identify visibility rules across packages and subclasses.'
+            },
+            {
+                title: '32. Practice: Access Modifiers',
+                content: 'Create classes in different packages and test access levels.'
+            },
+            {
+                title: '33. Inheritance',
+                content: 'Reuse and extend functionality using base and derived classes. Use super for parent access.'
+            },
+            {
+                title: '34. Quiz: Inheritance',
+                content: 'Focus on is-a relationships, overriding, and constructor order.'
+            },
+            {
+                title: '35. Practice: Inheritance',
+                content: 'Build Vehicle, Car, and Bike classes demonstrating inheritance and overriding.'
+            },
+            {
+                title: '36. Polymorphism',
+                content: 'Compile-time (overloading) and run-time (overriding) polymorphism enable flexible designs.'
+            },
+            {
+                title: '37. Quiz: Polymorphism',
+                content: 'Differentiate overloading vs overriding, dynamic dispatch, and interfaces.'
+            },
+            {
+                title: '38. Practice: Polymorphism',
+                content: 'Create a Shape hierarchy and compute area using overridden methods.'
+            },
+            {
+                title: '39. Abstraction',
+                content: 'Expose essential features while hiding implementation details using abstract classes.'
+            },
+            {
+                title: '40. Quiz: Abstraction',
+                content: 'Understand abstract methods, abstract classes, and when to use them.'
+            },
+            {
+                title: '41. Practice: Abstraction',
+                content: 'Create an abstract class Appliance with abstract methods and concrete subclasses.'
+            },
+            {
+                title: '42. Interfaces',
+                content: 'Interfaces define contracts. Classes can implement multiple interfaces.'
+            },
+            {
+                title: '43. Quiz: Interfaces',
+                content: 'Focus on default methods, multiple implementation, and polymorphism.'
+            },
+            {
+                title: '44. Practice: Interfaces',
+                content: 'Create Printable and Scannable interfaces and implement them in a device class.'
+            },
+            {
+                title: '45. Static Keyword',
+                content: 'Static members belong to the class, not instances. Use for utilities and shared state.'
+            },
+            {
+                title: '46. Quiz: Static Keyword',
+                content: 'Identify static vs instance members and static initialization blocks.'
+            },
+            {
+                title: '47. Practice: Static Keyword',
+                content: 'Create a Counter class with a static count variable shared across instances.'
+            },
+            {
+                title: '48. Inner Classes',
+                content: 'Member, static nested, local, and anonymous inner classes for organizing related logic.'
+            },
+            {
+                title: '49. Quiz: Inner Classes',
+                content: 'Focus on scope, access, and use cases of inner classes.'
+            },
+            {
+                title: '50. Practice: Inner Classes',
+                content: 'Use an anonymous inner class to handle a simple event or callback.'
+            },
+            {
+                title: '51. Association, Aggregation, and Composition',
+                content: 'Association is a general relationship. Aggregation is weak ownership. Composition is strong ownership.'
+            },
+            {
+                title: '52. Quiz: Association/Aggregation/Composition',
+                content: 'Choose the correct relationship for given class pairs.'
+            },
+            {
+                title: '53. Practice: Composition',
+                content: 'Model a House composed of Rooms where Rooms cannot exist without the House.'
+            },
+            {
+                title: '54. Object Cloning',
+                content: 'Shallow vs deep copy, clone method usage, and copy constructors.'
+            },
+            {
+                title: '55. Quiz: Object Cloning',
+                content: 'Identify when shallow copy fails and how deep copy fixes it.'
+            },
+            {
+                title: '56. Practice: Object Cloning',
+                content: 'Clone a User object that contains an Address object and verify deep copy.'
+            },
+            {
+                title: '57. Exception Handling',
+                content: 'Use try/catch/finally, custom exceptions, and throw/throws for robust error handling.'
+            },
+            {
+                title: '58. Quiz: Exception Handling',
+                content: 'Focus on checked vs unchecked exceptions and handling flow.'
+            },
+            {
+                title: '59. Generics',
+                content: 'Generics enable type-safe collections and reusable code with type parameters.'
+            },
+            {
+                title: '60. Quiz: Generics',
+                content: 'Identify type bounds, wildcards, and raw types.'
+            },
+            {
+                title: '61. File Handling',
+                content: 'Read/write files using streams, readers, and writers with proper exception handling.'
+            },
+            {
+                title: '62. Quiz: File Handling',
+                content: 'Focus on file IO classes, buffering, and resource cleanup.'
+            },
+            {
+                title: '63. Design Principles',
+                content: 'Apply SOLID, DRY, KISS, and YAGNI to create maintainable systems.'
+            },
+            {
+                title: '64. Quiz: Design Principles',
+                content: 'Identify which principle applies to a given scenario.'
+            },
+            {
+                title: '65. Object Lifecycle',
+                content: 'Object creation, initialization, use, and garbage collection.'
+            },
+            {
+                title: '66. Quiz: Object Lifecycle',
+                content: 'Focus on constructors, finalization, and GC behavior.'
             }
         ],
         mcqs: [
@@ -1021,20 +1593,231 @@ export const subjects = [
         id: 'cn',
         title: 'Computer Networks',
         icon: 'Wifi',
-        description: 'OSI Layers, TCP/IP Suite, HTTP/HTTPS, and Network Security fundamentals.',
+        description: 'Complete mastery of OSI/TCP-IP Models, IP Addressing, Subnetting, Network Devices, Protocols (HTTP, DNS, SMTP), and Security.',
         concepts: [
             {
-                title: 'OSI Reference Model',
-                content: 'Seven layers: \n1. **Physical**: Bits over wire.\n2. **Data Link**: Frames, MAC addresses.\n3. **Network**: Packets, IP addresses, Routing.\n4. **Transport**: Segments, TCP/UDP, Port numbers.\n5. **Session**: Session management.\n6. **Presentation**: Data encryption/formatting.\n7. **Application**: HTTP, FTP, SMTP.'
+                title: '1. Introduction to Computer Networks',
+                content: 'A computer network connects devices to share data and resources using standard protocols.'
+            },
+            {
+                title: '2. Types of Networks and Internetworks',
+                content: 'LAN, MAN, WAN, PAN, and internetworks connect multiple networks with routers and gateways.'
+            },
+            {
+                title: '3. Network and Logical Topologies',
+                content: 'Topologies: bus, star, ring, mesh, and tree. Logical topology describes how data flows.'
+            },
+            {
+                title: '4. Quiz: Introduction to Computer Networks',
+                content: 'Practice MCQs on network basics, types, and topologies.'
+            },
+            {
+                title: '5. OSI Model and Layers',
+                content: 'Seven layers: Physical, Data Link, Network, Transport, Session, Presentation, Application.'
+            },
+            {
+                title: '6. TCP/IP Model and Comparison',
+                content: 'TCP/IP has 4 layers: Link, Internet, Transport, Application. It maps to OSI layers for practical networking.'
+            },
+            {
+                title: '7. Quiz: Networking Models',
+                content: 'Practice MCQs on OSI vs TCP/IP, layers, and responsibilities.'
+            },
+            {
+                title: '8. Network Cabling and Connectors',
+                content: 'Twisted pair, coaxial, and fiber optics. Connectors include RJ45, LC, and SC.'
+            },
+            {
+                title: '9. Network Devices',
+                content: 'Routers, switches, hubs, bridges, firewalls, gateways, and modems. Each operates at specific OSI layers.'
+            },
+            {
+                title: '10. Ethernet Frame, ARP, and NAC',
+                content: 'Ethernet frames carry MAC addresses, payload, and CRC. ARP maps IP to MAC. NAC enforces access control on network endpoints.'
+            },
+            {
+                title: '11. Quiz: Networking Fundamentals and Basics',
+                content: 'Practice MCQs on cabling, devices, Ethernet, and ARP.'
+            },
+            {
+                title: '12. Network Protocols and Communication',
+                content: 'Protocols define rules for data exchange. Core suites include TCP, UDP, IP, ICMP, and application protocols.'
+            },
+            {
+                title: '13. IP Addressing (IPv4 and IPv6)',
+                content: 'IPv4 is 32-bit dotted decimal; IPv6 is 128-bit hex with simplified headers and autoconfiguration.'
+            },
+            {
+                title: '14. Subnetting and Supernetting',
+                content: 'Subnetting divides networks; supernetting aggregates routes. Classful vs classless uses fixed vs variable masks.'
+            },
+            {
+                title: '15. NAT, DHCP, and DNS',
+                content: 'NAT maps private to public addresses. DHCP assigns IPs dynamically. DNS resolves domain names to IPs.'
+            },
+            {
+                title: '16. Quiz: IP Addressing and Subnetting',
+                content: 'Practice MCQs on IPv4/IPv6, CIDR, NAT, DHCP, and DNS.'
+            },
+            {
+                title: '17. Routing and Switching Overview',
+                content: 'Routing selects paths across networks. Switching forwards frames within a LAN.'
+            },
+            {
+                title: '18. Routing Algorithms',
+                content: 'Common algorithms include distance vector, link state, and path vector.'
+            },
+            {
+                title: '19. Distance Vector and Link State Protocols',
+                content: 'Distance vector shares routes with neighbors. Link state floods topology and computes shortest paths.'
+            },
+            {
+                title: '20. BGP and IGPs (IGRP, EIGRP, OSPF)',
+                content: 'BGP is path-vector for inter-domain routing. IGRP/EIGRP and OSPF are interior gateway protocols.'
+            },
+            {
+                title: '21. Switching Techniques',
+                content: 'Store-and-forward and cut-through switching determine latency and error handling.'
+            },
+            {
+                title: '22. Quiz: Routing and Switching',
+                content: 'Practice MCQs on routing protocols, algorithms, and switching.'
+            },
+            {
+                title: '23. Network Standards (IEEE 802.3 and 802.11)',
+                content: 'Ethernet uses 802.3; Wi-Fi uses 802.11. Standards define speed, encoding, and media.'
+            },
+            {
+                title: '24. Ethernet Switching and VLANs',
+                content: 'VLANs segment broadcast domains. Trunking carries multiple VLANs over a single link.'
+            },
+            {
+                title: '25. Data Link Protocols and STP',
+                content: 'Spanning Tree Protocol prevents loops at Layer 2. Common protocols include PPP and HDLC.'
+            },
+            {
+                title: '26. Quiz: Network Technologies and Standards',
+                content: 'Practice MCQs on Ethernet, Wi-Fi, VLANs, and STP.'
+            },
+            {
+                title: '27. Network Security Fundamentals',
+                content: 'Security goals include confidentiality, integrity, and availability with layered defenses.'
+            },
+            {
+                title: '28. Firewalls and Types',
+                content: 'Packet filtering, stateful inspection, and next-gen firewalls enforce traffic rules.'
+            },
+            {
+                title: '29. IDS and IPS',
+                content: 'Intrusion detection monitors and alerts. Intrusion prevention blocks malicious traffic.'
+            },
+            {
+                title: '30. VPNs and PKI',
+                content: 'VPNs encrypt traffic over untrusted networks. PKI manages certificates and trust.'
+            },
+            {
+                title: '31. Cryptography Basics',
+                content: 'Symmetric encryption uses one key; asymmetric uses public/private key pairs.'
+            },
+            {
+                title: '32. TLS and SSL',
+                content: 'TLS provides secure channels and certificate-based authentication for HTTPS.'
+            },
+            {
+                title: '33. Network and Application Layer Firewalls',
+                content: 'Network firewalls filter packets; application firewalls inspect application-layer payloads.'
+            },
+            {
+                title: '34. Quiz: Network Security',
+                content: 'Practice MCQs on firewalls, VPNs, TLS, and security fundamentals.'
+            },
+            {
+                title: '35. Network Management and Monitoring',
+                content: 'Monitoring uses metrics, logs, and alerts to keep networks healthy.'
+            },
+            {
+                title: '36. Traffic Management Techniques',
+                content: 'Traffic shaping, policing, and prioritization control bandwidth usage.'
+            },
+            {
+                title: '37. QoS, Bandwidth, Latency, and Congestion',
+                content: 'QoS prioritizes critical traffic. Congestion control prevents packet loss and delays.'
+            },
+            {
+                title: '38. Network Performance Metrics',
+                content: 'Key metrics include throughput, latency, jitter, packet loss, and availability.'
+            },
+            {
+                title: '39. Network Troubleshooting',
+                content: 'Use layered troubleshooting: physical checks, connectivity tests, routing, and service validation.'
+            },
+            {
+                title: '40. Monitoring Tools',
+                content: 'Tools include Wireshark, tcpdump, traceroute, ping, and SNMP-based systems.'
+            },
+            {
+                title: '41. Quiz: Network Management and Monitoring',
+                content: 'Practice MCQs on QoS, metrics, congestion, and troubleshooting.'
+            },
+            {
+                title: '42. Advanced Networking Concepts',
+                content: 'Covers modern architectures and reliability concerns.'
+            },
+            {
+                title: '43. Client-Server vs Peer-to-Peer',
+                content: 'Client-server centralizes services; P2P distributes responsibilities among peers.'
+            },
+            {
+                title: '44. Network Design Principles',
+                content: 'Design for scalability, redundancy, segmentation, and security by default.'
+            },
+            {
+                title: '45. Load Balancing and CDNs',
+                content: 'Load balancers distribute traffic. CDNs cache content closer to users.'
+            },
+            {
+                title: '46. Network Virtualization',
+                content: 'Abstracts physical networks into logical overlays for flexibility and isolation.'
+            },
+            {
+                title: '47. Software-Defined Networking (SDN)',
+                content: 'Separates control plane from data plane for centralized network management.'
+            },
+            {
+                title: '48. Reliability and Fault Tolerance',
+                content: 'Use redundancy, failover, and monitoring to keep networks resilient.'
+            },
+            {
+                title: '49. Quiz: Advanced Networking Concepts',
+                content: 'Practice MCQs on SDN, virtualization, and high availability.'
             }
         ],
         mcqs: [
-            {
-                question: 'Which protocol is used to map an IP address to a MAC address?',
-                options: ['DNS', 'ARP', 'DHCP', 'NAT'],
-                answer: 1,
-                explanation: 'ARP (Address Resolution Protocol) maps a logical IP address to a physical MAC address.'
-            }
+            { question: 'Which OSI layer is responsible for logical addressing (IP)?', options: ['Data Link', 'Network', 'Transport', 'Session'], answer: 1, explanation: 'The Network layer handles routing and logical addressing (IP addresses).' },
+            { question: 'Which device uses MAC addresses to forward data within a LAN?', options: ['Hub', 'Switch', 'Router', 'Modem'], answer: 1, explanation: 'Switches operate at the Data Link layer and use MAC addresses for efficient frame delivery.' },
+            { question: 'What is the bit length of an IPv6 address?', options: ['32', '64', '128', '256'], answer: 2, explanation: 'IPv6 uses 128-bit addresses to overcome the exhaustion of IPv4 addresses.' },
+            { question: 'Which protocol maps an IP address to a MAC address?', options: ['DNS', 'DHCP', 'ARP', 'ICMP'], answer: 2, explanation: 'ARP (Address Resolution Protocol) maps logical IP addresses to physical MAC addresses.' },
+            { question: 'Which port is used by HTTPS by default?', options: ['80', '21', '443', '53'], answer: 2, explanation: 'HTTPS (Secure Web) uses port 443; HTTP uses port 80.' },
+            { question: 'Which protocol is connection-oriented and ensures reliable delivery?', options: ['UDP', 'ICMP', 'IP', 'TCP'], answer: 3, explanation: 'TCP provides reliable, sequenced, and error-checked delivery of a stream of octets.' },
+            { question: 'In the Three-Way Handshake, what is the second packet sent?', options: ['SYN', 'ACK', 'SYN-ACK', 'FIN'], answer: 2, explanation: 'The sequence is SYN (from client) → SYN-ACK (from server) → ACK (from client).' },
+            { question: 'Which networking topology uses a central hub where all devices are connected?', options: ['Bus', 'Ring', 'Mesh', 'Star'], answer: 3, explanation: 'In a star topology, all devices are connected to a central hub or switch.' },
+            { question: 'Which protocol is used to translate domain names into IP addresses?', options: ['HTTP', 'DNS', 'SNMP', 'FTP'], answer: 1, explanation: 'DNS (Domain Name System) acts as the phonebook of the Internet.' },
+            { question: 'What is the purpose of TTL (Time To Live) in an IP header?', options: ['Measure latency', 'Prevent routing loops', 'Check for errors', 'Define packet size'], answer: 1, explanation: 'TTL limits the lifespan of a packet to prevent it from circulating indefinitely in case of routing loops.' },
+            { question: 'Which protocol is used for sending emails between servers?', options: ['POP3', 'IMAP', 'SMTP', 'HTTP'], answer: 2, explanation: 'SMTP (Simple Mail Transfer Protocol) is used for outgoing mail.' },
+            { question: 'Which device operates at the Physical layer (Layer 1)?', options: ['Switch', 'Router', 'Hub', 'Bridge'], answer: 2, explanation: 'Hubs are "dumb" devices that broadcast data at the electrical/bit level.' },
+            { question: 'What does CIDR stand for?', options: ['Classless Inter-Domain Routing', 'Computer Interface Data Record', 'Common Internet Delivery Router', 'None'], answer: 0, explanation: 'CIDR is a method for allocating IP addresses and IP routing.' },
+            { question: 'Which layer of the OSI model handles encryption and data compression?', options: ['Application', 'Presentation', 'Session', 'Transport'], answer: 1, explanation: 'Presentation layer (Layer 6) transforms data into the form the Application layer accepts.' },
+            { question: 'Which tool uses ICMP Echo Request/Reply messages?', options: ['Ping', 'Traceroute', 'Wireshark', 'Both Ping and Traceroute'], answer: 3, explanation: 'Both tools rely on ICMP for diagnostics and reachability tests.' },
+            { question: 'What range is reserved for Class A private IP addresses?', options: ['192.168.x.x', '172.16.x.x', '10.x.x.x', '127.x.x.x'], answer: 2, explanation: '10.0.0.0 to 10.255.255.255 is the Class A private range.' },
+            { question: 'Which port is used for DNS queries?', options: ['53', '80', '22', '25'], answer: 0, explanation: 'DNS primarily uses UDP port 53 for queries.' },
+            { question: 'What is a "Firewall"?', options: ['Device to boost signals', 'Security barrier for traffic control', 'Device to connect LANs', 'Storage server'], answer: 1, explanation: 'Firewalls monitor and filter traffic based on security rules.' },
+            { question: 'Which 802.11 standard is known as Wi-Fi 6?', options: ['802.11ac', '802.11n', '802.11ax', '802.11g'], answer: 2, explanation: '802.11ax introduced significant efficiency and capacity improvements.' },
+            { question: 'Which protocol is used by DHCP for automatic IP assignment?', options: ['TCP', 'UDP', 'ICMP', 'ARP'], answer: 1, explanation: 'DHCP uses UDP ports 67 (server) and 68 (client).' },
+            { question: 'Meaning of Latency in networking?', options: ['Data rate', 'Packet size', 'Time delay', 'Error count'], answer: 2, explanation: 'Latency is the time it takes for data to travel from source to destination.' },
+            { question: 'Which type of VPN connects two branch offices?', options: ['Remote Access', 'Site-to-Site', 'Client-to-Site', 'None'], answer: 1, explanation: 'Site-to-Site VPNs connect entire networks to each other.' },
+            { question: 'What is the maximum hop count for RIP v1?', options: ['10', '15', '16', 'Unlimited'], answer: 1, explanation: 'RIP considers 16 to be infinity/unreachable, so 15 is the max hops.' },
+            { question: 'Which layer is responsible for Dialog Control and Synchronization?', options: ['Transport', 'Session', 'Presentation', 'Application'], answer: 1, explanation: 'The Session layer manages sessions between applications.' },
+            { question: 'Which protocol provides secure terminal access to a remote host?', options: ['Telnet', 'SSH', 'FTP', 'SNMP'], answer: 1, explanation: 'SSH (Secure Shell) is the secure replacement for Telnet.' }
         ]
     },
     {
@@ -1094,6 +1877,22 @@ export const subjects = [
             {
                 title: '13. Memory Matrix: Time & Space Complexities',
                 content: 'Search Time:\n• Hash Table: O(1) avg.\n• BST: O(log n).\n• Array (Linear): O(n).\n• Array (Sorted Binary): O(log n).'
+            },
+            {
+                title: '14. Disjoint Set Union (Union-Find)',
+                content: 'Supports union and find operations with path compression and union by rank. Used in cycle detection and Kruskal\'s MST.'
+            },
+            {
+                title: '15. Advanced Graph Algorithms',
+                content: 'Topological sort (DAGs), shortest paths (Dijkstra, Bellman-Ford), and MST (Prim, Kruskal).' 
+            },
+            {
+                title: '16. Range Query Structures',
+                content: 'Fenwick Tree (BIT) and Segment Tree for prefix and range queries in O(log n).'
+            },
+            {
+                title: '17. String Data Structures',
+                content: 'Trie and suffix array basics for fast prefix and substring queries.'
             }
         ],
         mcqs: [
@@ -1165,8 +1964,116 @@ export const subjects = [
         description: 'Scalability, Load Balancing, Caching, and Microservices architecture.',
         concepts: [
             {
-                title: 'Scalability: Vertical vs Horizontal',
-                content: '• **Vertical**: Increasing capacity of a single machine (CPU/RAM).\n• **Horizontal**: Adding more machines to the network to share load.'
+                title: '1. System Design Process',
+                content: 'Clarify requirements, define APIs, estimate scale, choose data model, design high-level architecture, then drill into components, data flow, and failure handling.'
+            },
+            {
+                title: '2. Functional vs Non-Functional Requirements',
+                content: 'Functional = features/behavior. Non-functional = latency, availability, throughput, durability, security, and cost.'
+            },
+            {
+                title: '3. Back-of-the-Envelope Estimation',
+                content: 'Estimate QPS, storage, bandwidth, and cache size. Example: daily active users, avg requests/user, data per request.'
+            },
+            {
+                title: '4. API Design Basics',
+                content: 'Define endpoints, payloads, pagination, filtering, versioning, and error semantics (HTTP status codes).' 
+            },
+            {
+                title: '5. Data Modeling',
+                content: 'Choose relational vs NoSQL based on access patterns. Model entities, relationships, and indexes.'
+            },
+            {
+                title: '6. Consistency Models',
+                content: 'Strong, eventual, and causal consistency. Trade-offs with availability and latency.'
+            },
+            {
+                title: '7. CAP Theorem',
+                content: 'In a network partition, systems choose between consistency and availability. CP vs AP trade-offs.'
+            },
+            {
+                title: '8. Scalability',
+                content: 'Vertical scaling increases machine capacity. Horizontal scaling adds more nodes behind a load balancer.'
+            },
+            {
+                title: '9. Load Balancing',
+                content: 'Distribute traffic using round-robin, least connections, or weighted strategies. Health checks and failover are essential.'
+            },
+            {
+                title: '10. Caching',
+                content: 'Cache at client, CDN, or server. Policies: TTL, LRU/LFU. Beware of cache invalidation and stale reads.'
+            },
+            {
+                title: '11. Content Delivery Network (CDN)',
+                content: 'Edge caching reduces latency by serving content closer to users. Great for static assets and media.'
+            },
+            {
+                title: '12. Database Scaling',
+                content: 'Replication for availability, sharding for scale. Use read replicas and partitioning.'
+            },
+            {
+                title: '13. Indexing and Query Optimization',
+                content: 'Indexes speed reads but slow writes. Choose indexes based on query patterns.'
+            },
+            {
+                title: '14. Queues and Async Processing',
+                content: 'Use queues (Kafka, RabbitMQ, SQS) for decoupling, buffering spikes, and background jobs.'
+            },
+            {
+                title: '15. Event-Driven Architecture',
+                content: 'Services publish/subscribe to events. Enables loose coupling and scalability.'
+            },
+            {
+                title: '16. Rate Limiting and Throttling',
+                content: 'Protect services with token bucket, leaky bucket, or fixed window strategies.'
+            },
+            {
+                title: '17. Reliability and Fault Tolerance',
+                content: 'Use retries with backoff, circuit breakers, bulkheads, and graceful degradation.'
+            },
+            {
+                title: '18. Observability',
+                content: 'Logs, metrics, and traces help diagnose incidents. Use dashboards and alerts.'
+            },
+            {
+                title: '19. Security Basics',
+                content: 'AuthN/AuthZ, TLS, input validation, secrets management, and least privilege.'
+            },
+            {
+                title: '20. Storage Systems',
+                content: 'Object storage for blobs, block storage for disks, and file systems for shared access.'
+            },
+            {
+                title: '21. Microservices vs Monolith',
+                content: 'Microservices allow independent scaling and deployments but add complexity (network, ops, data consistency).' 
+            },
+            {
+                title: '22. Distributed ID Generation',
+                content: 'Use UUIDs or snowflake-style IDs for unique, sortable identifiers across nodes.'
+            },
+            {
+                title: '23. Disaster Recovery',
+                content: 'Define RTO/RPO, backups, multi-region strategies, and failover plans.'
+            },
+            {
+                title: '24. Idempotency & Retries',
+                content: 'Use idempotency keys for safe retries, especially in payment or order flows.'
+            },
+            {
+                title: '25. Distributed Transactions',
+                content: 'Patterns: Saga, outbox, and two-phase commit. Trade-offs between consistency and availability.'
+            },
+            {
+                title: '26. Leader Election & Coordination',
+                content: 'Use ZooKeeper/etcd or consensus algorithms for leader election and configuration management.'
+            },
+            {
+                title: '27. Multi-Region Design',
+                content: 'Active-active or active-passive deployments with geo-replication and traffic routing.'
+            },
+            {
+                title: '28. Data Migration & Backward Compatibility',
+                content: 'Use versioned schemas, expand-and-contract migrations, and backward-compatible API changes.'
             }
         ],
         mcqs: [
@@ -1175,6 +2082,24 @@ export const subjects = [
                 options: ['Encrypting traffic', 'Distributing traffic', 'Caching data', 'Storing logs'],
                 answer: 1,
                 explanation: 'A Load Balancer distributes incoming network traffic across multiple servers to ensure reliability and performance.'
+            },
+            {
+                question: 'Which cache eviction policy removes the least recently used item?',
+                options: ['FIFO', 'LFU', 'LRU', 'Random'],
+                answer: 2,
+                explanation: 'LRU evicts items that have not been accessed recently.'
+            },
+            {
+                question: 'Which CAP trade-off favors consistency over availability during partitions?',
+                options: ['AP', 'CP', 'CA', 'AC'],
+                answer: 1,
+                explanation: 'CP systems choose Consistency and Partition tolerance.'
+            },
+            {
+                question: 'What is a common use of message queues?',
+                options: ['Serving static files', 'Async processing and buffering', 'Rendering UI', 'DNS resolution'],
+                answer: 1,
+                explanation: 'Queues decouple services and handle traffic spikes.'
             }
         ]
     },
@@ -1182,19 +2107,213 @@ export const subjects = [
         id: 'web',
         title: 'Web Development',
         icon: 'Globe',
-        description: 'HTML/CSS, JS Engines, React internals, and web security (CORS, XSS).',
+        description: 'Complete MERN Stack: HTML/CSS, JavaScript, React, Node.js, Express, MongoDB, and Full-Stack Development.',
         concepts: [
             {
-                title: 'The DOM & Virtual DOM',
-                content: 'The DOM is a tree representation of the UI. React uses a **Virtual DOM** to minimize expensive DOM operations by diffing changes and patching only the differences.'
+                title: '1. HTML Fundamentals',
+                content: 'HTML (HyperText Markup Language) is the standard markup language for creating web pages.\\n\\nKey Concepts:\\n• **Semantic HTML**: Using meaningful tags like <header>, <nav>, <article>, <section>, <footer>.\\n• **Forms**: <form>, <input>, <textarea>, <select>, <button> with validation attributes.\\n• **Accessibility**: ARIA labels, alt text, semantic structure.\\n• **HTML5 Features**: <video>, <audio>, <canvas>, localStorage, sessionStorage.\\n\\nEX: <article><h1>Title</h1><p>Content</p></article>'
+            },
+            {
+                title: '2. CSS Fundamentals',
+                content: 'CSS (Cascading Style Sheets) controls the presentation and layout of web pages.\\n\\nCore Topics:\\n• **Box Model**: Content, Padding, Border, Margin.\\n• **Flexbox**: display: flex, justify-content, align-items, flex-direction.\\n• **Grid**: display: grid, grid-template-columns, grid-gap.\\n• **Responsive Design**: Media queries, mobile-first approach.\\n• **CSS Variables**: --primary-color: #10b981; color: var(--primary-color);\\n• **Animations**: @keyframes, transition, transform.\\n\\nEX: .container { display: flex; justify-content: center; }'
+            },
+            {
+                title: '3. JavaScript Core Concepts',
+                content: 'JavaScript is a high-level, interpreted programming language for web development.\\n\\nFundamentals:\\n• **Variables**: let, const, var (scope differences).\\n• **Data Types**: String, Number, Boolean, Object, Array, null, undefined, Symbol.\\n• **Functions**: Function declarations, expressions, arrow functions.\\n• **Closures**: Inner function accessing outer function variables.\\n• **Promises**: Async operations with .then(), .catch(), .finally().\\n• **Async/Await**: Modern async syntax for cleaner code.\\n\\nEX: const fetchData = async () => { const res = await fetch(url); return res.json(); }'
+            },
+            {
+                title: '4. JavaScript ES6+ Features',
+                content: 'Modern JavaScript features that improve code quality and readability.\\n\\nKey Features:\\n• **Destructuring**: const { name, age } = user;\\n• **Spread Operator**: const newArr = [...oldArr, newItem];\\n• **Template Literals**: `Hello ${name}!`\\n• **Arrow Functions**: const add = (a, b) => a + b;\\n• **Modules**: import/export for code organization.\\n• **Classes**: class User { constructor(name) { this.name = name; } }\\n• **Optional Chaining**: user?.address?.city\\n• **Nullish Coalescing**: const value = input ?? defaultValue;'
+            },
+            {
+                title: '5. DOM Manipulation',
+                content: 'The DOM (Document Object Model) is a tree representation of HTML.\\n\\nCommon Operations:\\n• **Selection**: document.querySelector(), document.getElementById(), document.querySelectorAll().\\n• **Modification**: element.innerHTML, textContent, setAttribute().\\n• **Creation**: document.createElement(), appendChild().\\n• **Events**: addEventListener("click", handler), event.preventDefault().\\n• **Traversal**: parentNode, children, nextSibling.\\n\\nEX: document.querySelector(".btn").addEventListener("click", () => alert("Clicked!"));'
+            },
+            {
+                title: '6. React Fundamentals',
+                content: 'React is a JavaScript library for building user interfaces with components.\\n\\nCore Concepts:\\n• **Components**: Reusable UI building blocks (functional/class).\\n• **JSX**: JavaScript XML syntax for writing HTML in JS.\\n• **Props**: Data passed from parent to child components.\\n• **State**: Component-level data that triggers re-renders.\\n• **Virtual DOM**: Efficient diffing algorithm for minimal DOM updates.\\n• **Reconciliation**: Process of updating the real DOM.\\n\\nEX: const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;'
+            },
+            {
+                title: '7. React Hooks',
+                content: 'Hooks allow functional components to use state and lifecycle features.\\n\\nEssential Hooks:\\n• **useState**: const [count, setCount] = useState(0);\\n• **useEffect**: Side effects, data fetching, subscriptions.\\n• **useContext**: Access context without prop drilling.\\n• **useRef**: Persist values across renders, DOM references.\\n• **useMemo**: Memoize expensive calculations.\\n• **useCallback**: Memoize functions to prevent re-creation.\\n• **useReducer**: Complex state logic (like Redux).\\n\\nEX: useEffect(() => { fetchData(); }, [dependency]);'
+            },
+            {
+                title: '8. React Component Lifecycle',
+                content: 'Understanding when components mount, update, and unmount is crucial.\\n\\nLifecycle Phases:\\n• **Mounting**: Component is created and inserted into DOM.\\n• **Updating**: Component re-renders due to state/props changes.\\n• **Unmounting**: Component is removed from DOM.\\n\\nWith Hooks:\\n• useEffect(() => { /* mount */ return () => { /* unmount */ }; }, []);\\n• useEffect(() => { /* update */ }, [dependency]);\\n\\nCleanup: Always return cleanup functions to prevent memory leaks.'
+            },
+            {
+                title: '9. Node.js Fundamentals',
+                content: 'Node.js is a JavaScript runtime built on the Chrome V8 engine for server-side development.\\n\\nKey Features:\\n• **Event-Driven**: Non-blocking I/O operations.\\n• **Single-Threaded**: Uses the event loop for concurrency.\\n• **NPM**: Package manager with millions of libraries.\\n• **Modules**: CommonJS (require) and ES6 (import/export).\\n• **Built-in Modules**: fs, http, path, os, crypto.\\n\\nEX: const http = require("http"); http.createServer((req, res) => res.end("Hello")).listen(3000);'
+            },
+            {
+                title: '10. Express.js Framework',
+                content: 'Express is a minimal and flexible Node.js web application framework.\\n\\nCore Concepts:\\n• **Routing**: app.get("/api/users", handler);\\n• **Middleware**: Functions that process requests (logging, auth, parsing).\\n• **Request/Response**: req.params, req.query, req.body, res.json(), res.send().\\n• **Error Handling**: app.use((err, req, res, next) => { /* ... */ });\\n• **Static Files**: app.use(express.static("public"));\\n\\nEX: app.post("/api/users", (req, res) => res.json({ success: true }));'
+            },
+            {
+                title: '11. RESTful API Design',
+                content: 'REST (Representational State Transfer) is an architectural style for APIs.\\n\\nHTTP Methods:\\n• **GET**: Retrieve data (idempotent, safe).\\n• **POST**: Create new resource.\\n• **PUT**: Update entire resource (idempotent).\\n• **PATCH**: Partial update.\\n• **DELETE**: Remove resource (idempotent).\\n\\nStatus Codes:\\n• 200 OK, 201 Created, 204 No Content.\\n• 400 Bad Request, 401 Unauthorized, 404 Not Found.\\n• 500 Internal Server Error.\\n\\nEX: GET /api/users/:id → { id: 1, name: "John" }'
+            },
+            {
+                title: '12. MongoDB Basics',
+                content: 'MongoDB is a NoSQL document database that stores data in JSON-like documents.\\n\\nKey Concepts:\\n• **Collections**: Groups of documents (like tables).\\n• **Documents**: JSON objects with key-value pairs.\\n• **Schema-less**: Flexible structure, no fixed schema.\\n• **CRUD Operations**: Create, Read, Update, Delete.\\n• **Indexing**: Improves query performance.\\n• **Aggregation**: Pipeline for data transformation.\\n\\nEX: db.users.find({ age: { $gt: 18 } }).sort({ name: 1 });'
+            },
+            {
+                title: '13. Mongoose ODM',
+                content: 'Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.\\n\\nFeatures:\\n• **Schema Definition**: Define structure with types and validation.\\n• **Models**: Constructors compiled from schemas.\\n• **Validation**: Built-in and custom validators.\\n• **Middleware**: Pre/post hooks for operations.\\n• **Population**: Reference other documents (like SQL joins).\\n\\nEX: const User = mongoose.model("User", { name: String, email: { type: String, required: true } });'
+            },
+            {
+                title: '14. Authentication & Authorization',
+                content: 'Securing your application with proper user authentication.\\n\\nStrategies:\\n• **JWT (JSON Web Tokens)**: Stateless authentication.\\n• **Sessions**: Server-side storage with cookies.\\n• **OAuth**: Third-party authentication (Google, GitHub).\\n• **bcrypt**: Password hashing for security.\\n\\nJWT Flow:\\n1. User logs in with credentials.\\n2. Server validates and creates JWT.\\n3. Client stores token (localStorage/cookie).\\n4. Client sends token in Authorization header.\\n5. Server verifies token for protected routes.\\n\\nEX: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
+            },
+            {
+                title: '15. MERN Stack Architecture',
+                content: 'Full-stack JavaScript development with MongoDB, Express, React, and Node.js.\\n\\nData Flow:\\n1. **Client (React)**: User interacts with UI.\\n2. **HTTP Request**: React sends API call to backend.\\n3. **Server (Express/Node)**: Processes request, business logic.\\n4. **Database (MongoDB)**: Stores/retrieves data.\\n5. **Response**: Server sends JSON back to client.\\n6. **UI Update**: React updates state and re-renders.\\n\\nAdvantages:\\n• Single language (JavaScript) across stack.\\n• JSON everywhere (MongoDB, Express, React).\\n• Rich ecosystem and community support.\\n• Fast development with reusable components.'
+            },
+            {
+                title: '16. State Management (Redux)',
+                content: 'Redux is a predictable state container for JavaScript apps.\\n\\nCore Principles:\\n• **Single Source of Truth**: One global store.\\n• **State is Read-Only**: Only changed via actions.\\n• **Pure Reducers**: (state, action) => newState.\\n\\nFlow:\\n1. Component dispatches action.\\n2. Reducer processes action and updates state.\\n3. Store notifies subscribers.\\n4. Component re-renders with new state.\\n\\nEX: dispatch({ type: "INCREMENT", payload: 1 });'
+            },
+            {
+                title: '17. Web Security',
+                content: 'Protecting web applications from common vulnerabilities.\\n\\nCommon Attacks:\\n• **XSS (Cross-Site Scripting)**: Injecting malicious scripts. Prevention: Sanitize input, use CSP.\\n• **CSRF (Cross-Site Request Forgery)**: Unauthorized commands. Prevention: CSRF tokens, SameSite cookies.\\n• **SQL Injection**: Malicious SQL queries. Prevention: Parameterized queries, ORMs.\\n• **CORS (Cross-Origin Resource Sharing)**: Browser security feature.\\n\\nBest Practices:\\n• Use HTTPS everywhere.\\n• Validate and sanitize all inputs.\\n• Implement rate limiting.\\n• Keep dependencies updated.\\n• Use security headers (Helmet.js).'
+            },
+            {
+                title: '18. Performance Optimization',
+                content: 'Techniques to improve web application speed and efficiency.\\n\\nFrontend:\\n• **Code Splitting**: Load only necessary code (React.lazy).\\n• **Lazy Loading**: Load images/components on demand.\\n• **Memoization**: React.memo, useMemo, useCallback.\\n• **Debouncing/Throttling**: Limit function execution.\\n• **CDN**: Serve static assets from edge servers.\\n\\nBackend:\\n• **Caching**: Redis, in-memory cache.\\n• **Database Indexing**: Speed up queries.\\n• **Connection Pooling**: Reuse database connections.\\n• **Compression**: gzip/brotli for responses.\\n• **Load Balancing**: Distribute traffic across servers.'
+            },
+            {
+                title: '19. Auth Flow Deep Dive',
+                content: 'Access tokens + refresh tokens, secure cookie storage, rotation, and logout invalidation.'
+            },
+            {
+                title: '20. Validation and Error Handling',
+                content: 'Use schema validation (Joi/Zod), centralized error handlers, and consistent error responses.'
+            },
+            {
+                title: '21. Testing in MERN',
+                content: 'Frontend: Jest + React Testing Library. Backend: Jest/Mocha + Supertest. Use mocks and integration tests.'
+            },
+            {
+                title: '22. Deployment & CI/CD',
+                content: 'Build pipelines, environment configs, secrets management, and zero-downtime deployments.'
+            },
+            {
+                title: '23. Monitoring & Logging',
+                content: 'Use structured logs, error tracking (Sentry), and performance monitoring.'
             }
         ],
         mcqs: [
             {
-                question: 'Which of the following is NOT a valid HTTP status code for successful requests?',
-                options: ['200 OK', '201 Created', '204 No Content', '304 Not Modified'],
-                answer: 3,
-                explanation: '304 Not Modified is a redirection/caching status code, not a 2xx success code.'
+                worksheet: 'HTML/CSS',
+                question: 'Which CSS property is used to create a flexible layout?',
+                options: ['display: block', 'display: flex', 'display: inline', 'display: table'],
+                answer: 1,
+                explanation: 'display: flex enables Flexbox layout, which provides a flexible way to arrange items in a container.'
+            },
+            {
+                worksheet: 'HTML/CSS',
+                question: 'What does the "box-sizing: border-box" property do?',
+                options: ['Adds border to the box', 'Includes padding and border in element width/height', 'Removes the box model', 'Sets box to full width'],
+                answer: 1,
+                explanation: 'border-box includes padding and border in the element\'s total width and height, making sizing more predictable.'
+            },
+            {
+                worksheet: 'JavaScript',
+                question: 'What is the output of: console.log(typeof null)?',
+                options: ['null', 'undefined', 'object', 'number'],
+                answer: 2,
+                explanation: 'typeof null returns "object" due to a historical bug in JavaScript that has been kept for compatibility.'
+            },
+            {
+                worksheet: 'JavaScript',
+                question: 'What is a closure in JavaScript?',
+                options: ['A function that closes the browser', 'A function with access to its outer scope', 'A way to close connections', 'A type of loop'],
+                answer: 1,
+                explanation: 'A closure is a function that has access to variables in its outer (enclosing) lexical scope, even after the outer function has returned.'
+            },
+            {
+                worksheet: 'JavaScript',
+                question: 'Which method is used to parse a JSON string?',
+                options: ['JSON.parse()', 'JSON.stringify()', 'JSON.decode()', 'JSON.convert()'],
+                answer: 0,
+                explanation: 'JSON.parse() converts a JSON string into a JavaScript object.'
+            },
+            {
+                worksheet: 'React',
+                question: 'What is the Virtual DOM in React?',
+                options: ['A copy of the real DOM', 'A lightweight representation of the real DOM', 'A database', 'A server'],
+                answer: 1,
+                explanation: 'The Virtual DOM is a lightweight JavaScript representation of the real DOM that React uses to optimize updates.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Which hook is used for side effects in React?',
+                options: ['useState', 'useEffect', 'useContext', 'useReducer'],
+                answer: 1,
+                explanation: 'useEffect is used for side effects like data fetching, subscriptions, and manually changing the DOM.'
+            },
+            {
+                worksheet: 'React',
+                question: 'What does "props" stand for in React?',
+                options: ['Properties', 'Proposals', 'Protocols', 'Propagation'],
+                answer: 0,
+                explanation: 'Props is short for properties and is used to pass data from parent to child components.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'What is the event loop in Node.js?',
+                options: ['A loop that creates events', 'A mechanism for handling async operations', 'A type of database', 'A debugging tool'],
+                answer: 1,
+                explanation: 'The event loop is Node.js\'s mechanism for handling asynchronous operations in a single-threaded environment.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which module is used to create a web server in Node.js?',
+                options: ['fs', 'http', 'path', 'url'],
+                answer: 1,
+                explanation: 'The http module is used to create HTTP servers and handle requests/responses in Node.js.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'What is middleware in Express.js?',
+                options: ['A database', 'Functions that process requests before reaching routes', 'A type of server', 'A frontend framework'],
+                answer: 1,
+                explanation: 'Middleware functions have access to request, response objects and can modify them or end the request-response cycle.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'What type of database is MongoDB?',
+                options: ['SQL', 'NoSQL', 'Graph', 'Relational'],
+                answer: 1,
+                explanation: 'MongoDB is a NoSQL document database that stores data in flexible, JSON-like documents.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'What is the equivalent of a table in MongoDB?',
+                options: ['Document', 'Collection', 'Schema', 'Row'],
+                answer: 1,
+                explanation: 'A collection in MongoDB is equivalent to a table in relational databases and contains documents.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which HTTP method is idempotent?',
+                options: ['POST', 'GET', 'PATCH', 'All of the above'],
+                answer: 1,
+                explanation: 'GET is idempotent, meaning multiple identical requests have the same effect as a single request. PUT and DELETE are also idempotent.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'What does CORS stand for?',
+                options: ['Cross-Origin Resource Sharing', 'Common Origin Request System', 'Cross-Object Resource Security', 'Central Origin Response Server'],
+                answer: 0,
+                explanation: 'CORS is a security feature that allows or restricts resources to be requested from another domain.'
+            },
+            {
+                worksheet: 'Full Stack',
+                question: 'In MERN stack, what does the "E" stand for?',
+                options: ['Electron', 'Express', 'Ember', 'Engine'],
+                answer: 1,
+                explanation: 'MERN stands for MongoDB, Express.js, React, and Node.js - a full JavaScript stack.'
             }
         ]
     },
@@ -1205,8 +2324,92 @@ export const subjects = [
         description: 'Lexical analysis, Parsing, Code generation, and Optimization techniques.',
         concepts: [
             {
-                title: 'Phases of a Compiler',
-                content: '1. Lexical Analysis\n2. Syntax Analysis (Parsing)\n3. Semantic Analysis\n4. Intermediate Code Gen\n5. Code Optimization\n6. Code Generation.'
+                title: '1. Compiler Overview',
+                content: 'A compiler translates high-level code to target code. Key goals: correctness, efficiency, and helpful diagnostics.'
+            },
+            {
+                title: '2. Phases of a Compiler',
+                content: 'Lexical Analysis → Syntax Analysis → Semantic Analysis → Intermediate Code Generation → Optimization → Code Generation.'
+            },
+            {
+                title: '3. Lexical Analysis',
+                content: 'Converts source into tokens using regular expressions and finite automata. Removes whitespace/comments.'
+            },
+            {
+                title: '4. Regular Expressions and Automata',
+                content: 'Regex define token patterns. Convert to NFA and DFA for efficient scanning.'
+            },
+            {
+                title: '5. Symbol Table',
+                content: 'Stores identifiers, types, scope, and memory locations. Supports fast insert/lookup.'
+            },
+            {
+                title: '6. Syntax Analysis (Parsing)',
+                content: 'Builds parse trees from tokens using context-free grammars. Techniques: LL(1), LR(0), SLR, CLR, LALR.'
+            },
+            {
+                title: '7. FIRST and FOLLOW Sets',
+                content: 'Used in predictive parsing to choose productions without backtracking.'
+            },
+            {
+                title: '8. Ambiguity and Left Recursion',
+                content: 'Ambiguous grammars have multiple parse trees. Remove left recursion or perform left factoring for LL parsers.'
+            },
+            {
+                title: '9. Semantic Analysis',
+                content: 'Type checking, scope resolution, and enforcing language rules beyond grammar.'
+            },
+            {
+                title: '10. Intermediate Representation (IR)',
+                content: 'Three-address code (TAC), quadruples, or SSA represent code in a machine-independent form.'
+            },
+            {
+                title: '11. Control Flow Graph (CFG)',
+                content: 'Basic blocks with edges indicating flow. Used for data-flow and optimization.'
+            },
+            {
+                title: '12. Code Optimization',
+                content: 'Local: constant folding, common subexpression elimination. Global: dead code elimination, loop optimizations.'
+            },
+            {
+                title: '13. Register Allocation',
+                content: 'Assign variables to registers using graph coloring or linear scan to reduce memory access.'
+            },
+            {
+                title: '14. Code Generation',
+                content: 'Translate IR to target assembly/machine code with instruction selection and scheduling.'
+            },
+            {
+                title: '15. Runtime Environment',
+                content: 'Stack frames, activation records, calling conventions, and memory layout (stack/heap/data).' 
+            },
+            {
+                title: '16. Error Handling',
+                content: 'Lexical, syntax, and semantic errors. Use recovery strategies to continue parsing.'
+            },
+            {
+                title: '17. Linker and Loader',
+                content: 'Linker resolves symbols and combines object files. Loader places code into memory for execution.'
+            },
+            {
+                title: '18. Compiler Tools',
+                content: 'Lex/Flex for scanners, Yacc/Bison for parsers, and LLVM for optimization and code generation.'
+            },
+            {
+                title: '19. Parsing Tables & Conflicts',
+                content: 'LR parsing uses ACTION/GOTO tables. Resolve shift-reduce and reduce-reduce conflicts by grammar refactoring.'
+            },
+            {
+                title: '20. Static Single Assignment (SSA)',
+                content: 'SSA form assigns each variable exactly once and introduces phi functions at control-flow joins.'
+            },
+            {
+                title: '21. Data-Flow Analysis',
+                content: 'Analyses like reaching definitions, live variable analysis, and available expressions guide optimizations.'
+            },
+            {
+                title: '22. Instruction Selection & Scheduling',
+                content: 'Select target instructions and schedule them to reduce stalls and improve pipeline usage.'
             }
         ],
         mcqs: [
@@ -1215,6 +2418,30 @@ export const subjects = [
                 options: ['Lexical Analysis', 'Syntax Analysis', 'Semantic Analysis', 'Code Generation'],
                 answer: 0,
                 explanation: 'Lexical analysis is the first phase where the source code is scanned and converted into tokens.'
+            },
+            {
+                question: 'Which grammar class is used by LL(1) parsers?',
+                options: ['Regular', 'Context-free', 'Context-sensitive', 'Unrestricted'],
+                answer: 1,
+                explanation: 'LL(1) parsers operate on a subset of context-free grammars.'
+            },
+            {
+                question: 'What is the purpose of the symbol table?',
+                options: ['Tokenizing input', 'Storing identifiers and attributes', 'Generating machine code', 'Parsing expressions'],
+                answer: 1,
+                explanation: 'Symbol tables store name, type, scope, and address info for identifiers.'
+            },
+            {
+                question: 'Which optimization removes unreachable or unused statements?',
+                options: ['Constant folding', 'Dead code elimination', 'Inlining', 'Loop unrolling'],
+                answer: 1,
+                explanation: 'Dead code elimination removes statements that do not affect program output.'
+            },
+            {
+                question: 'Three-address code is an example of:',
+                options: ['Source code', 'Intermediate representation', 'Machine code', 'Bytecode only'],
+                answer: 1,
+                explanation: 'TAC is a machine-independent intermediate form used for analysis and optimization.'
             }
         ]
     },
@@ -1225,8 +2452,56 @@ export const subjects = [
         description: 'SDLC models, Agile methodologies, Testing strategies, and UML diagrams.',
         concepts: [
             {
-                title: 'Agile Methodology',
-                content: 'Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches.'
+                title: '1. SDLC Overview',
+                content: 'Software Development Life Cycle (SDLC) defines phases: planning, requirements, design, implementation, testing, deployment, and maintenance. Goal: predictable quality and delivery.'
+            },
+            {
+                title: '2. Process Models',
+                content: 'Common models: Waterfall (linear), V-Model (testing mapped to each phase), Spiral (risk-driven), Iterative, and Agile (incremental delivery with feedback).' 
+            },
+            {
+                title: '3. Requirements Engineering',
+                content: 'Elicitation, analysis, specification (SRS), validation, and management of requirements. Clear, testable requirements reduce rework and scope creep.'
+            },
+            {
+                title: '4. Software Design Basics',
+                content: 'High-level architecture, low-level design, modularity, cohesion, and coupling. Use design principles like SOLID for maintainable systems.'
+            },
+            {
+                title: '5. UML Diagrams',
+                content: 'Key diagrams: Use Case, Class, Sequence, Activity, and Component. UML helps visualize structure and behavior.'
+            },
+            {
+                title: '6. Testing Strategies',
+                content: 'Levels: unit, integration, system, acceptance. Types: functional, regression, performance, security, and usability testing.'
+            },
+            {
+                title: '7. Estimation Techniques',
+                content: 'Story points, Function Points, and COCOMO. Estimation depends on scope, complexity, and team velocity.'
+            },
+            {
+                title: '8. Configuration Management',
+                content: 'Version control, baselines, change control, and release management. Tools: Git, CI/CD pipelines.'
+            },
+            {
+                title: '9. SRS and SDD Documents',
+                content: 'SRS defines requirements; SDD documents architecture and detailed design decisions.'
+            },
+            {
+                title: '10. QA Process & Defect Lifecycle',
+                content: 'Defect logging, triage, fix, retest, and closure. Use regression suites to prevent reintroductions.'
+            },
+            {
+                title: '11. Maintenance Types',
+                content: 'Corrective, adaptive, perfective, and preventive maintenance after release.'
+            },
+            {
+                title: '12. Software Metrics',
+                content: 'Cyclomatic complexity, defect density, MTTR, and velocity for planning and quality tracking.'
+            },
+            {
+                title: '13. Code Reviews & Standards',
+                content: 'Peer reviews reduce defects. Use checklists, style guides, and automated linters.'
             }
         ],
         mcqs: [
@@ -1235,6 +2510,36 @@ export const subjects = [
                 options: ['Agile', 'Waterfall', 'Spiral', 'Iterative'],
                 answer: 1,
                 explanation: 'The Waterfall model is a linear sequential flow in software development.'
+            },
+            {
+                question: 'In the V-Model, which phase corresponds to system testing?',
+                options: ['Requirements', 'High-level design', 'Low-level design', 'Implementation'],
+                answer: 1,
+                explanation: 'System testing maps to the high-level design phase in the V-Model.'
+            },
+            {
+                question: 'Which testing level verifies individual components?',
+                options: ['Unit', 'Integration', 'System', 'Acceptance'],
+                answer: 0,
+                explanation: 'Unit testing checks the smallest testable parts of the software.'
+            },
+            {
+                question: 'What is the main goal of requirements validation?',
+                options: ['Increase code speed', 'Ensure requirements reflect user needs', 'Reduce team size', 'Improve UI colors'],
+                answer: 1,
+                explanation: 'Validation confirms requirements are correct, complete, and aligned with user needs.'
+            },
+            {
+                question: 'Which is a UML behavioral diagram?',
+                options: ['Class diagram', 'Component diagram', 'Sequence diagram', 'Deployment diagram'],
+                answer: 2,
+                explanation: 'Sequence diagrams model interactions over time, which is behavioral.'
+            },
+            {
+                question: 'Which metric measures software size by functionality?',
+                options: ['Cyclomatic complexity', 'Function points', 'Defect density', 'Velocity'],
+                answer: 1,
+                explanation: 'Function points estimate size based on user-visible functionality.'
             }
         ]
     },
@@ -1245,16 +2550,94 @@ export const subjects = [
         description: 'Search algorithms, Neural Networks, Machine Learning, and NLP basics.',
         concepts: [
             {
-                title: 'Turing Test',
-                content: 'Developed by Alan Turing in 1950, it is a test of a machine\'s ability to exhibit intelligent behavior equivalent to, or indistinguishable from, that of a human.'
+                title: '1. AI Foundations',
+                content: 'AI studies how to build systems that perceive, reason, learn, and act. Key areas: search, knowledge representation, learning, and reasoning under uncertainty.'
+            },
+            {
+                title: '2. Intelligent Agents',
+                content: 'An agent perceives its environment, chooses actions, and maximizes a performance measure. Types: simple reflex, model-based, goal-based, and utility-based.'
+            },
+            {
+                title: '3. Search Strategies',
+                content: 'Uninformed: BFS, DFS, Uniform Cost. Informed: Greedy Best-First and A* (uses heuristic for optimal paths).' 
+            },
+            {
+                title: '4. Knowledge Representation',
+                content: 'Represent knowledge using logic, rules, semantic networks, and ontologies. Inference derives new facts from known facts.'
+            },
+            {
+                title: '5. Machine Learning Basics',
+                content: 'Supervised (labeled data), unsupervised (clustering), and reinforcement learning (rewards). Common algorithms: linear regression, decision trees, k-means.'
+            },
+            {
+                title: '6. Neural Networks',
+                content: 'Neurons with weighted inputs and activation functions. Training uses backpropagation and gradient descent to minimize loss.'
+            },
+            {
+                title: '7. Natural Language Processing',
+                content: 'Tasks: tokenization, stemming, POS tagging, NER, and text classification. Applications: chatbots, summarization, search.'
+            },
+            {
+                title: '8. AI Ethics',
+                content: 'Concerns: bias, transparency, privacy, and safety. Use responsible data practices and evaluate model fairness.'
+            },
+            {
+                title: '9. Probability Foundations',
+                content: 'Conditional probability, Bayes\' theorem, and independence are core to probabilistic reasoning.'
+            },
+            {
+                title: '10. Model Evaluation Metrics',
+                content: 'Classification: accuracy, precision, recall, F1. Regression: MSE, MAE, R^2.'
+            },
+            {
+                title: '11. Optimization Basics',
+                content: 'Gradient descent variants (batch, mini-batch, SGD) and learning rate scheduling.'
+            },
+            {
+                title: '12. Deep Learning Overview',
+                content: 'CNNs for vision, RNNs/LSTMs for sequences, and transformers for language.'
+            },
+            {
+                title: '13. Probabilistic Models',
+                content: 'Naive Bayes, Hidden Markov Models, and Markov Decision Processes for sequential decision-making.'
             }
         ],
         mcqs: [
             {
-                question: 'Which search algorithm is guaranteed to find the shortest path?',
+                question: 'Which search algorithm is guaranteed to find the shortest path in an unweighted graph?',
                 options: ['BFS', 'DFS', 'Best-First', 'A* Search'],
                 answer: 0,
-                explanation: 'Breadth-First Search (BFS) is guaranteed to find the shortest path in an unweighted graph.'
+                explanation: 'BFS explores level by level, which yields the shortest path in unweighted graphs.'
+            },
+            {
+                question: 'A* is optimal when the heuristic is:',
+                options: ['Overestimating', 'Admissible', 'Random', 'Negative'],
+                answer: 1,
+                explanation: 'An admissible heuristic never overestimates the true cost.'
+            },
+            {
+                question: 'Which learning type uses reward signals?',
+                options: ['Supervised', 'Unsupervised', 'Reinforcement', 'Transfer'],
+                answer: 2,
+                explanation: 'Reinforcement learning optimizes actions based on rewards.'
+            },
+            {
+                question: 'Which task is a typical NLP task?',
+                options: ['Image segmentation', 'Tokenization', 'Edge detection', 'Pose estimation'],
+                answer: 1,
+                explanation: 'Tokenization splits text into tokens, a core NLP step.'
+            },
+            {
+                question: 'In a neural network, backpropagation is used to:',
+                options: ['Initialize weights', 'Compute gradients', 'Shuffle data', 'Add noise'],
+                answer: 1,
+                explanation: 'Backpropagation computes gradients to update weights.'
+            },
+            {
+                question: 'Which model is an example of unsupervised learning?',
+                options: ['Linear regression', 'Decision tree', 'K-means', 'Logistic regression'],
+                answer: 2,
+                explanation: 'K-means clusters unlabeled data.'
             }
         ]
     },
@@ -1309,7 +2692,23 @@ export const subjects = [
                 content: '• **Sum of first n**: n(n+1)/2.\n• **Matrix Chains**: Catalan Number logic.\n• **Binary Tree Nodes**: 2^h - 1 max.\n• **Cycle Detection**: Floyd\'s Cycle Algo.\n• **MST Edges**: V-1 edges always.'
             },
             {
-                title: '12. High-Frequency Interview Questions',
+                title: '12. Amortized Analysis',
+                content: 'Analyzes average cost per operation over a sequence (e.g., dynamic array resizing).'
+            },
+            {
+                title: '13. Randomized Algorithms',
+                content: 'Use randomness to improve average performance (e.g., randomized quicksort).'
+            },
+            {
+                title: '14. Approximation Algorithms',
+                content: 'Provide near-optimal solutions for NP-hard problems with provable bounds.'
+            },
+            {
+                title: '15. Network Flow and Matching',
+                content: 'Max-flow/min-cut (Ford-Fulkerson), bipartite matching, and applications.'
+            },
+            {
+                title: '16. High-Frequency Interview Questions',
                 content: '1. Difference between DP and Greedy?\n2. When does QuickSort perform O(n²)?\n3. Why is MergeSort preferred for Linked Lists?\n4. Explain P vs NP in simple terms.\n5. How does Dijkstra handle negative edges? (It doesn\'t, use Bellman-Ford).'
             }
         ],
@@ -1520,6 +2919,26 @@ export const subjects = [
             {
                 title: '35. Qualities of a Successful Professional',
                 content: 'Adaptability, Curiosity, Resilience, and High Ownership.\n• Mention that technical skill is the baseline, but "soft skills" determine the ceiling.'
+            },
+            {
+                title: '36. Salary Expectations & Negotiation',
+                content: 'Be market-aware, give a reasonable range, and emphasize flexibility based on role scope.'
+            },
+            {
+                title: '37. Relocation and Notice Period',
+                content: 'Be transparent about notice period, relocation readiness, and any constraints.'
+            },
+            {
+                title: '38. Ownership & Accountability',
+                content: 'Demonstrate initiative by describing times you owned outcomes and followed through.'
+            },
+            {
+                title: '39. Handling Failures',
+                content: 'Explain a failure, what you learned, and how you improved your process afterward.'
+            },
+            {
+                title: '40. Why should we hire you?',
+                content: 'Connect your skills and projects directly to the role, with concrete results or impact.'
             }
         ],
         mcqs: [

@@ -13,10 +13,10 @@ const Footer = () => {
 
     return (
         <footer style={{
-            padding: isMobile ? '60px 0 40px' : '100px 0 60px',
-            borderTop: '1px solid rgba(255, 255, 255, 0.03)',
-            marginTop: isMobile ? '60px' : '150px',
-            background: 'rgba(255, 255, 255, 0.01)',
+            padding: isMobile ? '60px 0 40px' : '80px 0 50px',
+            borderTop: '1px solid var(--border-glass)',
+            marginTop: isMobile ? '60px' : '80px',
+            background: 'var(--bg-card)',
             position: 'relative',
             zIndex: 1
         }}>
@@ -39,7 +39,7 @@ const Footer = () => {
                             }}>
                                 <Zap size={14} fill="white" color="white" />
                             </div>
-                            <span style={{ fontSize: '1.1rem', fontWeight: '950', letterSpacing: '-0.03em', color: 'white' }}>
+                            <span style={{ fontSize: '1.1rem', fontWeight: '950', letterSpacing: '-0.03em', color: 'var(--text-main)' }}>
                                 Sylla<span style={{ color: 'var(--primary)' }}>blink</span>
                             </span>
                         </div>
@@ -47,13 +47,24 @@ const Footer = () => {
                             The definitive link between comprehensive engineering syllabi and technical career excellence.
                         </p>
                         <div style={{ display: 'flex', gap: '12px' }}>
-                            {[Github, Linkedin, Twitter, Mail].map((Icon, i) => (
-                                <a key={i} href="#" style={{
-                                    width: '36px', height: '36px', borderRadius: '8px',
-                                    background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)',
-                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                                    color: 'var(--text-muted)', transition: '0.2s'
-                                }}>
+                            {[
+                                { Icon: Github, href: 'https://github.com/' },
+                                { Icon: Linkedin, href: 'https://www.linkedin.com/' },
+                                { Icon: Twitter, href: 'https://twitter.com/' },
+                                { Icon: Mail, href: 'mailto:hello@syllablink.com' }
+                            ].map(({ Icon, href }, i) => (
+                                <a
+                                    key={i}
+                                    href={href}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    style={{
+                                        width: '36px', height: '36px', borderRadius: '8px',
+                                        background: 'var(--bg-card)', border: '1px solid var(--border-glass)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        color: 'var(--text-muted)', transition: '0.2s'
+                                    }}
+                                >
                                     <Icon size={16} />
                                 </a>
                             ))}
@@ -63,13 +74,24 @@ const Footer = () => {
                     {/* Navigation */}
                     {['Platform', 'Archive'].map((title, idx) => (
                         <div key={title}>
-                            <h4 style={{ fontSize: '0.75rem', fontWeight: '900', color: 'white', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+                            <h4 style={{ fontSize: '0.75rem', fontWeight: '900', color: 'var(--text-main)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
                                 {title}
                             </h4>
                             <div style={{ display: 'grid', gap: '0.8rem' }}>
-                                {(idx === 0 ? ['Library', 'Interview Lab', 'Cheat Sheets'] : ['Core Track', 'Adv Mock', 'System Design']).map(link => (
-                                    <Link key={link} to="#" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                        <ChevronRight size={12} /> {link}
+                                {(idx === 0
+                                    ? [
+                                        { label: 'Library', to: '/library' },
+                                        { label: 'Interview Lab', to: '/interview-vault' },
+                                        { label: 'Cheat Sheets', to: '/company-sheets' }
+                                    ]
+                                    : [
+                                        { label: 'Core Track', to: '/subject/os' },
+                                        { label: 'Adv Mock', to: '/subject/dsa' },
+                                        { label: 'System Design', to: '/subject/sd' }
+                                    ]
+                                ).map(link => (
+                                    <Link key={link.label} to={link.to} style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                        <ChevronRight size={12} /> {link.label}
                                     </Link>
                                 ))}
                             </div>
@@ -78,12 +100,12 @@ const Footer = () => {
 
                     {/* Status */}
                     {!isMobile && (
-                        <div style={{ padding: '1.5rem', background: 'rgba(16, 185, 129, 0.02)', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.05)' }}>
+                        <div style={{ padding: '1.5rem', background: 'rgba(16, 185, 129, 0.02)', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.1)' }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#10b981', marginBottom: '0.75rem' }}>
                                 <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981' }} />
                                 <span style={{ fontSize: '0.65rem', fontWeight: '900', textTransform: 'uppercase' }}>Preparation Active</span>
                             </div>
-                            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', lineHeight: '1.5' }}>
+                            <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)', lineHeight: '1.5' }}>
                                 Systems online. Real-time interview metrics and curriculum synchronization active.
                             </p>
                         </div>
@@ -92,7 +114,7 @@ const Footer = () => {
 
                 <div style={{
                     paddingTop: '30px',
-                    borderTop: '1px solid rgba(255, 255, 255, 0.03)',
+                    borderTop: '1px solid var(--border-glass)',
                     display: 'flex',
                     flexDirection: isMobile ? 'column' : 'row',
                     justifyContent: 'space-between',
@@ -103,8 +125,8 @@ const Footer = () => {
                 }}>
                     <p>© 2026 Syllablink. Engineered for the next generation.</p>
                     <div style={{ display: 'flex', gap: '1.5rem' }}>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy</a>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Security</a>
+                        <a href="https://www.termsfeed.com/privacy-policy/" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy</a>
+                        <a href="https://owasp.org/" target="_blank" rel="noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Security</a>
                     </div>
                 </div>
             </div>

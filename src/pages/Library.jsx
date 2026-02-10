@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Bookmark, Star, BookOpen, HelpCircle, ArrowRight, Trash2, Search, Zap, Clock, User, Sparkles, ChevronRight, Filter, SortAsc, LayoutList, Menu, X } from 'lucide-react';
-import { getData, toggleImportant, deleteItem } from '../data/dataManager';
+import { Bookmark, Star, BookOpen, HelpCircle, ArrowRight, Trash2, Search, Zap, Clock, User, Sparkles, ChevronRight, Filter, SortAsc, LayoutList, Menu, X, Award } from 'lucide-react';
+import { getData, toggleImportant, deleteItem, getProgressSummary, getDailyReadTracker } from '../data/dataManager';
 
 const Library = () => {
     const [allData, setAllData] = useState([]);
@@ -10,6 +10,8 @@ const Library = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
     const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 1024);
+    const [progressSummary, setProgressSummary] = useState(() => getProgressSummary());
+    const [dailyTracker, setDailyTracker] = useState(() => getDailyReadTracker(7));
 
     useEffect(() => {
         setAllData(getData());
@@ -20,6 +22,15 @@ const Library = () => {
         };
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        const handleProgressUpdate = () => {
+            setProgressSummary(getProgressSummary());
+            setDailyTracker(getDailyReadTracker(7));
+        };
+        window.addEventListener('progress-updated', handleProgressUpdate);
+        return () => window.removeEventListener('progress-updated', handleProgressUpdate);
     }, []);
 
     const importantConcepts = [];
@@ -81,11 +92,11 @@ const Library = () => {
             {isMobile && (
                 <div style={{
                     position: 'fixed', top: '80px', left: 0, right: 0,
-                    height: '50px', background: 'rgba(10,11,15,0.95)',
-                    borderBottom: '1px solid rgba(255,255,255,0.05)',
+                    height: '50px', background: 'rgba(255,255,255,0.95)',
+                    borderBottom: '1px solid rgba(0,0,0,0.05)',
                     zIndex: 90, display: 'flex', alignItems: 'center', padding: '0 1rem', justifyContent: 'space-between'
                 }}>
-                    <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} style={{ background: 'none', border: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', fontWeight: '800' }}>
+                    <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} style={{ background: 'none', border: 'none', color: 'var(--text-main)', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', fontWeight: '800' }}>
                         <Filter size={18} color="var(--primary)" /> Filters
                     </button>
                     <span style={{ fontSize: '0.75rem', fontWeight: '900', color: 'var(--text-muted)' }}>{activeItems.length} ITEMS</span>
@@ -95,14 +106,14 @@ const Library = () => {
             {/* Sidebar Navigation */}
             <aside style={{
                 width: isMobile ? '280px' : '320px',
-                borderRight: '1px solid rgba(255,255,255,0.05)',
+                borderRight: '1px solid rgba(0,0,0,0.05)',
                 position: isMobile ? 'fixed' : 'sticky',
                 top: isMobile ? '0' : '80px',
                 left: isMobile && !isSidebarOpen ? '-280px' : '0',
                 bottom: 0,
                 height: isMobile ? '100vh' : 'calc(100vh - 80px)',
                 padding: '2rem 1.5rem',
-                background: isMobile ? '#0a0b0f' : 'rgba(5, 6, 10, 0.4)',
+                background: isMobile ? '#ffffff' : 'rgba(0, 0, 0, 0.02)',
                 zIndex: 140,
                 transition: '0.3s ease-out',
                 display: 'flex',
@@ -111,7 +122,7 @@ const Library = () => {
             }}>
                 {isMobile && (
                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <button onClick={() => setIsSidebarOpen(false)} style={{ background: 'none', border: 'none', color: 'white' }}><X size={24} /></button>
+                        <button onClick={() => setIsSidebarOpen(false)} style={{ background: 'none', border: 'none', color: 'var(--text-main)' }}><X size={24} /></button>
                     </div>
                 )}
                 <div>
@@ -127,8 +138,8 @@ const Library = () => {
                             onChange={(e) => setSearchQuery(e.target.value)}
                             style={{
                                 width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px',
-                                background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)',
-                                color: 'white', fontSize: '0.85rem'
+                                background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.05)',
+                                color: 'var(--text-main)', fontSize: '0.85rem'
                             }}
                         />
                     </div>
@@ -179,9 +190,61 @@ const Library = () => {
                                 <ChevronRight size={12} />
                                 <span style={{ color: 'var(--primary)' }}>VAULT</span>
                             </div>
-                            <h1 style={{ fontSize: '2.5rem', fontWeight: '900', color: 'white' }}>Knowledge Archive</h1>
+                            <h1 style={{ fontSize: '2.5rem', fontWeight: '900', color: 'var(--text-main)' }}>Knowledge Archive</h1>
                         </div>
                     )}
+
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, minmax(0, 1fr))',
+                        gap: '1.5rem',
+                        marginBottom: '2.5rem'
+                    }}>
+                        <div style={{ padding: '1.5rem', borderRadius: '16px', background: 'rgba(16, 185, 129, 0.08)', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                            <div style={{ fontSize: '0.75rem', fontWeight: '900', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--primary)' }}>Daily Streak</div>
+                            <div style={{ fontSize: '2rem', fontWeight: '900', marginTop: '0.5rem', color: 'var(--text-main)' }}>{progressSummary.streak} days</div>
+                            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Any read today keeps it alive.</div>
+                        </div>
+                        <div style={{ padding: '1.5rem', borderRadius: '16px', background: 'rgba(14, 165, 233, 0.08)', border: '1px solid rgba(14, 165, 233, 0.2)' }}>
+                            <div style={{ fontSize: '0.75rem', fontWeight: '900', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#0ea5e9' }}>Coins Earned</div>
+                            <div style={{ fontSize: '2rem', fontWeight: '900', marginTop: '0.5rem', color: 'var(--text-main)' }}>{progressSummary.coins}</div>
+                            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>1 read = 1 coin.</div>
+                        </div>
+                        <div style={{ padding: '1.5rem', borderRadius: '16px', background: 'rgba(245, 158, 11, 0.08)', border: '1px solid rgba(245, 158, 11, 0.2)' }}>
+                            <div style={{ fontSize: '0.75rem', fontWeight: '900', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#f59e0b' }}>Total Reads</div>
+                            <div style={{ fontSize: '2rem', fontWeight: '900', marginTop: '0.5rem', color: 'var(--text-main)' }}>{progressSummary.totalReads}</div>
+                            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>Track your study momentum.</div>
+                        </div>
+                    </div>
+
+                    <div style={{
+                        background: 'rgba(255,255,255,0.02)',
+                        borderRadius: '16px',
+                        border: '1px solid rgba(255,255,255,0.06)',
+                        padding: '1.5rem',
+                        marginBottom: '2rem'
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '1rem' }}>
+                            <div style={{ fontSize: '0.85rem', fontWeight: '900', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>Weekly Reading Tracker</div>
+                            <div style={{ fontSize: '0.7rem', fontWeight: '900', color: 'var(--primary)' }}>Green = streak day</div>
+                        </div>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, minmax(0, 1fr))', gap: '10px' }}>
+                            {dailyTracker.map((day) => (
+                                <div key={day.date} style={{
+                                    padding: '12px 8px',
+                                    borderRadius: '12px',
+                                    background: day.hasRead ? 'rgba(16, 185, 129, 0.18)' : 'rgba(0,0,0,0.04)',
+                                    border: day.hasRead ? '1px solid rgba(16, 185, 129, 0.35)' : '1px solid rgba(0,0,0,0.05)',
+                                    textAlign: 'center',
+                                    fontWeight: '900',
+                                    color: day.hasRead ? 'var(--primary)' : 'var(--text-muted)'
+                                }}>
+                                    <div style={{ fontSize: '0.7rem', letterSpacing: '0.08em', textTransform: 'uppercase' }}>{day.label}</div>
+                                    <div style={{ fontSize: '0.8rem' }}>{day.hasRead ? 'Read' : 'Rest'}</div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
 
                     <div style={{ background: 'rgba(255,255,255,0.01)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden' }}>
 
@@ -212,7 +275,7 @@ const Library = () => {
                                         display: 'grid',
                                         gridTemplateColumns: isMobile ? '1fr' : '40px 1fr 180px 100px',
                                         padding: isMobile ? '1.5rem' : '1.5rem 1.5rem',
-                                        borderBottom: '1px solid rgba(255,255,255,0.03)',
+                                        borderBottom: '1px solid rgba(0,0,0,0.03)',
                                         alignItems: 'center',
                                         gap: isMobile ? '1rem' : '0'
                                     }}
@@ -236,7 +299,7 @@ const Library = () => {
                                     )}
 
                                     <div style={{ display: 'flex', justifyContent: isMobile ? 'flex-start' : 'flex-end', gap: '1rem' }}>
-                                        <button onClick={(e) => handleToggleImportant(e, item.subjectId, item.type, item.index)} style={{ background: 'none', border: 'none', color: item.important ? 'var(--warning)' : 'rgba(255,255,255,0.1)', cursor: 'pointer' }}>
+                                        <button onClick={(e) => handleToggleImportant(e, item.subjectId, item.type, item.index)} style={{ background: 'none', border: 'none', color: item.important ? 'var(--warning)' : 'rgba(0,0,0,0.1)', cursor: 'pointer' }}>
                                             <Star size={18} fill={item.important ? 'currentColor' : 'none'} />
                                         </button>
                                         <button onClick={(e) => handleDelete(e, item.subjectId, item.type, item.index)} style={{ background: 'none', border: 'none', color: 'rgba(239, 68, 68, 0.4)', cursor: 'pointer' }}>

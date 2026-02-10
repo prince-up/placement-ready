@@ -50,7 +50,7 @@ const InterviewVault = () => {
                         <Sparkles size={16} />
                         <span style={{ fontWeight: '900', fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Behavioral Mastery</span>
                     </div>
-                    <h1 style={{ fontSize: isMobile ? '2.2rem' : '3.5rem', fontWeight: '900', letterSpacing: '-0.02em', marginBottom: '1rem', color: 'white' }}>
+                    <h1 style={{ fontSize: isMobile ? '2.2rem' : '3.5rem', fontWeight: '900', letterSpacing: '-0.02em', marginBottom: '1rem', color: 'var(--text-main)' }}>
                         HR Archive
                     </h1>
                     <p style={{ color: 'var(--text-muted)', fontSize: isMobile ? '1rem' : '1.1rem', maxWidth: '650px', lineHeight: '1.6' }}>
@@ -78,9 +78,9 @@ const InterviewVault = () => {
                             onClick={() => setActiveSection('all')}
                             style={{
                                 padding: '8px 16px', borderRadius: '8px', whiteSpace: 'nowrap',
-                                background: activeSection === 'all' ? 'var(--primary)' : 'rgba(255,255,255,0.03)',
+                                background: activeSection === 'all' ? 'var(--primary)' : 'rgba(0,0,0,0.03)',
                                 color: activeSection === 'all' ? 'white' : 'var(--text-muted)',
-                                border: '1px solid rgba(255,255,255,0.05)',
+                                border: '1px solid rgba(0,0,0,0.05)',
                                 fontWeight: '800', fontSize: '0.75rem', cursor: 'pointer', transition: '0.2s'
                             }}
                         >
@@ -92,9 +92,9 @@ const InterviewVault = () => {
                                 onClick={() => setActiveSection(s.id)}
                                 style={{
                                     padding: '8px 16px', borderRadius: '8px', whiteSpace: 'nowrap',
-                                    background: activeSection === s.id ? 'rgba(16, 185, 129, 0.1)' : 'rgba(255,255,255,0.03)',
+                                    background: activeSection === s.id ? 'rgba(16, 185, 129, 0.1)' : 'rgba(0,0,0,0.03)',
                                     color: activeSection === s.id ? 'var(--primary)' : 'var(--text-muted)',
-                                    border: '1px solid rgba(255,255,255,0.05)',
+                                    border: '1px solid rgba(0,0,0,0.05)',
                                     fontWeight: '800', fontSize: '0.75rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px'
                                 }}
                             >
@@ -113,8 +113,8 @@ const InterviewVault = () => {
                             onChange={(e) => setSearchQuery(e.target.value)}
                             style={{
                                 width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px',
-                                background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)',
-                                color: 'white', fontSize: '0.85rem', outline: 'none'
+                                background: 'rgba(0,0,0,0.03)', border: '1px solid rgba(0,0,0,0.05)',
+                                color: 'var(--text-main)', fontSize: '0.85rem', outline: 'none'
                             }}
                         />
                     </div>
@@ -130,9 +130,9 @@ const InterviewVault = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 style={{
-                                    background: 'rgba(255,255,255,0.01)',
+                                    background: 'rgba(0,0,0,0.01)',
                                     borderRadius: '12px',
-                                    border: '1px solid rgba(255,255,255,0.03)',
+                                    border: '1px solid rgba(0,0,0,0.05)',
                                     overflow: 'hidden',
                                     transition: '0.2s'
                                 }}
@@ -151,7 +151,7 @@ const InterviewVault = () => {
                                             {String(idx + 1).padStart(2, '0')}
                                         </div>
                                         <div>
-                                            <h3 style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: '800', color: 'white', marginBottom: '4px' }}>
+                                            <h3 style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '4px' }}>
                                                 {q.question}
                                             </h3>
                                             <div style={{ fontSize: '0.65rem', color: 'var(--text-muted)', fontWeight: '900', opacity: 0.4, textTransform: 'uppercase' }}>
@@ -169,7 +169,7 @@ const InterviewVault = () => {
                                             animate={{ height: 'auto', opacity: 1 }}
                                             exit={{ height: 0, opacity: 0 }}
                                         >
-                                            <div style={{ padding: isMobile ? '0 1.25rem 2rem' : '0 2rem 3rem', borderTop: '1px solid rgba(255,255,255,0.02)' }}>
+                                            <div style={{ padding: isMobile ? '0 1.25rem 2rem' : '0 2rem 3rem', borderTop: '1px solid rgba(0,0,0,0.05)' }}>
                                                 <div style={{ paddingTop: '2rem', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '2.5rem' }}>
 
                                                     {/* Strategy & Model Answer */}
@@ -193,8 +193,8 @@ const InterviewVault = () => {
                                                             </div>
                                                             <div style={{
                                                                 padding: '1.5rem', borderRadius: '12px',
-                                                                background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)',
-                                                                color: 'var(--text-muted)', fontSize: '0.95rem', lineHeight: '1.7', fontStyle: 'italic'
+                                                                background: 'rgba(0,0,0,0.02)', border: '1px solid rgba(0,0,0,0.05)',
+                                                                color: 'var(--text-main)', fontSize: '0.95rem', lineHeight: '1.7', fontStyle: 'italic'
                                                             }}>
                                                                 "{q.modelAnswer}"
                                                             </div>
@@ -204,7 +204,7 @@ const InterviewVault = () => {
                                                     {/* STAR Method / Context */}
                                                     <div>
                                                         {q.starMethod ? (
-                                                            <div style={{ background: 'rgba(16, 185, 129, 0.02)', borderRadius: '12px', padding: '1.5rem', border: '1px solid rgba(16, 185, 129, 0.05)' }}>
+                                                            <div style={{ background: 'rgba(16, 185, 129, 0.02)', borderRadius: '12px', padding: '1.5rem', border: '1px solid rgba(16, 185, 129, 0.1)' }}>
                                                                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#10b981', fontWeight: '900', fontSize: '0.65rem', textTransform: 'uppercase', marginBottom: '1.25rem', letterSpacing: '0.05em' }}>
                                                                     <Star size={14} fill="#10b981" /> Performance Breakdown (STAR)
                                                                 </div>
@@ -212,13 +212,13 @@ const InterviewVault = () => {
                                                                     {Object.entries(q.starMethod).map(([key, val]) => (
                                                                         <div key={key}>
                                                                             <div style={{ fontSize: '0.6rem', fontWeight: '900', color: '#10b981', textTransform: 'uppercase', marginBottom: '4px' }}>{key}</div>
-                                                                            <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: '1.5' }}>{val}</div>
+                                                                            <div style={{ fontSize: '0.85rem', color: 'var(--text-main)', opacity: 0.7, lineHeight: '1.5' }}>{val}</div>
                                                                         </div>
                                                                     ))}
                                                                 </div>
                                                             </div>
                                                         ) : (
-                                                            <div style={{ padding: '2rem', background: 'rgba(255,255,255,0.01)', border: '1px dashed rgba(255,255,255,0.05)', borderRadius: '12px', textAlign: 'center' }}>
+                                                            <div style={{ padding: '2rem', background: 'rgba(0,0,0,0.01)', border: '1px dashed rgba(0,0,0,0.1)', borderRadius: '12px', textAlign: 'center' }}>
                                                                 <Info size={24} style={{ opacity: 0.2, marginBottom: '1rem' }} />
                                                                 <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
                                                                     Personalize your answer with specific college artifacts or internship milestones.
