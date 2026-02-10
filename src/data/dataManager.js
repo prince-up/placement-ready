@@ -1,12 +1,16 @@
 import { subjects as initialSubjects } from './subjects';
 
 const STORAGE_KEY = 'placement_ready_data';
+const STORAGE_VERSION_KEY = 'placement_ready_data_version';
+const DATA_VERSION = 'dbms-v5';
 
 export const getData = () => {
     try {
+        const savedVersion = localStorage.getItem(STORAGE_VERSION_KEY);
         const saved = localStorage.getItem(STORAGE_KEY);
-        if (!saved) {
+        if (!saved || savedVersion !== DATA_VERSION) {
             localStorage.setItem(STORAGE_KEY, JSON.stringify(initialSubjects));
+            localStorage.setItem(STORAGE_VERSION_KEY, DATA_VERSION);
             return initialSubjects;
         }
         const parsed = JSON.parse(saved);
@@ -19,10 +23,12 @@ export const getData = () => {
 
 export const saveData = (data) => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    localStorage.setItem(STORAGE_VERSION_KEY, DATA_VERSION);
 };
 
 export const resetData = () => {
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(STORAGE_VERSION_KEY);
     return getData();
 };
 

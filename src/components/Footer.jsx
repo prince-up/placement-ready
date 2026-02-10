@@ -1,187 +1,110 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { GraduationCap, Github, Linkedin, Twitter, Mail, ExternalLink, ChevronRight } from 'lucide-react';
+import { GraduationCap, Github, Linkedin, Twitter, Mail, ChevronRight, Zap } from 'lucide-react';
 
 const Footer = () => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <footer style={{
-            padding: '120px 0 60px',
-            borderTop: '1px solid var(--border-glass)',
-            marginTop: '150px',
-            background: 'linear-gradient(to bottom, transparent, rgba(14, 165, 233, 0.05))',
+            padding: isMobile ? '60px 0 40px' : '100px 0 60px',
+            borderTop: '1px solid rgba(255, 255, 255, 0.03)',
+            marginTop: isMobile ? '60px' : '150px',
+            background: 'rgba(255, 255, 255, 0.01)',
             position: 'relative',
             zIndex: 1
         }}>
-            {/* Background Glow */}
-            <div style={{
-                position: 'absolute',
-                top: 0,
-                left: '50%',
-                transform: 'translateX(-50%)',
-                width: '80%',
-                height: '1px',
-                background: 'linear-gradient(90deg, transparent, var(--primary), transparent)',
-                opacity: 0.5
-            }} />
-
             <div className="container">
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                    gap: '5rem',
-                    marginBottom: '80px',
-                    textAlign: 'left'
+                    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(200px, 1fr))',
+                    gap: isMobile ? '3rem' : '4rem',
+                    marginBottom: isMobile ? '40px' : '80px'
                 }}>
 
-                    {/* Brand Column */}
-                    <div style={{ maxWidth: '320px' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '2rem' }}>
+                    {/* Branding */}
+                    <div style={{ maxWidth: isMobile ? '100%' : '300px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '1.5rem' }}>
                             <div style={{
-                                background: 'linear-gradient(135deg, var(--primary), var(--secondary))',
-                                padding: '10px',
-                                borderRadius: '12px',
-                                display: 'flex',
-                                boxShadow: '0 8px 20px rgba(14, 165, 233, 0.3)'
+                                width: '28px', height: '28px', borderRadius: '6px',
+                                background: 'var(--primary)', display: 'flex',
+                                alignItems: 'center', justifyContent: 'center',
+                                boxShadow: '0 0 10px rgba(16, 185, 129, 0.3)'
                             }}>
-                                <GraduationCap size={24} color="white" />
+                                <Zap size={14} fill="white" color="white" />
                             </div>
-                            <span style={{ fontSize: '1.5rem', fontWeight: '900', letterSpacing: '-0.02em' }}>
-                                Placement<span className="glow-text">Ready</span>
+                            <span style={{ fontSize: '1.1rem', fontWeight: '950', letterSpacing: '-0.03em', color: 'white' }}>
+                                Sylla<span style={{ color: 'var(--primary)' }}>blink</span>
                             </span>
                         </div>
-                        <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.7', marginBottom: '2.5rem' }}>
-                            The ultimate engineering companion. Master your technical foundation and communication skills to ace your dream interview.
+                        <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.6', marginBottom: '2rem' }}>
+                            The definitive link between comprehensive engineering syllabi and technical career excellence.
                         </p>
-                        <div style={{ display: 'flex', gap: '15px' }}>
-                            {[
-                                { icon: Github, url: "https://github.com/prince-up" },
-                                { icon: Linkedin, url: "https://www.linkedin.com/in/prince-yadav-4t/" },
-                                { icon: Twitter, url: "https://x.com/prince__up" },
-                                { icon: Mail, url: "mailto:princeyadav76001@gmail.com" }
-                            ].map((social, i) => (
-                                <a
-                                    key={i}
-                                    href={social.url}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    style={{
-                                        width: '42px',
-                                        height: '42px',
-                                        borderRadius: '12px',
-                                        background: 'rgba(255,255,255,0.03)',
-                                        border: '1px solid var(--border-glass)',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: 'var(--text-muted)',
-                                        transition: '0.3s'
-                                    }}
-                                    onMouseOver={(e) => {
-                                        e.currentTarget.style.color = 'var(--primary)';
-                                        e.currentTarget.style.borderColor = 'var(--primary)';
-                                        e.currentTarget.style.background = 'rgba(14, 165, 233, 0.05)';
-                                    }}
-                                    onMouseOut={(e) => {
-                                        e.currentTarget.style.color = 'var(--text-muted)';
-                                        e.currentTarget.style.borderColor = 'var(--border-glass)';
-                                        e.currentTarget.style.background = 'rgba(255,255,255,0.03)';
-                                    }}
-                                >
-                                    <social.icon size={20} />
+                        <div style={{ display: 'flex', gap: '12px' }}>
+                            {[Github, Linkedin, Twitter, Mail].map((Icon, i) => (
+                                <a key={i} href="#" style={{
+                                    width: '36px', height: '36px', borderRadius: '8px',
+                                    background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.05)',
+                                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                    color: 'var(--text-muted)', transition: '0.2s'
+                                }}>
+                                    <Icon size={16} />
                                 </a>
                             ))}
                         </div>
                     </div>
 
-                    {/* Quick Links */}
-                    <div>
-                        <h4 style={{ fontSize: '1.1rem', fontWeight: '800', marginBottom: '2rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            Platform
-                        </h4>
-                        <div style={{ display: 'grid', gap: '1.2rem' }}>
-                            {[
-                                { name: 'Dashboard', path: '/' },
-                                { name: 'Personal Vault', path: '/library' },
-                                { name: 'HR Interview Lab', path: '/interview-vault' },
-                                { name: 'Company Sheets', path: '/company-sheets' }
-                            ].map(link => (
-                                <Link
-                                    key={link.name}
-                                    to={link.path}
-                                    style={{
-                                        color: 'var(--text-muted)',
-                                        textDecoration: 'none',
-                                        fontSize: '0.95rem',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '8px',
-                                        transition: '0.2s'
-                                    }}
-                                    onMouseOver={(e) => {
-                                        e.currentTarget.style.color = 'var(--primary)';
-                                        e.currentTarget.style.transform = 'translateX(5px)';
-                                    }}
-                                    onMouseOut={(e) => {
-                                        e.currentTarget.style.color = 'var(--text-muted)';
-                                        e.currentTarget.style.transform = 'translateX(0)';
-                                    }}
-                                >
-                                    <ChevronRight size={14} /> {link.name}
-                                </Link>
-                            ))}
+                    {/* Navigation */}
+                    {['Platform', 'Archive'].map((title, idx) => (
+                        <div key={title}>
+                            <h4 style={{ fontSize: '0.75rem', fontWeight: '900', color: 'white', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '1.5rem' }}>
+                                {title}
+                            </h4>
+                            <div style={{ display: 'grid', gap: '0.8rem' }}>
+                                {(idx === 0 ? ['Library', 'Interview Lab', 'Cheat Sheets'] : ['Core Track', 'Adv Mock', 'System Design']).map(link => (
+                                    <Link key={link} to="#" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                        <ChevronRight size={12} /> {link}
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
-                    </div>
+                    ))}
 
-                    {/* Resources */}
-                    <div>
-                        <h4 style={{ fontSize: '1.1rem', fontWeight: '800', marginBottom: '2rem' }}>Core Modules</h4>
-                        <div style={{ display: 'grid', gap: '1rem' }}>
-                            {['Operating Systems', 'Database Systems', 'OOPs Concepts', 'Networking'].map(item => (
-                                <div
-                                    key={item}
-                                    style={{
-                                        color: 'var(--text-muted)',
-                                        fontSize: '0.95rem',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        gap: '8px'
-                                    }}
-                                >
-                                    <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--border-glass)' }}></div>
-                                    {item}
-                                </div>
-                            ))}
+                    {/* Status */}
+                    {!isMobile && (
+                        <div style={{ padding: '1.5rem', background: 'rgba(16, 185, 129, 0.02)', borderRadius: '12px', border: '1px solid rgba(16, 185, 129, 0.05)' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#10b981', marginBottom: '0.75rem' }}>
+                                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#10b981' }} />
+                                <span style={{ fontSize: '0.65rem', fontWeight: '900', textTransform: 'uppercase' }}>Preparation Active</span>
+                            </div>
+                            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', lineHeight: '1.5' }}>
+                                Systems online. Real-time interview metrics and curriculum synchronization active.
+                            </p>
                         </div>
-                    </div>
-
-                    {/* Credits/Status */}
-                    <div className="glass-card" style={{ padding: '2rem', background: 'rgba(16, 185, 129, 0.02)', borderColor: 'rgba(16, 185, 129, 0.1)' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#10b981', marginBottom: '1rem' }}>
-                            <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981', boxShadow: '0 0 10px #10b981' }}></div>
-                            <span style={{ fontSize: '0.8rem', fontWeight: '800', textTransform: 'uppercase' }}>System Live</span>
-                        </div>
-                        <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.6' }}>
-                            Daily updates in progress. Preparation mode active. Good luck with your placements!
-                        </p>
-                    </div>
+                    )}
                 </div>
 
                 <div style={{
-                    paddingTop: '40px',
-                    borderTop: '1px solid var(--border-glass)',
+                    paddingTop: '30px',
+                    borderTop: '1px solid rgba(255, 255, 255, 0.03)',
                     display: 'flex',
+                    flexDirection: isMobile ? 'column' : 'row',
                     justifyContent: 'space-between',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
+                    alignItems: isMobile ? 'flex-start' : 'center',
                     gap: '20px',
                     color: 'var(--text-muted)',
-                    fontSize: '0.9rem'
+                    fontSize: '0.8rem'
                 }}>
-                    <p>© 2026 <span style={{ fontWeight: '700', color: 'var(--text-main)' }}>PlacementReady</span>. All rights reserved.</p>
-                    <div style={{ display: 'flex', gap: '2rem' }}>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy Policy</a>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Terms of Service</a>
+                    <p>© 2026 Syllablink. Engineered for the next generation.</p>
+                    <div style={{ display: 'flex', gap: '1.5rem' }}>
+                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Privacy</a>
+                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Security</a>
                     </div>
                 </div>
             </div>

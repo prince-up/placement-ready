@@ -1,16 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Bookmark, Star, BookOpen, HelpCircle, ArrowRight, Trash2, Search, Zap, Clock, User, Sparkles, ChevronRight } from 'lucide-react';
+import { Bookmark, Star, BookOpen, HelpCircle, ArrowRight, Trash2, Search, Zap, Clock, User, Sparkles, ChevronRight, Filter, SortAsc, LayoutList, Menu, X } from 'lucide-react';
 import { getData, toggleImportant, deleteItem } from '../data/dataManager';
 
 const Library = () => {
     const [allData, setAllData] = useState([]);
     const [activeFilter, setActiveFilter] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(window.innerWidth > 1024);
 
     useEffect(() => {
         setAllData(getData());
+        const handleResize = () => {
+            const mobile = window.innerWidth < 1024;
+            setIsMobile(mobile);
+            if (!mobile) setIsSidebarOpen(true);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     const importantConcepts = [];
@@ -36,7 +45,7 @@ const Library = () => {
         return items.filter(item => {
             const title = item.type === 'concepts' ? item.title : item.question;
             const content = item.type === 'concepts' ? (item.content || '') : '';
-            return (title + content).toLowerCase().includes(searchQuery.toLowerCase());
+            return (title + (item.subjectTitle || '') + content).toLowerCase().includes(searchQuery.toLowerCase());
         });
     };
 
@@ -45,174 +54,208 @@ const Library = () => {
     const displayMCQs = filterBySearch(importantMCQs);
     const displayPersonal = filterBySearch(personalItems);
 
-    const handleToggleImportant = (subjectId, type, index) => {
+    const activeItems = activeFilter === 'all' ? displayAll :
+        activeFilter === 'concepts' ? displayConcepts :
+            activeFilter === 'mcqs' ? displayMCQs : displayPersonal;
+
+    const handleToggleImportant = (e, subjectId, type, index) => {
+        e.preventDefault();
+        e.stopPropagation();
         const newData = toggleImportant(subjectId, type, index);
         if (newData) setAllData(newData);
     };
 
-    const handleDelete = (subjectId, type, index) => {
-        if (window.confirm('Remove from your vault?')) {
+    const handleDelete = (e, subjectId, type, index) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (window.confirm('Remove this resource?')) {
             const newData = deleteItem(subjectId, type, index);
             if (newData) setAllData(newData);
         }
     };
 
     return (
-        <div style={{ paddingTop: '140px', minHeight: '100vh', paddingBottom: '160px' }}>
-            <div className="bg-mesh"></div>
-            <div className="container">
+        <div style={{ paddingTop: '80px', minHeight: '100vh', display: 'flex', background: 'var(--bg-dark)' }}>
 
-                {/* Header */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '4rem', flexWrap: 'wrap', gap: '2rem' }}>
-                    <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }}>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--primary)', marginBottom: '1.25rem' }}>
-                            <Star size={18} className="glow-text" />
-                            <span style={{ fontWeight: '800', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.15em' }}>Your Archive</span>
-                        </div>
-                        <h1 style={{ fontSize: '4rem', fontWeight: '900', letterSpacing: '-0.03em', marginBottom: '1rem' }}>Personal <span className="glow-text">Vault</span></h1>
-                        <p style={{ color: 'var(--text-muted)', fontSize: '1.2rem', maxWidth: '500px', lineHeight: '1.6' }}>
-                            Your curated set of critical technical notes and difficult practice questions.
-                        </p>
-                    </motion.div>
-
-                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} style={{ display: 'flex', gap: '15px' }}>
-                        <div className="glass-card" style={{ padding: '1.5rem 2rem', textAlign: 'center', minWidth: '150px' }}>
-                            <div style={{ fontSize: '2rem', fontWeight: '900', color: 'var(--warning)' }}>{importantConcepts.length + importantMCQs.length}</div>
-                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '800' }}>Starred Total</div>
-                        </div>
-                        <div className="glass-card" style={{ padding: '1.5rem 2rem', textAlign: 'center', minWidth: '150px' }}>
-                            <div style={{ fontSize: '2rem', fontWeight: '900', color: 'var(--primary)' }}>{personalItems.length}</div>
-                            <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', fontWeight: '800' }}>Personalized</div>
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* Navbar Toolbar */}
+            {/* Mobile Header / Toggle */}
+            {isMobile && (
                 <div style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginBottom: '3.5rem',
-                    flexWrap: 'wrap',
-                    gap: '1.5rem',
-                    background: 'rgba(255,255,255,0.02)',
-                    padding: '8px',
-                    borderRadius: '20px',
-                    border: '1px solid var(--border-glass)'
+                    position: 'fixed', top: '80px', left: 0, right: 0,
+                    height: '50px', background: 'rgba(10,11,15,0.95)',
+                    borderBottom: '1px solid rgba(255,255,255,0.05)',
+                    zIndex: 90, display: 'flex', alignItems: 'center', padding: '0 1rem', justifyContent: 'space-between'
                 }}>
-                    <div style={{ display: 'flex', gap: '4px' }}>
-                        {[
-                            { id: 'all', label: 'All Saved', icon: Zap },
-                            { id: 'concepts', label: 'Notes', icon: BookOpen },
-                            { id: 'mcqs', label: 'MCQs', icon: HelpCircle },
-                            { id: 'personal', label: 'My Additions', icon: User }
-                        ].map(f => (
-                            <button
-                                key={f.id}
-                                onClick={() => setActiveFilter(f.id)}
-                                style={{
-                                    padding: '12px 24px', borderRadius: '14px', border: 'none',
-                                    background: activeFilter === f.id ? 'var(--bg-card)' : 'transparent',
-                                    color: activeFilter === f.id ? 'var(--primary)' : 'var(--text-muted)',
-                                    fontWeight: '800', fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px', transition: '0.3s'
-                                }}
-                            >
-                                <f.icon size={16} /> {f.label}
-                            </button>
-                        ))}
-                    </div>
+                    <button onClick={() => setIsSidebarOpen(!isSidebarOpen)} style={{ background: 'none', border: 'none', color: 'white', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '0.85rem', fontWeight: '800' }}>
+                        <Filter size={18} color="var(--primary)" /> Filters
+                    </button>
+                    <span style={{ fontSize: '0.75rem', fontWeight: '900', color: 'var(--text-muted)' }}>{activeItems.length} ITEMS</span>
+                </div>
+            )}
 
-                    <div style={{ position: 'relative', flex: 1, maxWidth: '350px' }}>
-                        <Search size={18} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} />
+            {/* Sidebar Navigation */}
+            <aside style={{
+                width: isMobile ? '280px' : '320px',
+                borderRight: '1px solid rgba(255,255,255,0.05)',
+                position: isMobile ? 'fixed' : 'sticky',
+                top: isMobile ? '0' : '80px',
+                left: isMobile && !isSidebarOpen ? '-280px' : '0',
+                bottom: 0,
+                height: isMobile ? '100vh' : 'calc(100vh - 80px)',
+                padding: '2rem 1.5rem',
+                background: isMobile ? '#0a0b0f' : 'rgba(5, 6, 10, 0.4)',
+                zIndex: 140,
+                transition: '0.3s ease-out',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '2.5rem'
+            }}>
+                {isMobile && (
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <button onClick={() => setIsSidebarOpen(false)} style={{ background: 'none', border: 'none', color: 'white' }}><X size={24} /></button>
+                    </div>
+                )}
+                <div>
+                    <h2 style={{ fontSize: '0.7rem', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--primary)', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <LayoutList size={14} /> Knowledge Archive
+                    </h2>
+                    <div style={{ position: 'relative', marginBottom: '1.5rem' }}>
+                        <Search size={14} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', opacity: 0.4 }} />
                         <input
                             type="text"
-                            placeholder="Filter your vault..."
+                            placeholder="Search Vault..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
                             style={{
-                                width: '100%', padding: '14px 16px 14px 48px', borderRadius: '14px',
-                                background: 'transparent', border: '1px solid transparent',
-                                color: 'white', fontSize: '0.95rem', outline: 'none'
+                                width: '100%', padding: '10px 12px 10px 36px', borderRadius: '8px',
+                                background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)',
+                                color: 'white', fontSize: '0.85rem'
                             }}
                         />
                     </div>
+
+                    <nav style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                        {[
+                            { id: 'all', label: 'Entire Library', count: allSaved.length, icon: Zap },
+                            { id: 'concepts', label: 'Study Master', count: importantConcepts.length, icon: BookOpen },
+                            { id: 'mcqs', label: 'Practice Star', count: importantMCQs.length, icon: HelpCircle },
+                            { id: 'personal', label: 'Personal Units', count: personalItems.length, icon: User }
+                        ].map(f => (
+                            <button
+                                key={f.id}
+                                onClick={() => { setActiveFilter(f.id); if (isMobile) setIsSidebarOpen(false); }}
+                                style={{
+                                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                    padding: '10px 14px', borderRadius: '8px', border: 'none', cursor: 'pointer',
+                                    background: activeFilter === f.id ? 'rgba(16, 185, 129, 0.1)' : 'transparent',
+                                    color: activeFilter === f.id ? 'var(--primary)' : 'var(--text-muted)',
+                                    fontWeight: activeFilter === f.id ? '800' : '600', fontSize: '0.85rem',
+                                    transition: '0.2s'
+                                }}
+                            >
+                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                    <f.icon size={16} />
+                                    <span>{f.label}</span>
+                                </div>
+                                <span style={{ fontSize: '0.7rem', opacity: 0.3 }}>{f.count}</span>
+                            </button>
+                        ))}
+                    </nav>
                 </div>
+            </aside>
 
-                {/* Content Grid */}
-                <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(380px, 1fr))', gap: '2rem' }}>
-                    <AnimatePresence mode="popLayout">
-                        {(activeFilter === 'all' ? displayAll :
-                            activeFilter === 'concepts' ? displayConcepts :
-                                activeFilter === 'mcqs' ? displayMCQs :
-                                    displayPersonal).map((item) => (
-                                        <motion.div
-                                            layout
-                                            initial={{ opacity: 0, scale: 0.95 }}
-                                            animate={{ opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0.9 }}
-                                            key={`${item.type}-${item.subjectId}-${item.index}`}
-                                            className="glass-card"
-                                            style={{
-                                                padding: '2rem',
-                                                borderColor: item.important ? 'var(--warning)' : 'var(--border-glass)',
-                                                display: 'flex',
-                                                flexDirection: 'column',
-                                                height: '100%'
-                                            }}
-                                        >
-                                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem' }}>
-                                                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                                    <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: item.type === 'concepts' ? 'var(--primary)' : 'var(--secondary)' }}></div>
-                                                    <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', fontWeight: '900', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{item.subjectTitle}</span>
-                                                </div>
-                                                <div style={{ display: 'flex', gap: '10px' }}>
-                                                    <button
-                                                        onClick={() => handleToggleImportant(item.subjectId, item.type, item.index)}
-                                                        style={{ background: 'none', border: 'none', color: item.important ? 'var(--warning)' : 'var(--text-muted)', cursor: 'pointer' }}
-                                                    >
-                                                        <Star size={20} fill={item.important ? 'currentColor' : 'none'} />
-                                                    </button>
-                                                    {(item.isPersonal || item.important) && (
-                                                        <button
-                                                            onClick={() => handleDelete(item.subjectId, item.type, item.index)}
-                                                            style={{ background: 'none', border: 'none', color: 'var(--error)', opacity: 0.3, cursor: 'pointer' }}
-                                                            onMouseOver={(e) => e.currentTarget.style.opacity = '1'}
-                                                            onMouseOut={(e) => e.currentTarget.style.opacity = '0.3'}
-                                                        >
-                                                            <Trash2 size={20} />
-                                                        </button>
-                                                    )}
-                                                </div>
-                                            </div>
+            {/* Main Content */}
+            <main style={{
+                flex: 1,
+                marginLeft: isMobile ? '0' : '0',
+                padding: isMobile ? '6rem 1rem 2rem' : '3rem 4rem',
+                width: '100%'
+            }}>
+                <div style={{ maxWidth: '1050px', margin: '0 auto' }}>
 
-                                            <h3 style={{ fontSize: '1.4rem', fontWeight: '800', marginBottom: '1.5rem', lineHeight: '1.3' }}>
-                                                {item.type === 'concepts' ? item.title : item.question}
-                                            </h3>
-
-                                            <div style={{ marginTop: 'auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                                <Link to={`/subject/${item.subjectId}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--primary)', textDecoration: 'none', fontSize: '0.9rem', fontWeight: '800' }}>
-                                                    Open Module <ChevronRight size={16} />
-                                                </Link>
-                                                <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderRadius: '30px', fontWeight: '800', textTransform: 'uppercase' }}>
-                                                    {item.type === 'concepts' ? 'Note' : 'MCQ'}
-                                                </span>
-                                            </div>
-                                        </motion.div>
-                                    ))}
-                    </AnimatePresence>
-                </motion.div>
-
-                {/* Empty State */}
-                {((activeFilter === 'all' && displayAll.length === 0) ||
-                    (activeFilter === 'concepts' && displayConcepts.length === 0) ||
-                    (activeFilter === 'mcqs' && displayMCQs.length === 0) ||
-                    (activeFilter === 'personal' && displayPersonal.length === 0)) && (
-                        <div style={{ textAlign: 'center', padding: '120px 0', opacity: 0.3 }}>
-                            <Bookmark size={64} style={{ marginBottom: '2rem' }} />
-                            <h3 style={{ fontSize: '1.5rem' }}>No items found in your vault.</h3>
+                    {!isMobile && (
+                        <div style={{ marginBottom: '3rem' }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'var(--text-muted)', fontSize: '0.75rem', fontWeight: '800', marginBottom: '1rem' }}>
+                                <Link to="/" style={{ color: 'inherit' }}>ROOT</Link>
+                                <ChevronRight size={12} />
+                                <span style={{ color: 'var(--primary)' }}>VAULT</span>
+                            </div>
+                            <h1 style={{ fontSize: '2.5rem', fontWeight: '900', color: 'white' }}>Knowledge Archive</h1>
                         </div>
                     )}
-            </div>
+
+                    <div style={{ background: 'rgba(255,255,255,0.01)', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', overflow: 'hidden' }}>
+
+                        {/* Headers Concept for desktop */}
+                        {!isMobile && (
+                            <div style={{
+                                display: 'grid', gridTemplateColumns: '40px 1fr 180px 100px',
+                                padding: '12px 24px', background: 'rgba(255,255,255,0.02)',
+                                borderBottom: '1px solid rgba(255,255,255,0.05)',
+                                fontSize: '0.7rem', fontWeight: '900', color: 'var(--text-muted)', textTransform: 'uppercase'
+                            }}>
+                                <div>#</div>
+                                <div>Topic / Resource</div>
+                                <div>Section</div>
+                                <div style={{ textAlign: 'right' }}>Action</div>
+                            </div>
+                        )}
+
+                        <AnimatePresence mode="popLayout">
+                            {activeItems.map((item, idx) => (
+                                <motion.div
+                                    key={`${item.type}-${item.subjectId}-${item.index}`}
+                                    layout
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    style={{
+                                        display: 'grid',
+                                        gridTemplateColumns: isMobile ? '1fr' : '40px 1fr 180px 100px',
+                                        padding: isMobile ? '1.5rem' : '1.5rem 1.5rem',
+                                        borderBottom: '1px solid rgba(255,255,255,0.03)',
+                                        alignItems: 'center',
+                                        gap: isMobile ? '1rem' : '0'
+                                    }}
+                                >
+                                    {!isMobile && <span style={{ fontSize: '0.75rem', opacity: 0.3 }}>{idx + 1}</span>}
+
+                                    <div>
+                                        <Link to={`/subject/${item.subjectId}`} style={{ color: 'white', fontWeight: '700', fontSize: '1rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                            {item.type === 'concepts' ? <BookOpen size={16} color="var(--primary)" /> : <HelpCircle size={16} color="var(--secondary)" />}
+                                            {item.type === 'concepts' ? item.title : item.question}
+                                        </Link>
+                                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                            <Bookmark size={10} /> {item.subjectTitle}
+                                        </div>
+                                    </div>
+
+                                    {!isMobile && (
+                                        <div style={{ fontSize: '0.7rem', fontWeight: '900', textTransform: 'uppercase', opacity: 0.5 }}>
+                                            {item.type === 'concepts' ? 'Technical Note' : 'Practice Unit'}
+                                        </div>
+                                    )}
+
+                                    <div style={{ display: 'flex', justifyContent: isMobile ? 'flex-start' : 'flex-end', gap: '1rem' }}>
+                                        <button onClick={(e) => handleToggleImportant(e, item.subjectId, item.type, item.index)} style={{ background: 'none', border: 'none', color: item.important ? 'var(--warning)' : 'rgba(255,255,255,0.1)', cursor: 'pointer' }}>
+                                            <Star size={18} fill={item.important ? 'currentColor' : 'none'} />
+                                        </button>
+                                        <button onClick={(e) => handleDelete(e, item.subjectId, item.type, item.index)} style={{ background: 'none', border: 'none', color: 'rgba(239, 68, 68, 0.4)', cursor: 'pointer' }}>
+                                            <Trash2 size={18} />
+                                        </button>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </AnimatePresence>
+
+                        {activeItems.length === 0 && (
+                            <div style={{ textAlign: 'center', padding: '100px 0', opacity: 0.3 }}>
+                                <Bookmark size={48} style={{ marginBottom: '1rem' }} />
+                                <h3>Nothing archived here yet.</h3>
+                            </div>
+                        )}
+                    </div>
+                </div>
+            </main>
         </div>
     );
 };
