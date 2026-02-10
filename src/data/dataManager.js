@@ -2,7 +2,7 @@ import { subjects as initialSubjects } from './subjects';
 
 const STORAGE_KEY = 'placement_ready_data';
 const STORAGE_VERSION_KEY = 'placement_ready_data_version';
-const DATA_VERSION = 'dbms-v5';
+const DATA_VERSION = 'dbms-v6';
 
 export const getData = () => {
     try {

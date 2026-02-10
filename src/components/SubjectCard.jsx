@@ -24,7 +24,9 @@ const SubjectCard = ({ subject, index }) => {
             web: { shadow: 'rgba(45, 212, 191, 0.4)', text: '#2dd4bf' },
             cd: { shadow: 'rgba(167, 139, 250, 0.4)', text: '#a78bfa' },
             se: { shadow: 'rgba(251, 113, 133, 0.4)', text: '#fb7185' },
-            ai: { shadow: 'rgba(250, 204, 21, 0.4)', text: '#facc15' }
+            ai: { shadow: 'rgba(250, 204, 21, 0.4)', text: '#facc15' },
+            algo: { shadow: 'rgba(244, 63, 94, 0.4)', text: '#f43f5e' },
+            hr: { shadow: 'rgba(20, 184, 166, 0.4)', text: '#14b8a6' }
         };
         return colors[id] || { shadow: 'rgba(16, 185, 129, 0.4)', text: 'var(--primary)' };
     };

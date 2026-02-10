@@ -1298,5 +1298,185 @@ export const subjects = [
             { worksheet: 'Worksheet 5', question: 'Time complexity of iterative DP Fibonacci?', options: ['O(n)', 'O(W)', 'O(n^2)', 'O(log n)'], answer: 0, explanation: 'Calculates n elements in one loop.' },
             { worksheet: 'Worksheet 5', question: 'Knapsack 0/1: Cap 10, Weights [2,4,5], Values [6,8,7]. Max value?', options: ['13', '14', '15', '21'], answer: 1, explanation: 'Take item 1 (2kg/6v) and item 2 (4kg/8v). Total 6kg/14v. Adding item 3 exceeds capacity or replaces higher value.' }
         ]
+    },
+    {
+        id: 'hr',
+        title: 'HR Interview',
+        icon: 'Users',
+        description: 'Master behavioral questions, company research, situation-based responses, and professional etiquette.',
+        concepts: [
+            {
+                title: '1. Tell me about yourself',
+                content: 'This is usually the icebreaker. Focus on your professional journey, key achievements, and current goals. Use the **Past-Present-Future** model:\n• **Past**: Your education and previous relevant experience.\n• **Present**: Your current role/project and core skills.\n• **Future**: Why you are excited about this specific opportunity.\n\n**Assessment:** Communication skills, background, and professional focus.'
+            },
+            {
+                title: '2. Why do you want to work for our company?',
+                content: 'Show that you’ve done your research. Align your personal values or career goals with the company’s mission.\n• Mention specific products, culture, or recent news.\n• Avoid generic answers like "It’s a big company."'
+            },
+            {
+                title: '3. What do you know about our company?',
+                content: 'Demonstrates initiative and research skills.\n• Discuss the company’s history, core services, notable achievements, and their position in the market.\n• Mention their tech stack or recent projects if applicable.'
+            },
+            {
+                title: '4. What are your strengths and weaknesses?',
+                content: '• **Strengths**: Choose 2-3 traits relevant to the job (e.g., problem-solving, fast learner). Provide examples.\n• **Weaknesses**: Show self-awareness. Choose a real but non-critical weakness and explain the steps you are taking to improve it.'
+            },
+            {
+                title: '5. Describe a challenging project you’ve worked on',
+                content: 'Use the **STAR** method:\n• **S**ituation: Set the scene.\n• **T**ask: What was the challenge?\n• **A**ction: What specifically did you do?\n• **R**esult: What was the positive outcome?\n\n**Assessment:** Problem-solving, technical depth, and teamwork.'
+            },
+            {
+                title: '6. Staying Updated with Technology',
+                content: 'IT is fast-paced. Show you are a lifelong learner.\n• Mention specific sources: Tech blogs (TechCrunch, Medium), Online courses (Coursera, Udemy), Podcasts, or GitHub open source contributions.'
+            },
+            {
+                title: '7. Explaining Technical Concepts Simply',
+                content: 'Tests your ability to communicate with non-technical stakeholders.\n• Pick a concept from your resume (e.g., Virtual DOM, Indexing).\n• Explain it using an analogy to show true understanding.'
+            },
+            {
+                title: '8. Deadlines and Priority Management',
+                content: 'How do you handle stress and "firefighting"?\n• Mention tools (Jira, Trello, To-do lists).\n• Explain how you evaluate urgency vs. importance (Eisenhower Matrix).\n• Discuss communication: informing stakeholders early if a deadline is at risk.'
+            },
+            {
+                title: '9. Handling Difficult Team Members or Clients',
+                content: 'Assesses interpersonal skills and professionalism.\n• Focus on empathy and objective communication.\n• Describe a situation where you depersonalized the conflict and focused on the project goal.'
+            },
+            {
+                title: '10. Where do you see yourself in 5 years?',
+                content: 'Shows ambition and commitment.\n• Align your growth path with the company’s opportunities.\n• Talk about mastering specific skills or taking on leadership/mentorship roles within the organization.'
+            },
+            {
+                title: '11. Team Environment & Collaboration',
+                content: 'Are you a "lone wolf" or a team player?\n• Discuss how you contribute to technical discussions.\n• Mention how you support peers and value diverse perspectives for better solutions.'
+            },
+            {
+                title: '12. Proficiency in Languages & Tech',
+                content: 'Be honest and specific.\n• Don’t just list names; mention *how* you used them.\n• Example: "I used Python for data scraping and React for the interactive dashboard."'
+            },
+            {
+                title: '13. Learning New Tech Quickly',
+                content: 'Demonstrates adaptability.\n• Describe a time you were given a task in a language you didn’t know.\n• Explain your process: Reading docs, building a "Hello World," and seeking mentorship.'
+            },
+            {
+                title: '14. Constructive Criticism & Code Reviews',
+                content: 'Shows humility and growth mindset.\n• Explain that you view feedback as an opportunity to improve code quality, not a personal attack.\n• Discuss how you incorporate suggestions from senior developers.'
+            },
+            {
+                title: '15. Work Motivation',
+                content: 'What keeps you engaged?\n• Examples: Solving complex puzzles, making a positive impact on users, or the excitement of learning new frameworks.'
+            },
+            {
+                title: '16. Recent Technology Trends',
+                content: 'Shows passion for the field.\n• Discuss something like Generative AI, Edge Computing, or Quantum Computing.\n• Explain its potential impact on the industry.'
+            },
+            {
+                title: '17. Stress Management in the Workplace',
+                content: 'High-pressure environments are common in IT.\n• Strategies: Breaking large tasks into smaller ones, taking short mental breaks, or practicing mindfulness and prioritization.'
+            },
+            {
+                title: '18. Professional Achievements',
+                content: 'Quantify your success if possible.\n• "I optimized a query that reduced load time by 40%" is better than "I made it faster."'
+            },
+            {
+                title: '19. Troubleshooting & Debugging Approach',
+                content: 'Explain your systematic process:\n1. Reproduce the error.\n2. Isolate the cause (using logs/debuggers).\n3. Test potential fixes in a safe environment.\n4. Apply solution and document.'
+            },
+            {
+                title: '20. Team Role & Leadership',
+                content: 'Do you lead by example? Coordinate communication? Or provide deep technical expertise?\n• Describe your natural tendency and how you adapt to what the team needs.'
+            },
+            {
+                title: '21. Conflict Resolution Skills',
+                content: 'Describe a specific mediation.\n• Focus on listen-first approach and finding a "win-win" solution that serves the project.'
+            },
+            {
+                title: '22. Agile & Software Methodologies',
+                content: 'Discuss your familiarity with Sprints, Stand-ups, Backlog grooming, and Retrospectives.\n• Explain how Agile helps in delivering value incrementally.'
+            },
+            {
+                title: '23. IT Industry Challenges',
+                content: 'Critical thinking exercise.\n• Mention data privacy, cybersecurity threats, or the ethical implications of AI.\n• Discuss how companies can bridge the skills gap.'
+            },
+            {
+                title: '24. Cloud Computing (AWS/Azure/GCP)',
+                content: 'Discuss your experience with deployment, storage (S3), or serverless functions.\n• Understand the shift from On-Premise to Cloud (Scalability, Cost-efficiency).'
+            },
+            {
+                title: '25. Security & Secure Coding',
+                content: 'Security is everyone’s job.\n• Mention: Input validation, avoiding hardcoded secrets, and using HTTPS.\n• Familiarity with OWASP Top 10 is a huge plus.'
+            },
+            {
+                title: '26. Performance & Scalability Optimization',
+                content: 'How do you handle growth?\n• Mention: Caching (Redis), Load balancing, Indexing, and horizontal vs. vertical scaling.'
+            },
+            {
+                title: '27. Documentation Practices',
+                content: 'Good code is documented code.\n• Discuss writing clean comments, README files, and API documentation (Swagger).'
+            },
+            {
+                title: '28. Version Control (Git)',
+                content: 'Standard industry tool.\n• Explain your workflow: Branching for features, Pull Requests for reviews, and resolving merge conflicts.'
+            },
+            {
+                title: '29. CI/CD Workflows',
+                content: 'Automation in development.\n• Discuss how automated testing and deployment pipelines reduce manual errors and speed up shipping.'
+            },
+            {
+                title: '30. Database Management (DBMS)',
+                content: 'Knowledge of SQL vs. NoSQL.\n• Explain when to use which: Relational for consistency/complex joins, NoSQL for speed/unstructured data.'
+            },
+            {
+                title: '31. Resource Constraints & Budgeting',
+                content: 'Shows business awareness.\n• Describe a time you had to find a free/open-source alternative to solve a problem due to budget limits.'
+            },
+            {
+                title: '32. Giving Peer Feedback',
+                content: 'Crucial for team growth.\n• Explain how you give specific, actionable, and kind feedback during code reviews.'
+            },
+            {
+                title: '33. Software Testing & QA',
+                content: 'Assuring quality.\n• Experience with Unit testing, Integration testing, and UAT (User Acceptance Testing).'
+            },
+            {
+                title: '34. Handling Ambiguous Requirements',
+                content: 'Proactivity.\n• Explain how you ask clarifying questions and create prototypes to align expectations with stakeholders.'
+            },
+            {
+                title: '35. Qualities of a Successful Professional',
+                content: 'Adaptability, Curiosity, Resilience, and High Ownership.\n• Mention that technical skill is the baseline, but "soft skills" determine the ceiling.'
+            }
+        ],
+        mcqs: [
+            {
+                question: 'What is the most effective model for answering behavioral interview questions?',
+                options: ['FAST model', 'STAR method', 'LINEAR approach', 'RANDOM strategy'],
+                answer: 1,
+                explanation: 'The STAR (Situation, Task, Action, Result) method helps structure responses clearly and effectively.'
+            },
+            {
+                question: 'When asked about a weakness, what is the best strategy?',
+                options: ['Say you have no weaknesses', 'Pick a weakness that is actually a strength (e.g., perfectionism)', 'Share a genuine minor weakness and show how you are improving it', 'Blame others for your shortcomings'],
+                answer: 2,
+                explanation: 'Honesty combined with a proactive improvement plan shows self-awareness and professional growth.'
+            },
+            {
+                question: 'Which of the following is a core pillar of the Agile Manifesto?',
+                options: ['Process over people', 'Comprehensive documentation over working software', 'Responding to change over following a plan', 'Contract negotiation over collaboration'],
+                answer: 2,
+                explanation: 'Agile prioritizes flexibility and responding to change to deliver better value.'
+            },
+            {
+                question: 'What does CI/CD stand for in software development?',
+                options: ['Code Integration / Code Deployment', 'Continuous Integration / Continuous Deployment', 'Client Interface / Client Design', 'Computed Integration / Computed Data'],
+                answer: 1,
+                explanation: 'Continuous Integration and Continuous Deployment/Delivery is a standard DevOps practice.'
+            },
+            {
+                question: 'How should you handle receiving constructive criticism during a code review?',
+                options: ['Defend your code at all costs', 'Ignore the comments if you disagree', 'View it as a learning opportunity and discuss improvements professionally', 'Complain to management about the reviewer'],
+                answer: 2,
+                explanation: 'Professionalism and a focus on code quality are essential traits for a collaborative developer.'
+            }
+        ]
     }
 ];
