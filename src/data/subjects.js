@@ -921,24 +921,100 @@ export const subjects = [
         id: 'oops',
         title: 'OOPs Concepts',
         icon: 'Code',
-        description: 'Advanced Classes, Objects, Inheritance, Polymorphism, and Solid Principles.',
+        description: 'Complete mastery of Classes, Objects, Inheritance, Polymorphism, Abstraction, Encapsulation, Design Patterns, and SOLID Principles.',
         concepts: [
             {
-                title: 'The Four Pillars of OOPs',
-                content: '1. **Encapsulation**: Wrapping data and methods into a single unit.\n2. **Abstraction**: Hiding internal details and showing only functionality.\n3. **Inheritance**: Acquiring properties of a parent class.\n4. **Polymorphism**: Ability of a message to be displayed in more than one form (Overloading & Overriding).'
+                title: '1. Introduction to OOP',
+                content: 'Object-Oriented Programming (OOP) is a paradigm based on "objects" which contain data (attributes) and code (methods).\n\n**Key Pillars:**\n• **Encapsulation**: Bundling data and methods; hiding internal state.\n• **Inheritance**: Acquiring properties from a base class.\n• **Polymorphism**: Single interface representing multiple underlying forms.\n• **Abstraction**: Hiding implementation details, showing only essentials.\n\n**Benefits:**\n• **Modularity**: Easier to maintain and modify.\n• **Reusability**: Code reuse via inheritance/composition.\n• **Scalability**: Building complex systems from reusable components.'
             },
             {
-                title: 'SOLID Principles',
-                content: 'A guide for better object-oriented design:\n\n• **S**: Single Responsibility.\n• **O**: Open/Closed (Open for extension, closed for modification).\n• **L**: Liskov Substitution.\n• **I**: Interface Segregation.\n• **D**: Dependency Inversion.'
+                title: '2. Classes and Objects',
+                content: 'A **Class** is a blueprint (template) that defines attributes and methods.\nAn **Object** is an instance of a class, representing a concrete realization.\n\n**Example (Car Class):**\n• **Attributes**: brand, model, speed.\n• **Methods**: start_engine(), drive().\n• **Instance**: `my_car = Car("Toyota", "Camry")`.'
+            },
+            {
+                title: '3. Inheritance & Hierarchy',
+                content: 'Allows a subclass to inherit properties from a superclass.\n\n**Key Concepts:**\n• **Code Reuse**: Subclasses extend functionality without duplicating code.\n• **Method Overriding**: Subclass provides specialized behavior for inherited methods.\n• **Types**: Single, Multiple (via Interfaces in Java), Multilevel, Hierarchical, and Hybrid inheritance.'
+            },
+            {
+                title: '4. Polymorphism: Static vs Dynamic',
+                content: 'Polymorphism allows objects to be treated as instances of their parent class.\n\n**Types:**\n• **Compile-Time (Static)**: Method Overloading (same name, different parameters).\n• **Run-Time (Dynamic)**: Method Overriding (subclass redefines parent method). Resolved at runtime via **Dynamic Binding**.'
+            },
+            {
+                title: '5. Encapsulation & Access Control',
+                content: 'Bundling data and methods into a single unit and restricting access.\n\n**Mechanisms:**\n• **Data Hiding**: Prevents direct modification of internal state.\n• **Access Modifiers**: \n  - `public`: Accessible from anywhere.\n  - `private`: Only within the same class.\n  - `protected`: Same package and subclasses.'
+            },
+            {
+                title: '6. Abstraction: Interfaces & Abstract Classes',
+                content: 'Hiding internal complexity and defining contracts.\n\n• **Abstract Classes**: Cannot be instantiated; can have both abstract (no body) and concrete methods.\n• **Interfaces**: A pure contract (all methods abstract by default); supports multiple inheritance (class can implement many interfaces).'
+            },
+            {
+                title: '7. Exception Handling',
+                content: 'Mechanism to detect and resolve runtime errors without crashing the program.\n\n**Keywords:**\n• `try`: Block containing code that might throw an error.\n• `catch`: Block to handle the thrown exception.\n• `finally`: Code that runs regardless of an error (cleanup).\n• `throw`: Explicitly trigger an exception.'
+            },
+            {
+                title: '8. Design Patterns',
+                content: 'Reusable solutions to common design problems.\n\n**Categories:**\n1. **Creational**: Object creation (Singleton, Factory, Builder, Prototype).\n2. **Structural**: Object composition (Adapter, Decorator, Facade, Proxy).\n3. **Behavioral**: Object communication (Observer, Strategy, Command, State).'
+            },
+            {
+                title: '9. SOLID Principles (Best Practices)',
+                content: 'Expert-level design guidelines:\n• **SRP**: Class should have only one reason to change.\n• **OCP**: Open for extension, closed for modification.\n• **LSP**: Subtypes must be substitutable for base types.\n• **ISP**: Clients shouldn\'t be forced to depend on unused interfaces.\n• **DIP**: Depend on abstractions, not concretions.'
+            },
+            {
+                title: '10. Important Terminology Matrix',
+                content: '• **Composition**: "Has-A" relationship (Car has an Engine).\n• **Constructor**: Special method to initialize objects.\n• **Destructor**: Method to release resources (important in C++).\n• **Static**: Belongs to class, not instance.\n• **Final**: Prevents overriding or subclassing.\n• **Immutable**: State cannot change after creation.'
+            },
+            {
+                title: '11. High-Frequency Interview Questions',
+                content: '1. Difference between Abstraction and Encapsulation?\n2. Why does Java not support multiple inheritance with classes? (Diamond Problem).\n3. Difference between `this` and `super`?\n4. What is a Singleton class and how to implement it?\n5. Explain Shallow Copy vs Deep Copy.'
             }
         ],
         mcqs: [
-            {
-                question: 'Which principle states that subclasses should be substitutable for their base classes?',
-                options: ['Dependency Inversion', 'Liskov Substitution', 'Interface Segregation', 'Single Responsibility'],
-                answer: 1,
-                explanation: 'Liskov Substitution Principle (LSP) ensures that a derived class can stand in for its base class without breaking the program.'
-            }
+            // Worksheet 1
+            { worksheet: 'Worksheet 1', question: 'Which concept in OOP is used to hide inner workings and only expose functionality?', options: ['Abstraction', 'Encapsulation', 'Polymorphism', 'Inheritance'], answer: 1, explanation: 'Encapsulation bundles data and methods and hides the internal state.' },
+            { worksheet: 'Worksheet 1', question: 'What is the key feature of inheritance in OOP?', options: ['Subclass inherits from superclass', 'Objects cannot inherit', 'Not supported in OOP', 'Created by constructors'], answer: 0, explanation: 'Inheritance allows a derived class to acquire properties of a base class.' },
+            { worksheet: 'Worksheet 1', question: 'Correct example of method overloading?', options: ['Same name, Different return type', 'Same name, Different arguments', 'No arguments', 'None'], answer: 1, explanation: 'Overloading requires same name but different signatures (parameters).' },
+            { worksheet: 'Worksheet 1', question: 'What is polymorphism in OOP?', options: ['Create many classes from one parent', 'Objects respond differently to same message', 'Same method name in all classes', 'None'], answer: 1, explanation: 'Ability of different objects to respond to the same call in specialized ways.' },
+            { worksheet: 'Worksheet 1', question: 'Purpose of a constructor?', options: ['Create objects', 'Initialize objects', 'Destroy objects', 'Return values'], answer: 1, explanation: 'Constructors are special methods used to set initial state of an object.' },
+            { worksheet: 'Worksheet 1', question: 'Modifier that restricts access ONLY to within the same class?', options: ['public', 'private', 'protected', 'default'], answer: 1, explanation: 'Private members are not accessible outside their containing class.' },
+            { worksheet: 'Worksheet 1', question: 'Significance of "super" keyword?', options: ['Refers to superclass', 'Used for overloading', 'Prevents inheritance', 'Initializes objects'], answer: 0, explanation: 'Used to access members or constructors of the parent class.' },
+            { worksheet: 'Worksheet 1', question: 'What is encapsulation?', options: ['Wrapping data and methods', 'Information hiding', 'Polymorphic response', 'Multi-class creation'], answer: 0, explanation: 'The bundling of data and the methods that operate on that data into a single unit.' },
+            { worksheet: 'Worksheet 1', question: 'Example of multiple inheritance?', options: ['Class inheriting from 2+ classes', 'Class inheriting from 1 class', 'Implementing multiple interfaces', 'None'], answer: 0, explanation: 'Acquiring properties from more than one immediate parent class.' },
+            { worksheet: 'Worksheet 1', question: 'Keyword used to inherit from a class in Java?', options: ['extends', 'inherit', 'super', 'implements'], answer: 0, explanation: 'extends keyword establishes the parent-child relationship.' },
+
+            // Worksheet 2
+            { worksheet: 'Worksheet 2', question: 'True about encapsulation?', options: ['Hide state and require methods for interaction', 'Allows global access to state', 'Refers to object creation', 'Used to share data'], answer: 0, explanation: 'Encapsulation ensures data integrity by controlling access.' },
+            { worksheet: 'Worksheet 2', question: 'Used to define a new class based on an existing class?', options: ['Overloading', 'Inheritance', 'Encapsulation', 'Abstraction'], answer: 1, explanation: 'Inheritance is the mechanism for deriving classes.' },
+            { worksheet: 'Worksheet 2', question: 'Main difference between abstract class and interface?', options: ['Abstract class has concrete methods; Interface (purely) does not', 'Abstract class no constructors', 'Abstract class cannot be inherited', 'No difference'], answer: 0, explanation: 'Abstract classes can have partial implementation; interfaces are pure contracts.' },
+            { worksheet: 'Worksheet 2', question: 'Method called on a null object reference in Java?', options: ['Executes normally', 'NullPointerException', 'Default value', 'Termination'], answer: 1, explanation: 'Accessing members of a null reference triggers this runtime exception.' },
+            { worksheet: 'Worksheet 2', question: 'Constructor overloading?', options: ['Multiple constructors with different parameters', 'Same name, different params', 'Overriding constructor', 'Same return type'], answer: 0, explanation: 'Providing multiple ways to initialize an object.' },
+            { worksheet: 'Worksheet 2', question: 'Result of "final" keyword with a class in Java?', options: ['Cannot instantiate', 'Cannot subclass', 'Private methods', 'No overloading'], answer: 1, explanation: 'Final classes cannot be extended.' },
+            { worksheet: 'Worksheet 2', question: 'NOT a feature of OOP?', options: ['Inheritance', 'Polymorphism', 'Modularity', 'Structured Programming'], answer: 3, explanation: 'Structured programming (like C) is a different paradigm from OOP.' },
+            { worksheet: 'Worksheet 2', question: 'When to use abstract class over interface?', options: ['To provide default implementation', 'Pure method definitions', 'Represent multiple behaviors', 'None'], answer: 0, explanation: 'If you want to share common code across all subclasses.' },
+            { worksheet: 'Worksheet 2', question: 'Method overriding?', options: ['Same signature in child as parent', 'Different signature in child', 'Change access modifier', 'None'], answer: 0, explanation: 'Run-time polymorphism where child redefines parent behavior.' },
+            { worksheet: 'Worksheet 2', question: 'True about class constructor in Java?', options: ['Must return value', 'Called automatically on creation', 'One argument only', 'Return type needed'], answer: 1, explanation: 'Constructors are invoked during the `new` operation.' },
+
+            // Worksheet 3
+            { worksheet: 'Worksheet 3', question: 'Benefit of polymorphism?', options: ['Treat different objects as common superclass', 'Makes overloading possible', 'Implements abstraction', 'Enforces inheritance'], answer: 0, explanation: 'Allows for generic code that works with different but related types.' },
+            { worksheet: 'Worksheet 3', question: 'When use method overloading?', options: ['Change signature, keep functionality', 'Same name, different return type', 'Same name, different parameter types', 'Override superclass'], answer: 2, explanation: 'Overloading handles different inputs for conceptually same operations.' },
+            { worksheet: 'Worksheet 3', question: 'Purpose of "this" keyword in Java?', options: ['Refer to current object instance', 'Create instance', 'Reference static method', 'Reference class variables only'], answer: 0, explanation: 'Differentiates instance variables from parameters with same name.' },
+            { worksheet: 'Worksheet 3', question: 'True about interfaces in Java?', options: ['Provide implementations', 'Class can implement multiple', 'Cannot extend other interfaces', 'Instance variables allowed'], answer: 1, explanation: 'Java supports multiple inheritance through interfaces.' },
+            { worksheet: 'Worksheet 3', question: 'Best describes "inheritance"?', options: ['Create new class from existing', 'Hide implementation', 'Allow subclassing only', 'Methods with same signature'], answer: 0, explanation: 'A mechanism for hierarchy and reuse.' },
+            { worksheet: 'Worksheet 3', question: 'Subclass calls method overridden in superclass?', options: ['Subclass version executed', 'Superclass version executed', 'Compilation error', 'Both executed'], answer: 0, explanation: 'The most specific (child) version takes precedence.' },
+            { worksheet: 'Worksheet 3', question: 'Difference between super() and this() in constructors?', options: ['super() calls parent; this() calls sibling constructor', 'super() calls sibling', 'super() initializes variables', 'No difference'], answer: 0, explanation: 'Both must be the first line in a constructor, used for chaining.' },
+            { worksheet: 'Worksheet 3', question: 'Example of "composition" in OOP?', options: ['Inheriting from class', 'Class containing objects of other classes', 'Implementing interface', 'Static methods'], answer: 1, explanation: 'A "Has-A" relationship where a class is composed of other objects.' },
+            { worksheet: 'Worksheet 3', question: 'NOT a valid access modifier in Java?', options: ['public', 'private', 'protected', 'global'], answer: 3, explanation: 'Java uses public, private, protected, and default (no keyword).' },
+            { worksheet: 'Worksheet 3', question: 'Result of instantiating an abstract class in Java?', options: ['Works if concrete method present', 'Runtime exception', 'Compilation error', 'Reflection only'], answer: 2, explanation: 'Abstract classes are designed only for inheritance, not instantiation.' },
+
+            // Worksheet 4
+            { worksheet: 'Worksheet 4', question: 'Copy constructors can be used to?', options: ['Pass object to another primitive', 'Type casting', 'Pass object to a function', 'Pass object to a class'], answer: 2, explanation: 'Creates a deep copy of an object for passing or assignment.' },
+            { worksheet: 'Worksheet 4', question: 'Correct constructor representation?', options: ['-classname()', 'classname()', '()classname', '~classname()'], answer: 1, explanation: 'Constructors share the class name and have no return type.' },
+            { worksheet: 'Worksheet 4', question: 'Purpose of try, catch, and finally?', options: ['Handle errors/exceptions', 'Create objects', 'Define class', 'Polymorphism'], answer: 0, explanation: 'Standard pattern for robust error management.' },
+            { worksheet: 'Worksheet 4', question: 'NOT a valid modifier for a class in Java?', options: ['public', 'private', 'protected', 'static'], answer: 3, explanation: 'Top-level classes cannot be static; only inner classes can.' },
+            { worksheet: 'Worksheet 4', question: 'Purpose of "instanceof"?', options: ['Check if object belongs to class/type', 'Create instance', 'Check if abstract', 'Check if final'], answer: 0, explanation: 'Operator for type checking at runtime.' },
+            { worksheet: 'Worksheet 4', question: 'Method overloading vs overriding?', options: ['Static vs Dynamic binding', 'Dynamic vs Static', 'Signatures same vs different', 'None'], answer: 0, explanation: 'Overloading is compile-time (static); Overriding is runtime (dynamic).' },
+            { worksheet: 'Worksheet 4', question: 'Used to prevent method overriding in Java?', options: ['static', 'final', 'abstract', 'private'], answer: 1, explanation: 'Final methods cannot be redefined in subclasses.' },
+            { worksheet: 'Worksheet 4', question: 'Object passed by reference?', options: ['Destructor called at end', 'Called explicitly', 'Not called', 'Called when out of scope'], answer: 3, explanation: 'Memory management handles cleanup when scope ends.' },
+            { worksheet: 'Worksheet 4', question: 'How to overcome "Diamond Problem"?', options: ['Separate derived class', 'Virtual keyword', 'Cannot be done', 'Alias name'], answer: 1, explanation: 'In C++, virtual inheritance resolves duplicate base objects.' }
         ]
     },
     {
