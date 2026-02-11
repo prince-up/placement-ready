@@ -139,17 +139,8 @@ const SubjectDetail = () => {
         [subject, id, activeTab, progressTick]
     );
 
-    useEffect(() => {
-        if (!currentItem || !currentKey || isCurrentRead) return;
-        const timer = setTimeout(() => {
-            markItemRead(id, activeTab, currentKey);
-            setProgressTick(prev => prev + 1);
-            if (selectedItemIndex < filteredItems.length - 1) {
-                setSelectedItemIndex(prev => Math.min(prev + 1, filteredItems.length - 1));
-            }
-        }, READ_DELAY_MS);
-        return () => clearTimeout(timer);
-    }, [id, activeTab, currentKey, currentItem, isCurrentRead, filteredItems.length, selectedItemIndex]);
+    // Auto-advance feature removed - users now have full manual control
+    // Items are only marked as read when clicking the "Mark Read" button
 
     if (!subject) {
         return <div style={{ padding: '160px', textAlign: 'center' }}><Sparkles className="animate-float" /> Loading Subject...</div>;
