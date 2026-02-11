@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft, ArrowRight, BookOpen, HelpCircle, Star, Plus, Trash2, ChevronRight, Bookmark, Search, Clock, CheckCircle2, Sparkles, Terminal, Code2, Menu, X, Smartphone, Globe, Cpu, Database, Network, Layout } from 'lucide-react';
 import { getData, toggleImportant, deleteItem, markItemRead, isItemRead, getReadCount } from '../data/dataManager';
 import AddContentModal from '../components/AddContentModal';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const SubjectDetail = () => {
     const { id } = useParams();
@@ -50,6 +51,11 @@ const SubjectDetail = () => {
     useEffect(() => {
         setSelectedOptionIndex(null);
         setIsAnswerRevealed(false);
+        // Auto-scroll sidebar to active item
+        const activeItemEl = document.getElementById(`sidebar-item-${selectedItemIndex}`);
+        if (activeItemEl) {
+            activeItemEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }, [selectedItemIndex]);
 
 
@@ -362,7 +368,7 @@ const SubjectDetail = () => {
                 justifyContent: 'space-between',
                 position: 'sticky',
                 top: '80px',
-                zIndex: 100,
+                zIndex: 200,
                 gap: '1rem'
             }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -470,6 +476,7 @@ const SubjectDetail = () => {
                             return (
                                 <button
                                     key={index}
+                                    id={`sidebar-item-${index}`}
                                     onClick={() => {
                                         setSelectedItemIndex(index);
                                         if (isMobile) setIsSidebarOpen(false);
@@ -501,6 +508,12 @@ const SubjectDetail = () => {
                     margin: '0 auto',
                     width: '100%'
                 }}>
+                    <Breadcrumbs customItems={[
+                        { label: 'Home', path: '/' },
+                        { label: 'Curriculum', path: '/#subjects' },
+                        { label: subject.title, path: null }
+                    ]} />
+
                     <AnimatePresence mode="wait">
                         {currentItem ? (
                             <motion.div

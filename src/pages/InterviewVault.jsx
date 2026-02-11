@@ -6,6 +6,7 @@ import {
     UserCheck, Search, Target, Users, Zap, AlertTriangle,
     CheckCircle, Info, Sparkles, Filter, X
 } from 'lucide-react';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const InterviewVault = () => {
     const [openId, setOpenId] = useState(null);
@@ -43,6 +44,7 @@ const InterviewVault = () => {
     return (
         <div style={{ paddingTop: isMobile ? '100px' : '140px', minHeight: '100vh', paddingBottom: '80px', background: 'var(--bg-dark)' }}>
             <div className="container" style={{ maxWidth: '1100px' }}>
+                <Breadcrumbs />
 
                 {/* Header Section */}
                 <div style={{ marginBottom: isMobile ? '2.5rem' : '4rem' }}>

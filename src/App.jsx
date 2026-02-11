@@ -14,6 +14,10 @@ import { ThemeProvider } from './context/ThemeContext';
 import CohortModal from './components/CohortModal';
 import { AuthProvider } from './context/AuthContext';
 
+import GlobalSearch from './components/GlobalSearch';
+import NotFound from './pages/NotFound';
+
+
 const AppContent = () => {
   const { isCohortModalOpen, closeCohortModal } = useCohort();
   const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
@@ -28,6 +32,7 @@ const AppContent = () => {
 
   return (
     <div className="app-root">
+      <GlobalSearch />
       {/* Background System */}
       <div className="bg-mesh" />
 
@@ -59,6 +64,7 @@ const AppContent = () => {
           <Route path="/company-sheets" element={<CompanySheets />} />
           <Route path="/buy-premium" element={<BuyPremium />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

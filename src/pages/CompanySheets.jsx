@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { companySheets } from '../data/interviewData';
 import { Target, ShieldCheck, Briefcase, Zap, Rocket, ChevronRight, Check } from 'lucide-react';
+import Breadcrumbs from '../components/Breadcrumbs';
 import { useCohort } from '../context/CohortContext';
 
 const CompanySheets = () => {
@@ -17,6 +18,7 @@ const CompanySheets = () => {
     return (
         <div style={{ paddingTop: isMobile ? '100px' : '140px', minHeight: '100vh', paddingBottom: '80px', background: 'var(--bg-dark)' }}>
             <div className="container" style={{ maxWidth: '1100px' }}>
+                <Breadcrumbs />
 
                 {/* Header Section */}
                 <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} style={{ marginBottom: isMobile ? '3rem' : '5rem', textAlign: isMobile ? 'left' : 'center' }}>

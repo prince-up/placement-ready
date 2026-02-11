@@ -5,11 +5,14 @@ import { resetData } from '../data/dataManager';
 import { useTheme } from '../context/ThemeContext';
 import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import SettingsModal from './SettingsModal';
+import FeedbackModal from './FeedbackModal';
 
 const Navbar = () => {
     const { isDark, toggleTheme } = useTheme();
     const { user, signOut } = useAuth();
     const [showSettings, setShowSettings] = useState(false);
+    const [showFeedback, setShowFeedback] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
@@ -113,6 +116,22 @@ const Navbar = () => {
 
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                             <button
+                                onClick={() => setShowFeedback(true)}
+                                style={{
+                                    background: 'transparent',
+                                    border: '1px solid var(--border-glass)',
+                                    color: 'var(--text-muted)',
+                                    padding: '8px 12px',
+                                    borderRadius: '8px',
+                                    fontSize: '0.75rem',
+                                    fontWeight: '700',
+                                    cursor: 'pointer',
+                                    transition: 'var(--transition)'
+                                }}
+                            >
+                                Feedback
+                            </button>
+                            <button
                                 onClick={handleBuyPremium}
                                 style={{
                                     background: 'var(--primary)',
@@ -129,7 +148,7 @@ const Navbar = () => {
                                 BUY PREMIUM
                             </button>
                             <button
-                                onClick={handleAuth}
+                                onClick={() => user ? setShowSettings(true) : handleAuth()}
                                 title={user?.email || 'Profile'}
                                 style={{
                                     width: '34px',
@@ -261,6 +280,20 @@ const Navbar = () => {
                             </Link>
                         ))}
                         <button
+                            onClick={() => { setShowFeedback(true); setIsMobileMenuOpen(false); }}
+                            style={{
+                                background: 'var(--bg-card)',
+                                color: 'var(--text-main)',
+                                padding: '14px',
+                                borderRadius: '10px',
+                                border: '1px solid var(--border-glass)',
+                                fontWeight: '800',
+                                width: '100%'
+                            }}
+                        >
+                            Feedback
+                        </button>
+                        <button
                             onClick={() => { navigate('/buy-premium'); setIsMobileMenuOpen(false); }}
                             style={{
                                 background: 'var(--primary)',
@@ -309,6 +342,9 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
+
+            <SettingsModal isOpen={showSettings} onClose={() => setShowSettings(false)} />
+            <FeedbackModal isOpen={showFeedback} onClose={() => setShowFeedback(false)} />
         </nav>
     );
 };

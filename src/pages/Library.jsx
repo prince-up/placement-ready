@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Bookmark, Star, BookOpen, HelpCircle, ArrowRight, Trash2, Search, Zap, Clock, User, Sparkles, ChevronRight, Filter, SortAsc, LayoutList, Menu, X, Award } from 'lucide-react';
 import { getData, toggleImportant, deleteItem, getProgressSummary, getDailyReadTracker } from '../data/dataManager';
+import Breadcrumbs from '../components/Breadcrumbs';
 
 const Library = () => {
     const [allData, setAllData] = useState([]);
@@ -182,6 +183,7 @@ const Library = () => {
                 width: '100%'
             }}>
                 <div style={{ maxWidth: '1050px', margin: '0 auto' }}>
+                    <Breadcrumbs />
 
                     {!isMobile && (
                         <div style={{ marginBottom: '3rem' }}>
