@@ -221,7 +221,7 @@ const Navbar = () => {
                             <button onClick={handleReset} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', opacity: 0.5 }}>
                                 <RotateCcw size={18} />
                             </button>
-                            <a href="https://github.com" target="_blank" rel="noreferrer" style={{ color: 'var(--text-muted)', opacity: 0.6 }}>
+                            <a href="https://github.com/prince-up" target="_blank" rel="noreferrer" style={{ color: 'var(--text-muted)', opacity: 0.6 }}>
                                 <Github size={20} />
                             </a>
                         </div>

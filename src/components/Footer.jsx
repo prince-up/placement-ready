@@ -48,8 +48,8 @@ const Footer = () => {
                         </p>
                         <div style={{ display: 'flex', gap: '12px' }}>
                             {[
-                                { Icon: Github, href: 'https://github.com/' },
-                                { Icon: Linkedin, href: 'https://www.linkedin.com/' },
+                                { Icon: Github, href: 'https://github.com/prince-up' },
+                                { Icon: Linkedin, href: 'https://www.linkedin.com/in/prince-yadav-4t/' },
                                 { Icon: Twitter, href: 'https://twitter.com/' },
                                 { Icon: Mail, href: 'mailto:hello@syllablink.com' }
                             ].map(({ Icon, href }, i) => (

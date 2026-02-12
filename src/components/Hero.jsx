@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ArrowRight, ShieldCheck, Zap, Star, Code, Terminal, Brain, Cpu, BookOpen } from 'lucide-react';
+import { BookOpen, Brain, Cpu, Terminal } from 'lucide-react';
 import { useCohort } from '../context/CohortContext';
 
 const Hero = () => {
@@ -14,151 +14,94 @@ const Hero = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const quickLinks = [
+        { icon: BookOpen, label: 'Operating Systems', count: '45 Topics', href: '#subjects' },
+        { icon: Brain, label: 'DBMS', count: '38 Topics', href: '#subjects' },
+        { icon: Cpu, label: 'Networking', count: '32 Topics', href: '#subjects' },
+        { icon: Terminal, label: 'System Design', count: '25 Topics', href: '#subjects' }
+    ];
+
     return (
         <section style={{
-            paddingTop: isMobile ? '120px' : '180px',
-            paddingBottom: isMobile ? '80px' : '120px',
+            paddingTop: isMobile ? '100px' : '140px',
+            paddingBottom: isMobile ? '60px' : '80px',
             position: 'relative',
             background: 'radial-gradient(circle at 50% -20%, rgba(16, 185, 129, 0.05), transparent 70%)'
         }}>
             <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-                <div style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center' }}>
+                <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
-                    {/* Simple Professional Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        style={{
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            padding: '8px 20px',
-                            background: 'var(--bg-card)',
-                            borderRadius: '8px',
-                            border: '1px solid var(--border-glass)',
-                            color: 'var(--primary)',
-                            marginBottom: '2.5rem',
-                            fontSize: '0.8rem',
-                            fontWeight: '900',
-                            letterSpacing: '0.1em',
-                            textTransform: 'uppercase'
-                        }}
-                    >
-                        <Zap size={14} fill="var(--primary)" /> Syllablink Engineering Archive
-                    </motion.div>
-
-                    <motion.h1
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        style={{
-                            fontSize: isMobile ? '2.8rem' : '5.5rem',
-                            fontWeight: '950',
-                            lineHeight: '1.05',
-                            marginBottom: '2rem',
-                            letterSpacing: '-0.05em',
-                            color: 'var(--text-main)'
-                        }}
-                    >
-                        Last Minute <br />
-                        <span style={{ color: 'var(--primary)' }}>Syllabus Sync.</span>
-                    </motion.h1>
-
-                    <motion.p
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
-                        style={{
-                            fontSize: isMobile ? '1.05rem' : '1.35rem',
-                            color: 'var(--text-muted)',
-                            marginBottom: '3.5rem',
-                            maxWidth: '700px',
-                            margin: '0 auto 3.5rem',
-                            lineHeight: '1.6',
-                            fontWeight: '500'
-                        }}
-                    >
-                        A curated knowledge base designed for technical interview preparation,
-                        covering OS, DBMS, Networking, and advanced System Architecture.
-                    </motion.p>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        style={{
-                            display: 'flex',
-                            gap: '1.5rem',
-                            justifyContent: 'center',
-                            flexDirection: isMobile ? 'column' : 'row',
-                            alignItems: 'center'
-                        }}
-                    >
-                        <a href="#subjects" className="btn-primary" style={{
-                            padding: '16px 36px',
-                            fontSize: '1rem',
-                            borderRadius: '10px',
-                            width: isMobile ? '100%' : 'auto',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '8px',
-                            textDecoration: 'none'
-                        }}>
-                            Browse Curriculum <ArrowRight size={20} />
-                        </a>
-                        <Link
-                            to="/buy-premium"
-                            style={{
-                                padding: '16px 36px',
-                                fontSize: '1rem',
-                                borderRadius: '10px',
-                                border: '1px solid var(--border-glass)',
-                                background: 'var(--bg-card)',
-                                color: 'var(--text-main)',
-                                fontWeight: '800',
-                                cursor: 'pointer',
-                                transition: 'var(--transition)',
-                                width: isMobile ? '100%' : 'auto',
-                                textDecoration: 'none',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            Learning Cohorts 2026
-                        </Link>
-                    </motion.div>
-
-                    {/* Trust Indicators */}
-                    {!isMobile && (
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 0.5 }}
-                            transition={{ delay: 0.6 }}
-                            style={{
-                                marginTop: '6rem',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                gap: '3rem',
-                                fontSize: '0.85rem',
-                                fontWeight: '700',
-                                color: 'var(--text-muted)'
-                            }}
-                        >
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <ShieldCheck size={18} /> Structured Units
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <Code size={18} /> Industry Standards
-                            </div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                <Zap size={18} /> Fast Revision
-                            </div>
-                        </motion.div>
-                    )}
+                    {/* Quick Access Grid */}
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+                        gap: isMobile ? '12px' : '16px'
+                    }}>
+                        {quickLinks.map((link, idx) => (
+                            <motion.a
+                                key={idx}
+                                href={link.href}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: idx * 0.1 }}
+                                style={{
+                                    background: 'var(--bg-card)',
+                                    border: '1px solid var(--border-glass)',
+                                    borderRadius: '12px',
+                                    padding: isMobile ? '1rem' : '1.25rem',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: '8px',
+                                    textDecoration: 'none',
+                                    transition: 'var(--transition)',
+                                    cursor: 'pointer'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-4px)';
+                                    e.currentTarget.style.borderColor = 'var(--primary)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.borderColor = 'var(--border-glass)';
+                                }}
+                            >
+                                <div style={{
+                                    width: '40px',
+                                    height: '40px',
+                                    background: 'rgba(16, 185, 129, 0.1)',
+                                    borderRadius: '10px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: 'var(--primary)'
+                                }}>
+                                    <link.icon size={20} />
+                                </div>
+                                <div>
+                                    <div style={{
+                                        fontSize: '0.9rem',
+                                        fontWeight: '800',
+                                        color: 'var(--text-main)',
+                                        marginBottom: '2px'
+                                    }}>
+                                        {link.label}
+                                    </div>
+                                    <div style={{
+                                        fontSize: '0.7rem',
+                                        fontWeight: '700',
+                                        color: 'var(--text-muted)',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.05em'
+                                    }}>
+                                        {link.count}
+                                    </div>
+                                </div>
+                            </motion.a>
+                        ))}
+                    </div>
                 </div>
             </div>
-        </section >
+        </section>
     );
 };
 

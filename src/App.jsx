@@ -20,15 +20,6 @@ import NotFound from './pages/NotFound';
 
 const AppContent = () => {
   const { isCohortModalOpen, closeCohortModal } = useCohort();
-  const [cursorPos, setCursorPos] = useState({ x: -100, y: -100 });
-
-  useEffect(() => {
-    const handleMouseMove = (e) => {
-      setCursorPos({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   return (
     <div className="app-root">
@@ -36,23 +27,6 @@ const AppContent = () => {
       {/* Background System */}
       <div className="bg-mesh" />
 
-      {/* Advanced Interactive Cursor */}
-      {window.innerWidth > 768 && (
-        <>
-          <div
-            className="custom-cursor"
-            style={{
-              transform: `translate3d(${cursorPos.x}px, ${cursorPos.y}px, 0)`
-            }}
-          />
-          <div
-            className="custom-cursor-follower"
-            style={{
-              transform: `translate3d(${cursorPos.x}px, ${cursorPos.y}px, 0)`
-            }}
-          />
-        </>
-      )}
 
       <Navbar />
       <main style={{ flex: 1 }}>
