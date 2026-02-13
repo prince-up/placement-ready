@@ -2775,6 +2775,146 @@ export const subjects = [
         ]
     },
     {
+        id: 'git',
+        title: 'Git and GitHub',
+        icon: 'GitBranch',
+        description: 'Professional Git workflow, collaboration, interview questions, and a 7-day mastery plan.',
+        concepts: [
+            {
+                title: '1. Git and GitHub Basics',
+                content: 'Git = distributed version control. GitHub = cloud hosting + collaboration platform.\n\nCore terms:\n- Repository, commit, branch, merge, remote, clone, fork\n- Working directory, staging area, local repo, remote repo\n\nLocal flow:\nWorking Directory -> Staging Area (git add) -> Local Repo (git commit) -> Remote Repo (git push)\n\nWhy Git?\n- History, collaboration, rollback, safe experimentation'
+            },
+            {
+                title: '2. Setup and First Commit',
+                content: 'Commands:\n- git --version\n- git config --global user.name "Your Name"\n- git config --global user.email "you@email.com"\n- git init\n- git status\n- git add .\n- git commit -m "Initial commit"\n\nExample:\nmkdir demo && cd demo\n.gitignore created\nGit repo initialized and first commit done.'
+            },
+            {
+                title: '3. Cloning, Remotes, and Push/Pull',
+                content: 'Commands:\n- git clone <url>\n- git remote -v\n- git remote add origin <url>\n- git push -u origin main\n- git pull\n- git fetch\n\nPull definition:\n- git pull = git fetch + git merge\n\nExample:\n- git clone https://github.com/org/app.git\n- git push -u origin main'
+            },
+            {
+                title: '4. Branching and Merging',
+                content: 'Commands:\n- git branch\n- git branch <name>\n- git checkout <name>\n- git checkout -b <name>\n- git merge <branch>\n- git branch -d <name>\n\nExample:\n- git checkout -b feature/profile\n- git merge feature/profile'
+            },
+            {
+                title: '5. Rebasing',
+                content: 'Commands:\n- git rebase <branch>\n- git rebase -i <commit>\n\nUse cases:\n- Clean linear history\n- Squash or edit commits\n\nExample:\n- git checkout feature\n- git rebase main\n- git rebase -i HEAD~3'
+            },
+            {
+                title: '6. Commit History and Inspection',
+                content: 'Commands:\n- git log\n- git log --oneline --graph --decorate\n- git show <commit>\n- git diff\n- git diff --staged\n- git blame <file>\n\nExample:\n- git log --oneline --graph --decorate'
+            },
+            {
+                title: '7. Undoing Changes (Safe vs Destructive)',
+                content: 'Safe:\n- git revert <commit> (creates new commit)\n\nLocal undo:\n- git restore <file>\n- git restore --staged <file>\n- git reset --soft <commit>\n- git reset --mixed <commit>\n- git reset --hard <commit> (danger)\n\nRule: use revert for shared history, reset for local history.'
+            },
+            {
+                title: '8. Stash and Patch Workflows',
+                content: 'Commands:\n- git stash\n- git stash push -m "msg"\n- git stash list\n- git stash pop\n- git stash apply\n- git stash drop\n\nExample:\n- git stash push -m "wip"\n- git stash pop'
+            },
+            {
+                title: '9. Tags and Releases',
+                content: 'Commands:\n- git tag\n- git tag -a v1.0 -m "Release"\n- git push origin v1.0\n- git push origin --tags\n\nUse tags for release points and CI/CD triggers.'
+            },
+            {
+                title: '10. Git Ignore and Clean',
+                content: 'Commands:\n- .gitignore rules\n- git status -u\n- git clean -n\n- git clean -fd\n\nExample:\nnode_modules/\n.env\n/dist'
+            },
+            {
+                title: '11. GitHub PR Workflow (Industry Flow)',
+                content: 'Steps:\n1. Clone repo\n2. Create branch\n3. Work on feature\n4. Add + Commit\n5. Push branch\n6. Create Pull Request\n7. Code Review\n8. Fix changes\n9. Merge to main\n10. Delete branch\n\nCommands:\n- git checkout -b feature/x\n- git push origin feature/x'
+            },
+            {
+                title: '12. Forking Workflow',
+                content: 'Commands:\n- Fork repo on GitHub\n- git clone <your-fork>\n- git remote add upstream <original-repo>\n- git fetch upstream\n- git merge upstream/main\n- git push origin main\n\nUsed for open source contributions.'
+            },
+            {
+                title: '13. Handling Merge Conflicts',
+                content: 'Steps:\n- git status to see conflict\n- Open files and resolve markers\n- git add <file>\n- git commit\n\nMarkers:\n<<<<<<< HEAD\n=======\n>>>>>>> branch\n\nTip: keep small PRs to reduce conflicts.'
+            },
+            {
+                title: '14. Cherry-Pick',
+                content: 'Command:\n- git cherry-pick <commit>\n\nUse case: bring a specific fix from another branch without merging everything.'
+            },
+            {
+                title: '15. Reflog and Recovery',
+                content: 'Commands:\n- git reflog\n- git reset --hard <reflog-commit>\n\nUse reflog to recover lost commits after reset or rebase.'
+            },
+            {
+                title: '16. Git Internals (Interview Advanced)',
+                content: 'Git stores:\n- Blobs (file content)\n- Trees (directories)\n- Commits (snapshot + metadata)\n- References (branches/tags)\n\nObjects are content-addressed by SHA-1/SHA-256.'
+            },
+            {
+                title: '17. SSH Keys and Auth',
+                content: 'Commands:\n- ssh-keygen -t ed25519 -C "you@email.com"\n- cat ~/.ssh/id_ed25519.pub\n\nAdd key to GitHub for secure auth.'
+            },
+            {
+                title: '18. Common GitHub Features',
+                content: 'Features:\n- Issues, Projects, Milestones\n- Discussions, Wikis\n- Actions (CI/CD)\n- CODEOWNERS and review rules\n- Branch protection rules\n- Releases and tags'
+            },
+            {
+                title: '19. GitHub Actions (CI/CD Basics)',
+                content: 'YAML workflow basics:\n- .github/workflows/ci.yml\n- on: [push, pull_request]\n- jobs -> steps\n\nExample steps:\n- Checkout\n- Install deps\n- Run tests\n- Build'
+            },
+            {
+                title: '20. Git LFS (Large Files)',
+                content: 'Commands:\n- git lfs install\n- git lfs track "*.psd"\n- git add .gitattributes\n- git push\n\nUse LFS for large binaries.'
+            },
+            {
+                title: '21. Git Hooks (Local Automation)',
+                content: 'Hooks:\n- pre-commit, commit-msg, pre-push\n\nUse cases:\n- Linting, tests, commit message checks.'
+            },
+            {
+                title: '22. Useful Git Aliases',
+                content: 'Examples:\n- git config --global alias.co checkout\n- git config --global alias.br branch\n- git config --global alias.st status\n- git config --global alias.lg "log --oneline --graph --decorate"'
+            },
+            {
+                title: '23. Interview Question Bank (Quick)',
+                content: 'Basic:\n- What is Git?\n- Git vs GitHub?\n- What is a commit/branch?\n\nIntermediate:\n- Merge vs rebase?\n- What is HEAD and detached HEAD?\n- Reset vs revert?\n- Stash use case?\n- Pull vs fetch?\n\nAdvanced:\n- How does Git store data?\n- How to resolve conflicts?\n- What is cherry-pick?\n- Explain company workflow.\n- Reflog use case?'
+            },
+            {
+                title: '24. Real Project Collaboration Simulation',
+                content: 'Scenario: You and 3 developers on one project.\n\nRoles:\n- Dev A -> Login Feature\n- Dev B -> Dashboard\n- Dev C -> Payment\n- You -> Profile Page\n\nWorkflow:\n- git clone repo\n- git checkout -b profile-feature\n- git add .\n- git commit -m "Added profile page"\n- git push origin profile-feature\n- Create PR\n- Review and fix\n- Merge\n- Delete branch'
+            },
+            {
+                title: '25. 7-Day Mastery Plan',
+                content: 'Day 1 -> Git Basics: init, add, commit, status, log\nDay 2 -> GitHub: create repo, connect remote, push, pull, clone\nDay 3 -> Branching: branch, checkout, merge, delete\nDay 4 -> Conflict Handling: simulate conflict, resolve, commit\nDay 5 -> Advanced Commands: stash, reset, revert, rebase\nDay 6 -> Collaboration Practice: fork repo, PR, merge\nDay 7 -> Real Project Simulation: mini project, 2 branches, 3 PRs, clean merge'
+            }
+        ],
+        mcqs: [
+            {
+                question: 'git pull is equivalent to:',
+                options: ['git fetch + git merge', 'git add + git commit', 'git clone + git push', 'git merge + git reset'],
+                answer: 0,
+                explanation: 'pull fetches from remote and then merges into the current branch.'
+            },
+            {
+                question: 'What does HEAD point to in Git?',
+                options: ['The latest commit on the current branch', 'The first commit', 'The staging area', 'A remote branch'],
+                answer: 0,
+                explanation: 'HEAD is a pointer to the current branch tip (latest commit).'
+            },
+            {
+                question: 'Which command creates a new branch and switches to it?',
+                options: ['git branch', 'git checkout -b', 'git merge', 'git reset'],
+                answer: 1,
+                explanation: 'git checkout -b creates and checks out the branch in one step.'
+            },
+            {
+                question: 'Which command is used to temporarily save changes without committing?',
+                options: ['git stash', 'git reset --hard', 'git rebase', 'git tag'],
+                answer: 0,
+                explanation: 'git stash saves uncommitted changes to a stack.'
+            },
+            {
+                question: 'Which is true about rebase?',
+                options: ['It creates a merge commit', 'It rewrites commit history', 'It deletes branches', 'It only works on remote'],
+                answer: 1,
+                explanation: 'Rebase reapplies commits on a new base, rewriting history.'
+            }
+        ]
+    },
+    {
         id: 'hr',
         title: 'HR Interview',
         icon: 'Users',
