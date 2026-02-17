@@ -34,6 +34,7 @@ const Home = () => {
         };
     }, []);
 
+
     return (
         <main style={{ paddingBottom: '60px', background: 'var(--bg-dark)', minHeight: '100vh' }}>
             {/* Main Title & Why Syllablink Section */}
@@ -184,6 +185,56 @@ const Home = () => {
                                     Learning Cohorts 2026
                                 </button>
                             </div>
+
+                            <div style={{
+                                marginTop: '2rem',
+                                display: 'grid',
+                                gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, minmax(0, 1fr))',
+                                gap: '12px'
+                            }}>
+                                {[
+                                    { label: 'Subjects', value: `${subjects.length}+` },
+                                    { label: 'Topics', value: `${subjects.reduce((sum, subject) => sum + (subject.concepts?.length || 0), 0)}+` },
+                                    { label: 'MCQs', value: `${subjects.reduce((sum, subject) => sum + (subject.mcqs?.length || 0), 0)}+` }
+                                ].map((stat, idx) => (
+                                    <div
+                                        key={idx}
+                                        style={{
+                                            padding: '12px 14px',
+                                            borderRadius: '12px',
+                                            border: '1px solid rgba(0,0,0,0.06)',
+                                            background: 'rgba(255,255,255,0.7)',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            gap: '4px'
+                                        }}
+                                    >
+                                        <span style={{ fontSize: '1.1rem', fontWeight: '900', color: 'var(--text-main)' }}>{stat.value}</span>
+                                        <span style={{ fontSize: '0.7rem', fontWeight: '800', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
+                                            {stat.label}
+                                        </span>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div style={{
+                                marginTop: '1.5rem',
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                gap: '10px',
+                                alignItems: 'center',
+                                color: 'var(--text-muted)',
+                                fontSize: '0.85rem'
+                            }}>
+                                <span style={{ fontWeight: '800', color: 'var(--text-main)' }}>Prep Flow:</span>
+                                <span>Notes</span>
+                                <span style={{ opacity: 0.5 }}>→</span>
+                                <span>MCQs</span>
+                                <span style={{ opacity: 0.5 }}>→</span>
+                                <span>Mock Interviews</span>
+                                <span style={{ opacity: 0.5 }}>→</span>
+                                <span>Placement Ready</span>
+                            </div>
                         </motion.div>
 
                         {/* Right Div - Platform Features */}
@@ -259,6 +310,7 @@ const Home = () => {
                     </div>
                 </div>
             </section>
+
 
             {/* Hero Component - Quick Access Cards */}
             <Hero />

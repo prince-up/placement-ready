@@ -1,9 +1,7 @@
 import React, { useMemo, useState, useEffect } from 'react';
-import qrPremium from '../assets/qr-premium.jpeg';
-
 const BUY_AMOUNT = '150';
 const APPROVAL_NUMBER = '7986614646';
-const QR_SRC = qrPremium;
+const UPI_ID = 'py562535-1@oksbi';
 
 const BuyPremium = () => {
     const [name, setName] = useState('');
@@ -76,7 +74,7 @@ const BuyPremium = () => {
                         Buy Premium (Cohort 2026)
                     </h1>
                     <p style={{ color: 'var(--text-muted)', fontSize: isMobile ? '0.95rem' : '1.05rem', lineHeight: '1.7', maxWidth: '720px' }}>
-                        Scan the QR and complete the payment. Then send your UTR/transaction ID using WhatsApp or SMS for approval.
+                        Pay using the UPI ID below. Then send your UTR/transaction ID using WhatsApp or SMS for approval.
                     </p>
                 </div>
 
@@ -98,16 +96,21 @@ const BuyPremium = () => {
                             justifyContent: 'space-between',
                             marginBottom: '1rem'
                         }}>
-                            <div style={{ fontWeight: '900', color: 'var(--text-main)' }}>Pay via UPI QR</div>
+                            <div style={{ fontWeight: '900', color: 'var(--text-main)' }}>Pay via UPI ID</div>
                             <div style={{ fontWeight: '900', color: 'var(--primary)' }}>INR {BUY_AMOUNT}</div>
                         </div>
-                        <img
-                            src={QR_SRC}
-                            alt="UPI QR for premium"
-                            style={{ width: '100%', borderRadius: '14px', border: '1px solid var(--border-glass)' }}
-                        />
-                        <div style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                            Using QR image from src/assets/qr-premium.jpeg.
+                        <div style={{
+                            padding: '1rem',
+                            borderRadius: '14px',
+                            border: '1px solid var(--border-glass)',
+                            background: 'rgba(15, 23, 42, 0.35)',
+                            fontSize: isMobile ? '1rem' : '1.1rem',
+                            fontWeight: '900',
+                            letterSpacing: '0.02em',
+                            color: 'var(--text-main)',
+                            textAlign: 'center'
+                        }}>
+                            {UPI_ID}
                         </div>
                         <div style={{
                             marginTop: '1rem',
@@ -118,7 +121,7 @@ const BuyPremium = () => {
                             color: 'var(--text-muted)',
                             fontSize: '0.85rem'
                         }}>
-                            Steps: 1) Scan QR  2) Pay INR {BUY_AMOUNT}  3) Send UTR for approval
+                            Steps: 1) Pay INR {BUY_AMOUNT} to {UPI_ID}  2) Send UTR for approval
                         </div>
                     </div>
 
