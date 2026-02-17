@@ -106,7 +106,7 @@ const SubjectCard = ({ subject, index }) => {
                             }}>
                                 {subject.title}
                             </h3>
-                            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6', fontWeight: '500' }}>
+                            <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem', lineHeight: '1.6', fontWeight: '500', whiteSpace: 'pre-line' }}>
                                 {subject.description}
                             </p>
                         </div>

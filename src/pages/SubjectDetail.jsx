@@ -266,19 +266,63 @@ const SubjectDetail = () => {
         return null;
     };
 
-    const renderContent = (content) => {
-        const lines = content.split('\n');
+    const renderInlineMarkdown = (text, keyPrefix) => {
+        const parts = text.split(/\*\*([^*]+)\*\*/g);
+        return parts.map((part, idx) => {
+            if (idx % 2 === 1) {
+                return <strong key={`${keyPrefix}-bold-${idx}`} style={{ color: 'var(--text-main)' }}>{part}</strong>;
+            }
+            return part;
+        });
+    };
+
+    const getSummaryText = (content) => {
+        if (!content) return null;
+        const normalized = content.replace(/\\n/g, '\n');
+        const lines = normalized
+            .split('\n')
+            .map(line => line.trim())
+            .filter(Boolean);
+        if (!lines.length) return null;
+        let line = lines[0];
+        if (line.endsWith(':') && lines.length > 1) {
+            line = lines[1];
+        }
+        line = line.replace(/^[-•]\s+/, '').replace(/^\d+\.\s+/, '');
+        const sentenceMatch = line.match(/^(.*?[.!?])(\s|$)/);
+        const sentence = sentenceMatch ? sentenceMatch[1] : line;
+        const trimmed = sentence.trim();
+        if (!trimmed) return null;
+        return trimmed.length > 180 ? `${trimmed.slice(0, 177)}...` : trimmed;
+    };
+
+    const renderContent = (content, options = {}) => {
+        const { preferOrderedList = false } = options;
+        const normalized = content.replace(/\\n/g, '\n');
+        const lines = normalized.split('\n');
         const elements = [];
         let listItems = [];
+        let listType = null;
+
+        const summary = getSummaryText(content);
+        if (summary && !summary.toLowerCase().startsWith('summary:')) {
+            elements.push(
+                <p key="summary" style={{ marginBottom: '1rem', color: 'var(--text-main)' }}>
+                    <strong style={{ color: 'var(--primary)', fontWeight: '800' }}>Summary:</strong> {renderInlineMarkdown(summary, 'summary')}
+                </p>
+            );
+        }
 
         const flushList = (keySuffix) => {
             if (listItems.length) {
+                const ListTag = listType === 'ol' ? 'ol' : 'ul';
                 elements.push(
-                    <ul key={`list-${keySuffix}`} style={{ margin: '0 0 1.5rem 1.2rem', lineHeight: 1.7 }}>
+                    <ListTag key={`list-${keySuffix}`} style={{ margin: '0 0 1.5rem 1.2rem', lineHeight: 1.7 }}>
                         {listItems}
-                    </ul>
+                    </ListTag>
                 );
                 listItems = [];
+                listType = null;
             }
         };
 
@@ -289,10 +333,18 @@ const SubjectDetail = () => {
                 return;
             }
 
-            if (/^[-•]\s+/.test(trimmed)) {
+            const orderedMatch = trimmed.match(/^\d+\.\s+(.*)$/);
+            const unorderedMatch = trimmed.match(/^[-•]\s+(.*)$/);
+            if (orderedMatch || unorderedMatch) {
+                const nextType = orderedMatch ? 'ol' : (preferOrderedList ? 'ol' : 'ul');
+                const itemText = orderedMatch ? orderedMatch[1] : unorderedMatch[1];
+                if (listType && listType !== nextType) {
+                    flushList(index);
+                }
+                listType = nextType;
                 listItems.push(
                     <li key={`li-${index}`} style={{ marginBottom: '0.4rem', color: 'var(--text-main)', opacity: 0.85 }}>
-                        {trimmed.replace(/^[-•]\s+/, '')}
+                        {renderInlineMarkdown(itemText, `li-${index}`)}
                     </li>
                 );
                 return;
@@ -328,13 +380,13 @@ const SubjectDetail = () => {
                 const rest = labelMatch[2];
                 elements.push(
                     <p key={`p-${index}`} style={{ marginBottom: '1rem', color: 'var(--text-main)' }}>
-                        <strong style={{ color: 'var(--primary)', fontWeight: '800' }}>{label}:</strong> {rest}
+                        <strong style={{ color: 'var(--primary)', fontWeight: '800' }}>{label}:</strong> {renderInlineMarkdown(rest, `label-${index}`)}
                     </p>
                 );
             } else {
                 elements.push(
                     <p key={`p-${index}`} style={{ marginBottom: '1rem', color: 'var(--text-main)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-                        {trimmed}
+                        {renderInlineMarkdown(trimmed, `p-${index}`)}
                     </p>
                 );
             }
@@ -563,7 +615,7 @@ const SubjectDetail = () => {
                                 }}>
                                     {activeTab === 'concepts' ? (
                                         <div style={{ fontSize: '1.05rem', lineHeight: '1.7', color: 'var(--text-main)' }}>
-                                            {renderContent(currentItem.content)}
+                                            {renderContent(currentItem.content, { preferOrderedList: subject.id === 'web' })}
                                         </div>
                                     ) : (
                                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

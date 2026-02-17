@@ -2107,7 +2107,7 @@ export const subjects = [
         id: 'web',
         title: 'Web Development',
         icon: 'Globe',
-        description: 'Complete MERN Stack: HTML/CSS, JavaScript, React, Node.js, Express, MongoDB, and Full-Stack Development.',
+        description: 'Complete MERN Stack:\n• HTML\n• CSS\n• JavaScript\n• React\n• Node.js\n• Express\n• MongoDB\n• Full-Stack Development',
         concepts: [
             {
                 title: '1. HTML Fundamentals',
@@ -2200,6 +2200,26 @@ export const subjects = [
             {
                 title: '23. Monitoring & Logging',
                 content: 'Use structured logs, error tracking (Sentry), and performance monitoring.'
+            },
+            {
+                title: '24. TypeScript Essentials for MERN',
+                content: 'Why TypeScript: safer refactors, better tooling, fewer runtime bugs.\n\nCore Topics:\n- Basic types, interfaces, and type inference.\n- Union types and generics.\n- Type narrowing with typeof/instanceof.\n- React props and component typing.\n- Node/Express request/response types.\n\nInterview tip: explain how TypeScript catches contract mismatches between API and UI.'
+            },
+            {
+                title: '25. React Router and SPA Navigation',
+                content: 'Routing in single-page apps without full page reloads.\n\nKey Ideas:\n- Route definitions and nested routes.\n- Dynamic params and query strings.\n- Protected routes and auth guards.\n- Lazy loading route chunks.\n\nInterview tip: describe how client-side routing differs from server-side routing.'
+            },
+            {
+                title: '26. Form Handling and Validation',
+                content: 'Reliable forms require client + server validation.\n\nBest Practices:\n- Controlled inputs and form state.\n- Schema validation (Zod/Joi/Yup).\n- Server-side revalidation for security.\n- Error display and accessibility.\n\nInterview tip: emphasize validation on the server is mandatory.'
+            },
+            {
+                title: '27. Real-Time Communication (WebSockets)',
+                content: 'Use WebSockets (Socket.IO) for real-time updates like chat, notifications, and live dashboards.\n\nConcepts:\n- Persistent duplex connection.\n- Rooms/namespaces for grouping.\n- Heartbeats and reconnect logic.\n- Scaling with Redis pub/sub.\n\nInterview tip: mention fallback strategies and scaling challenges.'
+            },
+            {
+                title: '28. Debugging and DevTools',
+                content: 'Debug across the stack to isolate bugs quickly.\n\nTools:\n- Chrome DevTools: network, performance, and DOM inspection.\n- React DevTools: component state and props.\n- Node inspector and logs.\n- Source maps for production debugging.\n\nInterview tip: show a systematic approach to root-cause analysis.'
             }
         ],
         mcqs: [
@@ -2314,6 +2334,2939 @@ export const subjects = [
                 options: ['Electron', 'Express', 'Ember', 'Engine'],
                 answer: 1,
                 explanation: 'MERN stands for MongoDB, Express.js, React, and Node.js - a full JavaScript stack.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which tag represents the main content of the page?',
+                options: ['<section>', '<main>', '<aside>', '<article>'],
+                answer: 1,
+                explanation: '<main> identifies the dominant content of the document.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which attribute connects a <label> to an <input>?',
+                options: ['id', 'for', 'name', 'value'],
+                answer: 1,
+                explanation: 'The label for attribute should match the input id.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'What does <!DOCTYPE html> do?',
+                options: ['Loads JavaScript', 'Enables standards mode', 'Adds metadata', 'Links CSS'],
+                answer: 1,
+                explanation: 'It tells the browser to render in standards mode.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which tag is semantic for site navigation?',
+                options: ['<nav>', '<menu>', '<ul>', '<header>'],
+                answer: 0,
+                explanation: '<nav> is the semantic element for navigation links.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'What is the default method for form submission?',
+                options: ['POST', 'GET', 'PUT', 'PATCH'],
+                answer: 1,
+                explanation: 'Forms default to GET if method is not specified.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which input type hides typed characters?',
+                options: ['text', 'email', 'password', 'hidden'],
+                answer: 2,
+                explanation: 'password masks the user input.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which attribute provides an accessible label when no visible text is present?',
+                options: ['alt', 'aria-label', 'title', 'role'],
+                answer: 1,
+                explanation: 'aria-label provides an accessible name.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which tag supplies a caption for a figure?',
+                options: ['<caption>', '<figcaption>', '<legend>', '<summary>'],
+                answer: 1,
+                explanation: '<figcaption> labels a <figure>.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which element embeds a video in HTML5?',
+                options: ['<media>', '<video>', '<movie>', '<source>'],
+                answer: 1,
+                explanation: '<video> is the HTML5 video element.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which attribute is required for accessible images?',
+                options: ['src', 'alt', 'title', 'loading'],
+                answer: 1,
+                explanation: 'alt provides alternative text for images.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which element groups related options inside a <select>?',
+                options: ['<option>', '<optgroup>', '<fieldset>', '<datalist>'],
+                answer: 1,
+                explanation: '<optgroup> groups <option> elements.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which attribute disables built-in form validation?',
+                options: ['readonly', 'novalidate', 'required', 'disabled'],
+                answer: 1,
+                explanation: 'novalidate tells the browser to skip validation.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which tag is used for time or dates?',
+                options: ['<time>', '<date>', '<timestamp>', '<clock>'],
+                answer: 0,
+                explanation: '<time> represents a time or date value.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which element represents a self-contained piece of content?',
+                options: ['<article>', '<section>', '<div>', '<span>'],
+                answer: 0,
+                explanation: '<article> is for independent, reusable content.'
+            },
+            {
+                worksheet: 'HTML',
+                question: 'Which meta tag helps control layout on mobile devices?',
+                options: ['charset', 'viewport', 'keywords', 'robots'],
+                answer: 1,
+                explanation: 'The viewport meta tag controls scaling on mobile.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Correct box model order from inside to outside?',
+                options: ['Content, Padding, Border, Margin', 'Padding, Content, Border, Margin', 'Border, Padding, Content, Margin', 'Content, Border, Padding, Margin'],
+                answer: 0,
+                explanation: 'The box model expands outward: content -> padding -> border -> margin.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property aligns items along the main axis in Flexbox?',
+                options: ['align-items', 'justify-content', 'align-content', 'place-items'],
+                answer: 1,
+                explanation: 'justify-content controls main axis alignment.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property aligns items along the cross axis in Flexbox?',
+                options: ['align-items', 'justify-content', 'align-self', 'gap'],
+                answer: 0,
+                explanation: 'align-items controls cross axis alignment for all items.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property defines columns in CSS Grid?',
+                options: ['grid-template-columns', 'grid-columns', 'grid-auto-columns', 'grid-column-gap'],
+                answer: 0,
+                explanation: 'grid-template-columns defines the column structure.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which media query targets screens up to 768px wide?',
+                options: ['@media (min-width: 768px)', '@media (max-width: 768px)', '@media (width: 768px)', '@media (device-width: 768px)'],
+                answer: 1,
+                explanation: 'max-width applies to screens up to the specified width.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'What does position: relative do?',
+                options: ['Removes element from flow', 'Positions relative to its normal position', 'Positions relative to viewport', 'Positions relative to parent'],
+                answer: 1,
+                explanation: 'Offsets are applied relative to the element itself.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which elements can use z-index effectively?',
+                options: ['Only static elements', 'Only positioned elements', 'Only flex items', 'Only grid items'],
+                answer: 1,
+                explanation: 'z-index works on positioned elements (not static).' 
+            },
+            {
+                worksheet: 'CSS',
+                question: 'What does the rem unit scale from?',
+                options: ['Parent font size', 'Viewport width', 'Root font size', 'Element width'],
+                answer: 2,
+                explanation: 'rem is relative to the root (html) font size.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'How do you hide an element but keep its layout space?',
+                options: ['display: none', 'visibility: hidden', 'opacity: 0', 'position: absolute'],
+                answer: 1,
+                explanation: 'visibility: hidden hides content but preserves layout.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property creates a linear gradient?',
+                options: ['background', 'background-image', 'color', 'filter'],
+                answer: 1,
+                explanation: 'Use background-image: linear-gradient(...)' 
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property applies keyframe animations?',
+                options: ['transition', 'animation', 'transform', 'filter'],
+                answer: 1,
+                explanation: 'animation links keyframes to an element.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property enables smooth changes between states?',
+                options: ['transform', 'transition', 'animation', 'opacity'],
+                answer: 1,
+                explanation: 'transition animates property changes over time.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which pseudo-class targets hover state?',
+                options: [':active', ':hover', ':focus', ':visited'],
+                answer: 1,
+                explanation: ':hover applies when the pointer is over the element.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property transforms text to uppercase?',
+                options: ['font-style', 'text-transform', 'text-decoration', 'letter-spacing'],
+                answer: 1,
+                explanation: 'text-transform controls capitalization.'
+            },
+            {
+                worksheet: 'CSS',
+                question: 'Which property adds shadow around a box?',
+                options: ['text-shadow', 'box-shadow', 'outline', 'border-shadow'],
+                answer: 1,
+                explanation: 'box-shadow adds shadows to elements.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which keyword declares a block-scoped variable?',
+                options: ['var', 'let', 'const', 'static'],
+                answer: 1,
+                explanation: 'let is block-scoped, unlike var.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'What is the type of NaN?',
+                options: ['number', 'string', 'undefined', 'object'],
+                answer: 0,
+                explanation: 'NaN is a special numeric value.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which function converts a string to an integer?',
+                options: ['parseInt()', 'parseFloat()', 'String()', 'toString()'],
+                answer: 0,
+                explanation: 'parseInt converts to integer (base can be specified).' 
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which operator checks strict equality?',
+                options: ['==', '!=', '===', '!=='],
+                answer: 2,
+                explanation: '=== compares both value and type.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'What does Array.prototype.map return?',
+                options: ['A new array', 'A boolean', 'A number', 'The original array'],
+                answer: 0,
+                explanation: 'map produces a new array of transformed items.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which method removes the last element of an array?',
+                options: ['shift', 'pop', 'push', 'unshift'],
+                answer: 1,
+                explanation: 'pop removes the last element.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'What is hoisting in JavaScript?',
+                options: ['Moving variables to the heap', 'Moving declarations to the top of scope', 'Deleting unused variables', 'Blocking variables in loops'],
+                answer: 1,
+                explanation: 'Declarations are processed before execution.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which value is falsy?',
+                options: ['"0"', '[]', '0', '{}'],
+                answer: 2,
+                explanation: '0 is falsy, while "0", [] and {} are truthy.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'What is the result of typeof []?',
+                options: ['array', 'object', 'list', 'undefined'],
+                answer: 1,
+                explanation: 'Arrays are objects in JavaScript.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'What does JSON.stringify do?',
+                options: ['Parses JSON', 'Converts object to JSON string', 'Validates JSON', 'Encrypts JSON'],
+                answer: 1,
+                explanation: 'JSON.stringify serializes objects.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'What does the value of this depend on in a regular function?',
+                options: ['Where it is defined', 'How it is called', 'Its return value', 'Its parameters'],
+                answer: 1,
+                explanation: 'this is determined by the call site.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'What does addEventListener do?',
+                options: ['Removes a listener', 'Registers an event handler', 'Triggers an event', 'Stops propagation'],
+                answer: 1,
+                explanation: 'It attaches a handler to an event.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which method filters items based on a condition?',
+                options: ['map', 'filter', 'reduce', 'forEach'],
+                answer: 1,
+                explanation: 'filter returns only items that pass the test.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which statement handles exceptions?',
+                options: ['if/else', 'try/catch', 'switch', 'throw only'],
+                answer: 1,
+                explanation: 'try/catch handles runtime errors.'
+            },
+            {
+                worksheet: 'JavaScript Core',
+                question: 'Which keyword declares a constant?',
+                options: ['var', 'let', 'const', 'static'],
+                answer: 2,
+                explanation: 'const creates a read-only binding.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'Which syntax creates a template literal?',
+                options: ['"..."', "'...'", '`...`', '/*...*/'],
+                answer: 2,
+                explanation: 'Template literals use backticks.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'Which is an array destructuring example?',
+                options: ['const {a} = arr', 'const [a, b] = arr', 'const a = arr()', 'const (a) = arr'],
+                answer: 1,
+                explanation: 'Array destructuring uses square brackets.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'What does the spread operator do?',
+                options: ['Creates functions', 'Expands iterables', 'Blocks scope', 'Sorts arrays'],
+                answer: 1,
+                explanation: '... expands arrays/objects into individual elements.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'Arrow functions have what kind of this binding?',
+                options: ['Dynamic', 'Lexical', 'Global only', 'Undefined'],
+                answer: 1,
+                explanation: 'Arrow functions capture this from the outer scope.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'Which syntax shows a default parameter?',
+                options: ['function f(a == 1)', 'function f(a = 1)', 'function f(a := 1)', 'function f(a -> 1)'],
+                answer: 1,
+                explanation: 'Default parameters use = in the signature.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'What do rest parameters collect?',
+                options: ['Return values', 'Remaining arguments', 'Only strings', 'Only numbers'],
+                answer: 1,
+                explanation: '...args gathers remaining arguments into an array.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'How do you export a default module value?',
+                options: ['export default value', 'export value', 'module.exports', 'require()'],
+                answer: 0,
+                explanation: 'export default marks the module default export.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'What does optional chaining prevent?',
+                options: ['Syntax errors', 'Null/undefined access errors', 'Async errors', 'Type errors only'],
+                answer: 1,
+                explanation: '?. stops evaluation when the left side is null or undefined.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'What does the ?? operator do?',
+                options: ['Checks strict equality', 'Defaults only on null/undefined', 'Converts to number', 'Concatenates strings'],
+                answer: 1,
+                explanation: 'Nullish coalescing uses the right value only when left is null/undefined.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'Promise.all resolves when:',
+                options: ['Any promise resolves', 'All promises resolve', 'The first promise rejects', 'All promises reject'],
+                answer: 1,
+                explanation: 'Promise.all waits for all to fulfill or rejects on first failure.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'What does for...of iterate over?',
+                options: ['Object keys', 'Iterable values', 'Object values only', 'Function arguments only'],
+                answer: 1,
+                explanation: 'for...of iterates values of iterables.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'What does a Set store?',
+                options: ['Key/value pairs', 'Unique values', 'Sorted values only', 'Duplicate values'],
+                answer: 1,
+                explanation: 'Set enforces uniqueness.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'What is a key feature of Map?',
+                options: ['Only string keys', 'Any key type', 'Auto-sorting keys', 'Only numeric keys'],
+                answer: 1,
+                explanation: 'Map can use any value as a key.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'async/await works with:',
+                options: ['Callbacks', 'Promises', 'Events only', 'Generators only'],
+                answer: 1,
+                explanation: 'async/await is syntax over Promises.'
+            },
+            {
+                worksheet: 'JavaScript ES6+',
+                question: 'Object property shorthand is:',
+                options: ['{x: x}', '{x}', '{x => x}', '{x = x}'],
+                answer: 1,
+                explanation: '{x} is shorthand for {x: x}.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'What does querySelector return?',
+                options: ['All matches', 'First match', 'An array', 'An HTML string'],
+                answer: 1,
+                explanation: 'querySelector returns the first matching element.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'What does querySelectorAll return?',
+                options: ['Element', 'NodeList', 'HTMLCollection only', 'Boolean'],
+                answer: 1,
+                explanation: 'It returns a NodeList of matching elements.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'textContent differs from innerHTML because it:',
+                options: ['Parses HTML tags', 'Does not parse HTML', 'Is slower', 'Returns attributes only'],
+                answer: 1,
+                explanation: 'textContent treats content as plain text.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'What does event.preventDefault() do?',
+                options: ['Stops bubbling', 'Stops default browser action', 'Stops propagation only', 'Stops capturing'],
+                answer: 1,
+                explanation: 'It prevents the default action like navigation or submit.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'What does event.stopPropagation() do?',
+                options: ['Prevents default', 'Stops event bubbling', 'Stops event listeners', 'Pauses animation'],
+                answer: 1,
+                explanation: 'It prevents the event from bubbling to parents.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'Which method creates a new element node?',
+                options: ['createNode', 'createElement', 'appendChild', 'cloneNode'],
+                answer: 1,
+                explanation: 'createElement creates a new element.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'What does appendChild do?',
+                options: ['Replaces a child', 'Adds as the last child', 'Adds as first child', 'Removes a child'],
+                answer: 1,
+                explanation: 'appendChild adds a node at the end.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'Which method removes a specific child node?',
+                options: ['removeChild', 'deleteChild', 'remove', 'detachChild'],
+                answer: 0,
+                explanation: 'removeChild removes the child from its parent.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'What does element.classList.add do?',
+                options: ['Removes a class', 'Adds a class', 'Replaces all classes', 'Toggles visibility'],
+                answer: 1,
+                explanation: 'classList.add adds a class name.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'What does element.dataset provide access to?',
+                options: ['CSS variables', 'data-* attributes', 'ARIA attributes', 'Inline styles'],
+                answer: 1,
+                explanation: 'dataset maps to data-* attributes.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'Event delegation means:',
+                options: ['Listening on every child', 'Listening on a parent for child events', 'Blocking events', 'Capturing only'],
+                answer: 1,
+                explanation: 'A parent listener handles events from children.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'When does DOMContentLoaded fire?',
+                options: ['After all images load', 'When the DOM is parsed', 'On window close', 'After CSS loads only'],
+                answer: 1,
+                explanation: 'It fires when the initial HTML is parsed.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'Which method finds an element by id?',
+                options: ['getElementById', 'querySelectorAll', 'getElementsByClassName', 'getElementsByTagName'],
+                answer: 0,
+                explanation: 'getElementById returns the element with that id.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'Which method sets an attribute value?',
+                options: ['setAttribute', 'addAttribute', 'setProp', 'attr'],
+                answer: 0,
+                explanation: 'setAttribute assigns attributes on elements.'
+            },
+            {
+                worksheet: 'DOM',
+                question: 'Why use document.createDocumentFragment?',
+                options: ['To store cookies', 'To batch DOM updates efficiently', 'To load scripts', 'To style elements'],
+                answer: 1,
+                explanation: 'Fragments reduce reflow by batching changes.'
+            },
+            {
+                worksheet: 'React',
+                question: 'JSX is compiled into:',
+                options: ['HTML strings', 'React.createElement calls', 'DOM nodes directly', 'Templates only'],
+                answer: 1,
+                explanation: 'JSX compiles to React.createElement calls.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Why is the key prop important in lists?',
+                options: ['For styling', 'For React diffing and stable identity', 'For routing', 'For validation'],
+                answer: 1,
+                explanation: 'Keys help React match items between renders.'
+            },
+            {
+                worksheet: 'React',
+                question: 'What happens when state changes?',
+                options: ['DOM reloads fully', 'Component re-renders', 'Server restarts', 'Props mutate'],
+                answer: 1,
+                explanation: 'State updates trigger re-renders.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Props are:',
+                options: ['Mutable by child components', 'Read-only inputs', 'Global variables', 'Promises'],
+                answer: 1,
+                explanation: 'Props are read-only values passed from parent.'
+            },
+            {
+                worksheet: 'React',
+                question: 'The main purpose of the Virtual DOM is to:',
+                options: ['Store data', 'Minimize direct DOM mutations', 'Compile JSX', 'Validate props'],
+                answer: 1,
+                explanation: 'React batches and optimizes DOM updates.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Which feature avoids extra wrapper elements in JSX?',
+                options: ['<div>', 'React.Fragment', 'useMemo', 'StrictMode'],
+                answer: 1,
+                explanation: 'Fragments group children without extra nodes.'
+            },
+            {
+                worksheet: 'React',
+                question: 'A controlled component is:',
+                options: ['Managed by the DOM only', 'Driven by React state', 'Unmanaged input', 'Class-only component'],
+                answer: 1,
+                explanation: 'Controlled inputs use React state as the source of truth.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Lifting state up means:',
+                options: ['Using localStorage', 'Moving state to a common parent', 'Using context only', 'Using refs'],
+                answer: 1,
+                explanation: 'Shared state is placed in a common parent.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Which is a common pattern for conditional rendering?',
+                options: ['if/else or &&', 'try/catch', 'switch only', 'await'],
+                answer: 0,
+                explanation: 'if/else and && are common patterns.'
+            },
+            {
+                worksheet: 'React',
+                question: 'What does React.StrictMode do in development?',
+                options: ['Optimizes production', 'Highlights potential issues', 'Disables hooks', 'Adds routing'],
+                answer: 1,
+                explanation: 'StrictMode helps detect unsafe patterns.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Which API optimizes a component by memoizing output?',
+                options: ['React.memo', 'useEffect', 'useRef', 'useReducer'],
+                answer: 0,
+                explanation: 'React.memo skips re-render when props are equal.'
+            },
+            {
+                worksheet: 'React',
+                question: 'What is the required return type of a React component?',
+                options: ['Array only', 'Single React element or null', 'String only', 'Number only'],
+                answer: 1,
+                explanation: 'Components return a React element or null.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Which tool is used for type-checking props at runtime?',
+                options: ['PropTypes', 'TypeScript only', 'ESLint only', 'Babel'],
+                answer: 0,
+                explanation: 'PropTypes provide runtime prop validation.'
+            },
+            {
+                worksheet: 'React',
+                question: 'What is prop drilling?',
+                options: ['Fetching props via API', 'Passing props through many levels', 'Mutating props', 'Removing props'],
+                answer: 1,
+                explanation: 'Prop drilling is passing props down multiple layers.'
+            },
+            {
+                worksheet: 'React',
+                question: 'Which is the correct way to render a list?',
+                options: ['for loop in JSX without return', 'map with key prop', 'while loop in JSX', 'setState in render'],
+                answer: 1,
+                explanation: 'map with stable keys is the standard pattern.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'useState returns:',
+                options: ['State only', 'State and setter', 'Setter only', 'Reducer and dispatch'],
+                answer: 1,
+                explanation: 'useState returns [state, setState].'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'useEffect runs when:',
+                options: ['Component mounts only', 'Dependencies change', 'Server responds', 'Props never change'],
+                answer: 1,
+                explanation: 'useEffect runs after render when deps change.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'How do you run an effect only once on mount?',
+                options: ['useEffect()', 'useEffect([], [])', 'useEffect(() => {}, [])', 'useMemo([])'],
+                answer: 2,
+                explanation: 'An empty dependency array runs once on mount.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'What should a useEffect cleanup do?',
+                options: ['Return a function', 'Return a value', 'Call setState only', 'Log errors'],
+                answer: 0,
+                explanation: 'Cleanup is returned as a function.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'useRef is commonly used to:',
+                options: ['Trigger re-renders', 'Persist values across renders', 'Fetch data', 'Replace state'],
+                answer: 1,
+                explanation: 'useRef stores mutable values without re-rendering.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'useMemo is used to:',
+                options: ['Memoize values', 'Memoize components', 'Trigger effects', 'Handle forms'],
+                answer: 0,
+                explanation: 'useMemo caches computed values.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'useCallback is used to:',
+                options: ['Memoize functions', 'Memoize state', 'Replace useEffect', 'Handle refs'],
+                answer: 0,
+                explanation: 'useCallback caches function references.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'Rules of Hooks require:',
+                options: ['Calling hooks in loops', 'Calling hooks at top level', 'Calling hooks in classes', 'Calling hooks conditionally'],
+                answer: 1,
+                explanation: 'Hooks must be called at the top level.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'Custom hooks should start with:',
+                options: ['hook', 'use', 'get', 'set'],
+                answer: 1,
+                explanation: 'Custom hooks should begin with use.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'useReducer is preferred when:',
+                options: ['State is complex', 'State is static', 'No updates needed', 'Only props exist'],
+                answer: 0,
+                explanation: 'useReducer helps manage complex state transitions.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'useContext gives access to:',
+                options: ['Global variables', 'Context values without prop drilling', 'DOM refs', 'HTTP requests'],
+                answer: 1,
+                explanation: 'useContext reads values from a React context.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'Which hook runs synchronously after DOM mutations?',
+                options: ['useEffect', 'useLayoutEffect', 'useMemo', 'useRef'],
+                answer: 1,
+                explanation: 'useLayoutEffect runs before the browser paints.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'Which hook helps expose imperative methods to parent refs?',
+                options: ['useImperativeHandle', 'useReducer', 'useMemo', 'useEffect'],
+                answer: 0,
+                explanation: 'useImperativeHandle customizes the ref value.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'How do you update state based on previous state?',
+                options: ['setState(value)', 'setState(prev => next)', 'state++', 'useMemo'],
+                answer: 1,
+                explanation: 'Use the functional updater form.'
+            },
+            {
+                worksheet: 'React Hooks',
+                question: 'Lazy initial state is set by:',
+                options: ['useState(value)', 'useState(() => value)', 'useRef(value)', 'useEffect(value)'],
+                answer: 1,
+                explanation: 'Passing a function delays initialization.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'componentDidMount runs:',
+                options: ['Before render', 'After first render', 'On every update', 'On unmount'],
+                answer: 1,
+                explanation: 'It runs after the component is first mounted.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'componentWillUnmount is used for:',
+                options: ['Data fetching', 'Cleanup', 'Rendering', 'Updating state only'],
+                answer: 1,
+                explanation: 'Cleanup logic belongs in componentWillUnmount.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Which method runs after updates?',
+                options: ['componentDidUpdate', 'componentDidMount', 'render', 'constructor'],
+                answer: 0,
+                explanation: 'componentDidUpdate runs after re-renders.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Which lifecycle is used for performance optimization?',
+                options: ['shouldComponentUpdate', 'componentWillMount', 'componentDidCatch', 'getSnapshotBeforeUpdate'],
+                answer: 0,
+                explanation: 'shouldComponentUpdate can prevent re-renders.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Error boundaries are implemented using:',
+                options: ['componentDidCatch', 'componentDidMount', 'componentWillUnmount', 'render'],
+                answer: 0,
+                explanation: 'componentDidCatch handles rendering errors.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Which hook most closely matches componentDidMount + componentWillUnmount?',
+                options: ['useEffect with []', 'useEffect without deps', 'useMemo', 'useCallback'],
+                answer: 0,
+                explanation: 'useEffect with [] runs on mount and cleanup.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Which method derives state from props?',
+                options: ['getDerivedStateFromProps', 'componentDidUpdate', 'render', 'setState'],
+                answer: 0,
+                explanation: 'getDerivedStateFromProps is a static method for derived state.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'What does getSnapshotBeforeUpdate provide?',
+                options: ['Props only', 'Snapshot before DOM update', 'Async data', 'Event handlers'],
+                answer: 1,
+                explanation: 'It captures info before the DOM is updated.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Which lifecycle is deprecated for async setState?',
+                options: ['componentWillReceiveProps', 'componentDidUpdate', 'componentDidCatch', 'render'],
+                answer: 0,
+                explanation: 'componentWillReceiveProps is deprecated.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'useEffect without a dependency array runs:',
+                options: ['Once', 'After every render', 'Only on unmount', 'Before render'],
+                answer: 1,
+                explanation: 'It runs after every render.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Updating state in componentDidUpdate requires:',
+                options: ['No guard', 'A guard to avoid loops', 'A try/catch only', 'No dependencies'],
+                answer: 1,
+                explanation: 'You must guard to prevent infinite loops.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Which method is mandatory in class components?',
+                options: ['constructor', 'render', 'componentDidMount', 'shouldComponentUpdate'],
+                answer: 1,
+                explanation: 'render is required in class components.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'Error boundaries catch errors in:',
+                options: ['Event handlers', 'Render tree', 'Async callbacks only', 'setTimeout only'],
+                answer: 1,
+                explanation: 'They catch errors during rendering and lifecycle methods.'
+            },
+            {
+                worksheet: 'React Lifecycle',
+                question: 'StrictMode may cause useEffect to run twice in:',
+                options: ['Production', 'Development', 'Server only', 'Tests only'],
+                answer: 1,
+                explanation: 'StrictMode intentionally double-invokes in dev.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Node.js is:',
+                options: ['A browser', 'A JavaScript runtime', 'A database', 'A CSS framework'],
+                answer: 1,
+                explanation: 'Node.js runs JavaScript outside the browser.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Node.js uses which library for async I/O?',
+                options: ['libuv', 'jQuery', 'RxJS', 'Bootstrap'],
+                answer: 0,
+                explanation: 'libuv provides the event loop and async I/O.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which is true about Node.js?',
+                options: ['Blocking I/O by default', 'Non-blocking I/O', 'Multi-threaded for JS', 'No event loop'],
+                answer: 1,
+                explanation: 'Node.js uses non-blocking I/O.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'How do you export in CommonJS?',
+                options: ['export default', 'module.exports', 'import', 'define'],
+                answer: 1,
+                explanation: 'CommonJS uses module.exports.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which object holds environment variables?',
+                options: ['process.env', 'env.process', 'node.env', 'system.env'],
+                answer: 0,
+                explanation: 'process.env stores environment variables.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which Node API handles file system operations?',
+                options: ['fs', 'http', 'url', 'events'],
+                answer: 0,
+                explanation: 'fs provides file system access.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which pattern is used for async callbacks?',
+                options: ['Promise-first', 'Error-first', 'Result-first', 'Null-first'],
+                answer: 1,
+                explanation: 'Node uses error-first callback style.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'What does package.json define?',
+                options: ['Database schema', 'Project metadata and dependencies', 'HTML templates', 'OS settings'],
+                answer: 1,
+                explanation: 'package.json defines dependencies and scripts.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which object is the global in Node?',
+                options: ['window', 'global', 'document', 'root'],
+                answer: 1,
+                explanation: 'global is the Node global object.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Streams are useful for:',
+                options: ['Small in-memory data', 'Large data with backpressure', 'Only JSON', 'Only images'],
+                answer: 1,
+                explanation: 'Streams handle large data efficiently.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which method creates an HTTP server?',
+                options: ['http.createServer', 'net.createServer', 'fs.createServer', 'url.createServer'],
+                answer: 0,
+                explanation: 'http.createServer creates an HTTP server.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'What does Buffer represent?',
+                options: ['HTML markup', 'Binary data', 'CSS rules', 'Event handlers'],
+                answer: 1,
+                explanation: 'Buffer handles raw binary data.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Which function schedules a callback on the next tick?',
+                options: ['setTimeout', 'process.nextTick', 'setInterval', 'queueMicrotask'],
+                answer: 1,
+                explanation: 'process.nextTick schedules callbacks before I/O.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'What does path.join do?',
+                options: ['Splits paths', 'Joins path segments safely', 'Reads files', 'Deletes paths'],
+                answer: 1,
+                explanation: 'path.join builds normalized paths.'
+            },
+            {
+                worksheet: 'Node.js',
+                question: 'Node runs JavaScript in:',
+                options: ['SpiderMonkey', 'V8', 'Chakra', 'Java VM'],
+                answer: 1,
+                explanation: 'Node uses the V8 engine.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Which function starts an Express server?',
+                options: ['app.start()', 'app.listen()', 'app.run()', 'app.open()'],
+                answer: 1,
+                explanation: 'app.listen binds and listens for connections.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'req.params contains:',
+                options: ['Query strings', 'Route parameters', 'Headers', 'Body data'],
+                answer: 1,
+                explanation: 'req.params maps route params like /users/:id.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'req.query contains:',
+                options: ['Route params', 'Query string values', 'Request body', 'Cookies'],
+                answer: 1,
+                explanation: 'req.query holds URL query string values.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'What does res.json do?',
+                options: ['Sends a file', 'Sends JSON response', 'Redirects', 'Sets cookies only'],
+                answer: 1,
+                explanation: 'res.json sends JSON with proper headers.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Middleware signature is:',
+                options: ['(req, res)', '(req, res, next)', '(err, req, res)', '(res, next)'],
+                answer: 1,
+                explanation: 'Standard middleware receives req, res, next.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Error-handling middleware signature is:',
+                options: ['(req, res, next)', '(err, req, res, next)', '(req, err, res)', '(err, res)'],
+                answer: 1,
+                explanation: 'Error middleware has four parameters.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Order of middleware matters because:',
+                options: ['Express ignores order', 'They run in registration order', 'They are async only', 'They run alphabetically'],
+                answer: 1,
+                explanation: 'Middleware runs in the order it is registered.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Which middleware parses JSON bodies?',
+                options: ['express.urlencoded', 'express.json', 'bodyParser.text', 'cookieParser'],
+                answer: 1,
+                explanation: 'express.json parses JSON request bodies.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Which method mounts a router?',
+                options: ['app.route', 'app.use', 'app.mount', 'app.link'],
+                answer: 1,
+                explanation: 'app.use mounts routers and middleware.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'express.static is used to:',
+                options: ['Connect to DB', 'Serve static files', 'Parse JSON', 'Enable CORS'],
+                answer: 1,
+                explanation: 'express.static serves files from a directory.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Which method sets a response status code?',
+                options: ['res.code', 'res.status', 'res.sendStatus', 'res.statusCode()'],
+                answer: 1,
+                explanation: 'res.status sets the status code.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Which method sends a file?',
+                options: ['res.file', 'res.sendFile', 'res.downloadFile', 'res.sendJSON'],
+                answer: 1,
+                explanation: 'res.sendFile sends a file from disk.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Which HTTP method is used to create a resource?',
+                options: ['GET', 'POST', 'PUT', 'DELETE'],
+                answer: 1,
+                explanation: 'POST is commonly used to create resources.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'Which function passes control to the next handler?',
+                options: ['next()', 'done()', 'continue()', 'pass()'],
+                answer: 0,
+                explanation: 'Calling next() moves to the next middleware.'
+            },
+            {
+                worksheet: 'Express',
+                question: 'CORS is commonly enabled using:',
+                options: ['express.cors()', 'cors middleware', 'res.cors()', 'app.policy()'],
+                answer: 1,
+                explanation: 'The cors middleware package is standard.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'A REST API should be:',
+                options: ['Stateful', 'Stateless', 'Session-bound', 'Socket-only'],
+                answer: 1,
+                explanation: 'REST requires stateless requests.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which HTTP method is safe and idempotent?',
+                options: ['POST', 'GET', 'PATCH', 'CONNECT'],
+                answer: 1,
+                explanation: 'GET does not change server state.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'A typical resource URL for users is:',
+                options: ['/getUsers', '/users', '/users/get', '/user-list'],
+                answer: 1,
+                explanation: 'REST uses nouns like /users.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'PUT is used to:',
+                options: ['Create only', 'Replace a resource', 'Partial update', 'Delete resource'],
+                answer: 1,
+                explanation: 'PUT replaces the full resource.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'PATCH is used to:',
+                options: ['Replace full resource', 'Partial update', 'Read resource', 'Delete resource'],
+                answer: 1,
+                explanation: 'PATCH applies partial updates.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which status code means Created?',
+                options: ['200', '201', '204', '400'],
+                answer: 1,
+                explanation: '201 indicates a resource was created.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which status code means No Content?',
+                options: ['200', '201', '204', '404'],
+                answer: 2,
+                explanation: '204 indicates success with no response body.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which header describes response format?',
+                options: ['Accept', 'Content-Type', 'Authorization', 'Cache-Control'],
+                answer: 1,
+                explanation: 'Content-Type indicates the response media type.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which header tells the server desired response type?',
+                options: ['Accept', 'Content-Type', 'Origin', 'Host'],
+                answer: 0,
+                explanation: 'Accept specifies acceptable response types.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Pagination is usually done with:',
+                options: ['Path params only', 'Query params like page/limit', 'Headers only', 'Cookies'],
+                answer: 1,
+                explanation: 'page/limit or cursor params are common.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'A common versioning approach is:',
+                options: ['Header-only', 'No versioning', 'URL like /v1', 'Query like ?v=0'],
+                answer: 2,
+                explanation: 'Many APIs use /v1 in the URL.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which status code means Bad Request?',
+                options: ['400', '401', '403', '500'],
+                answer: 0,
+                explanation: '400 indicates invalid request input.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which status code means Unauthorized?',
+                options: ['401', '403', '404', '409'],
+                answer: 0,
+                explanation: '401 indicates missing or invalid auth.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'Which status code means Forbidden?',
+                options: ['401', '403', '404', '422'],
+                answer: 1,
+                explanation: '403 means authenticated but not allowed.'
+            },
+            {
+                worksheet: 'REST API',
+                question: 'HATEOAS means:',
+                options: ['No links in responses', 'Links guide client actions', 'Only POST requests', 'Cache only'],
+                answer: 1,
+                explanation: 'HATEOAS includes links to related actions.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'MongoDB stores data as:',
+                options: ['Rows', 'Documents', 'Tables', 'Tuples'],
+                answer: 1,
+                explanation: 'MongoDB stores JSON-like documents.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'The default primary key field is:',
+                options: ['id', '_id', 'key', 'pk'],
+                answer: 1,
+                explanation: 'MongoDB uses _id by default.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'MongoDB uses which binary format?',
+                options: ['JSON', 'BSON', 'XML', 'YAML'],
+                answer: 1,
+                explanation: 'MongoDB stores data as BSON.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Which operation adds a document?',
+                options: ['findOne', 'insertOne', 'updateOne', 'deleteOne'],
+                answer: 1,
+                explanation: 'insertOne inserts a single document.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Which operation modifies a document?',
+                options: ['updateOne', 'find', 'aggregate', 'count'],
+                answer: 0,
+                explanation: 'updateOne updates matching documents.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Which operation removes a document?',
+                options: ['removeOne', 'deleteOne', 'dropOne', 'eraseOne'],
+                answer: 1,
+                explanation: 'deleteOne removes a single document.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Indexes in MongoDB are used to:',
+                options: ['Store files', 'Speed up queries', 'Backup data', 'Encrypt data'],
+                answer: 1,
+                explanation: 'Indexes improve query performance.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'The aggregation pipeline stage to filter documents is:',
+                options: ['$match', '$group', '$sort', '$lookup'],
+                answer: 0,
+                explanation: '$match filters documents.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'The aggregation stage to group data is:',
+                options: ['$project', '$group', '$match', '$limit'],
+                answer: 1,
+                explanation: '$group aggregates by keys.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'A replica set provides:',
+                options: ['Sharding', 'High availability', 'Only indexing', 'Only caching'],
+                answer: 1,
+                explanation: 'Replica sets add redundancy and failover.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Sharding is used for:',
+                options: ['Encryption', 'Horizontal scaling', 'Backups only', 'Schema validation'],
+                answer: 1,
+                explanation: 'Sharding distributes data across nodes.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Projection is used to:',
+                options: ['Filter documents', 'Select fields', 'Sort results', 'Update fields'],
+                answer: 1,
+                explanation: 'Projection chooses which fields to return.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Which query returns all documents?',
+                options: ['find({})', 'find(null)', 'find(*)', 'find(all)'],
+                answer: 0,
+                explanation: 'find({}) matches all documents.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'A collection is most similar to:',
+                options: ['Table', 'Row', 'Column', 'Index'],
+                answer: 0,
+                explanation: 'Collections are like tables.'
+            },
+            {
+                worksheet: 'MongoDB',
+                question: 'Schema validation in MongoDB is enforced via:',
+                options: ['JSON Schema', 'TypeScript', 'SQL', 'ORM only'],
+                answer: 0,
+                explanation: 'MongoDB supports JSON Schema validation.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'In Mongoose, a schema defines:',
+                options: ['Routes', 'Document structure', 'HTTP methods', 'Server ports'],
+                answer: 1,
+                explanation: 'Schemas define fields, types, and validation.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'A Mongoose model is:',
+                options: ['A schema instance', 'A compiled schema for CRUD', 'A database', 'A router'],
+                answer: 1,
+                explanation: 'Models provide the interface for CRUD.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which method creates a document instance?',
+                options: ['Model.create', 'Schema.create', 'Collection.create', 'Database.create'],
+                answer: 0,
+                explanation: 'Model.create inserts a new document.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'populate is used to:',
+                options: ['Index fields', 'Join referenced documents', 'Validate fields', 'Encrypt fields'],
+                answer: 1,
+                explanation: 'populate replaces refs with documents.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Mongoose middleware is also called:',
+                options: ['Hooks', 'Routes', 'Schemas', 'Drivers'],
+                answer: 0,
+                explanation: 'Pre and post hooks are middleware.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'The lean() method returns:',
+                options: ['Mongoose documents', 'Plain JS objects', 'Strings only', 'Streams'],
+                answer: 1,
+                explanation: 'lean improves performance by returning plain objects.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which option adds createdAt and updatedAt?',
+                options: ['timestamps: true', 'versionKey: true', 'strict: false', 'autoIndex: true'],
+                answer: 0,
+                explanation: 'timestamps adds createdAt/updatedAt.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'What does strict mode do?',
+                options: ['Allows any field', 'Ignores fields not in schema', 'Disables validation', 'Disables indexes'],
+                answer: 1,
+                explanation: 'Strict mode drops unknown fields.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which method updates and returns the new doc?',
+                options: ['findById', 'findOneAndUpdate with new: true', 'updateOne', 'replaceOne'],
+                answer: 1,
+                explanation: 'findOneAndUpdate with new: true returns updated doc.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Validation in Mongoose happens:',
+                options: ['Only in DB', 'Before save', 'After save', 'Never'],
+                answer: 1,
+                explanation: 'Schema validation runs before save.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which is an instance method?',
+                options: ['Schema.statics.foo', 'doc.foo()', 'Model.foo()', 'mongoose.foo()'],
+                answer: 1,
+                explanation: 'Instance methods are defined on documents.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which is a static method?',
+                options: ['Schema.methods.foo', 'doc.foo()', 'Schema.statics.foo', 'mongoose.foo()'],
+                answer: 2,
+                explanation: 'Statics are defined on Schema.statics.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which connection method is recommended?',
+                options: ['mongoose.connect', 'mongoose.open', 'mongoose.link', 'mongoose.start'],
+                answer: 0,
+                explanation: 'mongoose.connect opens the default connection.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which option enforces unique values?',
+                options: ['required', 'unique', 'index', 'immutable'],
+                answer: 1,
+                explanation: 'unique creates a unique index.'
+            },
+            {
+                worksheet: 'Mongoose',
+                question: 'Which method deletes a document by id?',
+                options: ['findByIdAndDelete', 'deleteById', 'removeById', 'dropById'],
+                answer: 0,
+                explanation: 'findByIdAndDelete removes by id.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'Authentication verifies:',
+                options: ['Permissions', 'Identity', 'Data integrity', 'Schema'],
+                answer: 1,
+                explanation: 'Authentication confirms who the user is.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'Authorization determines:',
+                options: ['Identity', 'Access rights', 'Password strength', 'Encryption'],
+                answer: 1,
+                explanation: 'Authorization checks permissions.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'JWT stands for:',
+                options: ['Java Web Token', 'JSON Web Token', 'JWT Web Token', 'JSON Wide Token'],
+                answer: 1,
+                explanation: 'JWT is JSON Web Token.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'The Authorization header typically uses:',
+                options: ['Token <jwt>', 'Bearer <jwt>', 'JWT <jwt>', 'Auth <jwt>'],
+                answer: 1,
+                explanation: 'Bearer tokens are standard.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'Passwords should be stored as:',
+                options: ['Plain text', 'Hashed with salt', 'Encrypted only', 'Base64'],
+                answer: 1,
+                explanation: 'Use salted hashing like bcrypt.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'Which status code is correct for invalid credentials?',
+                options: ['401', '403', '404', '409'],
+                answer: 0,
+                explanation: '401 indicates invalid or missing credentials.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'Which status code is correct for insufficient permissions?',
+                options: ['401', '403', '422', '500'],
+                answer: 1,
+                explanation: '403 is for forbidden access.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'Refresh tokens are used to:',
+                options: ['Encrypt passwords', 'Get new access tokens', 'Store sessions only', 'Sign cookies'],
+                answer: 1,
+                explanation: 'Refresh tokens issue new access tokens.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'httpOnly cookies help prevent:',
+                options: ['CSRF', 'XSS access to cookies', 'SQL injection', 'Brute force'],
+                answer: 1,
+                explanation: 'httpOnly blocks JS access to cookies.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'CSRF protection commonly uses:',
+                options: ['CORS', 'CSRF tokens', 'JWT only', 'SSL only'],
+                answer: 1,
+                explanation: 'CSRF tokens validate form origin.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'OAuth is used for:',
+                options: ['Password hashing', 'Third-party auth', 'Caching', 'Compression'],
+                answer: 1,
+                explanation: 'OAuth enables delegated authorization.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'A common token storage for SPAs is:',
+                options: ['localStorage only', 'httpOnly cookies', 'URL params', 'SessionStorage only'],
+                answer: 1,
+                explanation: 'httpOnly cookies reduce XSS risk.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'RBAC stands for:',
+                options: ['Role Based Access Control', 'Resource Based Auth Control', 'Rule Based API Control', 'Role Based Auth Cache'],
+                answer: 0,
+                explanation: 'RBAC uses roles to manage permissions.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'bcrypt is used for:',
+                options: ['Token signing', 'Password hashing', 'Database encryption', 'Session storage'],
+                answer: 1,
+                explanation: 'bcrypt is for password hashing.'
+            },
+            {
+                worksheet: 'Auth',
+                question: 'JWTs should include:',
+                options: ['Password', 'Expiration (exp)', 'Database secret', 'Full user record'],
+                answer: 1,
+                explanation: 'exp controls token lifetime.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'MERN stands for:',
+                options: ['MongoDB, Express, React, Node', 'MySQL, Express, React, Node', 'MongoDB, Ember, React, Node', 'MongoDB, Express, Redux, Node'],
+                answer: 0,
+                explanation: 'MERN is MongoDB, Express, React, Node.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'The client in MERN is typically:',
+                options: ['Express', 'React', 'MongoDB', 'Node'],
+                answer: 1,
+                explanation: 'React is the frontend client.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'The server API in MERN is typically:',
+                options: ['MongoDB', 'Express + Node', 'React', 'Vite'],
+                answer: 1,
+                explanation: 'Express on Node builds the API.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Data is exchanged as:',
+                options: ['XML only', 'JSON', 'CSV', 'Binary only'],
+                answer: 1,
+                explanation: 'JSON is the standard payload format.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Typical flow is:',
+                options: ['DB -> Client -> Server', 'Client -> Server -> DB', 'Server -> Client -> DB', 'Client -> DB directly'],
+                answer: 1,
+                explanation: 'Client calls server, server accesses DB.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'API routes usually live in:',
+                options: ['React components', 'Express router', 'Mongo shell', 'CSS files'],
+                answer: 1,
+                explanation: 'Express routes define API endpoints.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Which layer handles UI state?',
+                options: ['MongoDB', 'React', 'Express', 'Node core'],
+                answer: 1,
+                explanation: 'React manages UI state.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Which layer handles business logic?',
+                options: ['React', 'Express/Node', 'MongoDB only', 'CSS'],
+                answer: 1,
+                explanation: 'Server handles business logic.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Where should secrets live?',
+                options: ['Client bundle', '.env on server', 'URL params', 'LocalStorage'],
+                answer: 1,
+                explanation: 'Secrets should stay on the server.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'The API should be:',
+                options: ['Stateful', 'Stateless', 'Session-only', 'Socket-only'],
+                answer: 1,
+                explanation: 'APIs are typically stateless.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Which build output is deployed for React?',
+                options: ['src only', 'dist/build folder', 'node_modules', 'public only'],
+                answer: 1,
+                explanation: 'Build output is deployed to static hosting.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Where is server-side validation done?',
+                options: ['React', 'Express/Node', 'Mongo shell only', 'Browser only'],
+                answer: 1,
+                explanation: 'Server validates to protect data.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Which is a common API pattern?',
+                options: ['MVC or layered', 'Single file only', 'Inline in React', 'No structure'],
+                answer: 0,
+                explanation: 'Layered or MVC patterns are common.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'CORS issues happen because:',
+                options: ['Same origin policy', 'JSON parsing', 'MongoDB', 'React rendering'],
+                answer: 0,
+                explanation: 'Browsers enforce same origin policy.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Which is a deployment best practice?',
+                options: ['Hardcode secrets', 'Use environment variables', 'Store tokens in code', 'Disable logging'],
+                answer: 1,
+                explanation: 'Use env vars for config and secrets.'
+            },
+            {
+                worksheet: 'MERN Architecture',
+                question: 'Which is true for full stack debugging?',
+                options: ['Only client logs matter', 'Trace request across client/server/DB', 'Server logs are optional', 'DB logs are useless'],
+                answer: 1,
+                explanation: 'Trace the full request path.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Redux store is:',
+                options: ['Multiple stores per app', 'Single source of truth', 'Only local state', 'Server-side only'],
+                answer: 1,
+                explanation: 'Redux uses one store.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Reducers should be:',
+                options: ['Impure', 'Pure functions', 'Async', 'Mutating state'],
+                answer: 1,
+                explanation: 'Reducers are pure and return new state.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'An action contains:',
+                options: ['Only payload', 'type and optional payload', 'Only type', 'Only state'],
+                answer: 1,
+                explanation: 'Actions have a type and optional payload.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'dispatch is used to:',
+                options: ['Read state', 'Send actions to reducers', 'Create components', 'Fetch API'],
+                answer: 1,
+                explanation: 'dispatch sends actions.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Immutability is important because:',
+                options: ['It is faster always', 'It enables change detection', 'It reduces code', 'It hides state'],
+                answer: 1,
+                explanation: 'Immutable updates allow efficient comparisons.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Middleware allows:',
+                options: ['Direct DOM changes', 'Intercepting actions', 'Changing reducers', 'Skipping store'],
+                answer: 1,
+                explanation: 'Middleware can log or handle async actions.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'redux-thunk is used for:',
+                options: ['Sync actions only', 'Async actions', 'Styling', 'Routing'],
+                answer: 1,
+                explanation: 'Thunk enables async action creators.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Selectors are used to:',
+                options: ['Update state', 'Derive data from state', 'Dispatch actions', 'Navigate routes'],
+                answer: 1,
+                explanation: 'Selectors compute derived data.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Redux Toolkit provides:',
+                options: ['Boilerplate only', 'Simplified Redux setup', 'Only middleware', 'Only testing'],
+                answer: 1,
+                explanation: 'RTK reduces boilerplate.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'createSlice generates:',
+                options: ['Components', 'Reducers and actions', 'Routes', 'Middlewares only'],
+                answer: 1,
+                explanation: 'createSlice builds reducers and actions.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'combineReducers does:',
+                options: ['Merges stores', 'Combines slice reducers', 'Combines actions', 'Combines selectors'],
+                answer: 1,
+                explanation: 'It composes reducers into a root reducer.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Redux DevTools are used for:',
+                options: ['Build', 'Inspecting state/actions', 'Deployment', 'Linting'],
+                answer: 1,
+                explanation: 'DevTools let you inspect and time-travel.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'When should Redux be used?',
+                options: ['For all state', 'When state is shared and complex', 'Only for forms', 'Only for CSS'],
+                answer: 1,
+                explanation: 'Use Redux for shared, complex state.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Reducers must not:',
+                options: ['Return state', 'Mutate state', 'Handle actions', 'Use switch'],
+                answer: 1,
+                explanation: 'Reducers should not mutate state.'
+            },
+            {
+                worksheet: 'Redux',
+                question: 'Async flow with thunk is:',
+                options: ['dispatch -> thunk -> API -> dispatch', 'API -> reducer only', 'dispatch -> reducer -> API', 'state -> API -> dispatch'],
+                answer: 0,
+                explanation: 'Thunk handles async then dispatches results.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'XSS is prevented by:',
+                options: ['Storing tokens in localStorage', 'Output encoding and sanitization', 'Disabling HTTPS', 'Allowing inline scripts'],
+                answer: 1,
+                explanation: 'Sanitize and encode user input/output.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'CSRF is best prevented by:',
+                options: ['CSP', 'CSRF tokens and SameSite cookies', 'JWT only', 'HTTP only'],
+                answer: 1,
+                explanation: 'Tokens and SameSite cookies protect against CSRF.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'SQL injection is prevented by:',
+                options: ['String concat', 'Parameterized queries', 'No input validation', 'LocalStorage'],
+                answer: 1,
+                explanation: 'Use parameterized queries or ORM.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'NoSQL injection is prevented by:',
+                options: ['Input validation', 'Disabling auth', 'Storing in cookies', 'Using GET only'],
+                answer: 0,
+                explanation: 'Validate and sanitize inputs.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'HTTPS provides:',
+                options: ['Compression only', 'Encryption in transit', 'Faster DB', 'Caching'],
+                answer: 1,
+                explanation: 'HTTPS encrypts data in transit.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'CSP stands for:',
+                options: ['Content Security Policy', 'Cross Site Policy', 'Cookie Security Policy', 'Content Source Protocol'],
+                answer: 0,
+                explanation: 'CSP restricts allowed content sources.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'Rate limiting helps prevent:',
+                options: ['Caching', 'Brute force attacks', 'XSS', 'CORS errors'],
+                answer: 1,
+                explanation: 'Rate limiting slows brute force.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'Which header prevents clickjacking?',
+                options: ['X-Frame-Options', 'X-Powered-By', 'ETag', 'Accept'],
+                answer: 0,
+                explanation: 'X-Frame-Options blocks framing.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'JWT stored in localStorage is vulnerable to:',
+                options: ['CSRF', 'XSS', 'CORS', 'SQL injection'],
+                answer: 1,
+                explanation: 'XSS can read localStorage.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'Input validation should happen:',
+                options: ['Only client', 'Only server', 'Both client and server', 'Never'],
+                answer: 2,
+                explanation: 'Client for UX, server for security.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'SameSite cookies help mitigate:',
+                options: ['XSS', 'CSRF', 'SQL injection', 'CORS'],
+                answer: 1,
+                explanation: 'SameSite reduces cross-site requests.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'Password policy should include:',
+                options: ['Short passwords', 'Minimum length and complexity', 'No hashing', 'No rotation'],
+                answer: 1,
+                explanation: 'Strong policies reduce risk.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'Helmet.js is used to:',
+                options: ['Minify code', 'Set security headers', 'Run tests', 'Seed DB'],
+                answer: 1,
+                explanation: 'Helmet sets secure HTTP headers.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'Least privilege means:',
+                options: ['Give all access', 'Give minimal required access', 'No access', 'Random access'],
+                answer: 1,
+                explanation: 'Only grant required permissions.'
+            },
+            {
+                worksheet: 'Security',
+                question: 'Logging sensitive data should be:',
+                options: ['Always full', 'Avoided or masked', 'Stored in localStorage', 'Only on client'],
+                answer: 1,
+                explanation: 'Mask or avoid sensitive data in logs.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Code splitting in React is done with:',
+                options: ['React.lazy', 'useMemo', 'useRef', 'React.memo'],
+                answer: 0,
+                explanation: 'React.lazy loads chunks on demand.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Lazy loading images improves:',
+                options: ['CPU usage', 'Initial page load', 'DB indexing', 'CORS'],
+                answer: 1,
+                explanation: 'It reduces initial network load.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Memoization in React is used to:',
+                options: ['Recompute always', 'Avoid expensive recomputation', 'Increase bundle size', 'Disable renders'],
+                answer: 1,
+                explanation: 'Memoization caches results.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'HTTP caching is controlled by:',
+                options: ['Cache-Control', 'Accept', 'Host', 'Origin'],
+                answer: 0,
+                explanation: 'Cache-Control defines caching behavior.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'A CDN helps by:',
+                options: ['Encrypting DB', 'Serving assets closer to users', 'Replacing API', 'Replacing DB'],
+                answer: 1,
+                explanation: 'CDNs reduce latency for static assets.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Server-side compression often uses:',
+                options: ['gzip or brotli', 'base64', 'hex', 'md5'],
+                answer: 0,
+                explanation: 'gzip/brotli reduce response size.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Database indexing improves:',
+                options: ['Writes only', 'Read query speed', 'Network latency', 'Disk size'],
+                answer: 1,
+                explanation: 'Indexes speed up reads.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'N+1 query problem means:',
+                options: ['Too many queries per item', 'Too many indexes', 'Too many caches', 'Too many users'],
+                answer: 0,
+                explanation: 'One query triggers many extra queries.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Debouncing is used to:',
+                options: ['Run on every event', 'Delay execution until idle', 'Cache data', 'Block requests'],
+                answer: 1,
+                explanation: 'Debounce waits for idle before running.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Throttling is used to:',
+                options: ['Run continuously', 'Limit execution rate', 'Disable events', 'Cache DOM'],
+                answer: 1,
+                explanation: 'Throttle limits calls per time interval.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'React.memo helps by:',
+                options: ['Reducing bundle size', 'Skipping re-renders with same props', 'Caching API calls', 'Changing state'],
+                answer: 1,
+                explanation: 'React.memo avoids unnecessary renders.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'useMemo helps by:',
+                options: ['Caching values', 'Handling effects', 'Managing refs', 'Routing'],
+                answer: 0,
+                explanation: 'useMemo caches computed values.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'useCallback helps by:',
+                options: ['Caching functions', 'Caching arrays', 'Routing', 'Fetching'],
+                answer: 0,
+                explanation: 'useCallback memoizes function references.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Lighthouse is used for:',
+                options: ['Security only', 'Performance audits', 'Unit tests', 'CI only'],
+                answer: 1,
+                explanation: 'Lighthouse audits performance and UX.'
+            },
+            {
+                worksheet: 'Performance',
+                question: 'Which is a backend optimization?',
+                options: ['Image lazy loading', 'Redis caching', 'CSS minify', 'SVG sprites'],
+                answer: 1,
+                explanation: 'Redis improves backend response time.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Access tokens should be:',
+                options: ['Long-lived', 'Short-lived', 'Never expire', 'Stored in URL'],
+                answer: 1,
+                explanation: 'Short-lived tokens reduce risk.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Refresh tokens should be:',
+                options: ['Short-lived', 'Longer-lived', 'Stored in JS only', 'Sent in URL'],
+                answer: 1,
+                explanation: 'Refresh tokens usually live longer.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Token rotation means:',
+                options: ['Reuse refresh token', 'Issue new refresh token each use', 'Store in localStorage', 'Disable refresh'],
+                answer: 1,
+                explanation: 'Rotation reduces replay risk.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Refresh endpoint should:',
+                options: ['Skip validation', 'Validate refresh token', 'Return HTML', 'Use GET only'],
+                answer: 1,
+                explanation: 'Always validate refresh tokens.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Logout should:',
+                options: ['Do nothing', 'Invalidate refresh token', 'Only clear UI', 'Only clear access token'],
+                answer: 1,
+                explanation: 'Invalidate server-side refresh tokens.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Storing refresh tokens in httpOnly cookies helps:',
+                options: ['CORS', 'Reduce XSS risk', 'Increase latency', 'Disable HTTPS'],
+                answer: 1,
+                explanation: 'httpOnly cookies are not accessible to JS.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Which claim identifies token expiry?',
+                options: ['iss', 'exp', 'aud', 'sub'],
+                answer: 1,
+                explanation: 'exp defines token expiration.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Sliding sessions are:',
+                options: ['Fixed expiry', 'Extended on activity', 'Never expire', 'Expired on login'],
+                answer: 1,
+                explanation: 'Activity extends session lifetime.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Refresh token theft risk is reduced by:',
+                options: ['Long expiry', 'Rotation and reuse detection', 'Storing in localStorage', 'Disabling HTTPS'],
+                answer: 1,
+                explanation: 'Rotation and detection reduce replay.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'CSRF tokens are needed when using:',
+                options: ['Bearer tokens only', 'Cookie-based auth', 'API keys only', 'Public endpoints'],
+                answer: 1,
+                explanation: 'Cookies are sent automatically, so CSRF tokens help.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Access token should be sent in:',
+                options: ['Query string', 'Authorization header', 'LocalStorage only', 'URL fragment'],
+                answer: 1,
+                explanation: 'Use Authorization: Bearer <token>.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Refresh token should be sent in:',
+                options: ['Authorization header only', 'httpOnly cookie or body', 'URL params', 'LocalStorage only'],
+                answer: 1,
+                explanation: 'Cookies or body are common patterns.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'If refresh token is invalid, server should:',
+                options: ['Issue access token', 'Force re-login', 'Ignore', 'Return 200'],
+                answer: 1,
+                explanation: 'Invalid refresh should require re-login.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Access token scope should be:',
+                options: ['All permissions', 'Least privilege', 'No permissions', 'Admin only'],
+                answer: 1,
+                explanation: 'Use least privilege scopes.'
+            },
+            {
+                worksheet: 'Auth Flow',
+                question: 'Revocation lists are used to:',
+                options: ['Cache tokens', 'Invalidate tokens early', 'Encrypt tokens', 'Refresh tokens'],
+                answer: 1,
+                explanation: 'Revocation lists invalidate tokens.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Schema validation tools include:',
+                options: ['Zod/Joi/Yup', 'Redux', 'React Router', 'Axios'],
+                answer: 0,
+                explanation: 'Zod, Joi, Yup validate data.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Server validation is required because:',
+                options: ['Client is trusted', 'Client can be bypassed', 'It is optional', 'It slows apps'],
+                answer: 1,
+                explanation: 'Client checks can be bypassed.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Centralized error handling is used to:',
+                options: ['Hide errors', 'Return consistent responses', 'Disable logs', 'Cache errors'],
+                answer: 1,
+                explanation: 'Consistency improves debugging and UX.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Common error response format includes:',
+                options: ['message and code', 'HTML only', 'Binary only', 'No body'],
+                answer: 0,
+                explanation: 'Return a message and a code.'
+            },
+            {
+                worksheet: 'Validation',
+                question: '422 Unprocessable Entity means:',
+                options: ['Server error', 'Validation error', 'Not found', 'Unauthorized'],
+                answer: 1,
+                explanation: '422 indicates validation failure.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Error logging should include:',
+                options: ['Only stack trace', 'Context and request info', 'Passwords', 'Only client logs'],
+                answer: 1,
+                explanation: 'Context helps debugging.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'A good API error status for not found is:',
+                options: ['400', '401', '404', '409'],
+                answer: 2,
+                explanation: '404 means resource not found.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'In Express, async errors should be:',
+                options: ['Ignored', 'Passed to next(err)', 'Returned as 200', 'Logged only'],
+                answer: 1,
+                explanation: 'Pass errors to centralized handler.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Input sanitization helps prevent:',
+                options: ['Caching issues', 'Injection attacks', 'CORS', 'Latency'],
+                answer: 1,
+                explanation: 'Sanitize to avoid injection.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Custom error classes help by:',
+                options: ['Adding HTTP context', 'Removing logs', 'Hiding errors', 'Skipping validation'],
+                answer: 0,
+                explanation: 'Custom errors carry status and details.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Client-side validation helps:',
+                options: ['Security only', 'User experience', 'Server performance only', 'DB indexing'],
+                answer: 1,
+                explanation: 'Client validation improves UX.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Rate-limited endpoints should return:',
+                options: ['200', '429', '403', '500'],
+                answer: 1,
+                explanation: '429 means too many requests.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Which status code means conflict?',
+                options: ['409', '401', '402', '405'],
+                answer: 0,
+                explanation: '409 indicates a conflict.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Which status code means server error?',
+                options: ['500', '404', '401', '400'],
+                answer: 0,
+                explanation: '500 indicates internal server error.'
+            },
+            {
+                worksheet: 'Validation',
+                question: 'Validation errors should be:',
+                options: ['Silent', 'Clear and field-specific', 'Only stack trace', 'Only console logs'],
+                answer: 1,
+                explanation: 'Field-level errors help users fix input.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Unit tests validate:',
+                options: ['Entire system', 'Single function or component', 'Only UI', 'Only DB'],
+                answer: 1,
+                explanation: 'Unit tests target small units.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Integration tests validate:',
+                options: ['Single function', 'Multiple modules together', 'Only UI', 'Only routes'],
+                answer: 1,
+                explanation: 'Integration tests check module interactions.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'End-to-end tests validate:',
+                options: ['UI only', 'Full user flows', 'Only reducers', 'Only DB'],
+                answer: 1,
+                explanation: 'E2E tests validate full flows.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Jest is primarily used for:',
+                options: ['Building UI', 'Testing JS', 'Deployment', 'Linting'],
+                answer: 1,
+                explanation: 'Jest is a JS testing framework.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'React Testing Library encourages:',
+                options: ['Testing implementation details', 'Testing user behavior', 'Skipping tests', 'Only snapshots'],
+                answer: 1,
+                explanation: 'RTL focuses on user behavior.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Supertest is used for:',
+                options: ['UI tests', 'API endpoint tests', 'Linting', 'DB migrations'],
+                answer: 1,
+                explanation: 'Supertest tests HTTP endpoints.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'A test pyramid favors:',
+                options: ['More E2E tests', 'More unit tests', 'No unit tests', 'No integration tests'],
+                answer: 1,
+                explanation: 'Most tests should be unit tests.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Mocking is used to:',
+                options: ['Replace real dependencies', 'Break tests', 'Deploy code', 'Cache API'],
+                answer: 0,
+                explanation: 'Mocks isolate dependencies.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Snapshot tests are best for:',
+                options: ['API performance', 'UI output regression', 'DB schema', 'Security'],
+                answer: 1,
+                explanation: 'Snapshots detect UI output changes.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Test isolation means:',
+                options: ['Tests share state', 'Tests do not depend on each other', 'All tests are E2E', 'Only one test'],
+                answer: 1,
+                explanation: 'Independent tests reduce flakiness.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'CI test runs should:',
+                options: ['Use production DB', 'Use test data', 'Skip tests', 'Only run UI'],
+                answer: 1,
+                explanation: 'Use isolated test data.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Coverage measures:',
+                options: ['App size', 'Code executed by tests', 'Network speed', 'DB size'],
+                answer: 1,
+                explanation: 'Coverage shows how much code is tested.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'A flaky test is:',
+                options: ['Always failing', 'Inconsistent', 'Fast', 'Well isolated'],
+                answer: 1,
+                explanation: 'Flaky tests pass/fail unpredictably.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'When to use fake timers?',
+                options: ['Async timing tests', 'Layout tests', 'CSS tests', 'DB tests'],
+                answer: 0,
+                explanation: 'Fake timers help test time-based logic.'
+            },
+            {
+                worksheet: 'Testing',
+                question: 'Seeding test DB helps:',
+                options: ['Production', 'Consistent test data', 'Disable tests', 'Remove migrations'],
+                answer: 1,
+                explanation: 'Seed data makes tests predictable.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'CI/CD stands for:',
+                options: ['Code Integration/Code Delivery', 'Continuous Integration/Continuous Delivery', 'Central Integration/Central Deploy', 'Continuous Index/Continuous DB'],
+                answer: 1,
+                explanation: 'CI/CD automates build and deploy.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Environment variables should store:',
+                options: ['Secrets and config', 'User passwords', 'Static assets only', 'Logs only'],
+                answer: 0,
+                explanation: 'Env vars hold config and secrets.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'A zero-downtime deploy strategy is:',
+                options: ['Blue/Green', 'Stop then start', 'Manual restart', 'Single server only'],
+                answer: 0,
+                explanation: 'Blue/Green swaps traffic with minimal downtime.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Secrets should be managed by:',
+                options: ['Git', 'Secret manager or env vars', 'Client storage', 'Logs'],
+                answer: 1,
+                explanation: 'Use secret management tools or env vars.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'A health check endpoint is used for:',
+                options: ['Security', 'Service uptime monitoring', 'Caching', 'Testing only'],
+                answer: 1,
+                explanation: 'Health checks verify service status.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Static assets for React are commonly served by:',
+                options: ['CDN or static host', 'Database', 'SMTP', 'WebSocket'],
+                answer: 0,
+                explanation: 'Static hosting/CDN serves the build.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Docker helps by:',
+                options: ['Changing language', 'Standardizing environments', 'Removing DB', 'Replacing CI'],
+                answer: 1,
+                explanation: 'Docker makes builds reproducible.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Migrations should be:',
+                options: ['Skipped', 'Versioned and repeatable', 'Manual only', 'Client side'],
+                answer: 1,
+                explanation: 'Versioned migrations reduce risk.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Rollback should be:',
+                options: ['Impossible', 'Fast and safe', 'Manual only', 'Ignored'],
+                answer: 1,
+                explanation: 'Safe rollback is a deployment best practice.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'A reverse proxy often handles:',
+                options: ['UI state', 'TLS termination', 'Database joins', 'Linting'],
+                answer: 1,
+                explanation: 'Reverse proxies often terminate TLS.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Logging should be:',
+                options: ['Disabled', 'Structured and centralized', 'Client-only', 'Plain text only'],
+                answer: 1,
+                explanation: 'Structured logs improve analysis.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Which file defines Node start scripts?',
+                options: ['package.json', 'index.html', 'vite.config.js', 'README.md'],
+                answer: 0,
+                explanation: 'package.json scripts define start commands.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Feature flags help by:',
+                options: ['Changing DB schema', 'Controlled rollout', 'Disabling tests', 'Hiding logs'],
+                answer: 1,
+                explanation: 'Flags enable safe, gradual rollout.'
+            },
+            {
+                worksheet: 'Deployment',
+                question: 'Which is a good backup strategy?',
+                options: ['No backups', 'Automated and tested', 'Manual only', 'Client side'],
+                answer: 1,
+                explanation: 'Backups should be automated and tested.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Structured logs are:',
+                options: ['Plain text only', 'Key-value or JSON logs', 'Binary logs only', 'No logs'],
+                answer: 1,
+                explanation: 'Structured logs are easier to search.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'A correlation ID helps:',
+                options: ['Encrypt data', 'Trace requests across services', 'Speed queries', 'Compress assets'],
+                answer: 1,
+                explanation: 'Correlation IDs connect logs across services.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Metrics are used to track:',
+                options: ['Code style', 'Latency, errors, throughput', 'CSS', 'Images'],
+                answer: 1,
+                explanation: 'Metrics show system health.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Tracing is used to:',
+                options: ['Format logs', 'Track requests across services', 'Store files', 'Cache assets'],
+                answer: 1,
+                explanation: 'Tracing follows a request path.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Sentry is used for:',
+                options: ['Error tracking', 'Deployment', 'Database migrations', 'Caching'],
+                answer: 0,
+                explanation: 'Sentry tracks runtime errors.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Alerting should be:',
+                options: ['Noisy always', 'Actionable', 'Ignored', 'Random'],
+                answer: 1,
+                explanation: 'Alerts should be actionable.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Log levels include:',
+                options: ['red, blue', 'debug, info, warn, error', 'fast, slow', 'up, down'],
+                answer: 1,
+                explanation: 'Standard log levels help filter data.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Uptime monitoring checks:',
+                options: ['Code style', 'Service availability', 'Database schema', 'CSS'],
+                answer: 1,
+                explanation: 'Uptime checks availability.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Dashboards are used to:',
+                options: ['Write code', 'Visualize metrics', 'Deploy code', 'Validate forms'],
+                answer: 1,
+                explanation: 'Dashboards visualize system health.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Sampling is used to:',
+                options: ['Store all logs', 'Reduce telemetry volume', 'Increase cost', 'Disable tracing'],
+                answer: 1,
+                explanation: 'Sampling reduces telemetry cost.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'p95 latency means:',
+                options: ['Average latency', '95th percentile', 'Minimum latency', 'Max latency only'],
+                answer: 1,
+                explanation: 'p95 shows upper latency for most requests.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Error budget is used in:',
+                options: ['SLA/SLO tracking', 'UI design', 'DB indexing', 'Auth only'],
+                answer: 0,
+                explanation: 'Error budgets guide reliability tradeoffs.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Which is a common metrics stack?',
+                options: ['Prometheus + Grafana', 'Mongo + React', 'Express + Node', 'HTML + CSS'],
+                answer: 0,
+                explanation: 'Prometheus and Grafana are common.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Logs should avoid:',
+                options: ['Sensitive data', 'Timestamps', 'Request IDs', 'Levels'],
+                answer: 0,
+                explanation: 'Avoid logging secrets or PII.'
+            },
+            {
+                worksheet: 'Monitoring',
+                question: 'Which is a good log format?',
+                options: ['JSON', 'Random text', 'No format', 'Binary only'],
+                answer: 0,
+                explanation: 'JSON logs are easier to parse.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'TypeScript is:',
+                options: ['A runtime', 'A superset of JavaScript', 'A database', 'A CSS tool'],
+                answer: 1,
+                explanation: 'TypeScript adds types to JS.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which is a union type?',
+                options: ['string & number', 'string | number', 'string + number', 'string / number'],
+                answer: 1,
+                explanation: 'Union uses |.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which is a generic function?',
+                options: ['function id(x)', 'function id<T>(x: T)', 'function id(x: any)', 'function id(x: string)'],
+                answer: 1,
+                explanation: 'Generics use type parameters.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'unknown differs from any because:',
+                options: ['unknown is unsafe', 'unknown requires type checks', 'any requires checks', 'unknown is deprecated'],
+                answer: 1,
+                explanation: 'unknown forces type narrowing.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Type narrowing can be done with:',
+                options: ['typeof', 'console.log', 'parseInt', 'JSON.stringify'],
+                answer: 0,
+                explanation: 'typeof helps narrow types.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Interfaces are used to:',
+                options: ['Define object shape', 'Run code', 'Build UI', 'Connect DB'],
+                answer: 0,
+                explanation: 'Interfaces define structure.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which option enables strict type checks?',
+                options: ['strict: true', 'any: true', 'safe: true', 'types: false'],
+                answer: 0,
+                explanation: 'strict mode enables strict checks.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'In React, props typing is done with:',
+                options: ['interface or type', 'class only', 'useRef', 'useEffect'],
+                answer: 0,
+                explanation: 'Props are typed with interfaces/types.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which type means no value is returned?',
+                options: ['never', 'void', 'null', 'unknown'],
+                answer: 1,
+                explanation: 'void indicates no return value.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which type means a function never returns?',
+                options: ['void', 'never', 'null', 'undefined'],
+                answer: 1,
+                explanation: 'never is used for functions that never return.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which is a type assertion?',
+                options: ['value as Type', 'value == Type', 'value => Type', 'Type(value) only'],
+                answer: 0,
+                explanation: 'Use value as Type for assertions.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which is preferred over enum in many codebases?',
+                options: ['const union types', 'var', 'any', 'interface'],
+                answer: 0,
+                explanation: 'Union types are often preferred.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Optional properties use:',
+                options: ['?', '!', '&', '@'],
+                answer: 0,
+                explanation: 'Optional props use ?.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Non-null assertion uses:',
+                options: ['!', '?', '??', '::'],
+                answer: 0,
+                explanation: '! asserts value is not null.'
+            },
+            {
+                worksheet: 'TypeScript',
+                question: 'Which tool compiles TS to JS?',
+                options: ['tsc', 'babel only', 'webpack only', 'node'],
+                answer: 0,
+                explanation: 'tsc is the TypeScript compiler.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'BrowserRouter uses:',
+                options: ['Hash', 'History API', 'Cookies', 'LocalStorage'],
+                answer: 1,
+                explanation: 'BrowserRouter uses the History API.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Which component defines routes in v6?',
+                options: ['Switch', 'Routes', 'Router', 'RouteList'],
+                answer: 1,
+                explanation: 'Routes replaced Switch in v6.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'useParams returns:',
+                options: ['Query params', 'Route params', 'State', 'History'],
+                answer: 1,
+                explanation: 'useParams returns route params.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'useNavigate is used to:',
+                options: ['Fetch data', 'Programmatically navigate', 'Validate forms', 'Update state'],
+                answer: 1,
+                explanation: 'useNavigate changes routes.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Link is preferred over <a> because:',
+                options: ['It reloads the page', 'It avoids full reloads', 'It requires CSS', 'It blocks navigation'],
+                answer: 1,
+                explanation: 'Link uses client-side navigation.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Nested routes render in:',
+                options: ['<Outlet>', '<Link>', '<Route>', '<Navigate>'],
+                answer: 0,
+                explanation: 'Outlet renders child routes.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'An index route is:',
+                options: ['Default child route', 'Top-level route only', 'A 404 route', 'A redirect'],
+                answer: 0,
+                explanation: 'Index routes render at the parent path.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'A 404 route is usually defined by:',
+                options: ['path="*"', 'path="/404" only', 'useParams', 'useLocation'],
+                answer: 0,
+                explanation: 'path="*" catches unmatched routes.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Navigate is used to:',
+                options: ['Create links', 'Redirect', 'Fetch data', 'Render lists'],
+                answer: 1,
+                explanation: 'Navigate redirects to another route.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Query params are accessed via:',
+                options: ['useParams', 'URLSearchParams', 'useMatch only', 'useState'],
+                answer: 1,
+                explanation: 'Use URLSearchParams or useSearchParams.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Route params example:',
+                options: ['/users?id=1', '/users/:id', '/users#id', '/users?id=:id'],
+                answer: 1,
+                explanation: 'Route params use :id syntax.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Protected routes are implemented by:',
+                options: ['Only CSS', 'Checking auth before rendering', 'Using <a>', 'Using localStorage only'],
+                answer: 1,
+                explanation: 'Guard routes based on auth state.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Lazy loading routes uses:',
+                options: ['React.lazy', 'setTimeout', 'useEffect only', 'useRef'],
+                answer: 0,
+                explanation: 'React.lazy splits routes into chunks.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'useLocation provides:',
+                options: ['Params', 'Current location object', 'History only', 'Route config'],
+                answer: 1,
+                explanation: 'useLocation returns the location info.'
+            },
+            {
+                worksheet: 'React Router',
+                question: 'Relative routing means:',
+                options: ['Routes depend on parent path', 'Routes must be absolute', 'No nested routes', 'No params'],
+                answer: 0,
+                explanation: 'Relative routes are resolved from parent.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Controlled inputs are:',
+                options: ['DOM managed', 'State managed', 'Server managed', 'Uncontrolled'],
+                answer: 1,
+                explanation: 'Controlled inputs use React state.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Uncontrolled inputs use:',
+                options: ['useState only', 'Refs to access DOM value', 'Redux only', 'No DOM'],
+                answer: 1,
+                explanation: 'Uncontrolled inputs use refs.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Client-side validation improves:',
+                options: ['Security only', 'User experience', 'DB indexing', 'CORS'],
+                answer: 1,
+                explanation: 'It gives fast feedback to users.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Server-side validation is needed to:',
+                options: ['Improve UX only', 'Protect data integrity', 'Style forms', 'Build UI'],
+                answer: 1,
+                explanation: 'Server validation protects the system.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Prevent default form submit with:',
+                options: ['event.preventDefault()', 'event.stopPropagation()', 'event.stop()', 'event.prevent()'],
+                answer: 0,
+                explanation: 'preventDefault stops normal submit.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Schema validation library example:',
+                options: ['Zod', 'Redux', 'Vite', 'Express'],
+                answer: 0,
+                explanation: 'Zod validates data against a schema.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Form errors should be:',
+                options: ['Hidden', 'Field-specific and visible', 'Only in console', 'Only server-side'],
+                answer: 1,
+                explanation: 'Clear errors help users fix issues.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Debounced validation is useful for:',
+                options: ['Password hashing', 'Reducing validation calls', 'Routing', 'DB indexing'],
+                answer: 1,
+                explanation: 'Debounce reduces frequent validation.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'File uploads should use:',
+                options: ['application/json', 'multipart/form-data', 'text/plain', 'application/xml'],
+                answer: 1,
+                explanation: 'Files are sent with multipart/form-data.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Accessible forms require:',
+                options: ['No labels', 'Proper labels and ARIA when needed', 'Only placeholders', 'Only color cues'],
+                answer: 1,
+                explanation: 'Labels improve accessibility.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Form reset can be handled by:',
+                options: ['Reload page', 'Reset state to initial values', 'Remove component', 'Disable inputs'],
+                answer: 1,
+                explanation: 'Reset state to clear the form.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'A common anti-pattern is:',
+                options: ['Validating on submit', 'Only client validation', 'Server validation', 'Clear errors'],
+                answer: 1,
+                explanation: 'Client-only validation is not secure.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Form state libraries include:',
+                options: ['React Hook Form', 'Redux only', 'Axios', 'Webpack'],
+                answer: 0,
+                explanation: 'React Hook Form manages form state.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'Which attribute marks a field required in HTML?',
+                options: ['validate', 'required', 'must', 'need'],
+                answer: 1,
+                explanation: 'required enables HTML validation.'
+            },
+            {
+                worksheet: 'Forms',
+                question: 'A good error message should be:',
+                options: ['Vague', 'Specific and actionable', 'Hidden', 'Only a code'],
+                answer: 1,
+                explanation: 'Specific messages improve UX.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'WebSockets provide:',
+                options: ['One-way requests', 'Full-duplex communication', 'Only polling', 'Only caching'],
+                answer: 1,
+                explanation: 'WebSockets support two-way communication.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Socket.IO adds:',
+                options: ['Only REST', 'Rooms, reconnection, fallbacks', 'Only caching', 'Only auth'],
+                answer: 1,
+                explanation: 'Socket.IO adds higher-level features.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'WebSocket connection starts with:',
+                options: ['HTTP upgrade', 'UDP handshake', 'DNS only', 'FTP'],
+                answer: 0,
+                explanation: 'WebSockets upgrade an HTTP connection.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Rooms are used to:',
+                options: ['Store files', 'Group clients', 'Encrypt data', 'Cache assets'],
+                answer: 1,
+                explanation: 'Rooms group socket clients.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Namespaces are used to:',
+                options: ['Split traffic by path', 'Create DBs', 'Handle CSS', 'Build UI'],
+                answer: 0,
+                explanation: 'Namespaces segment socket endpoints.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Heartbeats help with:',
+                options: ['Latency', 'Connection liveness', 'Caching', 'Compression'],
+                answer: 1,
+                explanation: 'Heartbeats detect dead connections.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Scaling Socket.IO across servers often uses:',
+                options: ['Redis pub/sub', 'LocalStorage', 'Cookies', 'CORS'],
+                answer: 0,
+                explanation: 'Redis enables cross-node events.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'WebSockets are best for:',
+                options: ['Static pages', 'Real-time updates', 'File storage', 'Batch jobs'],
+                answer: 1,
+                explanation: 'Use them for real-time apps.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Fallback transport in Socket.IO includes:',
+                options: ['Long polling', 'SMTP', 'FTP', 'DNS'],
+                answer: 0,
+                explanation: 'Socket.IO can fall back to polling.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Auth for WebSockets is typically done via:',
+                options: ['Handshake token', 'Query only always', 'Cookies only always', 'No auth'],
+                answer: 0,
+                explanation: 'Auth can be passed during handshake.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'A common event pattern is:',
+                options: ['request/response only', 'emit and on', 'only fetch', 'only post'],
+                answer: 1,
+                explanation: 'Sockets emit events and listen with on.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'WebSocket close codes indicate:',
+                options: ['File types', 'Reason for close', 'Status codes for REST', 'Only errors'],
+                answer: 1,
+                explanation: 'Close codes indicate why the socket closed.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Binary data over WebSockets is sent as:',
+                options: ['Buffers/Blobs', 'Strings only', 'JSON only', 'HTML only'],
+                answer: 0,
+                explanation: 'Binary data can be sent as buffers.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'Backpressure handling is important because:',
+                options: ['It breaks CSS', 'It prevents memory growth', 'It enables CORS', 'It removes auth'],
+                answer: 1,
+                explanation: 'Backpressure prevents excessive buffering.'
+            },
+            {
+                worksheet: 'WebSockets',
+                question: 'When not to use WebSockets:',
+                options: ['Real-time needs', 'Simple request/response', 'Chat apps', 'Live dashboards'],
+                answer: 1,
+                explanation: 'Use HTTP for simple request/response.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Source maps are used to:',
+                options: ['Encrypt code', 'Map minified code to source', 'Cache assets', 'Lint code'],
+                answer: 1,
+                explanation: 'Source maps map bundled code to original source.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Chrome DevTools Network tab helps:',
+                options: ['DB indexes', 'Inspect requests and responses', 'Build bundles', 'Run tests'],
+                answer: 1,
+                explanation: 'Network tab shows requests and timing.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'React DevTools helps inspect:',
+                options: ['DB schema', 'Component props and state', 'Routes only', 'Server logs only'],
+                answer: 1,
+                explanation: 'React DevTools shows props/state.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'A breakpoint is used to:',
+                options: ['Speed execution', 'Pause execution', 'Deploy code', 'Format code'],
+                answer: 1,
+                explanation: 'Breakpoints pause code at a line.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Node inspector allows:',
+                options: ['DB migrations', 'Server-side debugging', 'CSS editing', 'Cache flush'],
+                answer: 1,
+                explanation: 'Node inspector enables server debugging.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'A good debugging approach is:',
+                options: ['Guessing', 'Reproduce and isolate', 'Random changes', 'Only logs'],
+                answer: 1,
+                explanation: 'Reproduce and isolate the issue.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Console.log should be:',
+                options: ['Permanent', 'Temporary and removed', 'Used in production', 'Used for secrets'],
+                answer: 1,
+                explanation: 'Remove debug logs before release.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Network errors are often checked via:',
+                options: ['Elements panel', 'Network panel', 'Sources only', 'Memory only'],
+                answer: 1,
+                explanation: 'Network panel shows failed requests.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'A minimal reproduction helps:',
+                options: ['Hide bugs', 'Isolate root cause', 'Increase complexity', 'Skip tests'],
+                answer: 1,
+                explanation: 'A small repro isolates the issue.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Log levels should be:',
+                options: ['Random', 'Consistent', 'Unused', 'Only error'],
+                answer: 1,
+                explanation: 'Consistent log levels help diagnosis.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Performance issues can be checked in:',
+                options: ['Performance panel', 'Console only', 'CSS', 'DB only'],
+                answer: 0,
+                explanation: 'Performance panel profiles runtime.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'A stack trace shows:',
+                options: ['UI layout', 'Call sequence', 'Route list', 'DB tables'],
+                answer: 1,
+                explanation: 'Stack trace shows function call path.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'Feature flags help debugging by:',
+                options: ['Hiding errors', 'Isolating features', 'Disabling logs', 'Breaking builds'],
+                answer: 1,
+                explanation: 'Flags help isolate problematic features.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'When a bug appears only in prod, check:',
+                options: ['Source maps and logs', 'Only CSS', 'Only HTML', 'Only state'],
+                answer: 0,
+                explanation: 'Use logs and source maps to debug.'
+            },
+            {
+                worksheet: 'Debugging',
+                question: 'A systematic approach includes:',
+                options: ['Change many things', 'Hypothesis and test', 'Disable all code', 'Random fixes'],
+                answer: 1,
+                explanation: 'Form a hypothesis and test it.'
             }
         ]
     },
