@@ -6107,7 +6107,7 @@ export const subjects = [
         id: 'devops',
         title: 'DevOps',
         icon: 'Server',
-        description: 'DevOps roadmap with Docker, Kubernetes, CI/CD, Cloud, and Monitoring fundamentals.',
+        description: 'DevOps roadmap with Linux, Git, Kubernetes, CI/CD, Cloud, and Monitoring fundamentals.',
         concepts: [
             {
                 title: '1. What Is DevOps (Big Picture)',
@@ -6122,95 +6122,79 @@ export const subjects = [
                 content: 'Git basics: branches, merge, rebase, PRs, and CI triggers from pushes/PRs.'
             },
             {
-                title: '4. Docker (Core Concepts)',
-                content: 'Docker packages apps into containers.\nKnow image vs container, Dockerfile, volumes, networks, Docker Hub, and core commands (build/run/ps/images/stop/rm/rmi/logs/exec).'
-            },
-            {
-                title: '5. Dockerfile Deep Concepts',
-                content: 'Dockerfile builds images.\nKnow FROM/WORKDIR/COPY/ADD/RUN/CMD/ENTRYPOINT/ENV/ARG/EXPOSE/VOLUME/USER/HEALTHCHECK, CMD vs ENTRYPOINT, multi-stage builds, .dockerignore, and layer caching.'
-            },
-            {
-                title: '6. Docker Compose',
-                content: 'Compose runs multi-container apps from one file (services, networks, volumes).'
-            },
-            {
-                title: '7. Kubernetes (K8s) Core Concepts',
+                title: '4. Kubernetes (K8s) Core Concepts',
                 content: 'K8s manages containers at scale.\nMust-know: Pod, Deployment, ReplicaSet, Service, ConfigMap, Secret, Namespace, Ingress, and basic YAML structure.'
             },
             {
-                title: '8. CI/CD (Very Important)',
-                content: 'CI/CD automates build/test/deploy.\nTools: GitHub Actions, Jenkins, GitLab CI.\nFlow: Push -> Build -> Test -> Docker build -> Push -> Deploy.'
+                title: '5. CI/CD (Very Important)',
+                content: 'CI/CD automates build/test/deploy.\nTools: GitHub Actions, Jenkins, GitLab CI.\nFlow: Push -> Build -> Test -> Package -> Deploy.'
             },
             {
-                title: '9. Cloud Basics (AWS)',
+                title: '6. Cloud Basics (AWS)',
                 content: 'AWS basics: EC2, S3, IAM, ECR, ECS, Load Balancer.'
             },
             {
-                title: '10. Monitoring and Logs',
+                title: '7. Monitoring and Logs',
                 content: 'Observability basics: Prometheus, Grafana, logs, and health checks.'
             },
             {
-                title: '11. Authentication Flow (MERN)',
+                title: '8. Authentication Flow (MERN)',
                 content: 'Auth basics: JWT generation/verification, access vs refresh tokens, bcrypt hashing, middleware, and roles.'
             },
             {
-                title: '12. Full-Stack Flow',
+                title: '9. Full-Stack Flow',
                 content: 'End-to-end flow: Frontend -> API -> Backend -> Database -> Response -> UI update.\nBe able to explain a login request.'
             },
             {
-                title: '13. Interview Level: Enough',
-                content: 'Interview-ready: Linux + Git + Docker + Dockerfile + Compose + K8s core + CI/CD + Cloud basics + Monitoring.'
+                title: '10. Interview Level: Enough',
+                content: 'Interview-ready: Linux + Git + K8s core + CI/CD + Cloud basics + Monitoring.'
             },
             {
-                title: '14. Exam Focus',
+                title: '11. Exam Focus',
                 content: 'Focus on definitions, differences, short notes, code snippets, and simple diagrams.'
             },
             {
-                title: '15. DevOps Basics Checklist',
-                content: 'Checklist: Linux, Git, Docker, Dockerfile, Compose, CI/CD, Cloud basics, Monitoring.'
+                title: '12. DevOps Basics Checklist',
+                content: 'Checklist: Linux, Git, K8s core, CI/CD, Cloud basics, Monitoring.'
             },
             {
-                title: '16. Networking Basics (Must)',
+                title: '13. Networking Basics (Must)',
                 content: 'Networking basics: IP, DNS, HTTP/HTTPS, ports, firewalls, and load balancing.'
             },
             {
-                title: '17. Shell Scripting (Automation)',
+                title: '14. Shell Scripting (Automation)',
                 content: 'Shell scripting: variables, loops, and conditionals for automation.'
             },
             {
-                title: '18. Infrastructure as Code (IaC)',
+                title: '15. Infrastructure as Code (IaC)',
                 content: 'IaC: Terraform/CloudFormation for repeatable, versioned infrastructure.'
             },
             {
-                title: '19. Configuration Management',
+                title: '16. Configuration Management',
                 content: 'Config management: Ansible/Puppet/Chef for consistent server setup.'
             },
             {
-                title: '20. Kubernetes Advanced (Nice to Know)',
+                title: '17. Kubernetes Advanced (Nice to Know)',
                 content: 'Nice to know: RBAC, Helm, HPA, StatefulSets, DaemonSets, and Config/Secret best practices.'
             },
             {
-                title: '21. Observability Advanced',
+                title: '18. Observability Advanced',
                 content: 'Advanced observability: metrics, logs, traces, ELK/EFK, alerts, SLIs/SLOs.'
             },
             {
-                title: '22. DevSecOps Basics',
+                title: '19. DevSecOps Basics',
                 content: 'DevSecOps: secret scanning, dependency checks, least privilege, and secure secrets.'
             },
             {
-                title: '23. Docker Deep Dive (Must)',
-                content: 'Docker deep dive: layers/caching, tags/registry, volumes vs bind mounts, networks, namespaces/cgroups, and best practices.'
-            },
-            {
-                title: '24. Kubernetes Basics (Core)',
+                title: '20. Kubernetes Basics (Core)',
                 content: 'K8s basics: cluster components, node components, pods/labels, service types, configs, and secrets.'
             },
             {
-                title: '25. GitHub Actions (CI/CD)',
+                title: '21. GitHub Actions (CI/CD)',
                 content: 'GitHub Actions: workflows, triggers, jobs/steps, actions marketplace, secrets/env, and artifacts.'
             },
             {
-                title: '26. AWS EC2 (Deep Basics)',
+                title: '22. AWS EC2 (Deep Basics)',
                 content: 'EC2 basics: AMI, instance types, key pairs, security groups, EBS, user data, Elastic IP.'
             }
         ],
@@ -6249,55 +6233,6 @@ export const subjects = [
                 options: ['Manual server setup', 'Managing infra using code', 'Only UI scripting', 'Using spreadsheets for infra'],
                 answer: 1,
                 explanation: 'IaC uses code to define and manage infrastructure.'
-            },
-            {
-                worksheet: 'Docker',
-                question: 'What is a Docker image?',
-                options: ['A running container', 'A blueprint for a container', 'A log file', 'A network interface'],
-                answer: 1,
-                explanation: 'Images are templates used to create containers.'
-            },
-            {
-                worksheet: 'Docker',
-                question: 'What is a Docker container?',
-                options: ['A blueprint', 'A running instance of an image', 'A Dockerfile', 'A registry'],
-                answer: 1,
-                explanation: 'Containers are running instances of images.'
-            },
-            {
-                worksheet: 'Docker',
-                question: 'What does a Dockerfile contain?',
-                options: ['UI styles', 'Instructions to build an image', 'Server logs', 'Database schema'],
-                answer: 1,
-                explanation: 'Dockerfile defines how to build the image.'
-            },
-            {
-                worksheet: 'Docker',
-                question: 'CMD vs ENTRYPOINT difference is:',
-                options: ['They are identical', 'CMD is default and overridable; ENTRYPOINT is fixed', 'ENTRYPOINT is for Windows only', 'CMD runs only at build time'],
-                answer: 1,
-                explanation: 'CMD sets a default command; ENTRYPOINT is always executed.'
-            },
-            {
-                worksheet: 'Docker',
-                question: 'What is Docker Compose used for?',
-                options: ['Single container only', 'Multi-container applications', 'Database backups only', 'OS updates'],
-                answer: 1,
-                explanation: 'Compose manages multiple containers together.'
-            },
-            {
-                worksheet: 'Docker',
-                question: 'Docker volumes are used for:',
-                options: ['Temporary logs only', 'Persistent storage', 'Networking only', 'Security only'],
-                answer: 1,
-                explanation: 'Volumes persist data beyond container lifetime.'
-            },
-            {
-                worksheet: 'Docker',
-                question: 'What is a multi-stage build?',
-                options: ['Build once, run many', 'Separate build and runtime stages to reduce image size', 'Builds only on Windows', 'Builds without Dockerfile'],
-                answer: 1,
-                explanation: 'Multi-stage builds reduce final image size.'
             },
             {
                 worksheet: 'Kubernetes',
@@ -6427,13 +6362,6 @@ export const subjects = [
             },
             {
                 worksheet: 'Scenario',
-                question: 'How would you deploy a MERN app using Docker?',
-                options: ['Only run frontend', 'Dockerfile for frontend/backend + Compose + DB', 'Only use S3', 'No containers needed'],
-                answer: 1,
-                explanation: 'Use Dockerfiles and Compose with MongoDB.'
-            },
-            {
-                worksheet: 'Scenario',
                 question: 'How does Kubernetes scale apps?',
                 options: ['Only vertical scaling', 'Replica count and HPA', 'By stopping pods', 'By deleting nodes'],
                 answer: 1,
@@ -6447,6 +6375,91 @@ export const subjects = [
                 explanation: 'Use HTTPS, secrets, and least-privilege access.'
             }
         ]
+    },
+    {
+        id: 'docker',
+        title: 'Docker',
+        icon: 'Box',
+        description: 'Complete Docker syllabus: installation, core concepts, Dockerfile, images, networking, storage, registry, and security.',
+        concepts: [
+            {
+                title: '1. Docker Introduction',
+                content: 'Docker simplifies developing, packaging, and deploying apps using containers. Containers share the host kernel and run consistently across environments.'
+            },
+            {
+                title: '2. Containerization Basics',
+                content: 'Containers are lightweight and isolate apps with their dependencies. They start fast, use fewer resources, and run the same on laptop, server, or cloud.'
+            },
+            {
+                title: '3. Docker Installation (Ubuntu)',
+                content: 'Install Docker Engine, enable the service, and verify with a hello-world container. Understand why rootless or sudo usage matters.'
+            },
+            {
+                title: '4. Docker Architecture',
+                content: 'Key parts: Docker client, Docker daemon (engine), images, containers, registry, and storage drivers.'
+            },
+            {
+                title: '5. Core Docker Commands',
+                content: 'Must-know: docker build, run, ps, images, stop, rm, rmi, logs, exec, pull, push.'
+            },
+            {
+                title: '6. Running Commands in Containers',
+                content: 'Use docker exec for interactive commands and troubleshooting inside running containers.'
+            },
+            {
+                title: '7. Dockerfile and Images',
+                content: 'Dockerfile is a build script; image is the packaged output. Containers are created from images to run apps consistently.'
+            },
+            {
+                title: '8. Dockerfile Instructions',
+                content: 'Know FROM, WORKDIR, COPY, ADD, RUN, CMD, ENTRYPOINT, ENV, ARG, EXPOSE, VOLUME, USER, HEALTHCHECK.'
+            },
+            {
+                title: '9. Optimize Docker Images',
+                content: 'Use small base images, multi-stage builds, .dockerignore, and layer caching to reduce size and speed builds.'
+            },
+            {
+                title: '10. Docker Hub',
+                content: 'Docker Hub is the image registry to store and share images. Learn login, pull, tag, and push.'
+            },
+            {
+                title: '11. Docker Compose',
+                content: 'Compose runs multi-container apps with one YAML file (services, networks, volumes). Common for app + DB stacks.'
+            },
+            {
+                title: '12. Docker Engine and Storage',
+                content: 'Docker Engine manages containers. Storage includes layers, volumes, and bind mounts.'
+            },
+            {
+                title: '13. Docker Storage and Backups',
+                content: 'Use volumes for persistent data, understand backup/restore of volumes and container data.'
+            },
+            {
+                title: '14. Docker Networking Basics',
+                content: 'Networking enables container-to-container and external communication. Learn ports, bridge networks, and custom networks.'
+            },
+            {
+                title: '15. Docker Registry',
+                content: 'Registry stores images. Learn public vs private registries and how to push/pull images safely.'
+            },
+            {
+                title: '16. Docker Volumes',
+                content: 'Volumes store data outside container lifecycle. Understand volume mounts vs bind mounts.'
+            },
+            {
+                title: '17. Docker Swarm',
+                content: 'Swarm is Docker native clustering/orchestration for multiple hosts and services.'
+            },
+            {
+                title: '18. Docker Security Best Practices',
+                content: 'Use minimal images, scan vulnerabilities, drop root, keep secrets out of images, and control network access.'
+            },
+            {
+                title: '19. Docker vs Kubernetes',
+                content: 'Docker builds and runs containers. Kubernetes orchestrates and scales containers across many machines.'
+            }
+        ],
+        mcqs: []
     }
 ];
 
