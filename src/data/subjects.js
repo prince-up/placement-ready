@@ -6111,107 +6111,107 @@ export const subjects = [
         concepts: [
             {
                 title: '1. What Is DevOps (Big Picture)',
-                content: 'Simple idea: DevOps unites development and operations to ship faster and safer.\n\nGoal:\n- Automate build, test, deploy.\n- Scale apps and monitor production.\n\nPipeline:\nCode -> Build -> Test -> Containerize -> Push -> Deploy -> Scale -> Monitor.'
+                content: 'DevOps = Dev + Ops.\nGoal: automate build/test/deploy, scale apps, and monitor production.\nPipeline: Code -> Build -> Test -> Containerize -> Push -> Deploy -> Scale -> Monitor.'
             },
             {
                 title: '2. Linux Fundamentals (Must)',
-                content: 'Simple idea: Most DevOps tools run on Linux.\n\nCore topics:\n- File system, permissions (chmod, chown).\n- Processes, networking basics, SSH.\n- Package managers and environment variables.'
+                content: 'Linux basics: file system, permissions (chmod/chown), processes, networking, SSH, packages, and env vars.'
             },
             {
                 title: '3. Git and GitHub',
-                content: 'Simple idea: Version control is the backbone of CI/CD.\n\nRevise:\n- Branching, merging, rebase, PRs.\n- CI triggers from commits and pull requests.'
+                content: 'Git basics: branches, merge, rebase, PRs, and CI triggers from pushes/PRs.'
             },
             {
                 title: '4. Docker (Core Concepts)',
-                content: 'Simple idea: Docker packages app + dependencies into containers.\n\nKey concepts:\n- Image (blueprint), container (running instance).\n- Dockerfile, volumes, networks, Docker Hub.\n\nMust-know commands:\n- docker build, run, ps, images, stop, rm, rmi, logs, exec.'
+                content: 'Docker packages apps into containers.\nKnow image vs container, Dockerfile, volumes, networks, Docker Hub, and core commands (build/run/ps/images/stop/rm/rmi/logs/exec).'
             },
             {
                 title: '5. Dockerfile Deep Concepts',
-                content: 'Simple idea: Dockerfile defines how images are built.\n\nInstructions:\nFROM, WORKDIR, COPY, ADD, RUN, CMD, ENTRYPOINT, ENV, ARG, EXPOSE, VOLUME, USER, HEALTHCHECK.\n\nCMD vs ENTRYPOINT:\n- CMD is default and can be overridden.\n- ENTRYPOINT is fixed.\n\nMulti-stage build reduces image size.\n\nExample:\nFROM node:18\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 5000\nCMD ["npm", "start"]\n\nUse .dockerignore and layer caching for faster builds.'
+                content: 'Dockerfile builds images.\nKnow FROM/WORKDIR/COPY/ADD/RUN/CMD/ENTRYPOINT/ENV/ARG/EXPOSE/VOLUME/USER/HEALTHCHECK, CMD vs ENTRYPOINT, multi-stage builds, .dockerignore, and layer caching.'
             },
             {
                 title: '6. Docker Compose',
-                content: 'Simple idea: Compose runs multi-container apps together.\n\nExample stack: backend + frontend + MongoDB.\nUse one file to define services, networks, and volumes.'
+                content: 'Compose runs multi-container apps from one file (services, networks, volumes).'
             },
             {
                 title: '7. Kubernetes (K8s) Core Concepts',
-                content: 'Simple idea: Kubernetes manages containers at scale.\n\nMust-know:\n- Pod, Deployment, ReplicaSet, Service.\n- ConfigMap, Secret, Namespace, Ingress.\n\nYAML structure:\napiVersion: apps/v1\nkind: Deployment\nspec:\n  replicas: 3'
+                content: 'K8s manages containers at scale.\nMust-know: Pod, Deployment, ReplicaSet, Service, ConfigMap, Secret, Namespace, Ingress, and basic YAML structure.'
             },
             {
                 title: '8. CI/CD (Very Important)',
-                content: 'Simple idea: CI/CD automates build, test, and deployment.\n\nTools: GitHub Actions, Jenkins, GitLab CI.\nPipeline: Push -> Build -> Test -> Docker build -> Push -> Deploy.'
+                content: 'CI/CD automates build/test/deploy.\nTools: GitHub Actions, Jenkins, GitLab CI.\nFlow: Push -> Build -> Test -> Docker build -> Push -> Deploy.'
             },
             {
                 title: '9. Cloud Basics (AWS)',
-                content: 'Simple idea: Cloud hosts and scales apps on demand.\n\nMinimum topics:\n- EC2, S3, IAM, ECR, ECS, Load Balancer.'
+                content: 'AWS basics: EC2, S3, IAM, ECR, ECS, Load Balancer.'
             },
             {
                 title: '10. Monitoring and Logs',
-                content: 'Simple idea: Observability keeps services healthy.\n\nBasics:\n- Prometheus, Grafana, logs, and health checks.'
+                content: 'Observability basics: Prometheus, Grafana, logs, and health checks.'
             },
             {
                 title: '11. Authentication Flow (MERN)',
-                content: 'Simple idea: Auth protects APIs and users.\n\nRevise:\n- JWT generation and verification.\n- Access vs refresh tokens.\n- bcrypt hashing.\n- Middleware protection and role-based access.'
+                content: 'Auth basics: JWT generation/verification, access vs refresh tokens, bcrypt hashing, middleware, and roles.'
             },
             {
                 title: '12. Full-Stack Flow',
-                content: 'Simple idea: Request travels end-to-end through the stack.\n\nFlow:\nFrontend -> API -> Backend -> Database -> Response -> UI update.\nBe able to explain a login request end-to-end.'
+                content: 'End-to-end flow: Frontend -> API -> Backend -> Database -> Response -> UI update.\nBe able to explain a login request.'
             },
             {
                 title: '13. Interview Level: Enough',
-                content: 'Strong interview level: Linux + Git + Docker (deep) + Dockerfile + Compose + K8s core + CI/CD + Cloud basics + Monitoring.'
+                content: 'Interview-ready: Linux + Git + Docker + Dockerfile + Compose + K8s core + CI/CD + Cloud basics + Monitoring.'
             },
             {
                 title: '14. Exam Focus',
-                content: 'Focus on definitions, differences, short notes (JWT, Event Loop, Closures), code snippets, and diagram explanations.'
+                content: 'Focus on definitions, differences, short notes, code snippets, and simple diagrams.'
             },
             {
                 title: '15. DevOps Basics Checklist',
-                content: 'Linux + Git + Docker + Dockerfile + Compose + CI/CD + Cloud basics + Monitoring.\nIf you can explain each in 2-3 lines with one example, you are interview-ready for entry roles.'
+                content: 'Checklist: Linux, Git, Docker, Dockerfile, Compose, CI/CD, Cloud basics, Monitoring.'
             },
             {
                 title: '16. Networking Basics (Must)',
-                content: 'Know IP, DNS, HTTP/HTTPS, ports, firewalls, and basic load balancing.\nThese appear in Docker, Kubernetes, and cloud questions.'
+                content: 'Networking basics: IP, DNS, HTTP/HTTPS, ports, firewalls, and load balancing.'
             },
             {
                 title: '17. Shell Scripting (Automation)',
-                content: 'Simple idea: Bash scripts automate repetitive tasks.\nUse variables, loops, and conditionals to run backups, deploys, and cleanups.'
+                content: 'Shell scripting: variables, loops, and conditionals for automation.'
             },
             {
                 title: '18. Infrastructure as Code (IaC)',
-                content: 'Terraform or CloudFormation to create infra with code.\nBenefits: repeatable, versioned, and reviewable infrastructure.'
+                content: 'IaC: Terraform/CloudFormation for repeatable, versioned infrastructure.'
             },
             {
                 title: '19. Configuration Management',
-                content: 'Ansible/Puppet/Chef automate server setup and configuration.\nUseful for scaling and consistency across environments.'
+                content: 'Config management: Ansible/Puppet/Chef for consistent server setup.'
             },
             {
                 title: '20. Kubernetes Advanced (Nice to Know)',
-                content: 'RBAC, Helm charts, HPA, StatefulSets, DaemonSets, and ConfigMap/Secret best practices.\nFocus on deployments, services, and scaling first.'
+                content: 'Nice to know: RBAC, Helm, HPA, StatefulSets, DaemonSets, and Config/Secret best practices.'
             },
             {
                 title: '21. Observability Advanced',
-                content: 'Metrics + logs + traces.\nKnow ELK/EFK, alerting basics, and what SLIs/SLOs mean.'
+                content: 'Advanced observability: metrics, logs, traces, ELK/EFK, alerts, SLIs/SLOs.'
             },
             {
                 title: '22. DevSecOps Basics',
-                content: 'Security in the pipeline: secret scanning, dependency checks, and least-privilege access.\nUse environment variables and vaults for secrets.'
+                content: 'DevSecOps: secret scanning, dependency checks, least privilege, and secure secrets.'
             },
             {
                 title: '23. Docker Deep Dive (Must)',
-                content: 'Deep topics to revise:\n- **Layers and caching**: each Dockerfile line creates a layer.\n- **Tagging and registry**: tag images and push to Docker Hub/ECR.\n- **Volumes and bind mounts**: persistent vs host-mapped storage.\n- **Networks**: bridge, host, and custom networks.\n- **Namespaces/cgroups**: isolation and resource limits.\n- **Best practices**: small base images, multi-stage builds, minimal privileges.'
+                content: 'Docker deep dive: layers/caching, tags/registry, volumes vs bind mounts, networks, namespaces/cgroups, and best practices.'
             },
             {
                 title: '24. Kubernetes Basics (Core)',
-                content: 'Core understanding for interviews:\n- **Cluster components**: API server, scheduler, controller manager, etcd.\n- **Node components**: kubelet, kube-proxy, container runtime.\n- **Pods and labels**: selectors connect services to pods.\n- **Service types**: ClusterIP, NodePort, LoadBalancer.\n- **Config and secrets**: config files and sensitive data.'
+                content: 'K8s basics: cluster components, node components, pods/labels, service types, configs, and secrets.'
             },
             {
                 title: '25. GitHub Actions (CI/CD)',
-                content: 'Must-know concepts:\n- **Workflow**: .github/workflows/*.yml\n- **Triggers**: push, pull_request, schedule, workflow_dispatch.\n- **Jobs and steps**: run on runners.\n- **Actions and marketplace**: reuse steps.\n- **Secrets and env**: secure credentials.\n- **Artifacts**: upload build outputs.'
+                content: 'GitHub Actions: workflows, triggers, jobs/steps, actions marketplace, secrets/env, and artifacts.'
             },
             {
                 title: '26. AWS EC2 (Deep Basics)',
-                content: 'Core EC2 concepts:\n- **AMI**: base image for instances.\n- **Instance types**: compute/memory optimized.\n- **Key pairs**: SSH access.\n- **Security groups**: firewall rules.\n- **EBS**: persistent storage volumes.\n- **User data**: bootstrapping scripts.\n- **Elastic IP**: static public IP.'
+                content: 'EC2 basics: AMI, instance types, key pairs, security groups, EBS, user data, Elastic IP.'
             }
         ],
         mcqs: [
