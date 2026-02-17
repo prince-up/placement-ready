@@ -6,12 +6,12 @@ export const subjects = [
         description: 'Master process management, memory allocation, storage, and I/O systems.',
         concepts: [
             {
-                title: '1.1 Operating System (OS) – Definition',
-                content: 'An operating system is system software that manages computer hardware and provides services to users and applications.\n\nIn simple terms:\n• Users cannot interact with hardware directly.\n• The OS translates user commands into hardware actions.\n• The OS decides which program gets CPU time, which process gets memory, and which files can be accessed.\n\nCore responsibilities:\n• Process, memory, file, device, and security management.\n• Scheduling and resource allocation.\n\nExamples: Windows, Linux, macOS, Android.\nInterview line: The OS acts as an intermediary between the user and the hardware.'
+                title: '1.1 Operating System (OS) G�� Definition',
+                content: 'An operating system is system software that manages computer hardware and provides services to users and applications.\n\nIn simple terms:\nG�� Users cannot interact with hardware directly.\nG�� The OS translates user commands into hardware actions.\nG�� The OS decides which program gets CPU time, which process gets memory, and which files can be accessed.\n\nCore responsibilities:\nG�� Process, memory, file, device, and security management.\nG�� Scheduling and resource allocation.\n\nExamples: Windows, Linux, macOS, Android.\nInterview line: The OS acts as an intermediary between the user and the hardware.'
             },
             {
                 title: '1.1.1 Batch Operating System',
-                content: 'Jobs are grouped and executed as batches with no user interaction during execution.\nFlow: job queue → load → execute → store output → next job.\nUsed historically in mainframes for large, repetitive workloads.\nLimitations: not suitable for interactive apps, possible starvation, no preemption, low responsiveness.'
+                content: 'Jobs are grouped and executed as batches with no user interaction during execution.\nFlow: job queue G�� load G�� execute G�� store output G�� next job.\nUsed historically in mainframes for large, repetitive workloads.\nLimitations: not suitable for interactive apps, possible starvation, no preemption, low responsiveness.'
             },
             {
                 title: '1.1.1 Multiprogramming OS',
@@ -90,7 +90,7 @@ export const subjects = [
                 content: 'System calls are the interface for user programs to request OS services, switching from user mode to kernel mode.\nTypes: Process control (fork, exec, wait), File (open/read/write/close), Device (ioctl), Info (getpid/time), Communication (pipe/message queues/semaphores), Memory (brk/mmap), Network (socket/bind/listen/accept).'
             },
             {
-                title: '1.4 Process – Basics',
+                title: '1.4 Process G�� Basics',
                 content: 'A process is a program in execution with its own address space, registers, and execution context.\n[DIAGRAM:PROCESS_STATES]'
             },
             {
@@ -106,7 +106,7 @@ export const subjects = [
                 content: 'The PCB stores process information such as PID, state, program counter, CPU registers, memory info, priority, and I/O status. It enables context switching.'
             },
             {
-                title: '1.5 CPU Scheduling – Meaning',
+                title: '1.5 CPU Scheduling G�� Meaning',
                 content: 'CPU scheduling decides which ready process gets the CPU and when. Only one process can run on a single CPU at a time, so the scheduler optimizes fairness and performance.'
             },
             {
@@ -115,7 +115,7 @@ export const subjects = [
             },
             {
                 title: 'CPU Scheduling Terms',
-                content: 'Arrival Time, Burst Time, Completion Time, Turnaround Time = Completion − Arrival, Waiting Time = Turnaround − Burst, Response Time = First CPU Time − Arrival, Throughput, CPU Utilization = (Busy Time/Total Time) × 100.'
+                content: 'Arrival Time, Burst Time, Completion Time, Turnaround Time = Completion G�� Arrival, Waiting Time = Turnaround G�� Burst, Response Time = First CPU Time G�� Arrival, Throughput, CPU Utilization = (Busy Time/Total Time) +� 100.'
             },
             {
                 title: '1.5.1 FCFS',
@@ -155,14 +155,14 @@ export const subjects = [
             },
             {
                 title: 'Starvation & Aging',
-                content: 'Starvation happens when a process waits indefinitely. Aging gradually increases a waiting process’s priority.'
+                content: 'Starvation happens when a process waits indefinitely. Aging gradually increases a waiting processG��s priority.'
             },
             {
                 title: 'Gantt Chart (Concept)',
                 content: 'A timeline view of process execution used to compute waiting and turnaround times.'
             },
             {
-                title: '1.6 Thread – Basics',
+                title: '1.6 Thread G�� Basics',
                 content: 'A thread is the smallest unit of execution within a process. Threads share memory and code but have their own stack and registers, making them lightweight and fast.'
             },
             {
@@ -174,7 +174,7 @@ export const subjects = [
                 content: 'Many-to-One, One-to-One, Many-to-Many, and Hybrid models.'
             },
             {
-                title: '1.7 Synchronization – Basics',
+                title: '1.7 Synchronization G�� Basics',
                 content: 'Synchronization ensures safe access to shared data. Without it, you get data corruption, race conditions, and incorrect results.'
             },
             {
@@ -199,10 +199,10 @@ export const subjects = [
             },
             {
                 title: 'Classical Synchronization Problems',
-                content: 'Producer–Consumer, Reader–Writer, Dining Philosophers, Sleeping Barber.'
+                content: 'ProducerG��Consumer, ReaderG��Writer, Dining Philosophers, Sleeping Barber.'
             },
             {
-                title: '1.9 Deadlock – Definition',
+                title: '1.9 Deadlock G�� Definition',
                 content: 'Deadlock is when two or more processes wait indefinitely for resources held by each other, so none can proceed.'
             },
             {
@@ -219,10 +219,10 @@ export const subjects = [
             },
             {
                 title: 'Deadlock Handling',
-                content: 'Strategies include Prevention, Avoidance (Banker’s Algorithm), Detection, and Recovery.'
+                content: 'Strategies include Prevention, Avoidance (BankerG��s Algorithm), Detection, and Recovery.'
             },
             {
-                title: 'Banker’s Algorithm (Idea)',
+                title: 'BankerG��s Algorithm (Idea)',
                 content: 'Grant a request only if the system remains in a safe state.'
             },
             {
@@ -231,7 +231,7 @@ export const subjects = [
             },
             {
                 title: '1.10 Types of Memory',
-                content: 'Primary (RAM – volatile), ROM (non-volatile), Secondary (HDD/SSD/USB), Cache (L1/L2/L3), Registers, Virtual Memory (disk used as an extension of RAM).\nRegisters are the fastest storage and are inside the CPU.'
+                content: 'Primary (RAM G�� volatile), ROM (non-volatile), Secondary (HDD/SSD/USB), Cache (L1/L2/L3), Registers, Virtual Memory (disk used as an extension of RAM).\nRegisters are the fastest storage and are inside the CPU.'
             },
             {
                 title: '1.11 Memory Management Schemes',
@@ -255,7 +255,7 @@ export const subjects = [
             },
             {
                 title: 'Page Replacement Algorithms',
-                content: 'FIFO (Belady’s anomaly), LRU, LFU, Optimal, and Clock.'
+                content: 'FIFO (BeladyG��s anomaly), LRU, LFU, Optimal, and Clock.'
             },
             {
                 title: 'Thrashing',
@@ -306,20 +306,20 @@ export const subjects = [
                 content: 'sudo for admin access, chmod for permissions, ufw/iptables for firewall management. Use least privilege for safety.'
             },
             {
-                title: 'Worksheet 1 – Subjective Questions',
-                content: '• Compare real-time OS (RTOS) with general-purpose OS and give use cases.\n• Compare microkernel vs monolithic kernel, with examples and trade-offs.\n• Describe the boot process: bootloader role and kernel initialization.\n• Explain how device drivers connect software and hardware.\n• Describe system calls and give common examples.\n• Explain interrupts in computer systems.'
+                title: 'Worksheet 1 G�� Subjective Questions',
+                content: 'G�� Compare real-time OS (RTOS) with general-purpose OS and give use cases.\nG�� Compare microkernel vs monolithic kernel, with examples and trade-offs.\nG�� Describe the boot process: bootloader role and kernel initialization.\nG�� Explain how device drivers connect software and hardware.\nG�� Describe system calls and give common examples.\nG�� Explain interrupts in computer systems.'
             },
             {
-                title: 'Worksheet 2 – Subjective Questions',
-                content: '• Explain a process and its key components during execution.\n• Describe the process lifecycle and state transitions.\n• Compare preemptive vs non-preemptive scheduling with examples.\n• Define a thread and list advantages over processes.\n• Compare user-level vs kernel-level threads with pros/cons.\n• Practice: compute turnaround time for Round Robin with given data.'
+                title: 'Worksheet 2 G�� Subjective Questions',
+                content: 'G�� Explain a process and its key components during execution.\nG�� Describe the process lifecycle and state transitions.\nG�� Compare preemptive vs non-preemptive scheduling with examples.\nG�� Define a thread and list advantages over processes.\nG�� Compare user-level vs kernel-level threads with pros/cons.\nG�� Practice: compute turnaround time for Round Robin with given data.'
             },
             {
-                title: 'Worksheet 3 – Subjective Questions',
-                content: '• Explain synchronization and why it is essential in concurrent programs.\n• Define the critical section problem and its requirements.\n• Explain deadlock and the conditions required for it.\n• Differentiate deadlock prevention vs avoidance.\n• Practice: priority scheduling averages for given burst times.\n• Practice: Banker’s algorithm safe state with given matrices.'
+                title: 'Worksheet 3 G�� Subjective Questions',
+                content: 'G�� Explain synchronization and why it is essential in concurrent programs.\nG�� Define the critical section problem and its requirements.\nG�� Explain deadlock and the conditions required for it.\nG�� Differentiate deadlock prevention vs avoidance.\nG�� Practice: priority scheduling averages for given burst times.\nG�� Practice: BankerG��s algorithm safe state with given matrices.'
             },
             {
-                title: 'Worksheet 4 – Subjective Questions',
-                content: '• Explain LRU page replacement, pros/cons, and where it performs well/poorly.\n• Describe disk structure (tracks, sectors, cylinders) and its impact on access time.\n• Discuss disk partitioning benefits for organization and security.\n• Practice: LRU page faults for a given reference string and frame count.\n• Explain RAID and at least three RAID levels.\n• Practice: SSTF total head movement for a given request sequence.'
+                title: 'Worksheet 4 G�� Subjective Questions',
+                content: 'G�� Explain LRU page replacement, pros/cons, and where it performs well/poorly.\nG�� Describe disk structure (tracks, sectors, cylinders) and its impact on access time.\nG�� Discuss disk partitioning benefits for organization and security.\nG�� Practice: LRU page faults for a given reference string and frame count.\nG�� Explain RAID and at least three RAID levels.\nG�� Practice: SSTF total head movement for a given request sequence.'
             },
             {
                 title: 'Inter-Process Communication (IPC)',
@@ -517,7 +517,7 @@ export const subjects = [
                 question: 'In the parent process, fork() returns:',
                 options: ['-1', '0', 'The PID of the child process', 'The PID of the parent process'],
                 answer: 2,
-                explanation: 'The parent receives the child’s PID as the return value.'
+                explanation: 'The parent receives the childG��s PID as the return value.'
             },
             {
                 worksheet: 'Worksheet 1',
@@ -613,7 +613,7 @@ export const subjects = [
                 question: 'FCFS scheduling: P1(AT=0,BT=6), P2(AT=2,BT=4), P3(AT=4,BT=8). Waiting time for P2?',
                 options: ['4 units', '5 units', '7 units', '9 units'],
                 answer: 0,
-                explanation: 'P1 runs from 0–6, so P2 waits 4 units (6−2).'
+                explanation: 'P1 runs from 0G��6, so P2 waits 4 units (6G��2).'
             },
             {
                 worksheet: 'Worksheet 3',
@@ -653,15 +653,15 @@ export const subjects = [
                 question: 'Deadlock is:',
                 options: ['Simultaneous execution of processes', 'Inability to acquire required resources and proceed', 'Efficient scheduling', 'Fair CPU distribution'],
                 answer: 1,
-                explanation: 'Deadlock means processes are stuck waiting for each other’s resources.'
+                explanation: 'Deadlock means processes are stuck waiting for each otherG��s resources.'
             },
             {
                 worksheet: 'Worksheet 3',
                 difficulty: 'basic',
                 question: 'Which classic problem uses a finite buffer shared by two processes?',
-                options: ['Readers–Writers', 'Dining Philosophers', 'Producer–Consumer', 'Banker’s Algorithm'],
+                options: ['ReadersG��Writers', 'Dining Philosophers', 'ProducerG��Consumer', 'BankerG��s Algorithm'],
                 answer: 2,
-                explanation: 'Producer–Consumer uses a finite buffer shared by producers and consumers.'
+                explanation: 'ProducerG��Consumer uses a finite buffer shared by producers and consumers.'
             },
             {
                 worksheet: 'Worksheet 3',
@@ -674,15 +674,15 @@ export const subjects = [
             {
                 worksheet: 'Worksheet 3',
                 difficulty: 'medium',
-                question: 'In Banker’s algorithm, the maximum-need matrix represents:',
+                question: 'In BankerG��s algorithm, the maximum-need matrix represents:',
                 options: ['Max resources each process may request', 'Current allocations', 'Total available resources', 'Resources released by each process'],
                 answer: 0,
-                explanation: 'It describes each process’s maximum possible demand.'
+                explanation: 'It describes each processG��s maximum possible demand.'
             },
             {
                 worksheet: 'Worksheet 3',
                 difficulty: 'medium',
-                question: 'Banker’s algorithm grants a request if:',
+                question: 'BankerG��s algorithm grants a request if:',
                 options: ['Only max need is checked', 'Only availability is checked', 'Both max need and availability keep the system safe', 'Only current allocation is checked'],
                 answer: 2,
                 explanation: 'The request is granted only if the system remains in a safe state.'
@@ -691,7 +691,7 @@ export const subjects = [
                 worksheet: 'Worksheet 3',
                 difficulty: 'medium',
                 question: 'Which is a valid sequence of process state transitions?',
-                options: ['Ready → Running → Blocked → Ready → Running → Terminated', 'Blocked → Terminated → Running → Ready → Blocked', 'Running → Ready → Terminated → Blocked → Ready', 'Ready → Blocked → Running → Terminated → Ready'],
+                options: ['Ready G�� Running G�� Blocked G�� Ready G�� Running G�� Terminated', 'Blocked G�� Terminated G�� Running G�� Ready G�� Blocked', 'Running G�� Ready G�� Terminated G�� Blocked G�� Ready', 'Ready G�� Blocked G�� Running G�� Terminated G�� Ready'],
                 answer: 0,
                 explanation: 'A process can move from ready to running to blocked and back before termination.'
             },
@@ -773,7 +773,7 @@ export const subjects = [
                 question: 'For a 32-bit logical address with page size 2^12 bytes, the page number and offset bits are:',
                 options: ['20 bits, 12 bits', '10 bits, 22 bits', '12 bits, 20 bits', '14 bits, 18 bits'],
                 answer: 0,
-                explanation: 'Offset = 12 bits, so page number = 32 − 12 = 20 bits.'
+                explanation: 'Offset = 12 bits, so page number = 32 G�� 12 = 20 bits.'
             },
             {
                 worksheet: 'Worksheet 5',
@@ -865,39 +865,39 @@ export const subjects = [
         concepts: [
             {
                 title: '1. Introduction to DBMS',
-                content: 'A Database Management System (DBMS) is a software application that facilitates the creation, management, and manipulation of databases.\n[DIAGRAM:DB_ARCH]\n\nKey Components:\n• Data Definition Language (DDL): Defines structure and schema.\n• Data Manipulation Language (DML): Used to retrieve, insert, update, and delete data.\n• Data Control Language (DCL): Controls access and permissions.\n• Transaction Management: Ensures ACID properties.\n• Concurrency Control: Manages simultaneous access.\n• Backup and Recovery: Ensures data availability and integrity.'
+                content: 'A Database Management System (DBMS) is a software application that facilitates the creation, management, and manipulation of databases.\n[DIAGRAM:DB_ARCH]\n\nKey Components:\nG�� Data Definition Language (DDL): Defines structure and schema.\nG�� Data Manipulation Language (DML): Used to retrieve, insert, update, and delete data.\nG�� Data Control Language (DCL): Controls access and permissions.\nG�� Transaction Management: Ensures ACID properties.\nG�� Concurrency Control: Manages simultaneous access.\nG�� Backup and Recovery: Ensures data availability and integrity.'
             },
             {
                 title: '2. SQL Command Categories',
-                content: 'SQL commands are divided into functional categories:\n\nDDL (Data Definition Language):\n• CREATE: Creates database objects like tables, indexes, views.\n• ALTER: Modifies database objects.\n• DROP: Deletes database objects.\n• TRUNCATE: Removes all rows from a table quickly.\n• COMMENT: Adds comments to database objects.\n\nDML (Data Manipulation Language):\n• SELECT: Retrieves data from a database.\n• INSERT: Adds new rows of data.\n• UPDATE: Modifies existing data.\n• DELETE: Removes existing rows.\n• MERGE: Performs conditional insert/update/delete.\n• UPSERT: Inserts or updates if row exists.\n\nDCL (Data Control Language):\n• GRANT: Provides privileges to users.\n• REVOKE: Revokes privileges from users.'
+                content: 'SQL commands are divided into functional categories:\n\nDDL (Data Definition Language):\nG�� CREATE: Creates database objects like tables, indexes, views.\nG�� ALTER: Modifies database objects.\nG�� DROP: Deletes database objects.\nG�� TRUNCATE: Removes all rows from a table quickly.\nG�� COMMENT: Adds comments to database objects.\n\nDML (Data Manipulation Language):\nG�� SELECT: Retrieves data from a database.\nG�� INSERT: Adds new rows of data.\nG�� UPDATE: Modifies existing data.\nG�� DELETE: Removes existing rows.\nG�� MERGE: Performs conditional insert/update/delete.\nG�� UPSERT: Inserts or updates if row exists.\n\nDCL (Data Control Language):\nG�� GRANT: Provides privileges to users.\nG�� REVOKE: Revokes privileges from users.'
             },
             {
                 title: '3. Relational Database Concepts',
-                content: 'RDBMS stores data in tables and uses SQL for manipulation.\n\nKey Terms:\n• Table: Organized into rows (tuples) and columns (attributes).\n• Primary Key: Unique identifier for each record in a table.\n• Foreign Key: Column that references the primary key of another table to establish relationships.\n• Relationships: One-to-One, One-to-Many, Many-to-Many.\n• Referential Integrity: Ensures relationships between tables remain consistent.\n• ACID Properties: Atomicity, Consistency, Isolation, Durability.'
+                content: 'RDBMS stores data in tables and uses SQL for manipulation.\n\nKey Terms:\nG�� Table: Organized into rows (tuples) and columns (attributes).\nG�� Primary Key: Unique identifier for each record in a table.\nG�� Foreign Key: Column that references the primary key of another table to establish relationships.\nG�� Relationships: One-to-One, One-to-Many, Many-to-Many.\nG�� Referential Integrity: Ensures relationships between tables remain consistent.\nG�� ACID Properties: Atomicity, Consistency, Isolation, Durability.'
             },
             {
                 title: '4. Database Design & Normalization',
-                content: 'The process of defining database structure to minimize redundancy and dependency.\n\nNormalization Forms:\n• 1NF (First Normal Form): Atomic values in each column.\n• 2NF (Second Normal Form): No partial dependency (non-key attributes fully dependent on PK).\n• 3NF (Third Normal Form): No transitive dependency (non-key attributes dependent only on PK).\n• BCNF (Boyce-Codd): Stricter 3NF where every determinant is a superkey.\n• 4NF: Addresses multi-valued dependencies.\n• 5NF: Addresses join dependencies.'
+                content: 'The process of defining database structure to minimize redundancy and dependency.\n\nNormalization Forms:\nG�� 1NF (First Normal Form): Atomic values in each column.\nG�� 2NF (Second Normal Form): No partial dependency (non-key attributes fully dependent on PK).\nG�� 3NF (Third Normal Form): No transitive dependency (non-key attributes dependent only on PK).\nG�� BCNF (Boyce-Codd): Stricter 3NF where every determinant is a superkey.\nG�� 4NF: Addresses multi-valued dependencies.\nG�� 5NF: Addresses join dependencies.'
             },
             {
                 title: '5. Indexing & Query Optimization',
-                content: 'Techniques to improve performance and speed up data retrieval.\n\nTypes of Indexes:\n• Primary Index: Created on primary key automatically.\n• Secondary Index: Created on non-primary key columns.\n• Clustered Index: Reorders physical order of rows based on key.\n• Non-Clustered Index: Stores pointers to rows without reordering tables.\n\nOptimization Techniques:\n• Index Usage, Join Optimization, Predicate Pushdown, Query Rewriting, Parallel Execution, and Caching.'
+                content: 'Techniques to improve performance and speed up data retrieval.\n\nTypes of Indexes:\nG�� Primary Index: Created on primary key automatically.\nG�� Secondary Index: Created on non-primary key columns.\nG�� Clustered Index: Reorders physical order of rows based on key.\nG�� Non-Clustered Index: Stores pointers to rows without reordering tables.\n\nOptimization Techniques:\nG�� Index Usage, Join Optimization, Predicate Pushdown, Query Rewriting, Parallel Execution, and Caching.'
             },
             {
                 title: '6. Transaction Management',
-                content: 'Ensures the reliability and consistency of database operations.\n\nACID Properties:\n• Atomicity: Transaction completes fully or not at all.\n• Consistency: Database transitions from one valid state to another.\n• Isolation: Intermediate states are invisible to other transactions.\n• Durability: Committed changes survive system failures.\n\nConcurrency Control:\n• Locking: Prevents conflicting simultaneous access.\n• MVCC: Multiple versions of data allow non-blocking reads.\n• Timestamp Ordering: Orders transactions based on unique timestamps.'
+                content: 'Ensures the reliability and consistency of database operations.\n\nACID Properties:\nG�� Atomicity: Transaction completes fully or not at all.\nG�� Consistency: Database transitions from one valid state to another.\nG�� Isolation: Intermediate states are invisible to other transactions.\nG�� Durability: Committed changes survive system failures.\n\nConcurrency Control:\nG�� Locking: Prevents conflicting simultaneous access.\nG�� MVCC: Multiple versions of data allow non-blocking reads.\nG�� Timestamp Ordering: Orders transactions based on unique timestamps.'
             },
             {
                 title: '7. NoSQL & Distributed Databases',
-                content: 'Non-relational databases for distributed, horizontally scalable storage.\n\nTypes of NoSQL:\n• Document-oriented: JSON/BSON storage (MongoDB).\n• Key-value Stores: Fast retrieval by key (Redis, DynamoDB).\n• Column-family: Efficient wide-column storage (Cassandra, HBase).\n• Graph Databases: Models complex relationships (Neo4j).\n\nDistributed Characteristics:\n• Scalability: Horizontal scaling across nodes.\n• Fault Tolerance: Data replication for high availability.\n• Consistency: Distributed consensus protocols.'
+                content: 'Non-relational databases for distributed, horizontally scalable storage.\n\nTypes of NoSQL:\nG�� Document-oriented: JSON/BSON storage (MongoDB).\nG�� Key-value Stores: Fast retrieval by key (Redis, DynamoDB).\nG�� Column-family: Efficient wide-column storage (Cassandra, HBase).\nG�� Graph Databases: Models complex relationships (Neo4j).\n\nDistributed Characteristics:\nG�� Scalability: Horizontal scaling across nodes.\nG�� Fault Tolerance: Data replication for high availability.\nG�� Consistency: Distributed consensus protocols.'
             },
             {
                 title: '8. Current Trends in DBMS',
-                content: 'Modern database evolution:\n• Cloud-based Databases: Managed solutions like AWS RDS, Azure SQL.\n• Big Data Analytics: Handling Volume, Velocity, and Variety.\n• Real-time Data Processing: Stream processing and event-driven architectures.\n• Microservices DBs: Containerized and loosely coupled database services.\n• Graph & Blockchain DBs: Specialized storage for relationships and immutability.'
+                content: 'Modern database evolution:\nG�� Cloud-based Databases: Managed solutions like AWS RDS, Azure SQL.\nG�� Big Data Analytics: Handling Volume, Velocity, and Variety.\nG�� Real-time Data Processing: Stream processing and event-driven architectures.\nG�� Microservices DBs: Containerized and loosely coupled database services.\nG�� Graph & Blockchain DBs: Specialized storage for relationships and immutability.'
             },
             {
                 title: '9. Essential Formulas & Terms',
-                content: 'Key terms for preparation:\n• Cardinality: Number of tuples/rows in a relation.\n• Degree: Number of attributes/columns in a relation.\n• Super Key: Set of attributes uniquely identifying a row.\n• Candidate Key: Minimal superkey.\n• Functional Dependency (FD): Constraint between attributes.\n• Closure: Set of all FDs implied by a given set.\n• Aggregate Functions: SUM, AVG, COUNT, MAX, MIN.'
+                content: 'Key terms for preparation:\nG�� Cardinality: Number of tuples/rows in a relation.\nG�� Degree: Number of attributes/columns in a relation.\nG�� Super Key: Set of attributes uniquely identifying a row.\nG�� Candidate Key: Minimal superkey.\nG�� Functional Dependency (FD): Constraint between attributes.\nG�� Closure: Set of all FDs implied by a given set.\nG�� Aggregate Functions: SUM, AVG, COUNT, MAX, MIN.'
             },
             {
                 title: '10. Interview Question Bank (Top 20)',
@@ -905,19 +905,19 @@ export const subjects = [
             },
             {
                 title: '11. Interview Prep: RDBMS & ER Modeling',
-                content: 'Key questions on core concepts:\n• What is an Entity-Relationship (ER) diagram, and what is its purpose?\n• Describe the difference between an entity and an attribute.\n• Explain the cardinality and participation constraints in relationships.\n• What are weak entities, and how are they represented?\n• Describe the process of converting an ER diagram into a relational schema.\n• What is an associative entity, and when is it used?'
+                content: 'Key questions on core concepts:\nG�� What is an Entity-Relationship (ER) diagram, and what is its purpose?\nG�� Describe the difference between an entity and an attribute.\nG�� Explain the cardinality and participation constraints in relationships.\nG�� What are weak entities, and how are they represented?\nG�� Describe the process of converting an ER diagram into a relational schema.\nG�� What is an associative entity, and when is it used?'
             },
             {
                 title: '12. Interview Prep: Advanced SQL & Joins',
-                content: 'Mastering SQL queries:\n• Explain the difference between INNER JOIN and OUTER JOIN.\n• How do you use the GROUP BY and HAVING clauses?\n• What is the purpose of the DISTINCT keyword?\n• Explain the difference between aggregate functions and scalar functions.\n• How do you write a subquery? Is it better than a join?\n• What is indexing, and how does it optimize SQL performance?'
+                content: 'Mastering SQL queries:\nG�� Explain the difference between INNER JOIN and OUTER JOIN.\nG�� How do you use the GROUP BY and HAVING clauses?\nG�� What is the purpose of the DISTINCT keyword?\nG�� Explain the difference between aggregate functions and scalar functions.\nG�� How do you write a subquery? Is it better than a join?\nG�� What is indexing, and how does it optimize SQL performance?'
             },
             {
                 title: '13. Interview Prep: Normalization & Dependencies',
-                content: 'Refining database structure:\n• What is functional dependency (FD) in relational databases?\n• Explain the steps involved in determining functional dependencies.\n• How do you use attribute closure to find candidate keys?\n• Differentiate between partial dependency and transitive dependency.\n• In what scenarios would denormalization be appropriate?\n• Explain BCNF and how it differs from 3NF.'
+                content: 'Refining database structure:\nG�� What is functional dependency (FD) in relational databases?\nG�� Explain the steps involved in determining functional dependencies.\nG�� How do you use attribute closure to find candidate keys?\nG�� Differentiate between partial dependency and transitive dependency.\nG�� In what scenarios would denormalization be appropriate?\nG�� Explain BCNF and how it differs from 3NF.'
             },
             {
                 title: '14. Interview Prep: Transactions & Concurrency',
-                content: 'Ensuring data reliability:\n• Explain the ACID properties in depth.\n• What are the different states of a transaction?\n• What is a deadlock, and how is it handled?\n• Explain the difference between pessimistic and optimistic concurrency control.\n• Describe the 2-Phase Locking (2PL) protocol.\n• What are transaction isolation levels like SERIALIZABLE and READ COMMITTED?'
+                content: 'Ensuring data reliability:\nG�� Explain the ACID properties in depth.\nG�� What are the different states of a transaction?\nG�� What is a deadlock, and how is it handled?\nG�� Explain the difference between pessimistic and optimistic concurrency control.\nG�� Describe the 2-Phase Locking (2PL) protocol.\nG�� What are transaction isolation levels like SERIALIZABLE and READ COMMITTED?'
             },
             {
                 title: '15. Practical Case Study: Student-Course Table',
@@ -925,15 +925,15 @@ export const subjects = [
             },
             {
                 title: '16. Advanced Objects: Triggers & Procedures',
-                content: 'Automating database logic:\n• Stored Procedure: Precompiled collection of SQL statements.\n• Function: Similar to procedure but always returns a value.\n• Trigger: Automatically executes in response to certain events (INSERT, UPDATE, DELETE).\n• View: Virtual table that hides complexity and provides security.\n• Sequence: Generates unique numeric values (used for PKs).'
+                content: 'Automating database logic:\nG�� Stored Procedure: Precompiled collection of SQL statements.\nG�� Function: Similar to procedure but always returns a value.\nG�� Trigger: Automatically executes in response to certain events (INSERT, UPDATE, DELETE).\nG�� View: Virtual table that hides complexity and provides security.\nG�� Sequence: Generates unique numeric values (used for PKs).'
             },
             {
                 title: '17. Schema Architectures',
-                content: 'Comparing design patterns:\n• Flat File: Simple non-relational storage.\n• Hierarchical: Tree-like structure (legacy).\n• Network Schema: Many-to-many parent-child relationships.\n• Relational Schema: Using tables and keys (standard).\n• Star Schema: Central fact table with dimension tables (Data Warehousing).\n• Snowflake Schema: Normalized version of Star Schema.'
+                content: 'Comparing design patterns:\nG�� Flat File: Simple non-relational storage.\nG�� Hierarchical: Tree-like structure (legacy).\nG�� Network Schema: Many-to-many parent-child relationships.\nG�� Relational Schema: Using tables and keys (standard).\nG�� Star Schema: Central fact table with dimension tables (Data Warehousing).\nG�� Snowflake Schema: Normalized version of Star Schema.'
             },
             {
                 title: '18. Database Security & Backup',
-                content: 'Key terms:\n• Authentication vs Authorization.\n• SQL Injection: Vulnerability where malicious SQL is executed.\n• RAID: Redundant Array of Independent Disks (Data protection).\n• WAL: Write-Ahead Logging (Durability).\n• Cold vs Hot Backup: Backing up while DB is offline vs online.'
+                content: 'Key terms:\nG�� Authentication vs Authorization.\nG�� SQL Injection: Vulnerability where malicious SQL is executed.\nG�� RAID: Redundant Array of Independent Disks (Data protection).\nG�� WAL: Write-Ahead Logging (Durability).\nG�� Cold vs Hot Backup: Backing up while DB is offline vs online.'
             },
             {
                 title: '19. ER Modeling & Keys',
@@ -1192,10 +1192,10 @@ export const subjects = [
             },
             {
                 worksheet: 'Worksheet 2',
-                question: 'Selection (σ) operator in relational algebra is:',
+                question: 'Selection (-�) operator in relational algebra is:',
                 options: ['Commutative', 'Associative', 'Identity', 'None'],
                 answer: 0,
-                explanation: 'σ_cond1(σ_cond2(R)) is same as σ_cond2(σ_cond1(R)).'
+                explanation: '-�_cond1(-�_cond2(R)) is same as -�_cond2(-�_cond1(R)).'
             },
             {
                 worksheet: 'Worksheet 2',
@@ -1277,31 +1277,31 @@ export const subjects = [
         concepts: [
             {
                 title: '1. Introduction to OOP',
-                content: 'Object-Oriented Programming (OOP) is a paradigm based on "objects" which contain data (attributes) and code (methods).\n\n**Key Pillars:**\n• **Encapsulation**: Bundling data and methods; hiding internal state.\n• **Inheritance**: Acquiring properties from a base class.\n• **Polymorphism**: Single interface representing multiple underlying forms.\n• **Abstraction**: Hiding implementation details, showing only essentials.\n\n**Benefits:**\n• **Modularity**: Easier to maintain and modify.\n• **Reusability**: Code reuse via inheritance/composition.\n• **Scalability**: Building complex systems from reusable components.'
+                content: 'Object-Oriented Programming (OOP) is a paradigm based on "objects" which contain data (attributes) and code (methods).\n\n**Key Pillars:**\nG�� **Encapsulation**: Bundling data and methods; hiding internal state.\nG�� **Inheritance**: Acquiring properties from a base class.\nG�� **Polymorphism**: Single interface representing multiple underlying forms.\nG�� **Abstraction**: Hiding implementation details, showing only essentials.\n\n**Benefits:**\nG�� **Modularity**: Easier to maintain and modify.\nG�� **Reusability**: Code reuse via inheritance/composition.\nG�� **Scalability**: Building complex systems from reusable components.'
             },
             {
                 title: '2. Classes and Objects',
-                content: 'A **Class** is a blueprint (template) that defines attributes and methods.\nAn **Object** is an instance of a class, representing a concrete realization.\n\n**Example (Car Class):**\n• **Attributes**: brand, model, speed.\n• **Methods**: start_engine(), drive().\n• **Instance**: `my_car = Car("Toyota", "Camry")`.'
+                content: 'A **Class** is a blueprint (template) that defines attributes and methods.\nAn **Object** is an instance of a class, representing a concrete realization.\n\n**Example (Car Class):**\nG�� **Attributes**: brand, model, speed.\nG�� **Methods**: start_engine(), drive().\nG�� **Instance**: `my_car = Car("Toyota", "Camry")`.'
             },
             {
                 title: '3. Inheritance & Hierarchy',
-                content: 'Allows a subclass to inherit properties from a superclass.\n\n**Key Concepts:**\n• **Code Reuse**: Subclasses extend functionality without duplicating code.\n• **Method Overriding**: Subclass provides specialized behavior for inherited methods.\n• **Types**: Single, Multiple (via Interfaces in Java), Multilevel, Hierarchical, and Hybrid inheritance.'
+                content: 'Allows a subclass to inherit properties from a superclass.\n\n**Key Concepts:**\nG�� **Code Reuse**: Subclasses extend functionality without duplicating code.\nG�� **Method Overriding**: Subclass provides specialized behavior for inherited methods.\nG�� **Types**: Single, Multiple (via Interfaces in Java), Multilevel, Hierarchical, and Hybrid inheritance.'
             },
             {
                 title: '4. Polymorphism: Static vs Dynamic',
-                content: 'Polymorphism allows objects to be treated as instances of their parent class.\n\n**Types:**\n• **Compile-Time (Static)**: Method Overloading (same name, different parameters).\n• **Run-Time (Dynamic)**: Method Overriding (subclass redefines parent method). Resolved at runtime via **Dynamic Binding**.'
+                content: 'Polymorphism allows objects to be treated as instances of their parent class.\n\n**Types:**\nG�� **Compile-Time (Static)**: Method Overloading (same name, different parameters).\nG�� **Run-Time (Dynamic)**: Method Overriding (subclass redefines parent method). Resolved at runtime via **Dynamic Binding**.'
             },
             {
                 title: '5. Encapsulation & Access Control',
-                content: 'Bundling data and methods into a single unit and restricting access.\n\n**Mechanisms:**\n• **Data Hiding**: Prevents direct modification of internal state.\n• **Access Modifiers**: \n  - `public`: Accessible from anywhere.\n  - `private`: Only within the same class.\n  - `protected`: Same package and subclasses.'
+                content: 'Bundling data and methods into a single unit and restricting access.\n\n**Mechanisms:**\nG�� **Data Hiding**: Prevents direct modification of internal state.\nG�� **Access Modifiers**: \n  - `public`: Accessible from anywhere.\n  - `private`: Only within the same class.\n  - `protected`: Same package and subclasses.'
             },
             {
                 title: '6. Abstraction: Interfaces & Abstract Classes',
-                content: 'Hiding internal complexity and defining contracts.\n\n• **Abstract Classes**: Cannot be instantiated; can have both abstract (no body) and concrete methods.\n• **Interfaces**: A pure contract (all methods abstract by default); supports multiple inheritance (class can implement many interfaces).'
+                content: 'Hiding internal complexity and defining contracts.\n\nG�� **Abstract Classes**: Cannot be instantiated; can have both abstract (no body) and concrete methods.\nG�� **Interfaces**: A pure contract (all methods abstract by default); supports multiple inheritance (class can implement many interfaces).'
             },
             {
                 title: '7. Exception Handling',
-                content: 'Mechanism to detect and resolve runtime errors without crashing the program.\n\n**Keywords:**\n• `try`: Block containing code that might throw an error.\n• `catch`: Block to handle the thrown exception.\n• `finally`: Code that runs regardless of an error (cleanup).\n• `throw`: Explicitly trigger an exception.'
+                content: 'Mechanism to detect and resolve runtime errors without crashing the program.\n\n**Keywords:**\nG�� `try`: Block containing code that might throw an error.\nG�� `catch`: Block to handle the thrown exception.\nG�� `finally`: Code that runs regardless of an error (cleanup).\nG�� `throw`: Explicitly trigger an exception.'
             },
             {
                 title: '8. Design Patterns',
@@ -1309,11 +1309,11 @@ export const subjects = [
             },
             {
                 title: '9. SOLID Principles (Best Practices)',
-                content: 'Expert-level design guidelines:\n• **SRP**: Class should have only one reason to change.\n• **OCP**: Open for extension, closed for modification.\n• **LSP**: Subtypes must be substitutable for base types.\n• **ISP**: Clients shouldn\'t be forced to depend on unused interfaces.\n• **DIP**: Depend on abstractions, not concretions.'
+                content: 'Expert-level design guidelines:\nG�� **SRP**: Class should have only one reason to change.\nG�� **OCP**: Open for extension, closed for modification.\nG�� **LSP**: Subtypes must be substitutable for base types.\nG�� **ISP**: Clients shouldn\'t be forced to depend on unused interfaces.\nG�� **DIP**: Depend on abstractions, not concretions.'
             },
             {
                 title: '10. Important Terminology Matrix',
-                content: '• **Composition**: "Has-A" relationship (Car has an Engine).\n• **Constructor**: Special method to initialize objects.\n• **Destructor**: Method to release resources (important in C++).\n• **Static**: Belongs to class, not instance.\n• **Final**: Prevents overriding or subclassing.\n• **Immutable**: State cannot change after creation.'
+                content: 'G�� **Composition**: "Has-A" relationship (Car has an Engine).\nG�� **Constructor**: Special method to initialize objects.\nG�� **Destructor**: Method to release resources (important in C++).\nG�� **Static**: Belongs to class, not instance.\nG�� **Final**: Prevents overriding or subclassing.\nG�� **Immutable**: State cannot change after creation.'
             },
             {
                 title: '11. SOLID in Practice',
@@ -1799,7 +1799,7 @@ export const subjects = [
             { question: 'Which protocol maps an IP address to a MAC address?', options: ['DNS', 'DHCP', 'ARP', 'ICMP'], answer: 2, explanation: 'ARP (Address Resolution Protocol) maps logical IP addresses to physical MAC addresses.' },
             { question: 'Which port is used by HTTPS by default?', options: ['80', '21', '443', '53'], answer: 2, explanation: 'HTTPS (Secure Web) uses port 443; HTTP uses port 80.' },
             { question: 'Which protocol is connection-oriented and ensures reliable delivery?', options: ['UDP', 'ICMP', 'IP', 'TCP'], answer: 3, explanation: 'TCP provides reliable, sequenced, and error-checked delivery of a stream of octets.' },
-            { question: 'In the Three-Way Handshake, what is the second packet sent?', options: ['SYN', 'ACK', 'SYN-ACK', 'FIN'], answer: 2, explanation: 'The sequence is SYN (from client) → SYN-ACK (from server) → ACK (from client).' },
+            { question: 'In the Three-Way Handshake, what is the second packet sent?', options: ['SYN', 'ACK', 'SYN-ACK', 'FIN'], answer: 2, explanation: 'The sequence is SYN (from client) G�� SYN-ACK (from server) G�� ACK (from client).' },
             { question: 'Which networking topology uses a central hub where all devices are connected?', options: ['Bus', 'Ring', 'Mesh', 'Star'], answer: 3, explanation: 'In a star topology, all devices are connected to a central hub or switch.' },
             { question: 'Which protocol is used to translate domain names into IP addresses?', options: ['HTTP', 'DNS', 'SNMP', 'FTP'], answer: 1, explanation: 'DNS (Domain Name System) acts as the phonebook of the Internet.' },
             { question: 'What is the purpose of TTL (Time To Live) in an IP header?', options: ['Measure latency', 'Prevent routing loops', 'Check for errors', 'Define packet size'], answer: 1, explanation: 'TTL limits the lifespan of a packet to prevent it from circulating indefinitely in case of routing loops.' },
@@ -1828,43 +1828,43 @@ export const subjects = [
         concepts: [
             {
                 title: '1. Introduction to Data Structures',
-                content: 'Data structures define relationships between data elements and provide operations like insertion, deletion, searching, sorting, and traversal.\n\nCategories:\n• Primitive Data Structures: Integers, floats, characters, booleans (building blocks).\n• Abstract Data Types (ADTs): Stacks, Queues, Linked Lists, Trees, Graphs, Hash Tables.'
+                content: 'Data structures define relationships between data elements and provide operations like insertion, deletion, searching, sorting, and traversal.\n\nCategories:\nG�� Primitive Data Structures: Integers, floats, characters, booleans (building blocks).\nG�� Abstract Data Types (ADTs): Stacks, Queues, Linked Lists, Trees, Graphs, Hash Tables.'
             },
             {
                 title: '2. Arrays & Memory Layout',
-                content: 'An array stores elements of same type in contiguous memory.\n\nMemory Conventions:\n• Row-Major Order (C/C++): Stored row by row.\n• Column-Major Order (Fortran): Stored column by column.\n\nRow-Major Indexing Example:\nGiven A[-5...+5][-4...+4], Base 1000, 4-bytes per element. Address of A[1][2]?\n1. Rows: 11, Cols: 9.\n2. Offset for A[1][2]: (1 - (-5)) * 9 + (2 - (-4)) = 6 * 9 + 6 = 60 elements.\n3. Address: 1000 + (60 * 4) = 1240.'
+                content: 'An array stores elements of same type in contiguous memory.\n\nMemory Conventions:\nG�� Row-Major Order (C/C++): Stored row by row.\nG�� Column-Major Order (Fortran): Stored column by column.\n\nRow-Major Indexing Example:\nGiven A[-5...+5][-4...+4], Base 1000, 4-bytes per element. Address of A[1][2]?\n1. Rows: 11, Cols: 9.\n2. Offset for A[1][2]: (1 - (-5)) * 9 + (2 - (-4)) = 6 * 9 + 6 = 60 elements.\n3. Address: 1000 + (60 * 4) = 1240.'
             },
             {
                 title: '3. Linked Lists Variants',
-                content: 'Linear structure with dynamic memory allocation (non-contiguous).\n\nVariants:\n• Singly Linked List: Data + Next pointer.\n• Doubly Linked List: Prev + Data + Next pointer.\n• Circular Linked List: Last node points back to head.\n• Header Linked List: Contains a special node at the beginning with metadata.'
+                content: 'Linear structure with dynamic memory allocation (non-contiguous).\n\nVariants:\nG�� Singly Linked List: Data + Next pointer.\nG�� Doubly Linked List: Prev + Data + Next pointer.\nG�� Circular Linked List: Last node points back to head.\nG�� Header Linked List: Contains a special node at the beginning with metadata.'
             },
             {
                 title: '4. Stacks & Expression Evaluation',
-                content: 'LIFO (Last In First Out) structure.\n\nApplications:\n• Function Calls (Call Stack).\n• Balanced Parentheses/Syntax Parsing.\n• Infix to Postfix/Prefix conversion.\n• Undo mechanism (Ctrl+Z).'
+                content: 'LIFO (Last In First Out) structure.\n\nApplications:\nG�� Function Calls (Call Stack).\nG�� Balanced Parentheses/Syntax Parsing.\nG�� Infix to Postfix/Prefix conversion.\nG�� Undo mechanism (Ctrl+Z).'
             },
             {
                 title: '5. Queues & Scheduling',
-                content: 'FIFO (First In First Out) structure.\n\nVariants:\n• Simple Queue: Front removal, Rear insertion.\n• Circular Queue (Ring Buffer): End wraps to start to reuse space.\n• Priority Queue: Dequeue based on element weight/priority (Binary Heap implementation).\n• Deque: Insertion/Deletion at both ends.'
+                content: 'FIFO (First In First Out) structure.\n\nVariants:\nG�� Simple Queue: Front removal, Rear insertion.\nG�� Circular Queue (Ring Buffer): End wraps to start to reuse space.\nG�� Priority Queue: Dequeue based on element weight/priority (Binary Heap implementation).\nG�� Deque: Insertion/Deletion at both ends.'
             },
             {
                 title: '6. Trees: Binary Search Tree (BST)',
-                content: 'Hierarchical structure where:\n• Left Subtree < Root < Right Subtree.\n• Inorder Traversal gives Sorted Data.\n\nOperations:\n• Search/Insert/Delete: O(log n) average.\n• Worst case: O(n) (Skewed tree).'
+                content: 'Hierarchical structure where:\nG�� Left Subtree < Root < Right Subtree.\nG�� Inorder Traversal gives Sorted Data.\n\nOperations:\nG�� Search/Insert/Delete: O(log n) average.\nG�� Worst case: O(n) (Skewed tree).'
             },
             {
                 title: '7. Self-Balancing Trees',
-                content: 'Optimizing worst-case performance to O(log n):\n• AVL Tree: Balanced factor (-1, 0, 1) maintained via rotations.\n• Red-Black Tree: Rules on node colors (Root black, no two reds together, same black count per path).'
+                content: 'Optimizing worst-case performance to O(log n):\nG�� AVL Tree: Balanced factor (-1, 0, 1) maintained via rotations.\nG�� Red-Black Tree: Rules on node colors (Root black, no two reds together, same black count per path).'
             },
             {
                 title: '8. Graph Theory & Traversal',
-                content: 'Vertices (Nodes) V and Edges E.\n\nTraversals:\n• DFS (Depth First Search): Uses Stack (Recursive/Iterative). Explores as far as possible before back-tracking.\n• BFS (Breadth First Search): Uses Queue. Explores level by level (Shortest path in unweighted graphs).'
+                content: 'Vertices (Nodes) V and Edges E.\n\nTraversals:\nG�� DFS (Depth First Search): Uses Stack (Recursive/Iterative). Explores as far as possible before back-tracking.\nG�� BFS (Breadth First Search): Uses Queue. Explores level by level (Shortest path in unweighted graphs).'
             },
             {
                 title: '9. Hashing & Collision Resolution',
-                content: 'Technique to map keys to indices for O(1) access.\n\nCollision Handling:\n• Chaining: Bucket holds a linked list.\n• Open Addressing: Linear Probing (next slot), Quadratic Probing, or Double Hashing.'
+                content: 'Technique to map keys to indices for O(1) access.\n\nCollision Handling:\nG�� Chaining: Bucket holds a linked list.\nG�� Open Addressing: Linear Probing (next slot), Quadratic Probing, or Double Hashing.'
             },
             {
                 title: '10. Heaps & Sorting',
-                content: 'Complete binary tree with heap property:\n• Max-Heap: Parent ≥ Child. Used in Priority Queues.\n• Min-Heap: Parent ≤ Child.\n\nOperations:\n• Heapify: O(n).\n• Insert/Delete: O(log n).'
+                content: 'Complete binary tree with heap property:\nG�� Max-Heap: Parent G�� Child. Used in Priority Queues.\nG�� Min-Heap: Parent G�� Child.\n\nOperations:\nG�� Heapify: O(n).\nG�� Insert/Delete: O(log n).'
             },
             {
                 title: '11. Advanced Structures: Trie & Segment Trees',
@@ -1872,11 +1872,11 @@ export const subjects = [
             },
             {
                 title: '12. Sorting Algorithm Matrix',
-                content: 'Comparison for Placements:\n• Bubble/Insertion/Selection: O(n²) worst.\n• Merge Sort: O(n log n) always. (O(n) space).\n• Quick Sort: O(n log n) avg, O(n²) worst. (In-place).\n• Heap Sort: O(n log n) always. (In-place).'
+                content: 'Comparison for Placements:\nG�� Bubble/Insertion/Selection: O(n-�) worst.\nG�� Merge Sort: O(n log n) always. (O(n) space).\nG�� Quick Sort: O(n log n) avg, O(n-�) worst. (In-place).\nG�� Heap Sort: O(n log n) always. (In-place).'
             },
             {
                 title: '13. Memory Matrix: Time & Space Complexities',
-                content: 'Search Time:\n• Hash Table: O(1) avg.\n• BST: O(log n).\n• Array (Linear): O(n).\n• Array (Sorted Binary): O(log n).'
+                content: 'Search Time:\nG�� Hash Table: O(1) avg.\nG�� BST: O(log n).\nG�� Array (Linear): O(n).\nG�� Array (Sorted Binary): O(log n).'
             },
             {
                 title: '14. Disjoint Set Union (Union-Find)',
@@ -1901,7 +1901,7 @@ export const subjects = [
             { worksheet: 'Worksheet 1', question: 'The base address of a two-dimensional array A[4][5] is 2000, and each element occupies 4 bytes. What is the address of A[2][3] if stored in row-major order?', options: ['2048', '2052', '2060', '2072'], answer: 1, explanation: 'Address = Base + W*(i*cols + j) = 2000 + 4*(2*5 + 3) = 2052.' },
             { worksheet: 'Worksheet 1', question: 'Which of the following algorithms cannot be implemented using arrays?', options: ['Binary Search', 'Linked List Insertion', 'Merge Sort', 'Stack Operations'], answer: 1, explanation: 'Linked list insertion specifically refers to the pointer-based node linking, which is a different structure from contiguous arrays.' },
             { worksheet: 'Worksheet 1', question: 'Which of the following best describes the time complexity of inserting an element at the beginning of a dynamic array?', options: ['O(1)', 'O(n)', 'O(log n)', 'O(n log n)'], answer: 1, explanation: 'All existing elements must shift to index i+1, resulting in O(n).' },
-            { worksheet: 'Worksheet 1', question: 'In a 3D array A[x][y][z] stored in row-major order, which formula computes the address of element A[i][j][k]?', options: ['B+W ·(i·y·z+j·z+k)', 'B+W ·(k·x·y+j·x+i)', 'B+W ·(i·z+j·x·y+k)', 'B+W ·(j·z+i·y·z+k)'], answer: 0, explanation: 'Standard row-major formula for 3D array mapping.' },
+            { worksheet: 'Worksheet 1', question: 'In a 3D array A[x][y][z] stored in row-major order, which formula computes the address of element A[i][j][k]?', options: ['B+W -+(i-+y-+z+j-+z+k)', 'B+W -+(k-+x-+y+j-+x+i)', 'B+W -+(i-+z+j-+x-+y+k)', 'B+W -+(j-+z+i-+y-+z+k)'], answer: 0, explanation: 'Standard row-major formula for 3D array mapping.' },
             { worksheet: 'Worksheet 1', question: 'What will be the output of the program: int arr[2] = {7, 4}; cout << 0[arr] << ", " << 1[arr];?', options: ['Runtime error', 'Syntax error', '7, 4', 'None'], answer: 2, explanation: 'In C++, arr[i] is equivalent to *(arr + i), so 0[arr] is valid.' },
             { worksheet: 'Worksheet 1', question: 'What is the expected output of the swap loop on a square matrix A?', options: ['Transpose of matrix A', 'The matrix A itself', 'Inverse of matrix A', 'Adding 10 to upper diagonal'], answer: 0, explanation: 'The logic swaps symmetric elements A[i][j] and A[j][i].' },
             { worksheet: 'Worksheet 1', question: 'In a stack, what is the time complexity of inserting or deleting an element?', options: ['O(n)', 'O(log n)', 'O(1)', 'O(n log n)'], answer: 2, explanation: 'Stack operations (Push/Pop) occur at the top and are always O(1).' },
@@ -2107,119 +2107,155 @@ export const subjects = [
         id: 'web',
         title: 'Web Development',
         icon: 'Globe',
-        description: 'Complete MERN Stack:\n• HTML\n• CSS\n• JavaScript\n• React\n• Node.js\n• Express\n• MongoDB\n• Full-Stack Development',
+        description: 'Complete MERN Stack:\n- HTML\n- CSS\n- JavaScript\n- React\n- Node.js\n- Express\n- MongoDB\n- Full-Stack Development',
         concepts: [
             {
                 title: '1. HTML Fundamentals',
-                content: 'HTML (HyperText Markup Language) is the standard markup language for creating web pages.\\n\\nKey Concepts:\\n• **Semantic HTML**: Using meaningful tags like <header>, <nav>, <article>, <section>, <footer>.\\n• **Forms**: <form>, <input>, <textarea>, <select>, <button> with validation attributes.\\n• **Accessibility**: ARIA labels, alt text, semantic structure.\\n• **HTML5 Features**: <video>, <audio>, <canvas>, localStorage, sessionStorage.\\n\\nEX: <article><h1>Title</h1><p>Content</p></article>'
+                content: 'Simple idea: HTML structures content with tags so browsers know what each part means.\\n\\nKey Concepts:\\n- **Semantic HTML**: Using meaningful tags like <header>, <nav>, <article>, <section>, <footer>.\\n- **Forms**: <form>, <input>, <textarea>, <select>, <button> with validation attributes.\\n- **Accessibility**: ARIA labels, alt text, semantic structure.\\n- **HTML5 Features**: <video>, <audio>, <canvas>, localStorage, sessionStorage.\\n\\nEX: <article><h1>Title</h1><p>Content</p></article>'
             },
             {
                 title: '2. CSS Fundamentals',
-                content: 'CSS (Cascading Style Sheets) controls the presentation and layout of web pages.\\n\\nCore Topics:\\n• **Box Model**: Content, Padding, Border, Margin.\\n• **Flexbox**: display: flex, justify-content, align-items, flex-direction.\\n• **Grid**: display: grid, grid-template-columns, grid-gap.\\n• **Responsive Design**: Media queries, mobile-first approach.\\n• **CSS Variables**: --primary-color: #10b981; color: var(--primary-color);\\n• **Animations**: @keyframes, transition, transform.\\n\\nEX: .container { display: flex; justify-content: center; }'
+                content: 'Simple idea: CSS controls how HTML looks and how elements are laid out.\\n\\nCore Topics:\\n- **Box Model**: Content, Padding, Border, Margin.\\n- **Flexbox**: display: flex, justify-content, align-items, flex-direction.\\n- **Grid**: display: grid, grid-template-columns, grid-gap.\\n- **Responsive Design**: Media queries, mobile-first approach.\\n- **CSS Variables**: --primary-color: #10b981; color: var(--primary-color);\\n- **Animations**: @keyframes, transition, transform.\\n\\nEX: .container { display: flex; justify-content: center; }'
             },
             {
                 title: '3. JavaScript Core Concepts',
-                content: 'JavaScript is a high-level, interpreted programming language for web development.\\n\\nFundamentals:\\n• **Variables**: let, const, var (scope differences).\\n• **Data Types**: String, Number, Boolean, Object, Array, null, undefined, Symbol.\\n• **Functions**: Function declarations, expressions, arrow functions.\\n• **Closures**: Inner function accessing outer function variables.\\n• **Promises**: Async operations with .then(), .catch(), .finally().\\n• **Async/Await**: Modern async syntax for cleaner code.\\n\\nEX: const fetchData = async () => { const res = await fetch(url); return res.json(); }'
+                content: 'Simple idea: JavaScript fundamentals control data and flow.\\n\\nTopics:\\n- **Variables (var/let/const)**: var is function-scoped; let/const are block-scoped and safer.\\n- **Data Types**: Primitive (string, number, boolean, null, undefined, symbol, bigint) vs non-primitive (object, array, function).\\n- **Type Coercion**: JS can convert types implicitly; be explicit when needed.\\n- **== vs ===**: == allows coercion; === checks type and value.\\n- **Operators**: arithmetic, comparison, logical, ternary, assignment.\\n- **Conditionals**: if/else and switch control branches.\\n- **Loops**: for/while/for..of iterate over data.'
             },
             {
-                title: '4. JavaScript ES6+ Features',
-                content: 'Modern JavaScript features that improve code quality and readability.\\n\\nKey Features:\\n• **Destructuring**: const { name, age } = user;\\n• **Spread Operator**: const newArr = [...oldArr, newItem];\\n• **Template Literals**: `Hello ${name}!`\\n• **Arrow Functions**: const add = (a, b) => a + b;\\n• **Modules**: import/export for code organization.\\n• **Classes**: class User { constructor(name) { this.name = name; } }\\n• **Optional Chaining**: user?.address?.city\\n• **Nullish Coalescing**: const value = input ?? defaultValue;'
+                title: '4. JavaScript Functions (Very Important)',
+                content: 'Simple idea: Functions are reusable blocks of logic.\\n\\nKey points:\\n- **Declaration vs expression**: declarations are hoisted; expressions are not.\\n- **Arrow functions**: shorter syntax and lexical this.\\n- **Default parameters**: provide fallbacks for missing args.\\n- **Rest/Spread**: collect or expand arguments/arrays.\\n- **Higher-order functions**: accept or return functions.\\n- **Callbacks**: functions passed to other functions.\\n- **Array helpers**: map (transform), filter (select), reduce (accumulate), forEach (iterate).'
             },
             {
                 title: '5. DOM Manipulation',
-                content: 'The DOM (Document Object Model) is a tree representation of HTML.\\n\\nCommon Operations:\\n• **Selection**: document.querySelector(), document.getElementById(), document.querySelectorAll().\\n• **Modification**: element.innerHTML, textContent, setAttribute().\\n• **Creation**: document.createElement(), appendChild().\\n• **Events**: addEventListener("click", handler), event.preventDefault().\\n• **Traversal**: parentNode, children, nextSibling.\\n\\nEX: document.querySelector(".btn").addEventListener("click", () => alert("Clicked!"));'
+                content: 'Simple idea: The DOM is the browser\'s object tree of the page.\\n\\nCore tasks:\\n- **Selection**: document.getElementById(), querySelector(), querySelectorAll().\\n- **Events**: addEventListener(), preventDefault().\\n- **Bubbling/Capturing**: events move up or down the tree.\\n- **Event delegation**: handle many elements with one parent listener.\\n\\nEX: document.querySelector(".btn").addEventListener("click", () => alert("Clicked!"));'
             },
             {
                 title: '6. React Fundamentals',
-                content: 'React is a JavaScript library for building user interfaces with components.\\n\\nCore Concepts:\\n• **Components**: Reusable UI building blocks (functional/class).\\n• **JSX**: JavaScript XML syntax for writing HTML in JS.\\n• **Props**: Data passed from parent to child components.\\n• **State**: Component-level data that triggers re-renders.\\n• **Virtual DOM**: Efficient diffing algorithm for minimal DOM updates.\\n• **Reconciliation**: Process of updating the real DOM.\\n\\nEX: const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;'
+                content: 'Simple idea: React builds UIs from reusable components.\\n\\nCore Concepts:\\n- **Components**: Reusable UI building blocks (functional/class).\\n- **JSX**: JavaScript XML syntax for writing HTML in JS.\\n- **Props**: Data passed from parent to child components.\\n- **State**: Component-level data that triggers re-renders.\\n- **Virtual DOM**: Efficient diffing algorithm for minimal DOM updates.\\n- **Reconciliation**: Process of updating the real DOM.\\n\\nEX: const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;'
             },
             {
                 title: '7. React Hooks',
-                content: 'Hooks allow functional components to use state and lifecycle features.\\n\\nEssential Hooks:\\n• **useState**: const [count, setCount] = useState(0);\\n• **useEffect**: Side effects, data fetching, subscriptions.\\n• **useContext**: Access context without prop drilling.\\n• **useRef**: Persist values across renders, DOM references.\\n• **useMemo**: Memoize expensive calculations.\\n• **useCallback**: Memoize functions to prevent re-creation.\\n• **useReducer**: Complex state logic (like Redux).\\n\\nEX: useEffect(() => { fetchData(); }, [dependency]);'
+                content: 'Simple idea: Hooks let function components use state and lifecycle features.\\n\\nEssential Hooks:\\n- **useState**: const [count, setCount] = useState(0);\\n- **useEffect**: Side effects, data fetching, subscriptions.\\n- **useContext**: Access context without prop drilling.\\n- **useRef**: Persist values across renders, DOM references.\\n- **useMemo**: Memoize expensive calculations.\\n- **useCallback**: Memoize functions to prevent re-creation.\\n- **useReducer**: Complex state logic (like Redux).\\n\\nEX: useEffect(() => { fetchData(); }, [dependency]);'
             },
             {
                 title: '8. React Component Lifecycle',
-                content: 'Understanding when components mount, update, and unmount is crucial.\\n\\nLifecycle Phases:\\n• **Mounting**: Component is created and inserted into DOM.\\n• **Updating**: Component re-renders due to state/props changes.\\n• **Unmounting**: Component is removed from DOM.\\n\\nWith Hooks:\\n• useEffect(() => { /* mount */ return () => { /* unmount */ }; }, []);\\n• useEffect(() => { /* update */ }, [dependency]);\\n\\nCleanup: Always return cleanup functions to prevent memory leaks.'
+                content: 'Simple idea: Lifecycle tells you when a component mounts, updates, and unmounts.\\n\\nLifecycle Phases:\\n- **Mounting**: Component is created and inserted into DOM.\\n- **Updating**: Component re-renders due to state/props changes.\\n- **Unmounting**: Component is removed from DOM.\\n\\nWith Hooks:\\n- useEffect(() => { /* mount */ return () => { /* unmount */ }; }, []);\\n- useEffect(() => { /* update */ }, [dependency]);\\n\\nCleanup: Always return cleanup functions to prevent memory leaks.'
             },
             {
                 title: '9. Node.js Fundamentals',
-                content: 'Node.js is a JavaScript runtime built on the Chrome V8 engine for server-side development.\\n\\nKey Features:\\n• **Event-Driven**: Non-blocking I/O operations.\\n• **Single-Threaded**: Uses the event loop for concurrency.\\n• **NPM**: Package manager with millions of libraries.\\n• **Modules**: CommonJS (require) and ES6 (import/export).\\n• **Built-in Modules**: fs, http, path, os, crypto.\\n\\nEX: const http = require("http"); http.createServer((req, res) => res.end("Hello")).listen(3000);'
+                content: 'Simple idea: Node.js runs JavaScript on the server using the V8 engine.\\n\\nKey Features:\\n- **Event-Driven**: Non-blocking I/O operations.\\n- **Single-Threaded**: Uses the event loop for concurrency.\\n- **NPM**: Package manager with millions of libraries.\\n- **Modules**: CommonJS (require) and ES6 (import/export).\\n- **Built-in Modules**: fs, http, path, os, crypto.\\n\\nEX: const http = require("http"); http.createServer((req, res) => res.end("Hello")).listen(3000);'
             },
             {
                 title: '10. Express.js Framework',
-                content: 'Express is a minimal and flexible Node.js web application framework.\\n\\nCore Concepts:\\n• **Routing**: app.get("/api/users", handler);\\n• **Middleware**: Functions that process requests (logging, auth, parsing).\\n• **Request/Response**: req.params, req.query, req.body, res.json(), res.send().\\n• **Error Handling**: app.use((err, req, res, next) => { /* ... */ });\\n• **Static Files**: app.use(express.static("public"));\\n\\nEX: app.post("/api/users", (req, res) => res.json({ success: true }));'
+                content: 'Simple idea: Express makes it easy to build APIs with Node.js.\\n\\nCore Concepts:\\n- **Routing**: app.get("/api/users", handler);\\n- **Middleware**: Functions that process requests (logging, auth, parsing).\\n- **Request/Response**: req.params, req.query, req.body, res.json(), res.send().\\n- **Error Handling**: app.use((err, req, res, next) => { /* ... */ });\\n- **Static Files**: app.use(express.static("public"));\\n\\nEX: app.post("/api/users", (req, res) => res.json({ success: true }));'
             },
             {
                 title: '11. RESTful API Design',
-                content: 'REST (Representational State Transfer) is an architectural style for APIs.\\n\\nHTTP Methods:\\n• **GET**: Retrieve data (idempotent, safe).\\n• **POST**: Create new resource.\\n• **PUT**: Update entire resource (idempotent).\\n• **PATCH**: Partial update.\\n• **DELETE**: Remove resource (idempotent).\\n\\nStatus Codes:\\n• 200 OK, 201 Created, 204 No Content.\\n• 400 Bad Request, 401 Unauthorized, 404 Not Found.\\n• 500 Internal Server Error.\\n\\nEX: GET /api/users/:id → { id: 1, name: "John" }'
+                content: 'Simple idea: REST designs APIs around resources and HTTP verbs.\\n\\nHTTP Methods:\\n- **GET**: Retrieve data (idempotent, safe).\\n- **POST**: Create new resource.\\n- **PUT**: Update entire resource (idempotent).\\n- **PATCH**: Partial update.\\n- **DELETE**: Remove resource (idempotent).\\n\\nStatus Codes:\\n- 200 OK, 201 Created, 204 No Content.\\n- 400 Bad Request, 401 Unauthorized, 404 Not Found.\\n- 500 Internal Server Error.\\n\\nEX: GET /api/users/:id -> { id: 1, name: "John" }'
             },
             {
                 title: '12. MongoDB Basics',
-                content: 'MongoDB is a NoSQL document database that stores data in JSON-like documents.\\n\\nKey Concepts:\\n• **Collections**: Groups of documents (like tables).\\n• **Documents**: JSON objects with key-value pairs.\\n• **Schema-less**: Flexible structure, no fixed schema.\\n• **CRUD Operations**: Create, Read, Update, Delete.\\n• **Indexing**: Improves query performance.\\n• **Aggregation**: Pipeline for data transformation.\\n\\nEX: db.users.find({ age: { $gt: 18 } }).sort({ name: 1 });'
+                content: 'Simple idea: MongoDB stores data as JSON-like documents.\\n\\nKey Concepts:\\n- **Collections**: Groups of documents (like tables).\\n- **Documents**: JSON objects with key-value pairs.\\n- **Schema-less**: Flexible structure, no fixed schema.\\n- **CRUD Operations**: Create, Read, Update, Delete.\\n- **Indexing**: Improves query performance.\\n- **Aggregation**: Pipeline for data transformation.\\n\\nEX: db.users.find({ age: { $gt: 18 } }).sort({ name: 1 });'
             },
             {
                 title: '13. Mongoose ODM',
-                content: 'Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js.\\n\\nFeatures:\\n• **Schema Definition**: Define structure with types and validation.\\n• **Models**: Constructors compiled from schemas.\\n• **Validation**: Built-in and custom validators.\\n• **Middleware**: Pre/post hooks for operations.\\n• **Population**: Reference other documents (like SQL joins).\\n\\nEX: const User = mongoose.model("User", { name: String, email: { type: String, required: true } });'
+                content: 'Simple idea: Mongoose adds schemas and helpers on top of MongoDB.\\n\\nFeatures:\\n- **Schema Definition**: Define structure with types and validation.\\n- **Models**: Constructors compiled from schemas.\\n- **Validation**: Built-in and custom validators.\\n- **Middleware**: Pre/post hooks for operations.\\n- **Population**: Reference other documents (like SQL joins).\\n\\nEX: const User = mongoose.model("User", { name: String, email: { type: String, required: true } });'
             },
             {
                 title: '14. Authentication & Authorization',
-                content: 'Securing your application with proper user authentication.\\n\\nStrategies:\\n• **JWT (JSON Web Tokens)**: Stateless authentication.\\n• **Sessions**: Server-side storage with cookies.\\n• **OAuth**: Third-party authentication (Google, GitHub).\\n• **bcrypt**: Password hashing for security.\\n\\nJWT Flow:\\n1. User logs in with credentials.\\n2. Server validates and creates JWT.\\n3. Client stores token (localStorage/cookie).\\n4. Client sends token in Authorization header.\\n5. Server verifies token for protected routes.\\n\\nEX: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
+                content: 'Simple idea: Authentication proves who a user is; authorization controls what they can access.\\n\\nStrategies:\\n- **JWT (JSON Web Tokens)**: Stateless authentication.\\n- **Sessions**: Server-side storage with cookies.\\n- **OAuth**: Third-party authentication (Google, GitHub).\\n- **bcrypt**: Password hashing for security.\\n\\nJWT Flow:\\n1. User logs in with credentials.\\n2. Server validates and creates JWT.\\n3. Client stores token (localStorage/cookie).\\n4. Client sends token in Authorization header.\\n5. Server verifies token for protected routes.\\n\\nEX: Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'
             },
             {
                 title: '15. MERN Stack Architecture',
-                content: 'Full-stack JavaScript development with MongoDB, Express, React, and Node.js.\\n\\nData Flow:\\n1. **Client (React)**: User interacts with UI.\\n2. **HTTP Request**: React sends API call to backend.\\n3. **Server (Express/Node)**: Processes request, business logic.\\n4. **Database (MongoDB)**: Stores/retrieves data.\\n5. **Response**: Server sends JSON back to client.\\n6. **UI Update**: React updates state and re-renders.\\n\\nAdvantages:\\n• Single language (JavaScript) across stack.\\n• JSON everywhere (MongoDB, Express, React).\\n• Rich ecosystem and community support.\\n• Fast development with reusable components.'
+                content: 'Simple idea: MERN uses MongoDB, Express, React, and Node for full-stack JavaScript apps.\\n\\nData Flow:\\n1. **Client (React)**: User interacts with UI.\\n2. **HTTP Request**: React sends API call to backend.\\n3. **Server (Express/Node)**: Processes request, business logic.\\n4. **Database (MongoDB)**: Stores/retrieves data.\\n5. **Response**: Server sends JSON back to client.\\n6. **UI Update**: React updates state and re-renders.\\n\\nAdvantages:\\n- Single language (JavaScript) across stack.\\n- JSON everywhere (MongoDB, Express, React).\\n- Rich ecosystem and community support.\\n- Fast development with reusable components.'
             },
             {
                 title: '16. State Management (Redux)',
-                content: 'Redux is a predictable state container for JavaScript apps.\\n\\nCore Principles:\\n• **Single Source of Truth**: One global store.\\n• **State is Read-Only**: Only changed via actions.\\n• **Pure Reducers**: (state, action) => newState.\\n\\nFlow:\\n1. Component dispatches action.\\n2. Reducer processes action and updates state.\\n3. Store notifies subscribers.\\n4. Component re-renders with new state.\\n\\nEX: dispatch({ type: "INCREMENT", payload: 1 });'
+                content: 'Simple idea: Redux keeps app state in one predictable store.\\n\\nCore Principles:\\n- **Single Source of Truth**: One global store.\\n- **State is Read-Only**: Only changed via actions.\\n- **Pure Reducers**: (state, action) => newState.\\n\\nFlow:\\n1. Component dispatches action.\\n2. Reducer processes action and updates state.\\n3. Store notifies subscribers.\\n4. Component re-renders with new state.\\n\\nEX: dispatch({ type: "INCREMENT", payload: 1 });'
             },
             {
                 title: '17. Web Security',
-                content: 'Protecting web applications from common vulnerabilities.\\n\\nCommon Attacks:\\n• **XSS (Cross-Site Scripting)**: Injecting malicious scripts. Prevention: Sanitize input, use CSP.\\n• **CSRF (Cross-Site Request Forgery)**: Unauthorized commands. Prevention: CSRF tokens, SameSite cookies.\\n• **SQL Injection**: Malicious SQL queries. Prevention: Parameterized queries, ORMs.\\n• **CORS (Cross-Origin Resource Sharing)**: Browser security feature.\\n\\nBest Practices:\\n• Use HTTPS everywhere.\\n• Validate and sanitize all inputs.\\n• Implement rate limiting.\\n• Keep dependencies updated.\\n• Use security headers (Helmet.js).'
+                content: 'Simple idea: Web security prevents common attacks and data leaks.\\n\\nCommon Attacks:\\n- **XSS (Cross-Site Scripting)**: Injecting malicious scripts. Prevention: Sanitize input, use CSP.\\n- **CSRF (Cross-Site Request Forgery)**: Unauthorized commands. Prevention: CSRF tokens, SameSite cookies.\\n- **SQL Injection**: Malicious SQL queries. Prevention: Parameterized queries, ORMs.\\n- **CORS (Cross-Origin Resource Sharing)**: Browser security feature.\\n\\nBest Practices:\\n- Use HTTPS everywhere.\\n- Validate and sanitize all inputs.\\n- Implement rate limiting.\\n- Keep dependencies updated.\\n- Use security headers (Helmet.js).'
             },
             {
                 title: '18. Performance Optimization',
-                content: 'Techniques to improve web application speed and efficiency.\\n\\nFrontend:\\n• **Code Splitting**: Load only necessary code (React.lazy).\\n• **Lazy Loading**: Load images/components on demand.\\n• **Memoization**: React.memo, useMemo, useCallback.\\n• **Debouncing/Throttling**: Limit function execution.\\n• **CDN**: Serve static assets from edge servers.\\n\\nBackend:\\n• **Caching**: Redis, in-memory cache.\\n• **Database Indexing**: Speed up queries.\\n• **Connection Pooling**: Reuse database connections.\\n• **Compression**: gzip/brotli for responses.\\n• **Load Balancing**: Distribute traffic across servers.'
+                content: 'Simple idea: Optimization improves speed and responsiveness for users.\\n\\nFrontend:\\n- **Code Splitting**: Load only necessary code (React.lazy).\\n- **Lazy Loading**: Load images/components on demand.\\n- **Memoization**: React.memo, useMemo, useCallback.\\n- **Debouncing/Throttling**: Limit function execution.\\n- **CDN**: Serve static assets from edge servers.\\n\\nBackend:\\n- **Caching**: Redis, in-memory cache.\\n- **Database Indexing**: Speed up queries.\\n- **Connection Pooling**: Reuse database connections.\\n- **Compression**: gzip/brotli for responses.\\n- **Load Balancing**: Distribute traffic across servers.'
             },
             {
                 title: '19. Auth Flow Deep Dive',
-                content: 'Access tokens + refresh tokens, secure cookie storage, rotation, and logout invalidation.'
+                content: 'Simple idea: Use short-lived access tokens and long-lived refresh tokens for safer sessions.\\n\\nKey points:\\n- Store refresh tokens in httpOnly cookies to reduce XSS risk.\\n- Rotate refresh tokens to limit replay attacks.\\n- Revoke tokens on logout or password reset.\\n- Use short access token expiry to reduce damage if leaked.'
             },
             {
                 title: '20. Validation and Error Handling',
-                content: 'Use schema validation (Joi/Zod), centralized error handlers, and consistent error responses.'
+                content: 'Simple idea: Validate input and return consistent errors so clients can recover cleanly.\\n\\nBest practices:\\n- Validate on both client and server (server is mandatory).\\n- Use schemas (Zod/Joi/Yup) for type-safe validation.\\n- Centralize error handling and log stack traces.\\n- Return clear error codes and messages.'
             },
             {
                 title: '21. Testing in MERN',
-                content: 'Frontend: Jest + React Testing Library. Backend: Jest/Mocha + Supertest. Use mocks and integration tests.'
+                content: 'Simple idea: Tests prove features work and prevent regressions.\\n\\nLayers:\\n- Unit tests for pure functions and components.\\n- Integration tests for API routes and DB flows.\\n- E2E tests for full user journeys.\\n\\nTools: Jest + React Testing Library (frontend), Jest/Mocha + Supertest (backend).'
             },
             {
                 title: '22. Deployment & CI/CD',
-                content: 'Build pipelines, environment configs, secrets management, and zero-downtime deployments.'
+                content: 'Simple idea: CI/CD automates build, test, and deploy so releases are reliable.\\n\\nKey steps:\\n- Lint, test, and build on every push.\\n- Store secrets in env vars or secret managers.\\n- Use blue/green or rolling deployments to avoid downtime.\\n- Add health checks and automatic rollback.'
             },
             {
                 title: '23. Monitoring & Logging',
-                content: 'Use structured logs, error tracking (Sentry), and performance monitoring.'
+                content: 'Simple idea: Monitoring shows system health; logging explains what happened.\\n\\nCore tools:\\n- Structured logs with request IDs.\\n- Error tracking (Sentry) for crashes.\\n- Metrics for latency, throughput, and error rates.\\n- Alerts for spikes and outages.'
             },
             {
                 title: '24. TypeScript Essentials for MERN',
-                content: 'Why TypeScript: safer refactors, better tooling, fewer runtime bugs.\n\nCore Topics:\n- Basic types, interfaces, and type inference.\n- Union types and generics.\n- Type narrowing with typeof/instanceof.\n- React props and component typing.\n- Node/Express request/response types.\n\nInterview tip: explain how TypeScript catches contract mismatches between API and UI.'
+                content: 'Simple idea: TypeScript adds types to JavaScript for safer, clearer code.\\n\\nCore Topics:\\n- Basic types, interfaces, and type inference.\\n- Union types and generics.\\n- Type narrowing with typeof/instanceof.\\n- React props and component typing.\\n- Node/Express request/response types.\\n\\nInterview tip: explain how TypeScript catches contract mismatches between API and UI.'
             },
             {
                 title: '25. React Router and SPA Navigation',
-                content: 'Routing in single-page apps without full page reloads.\n\nKey Ideas:\n- Route definitions and nested routes.\n- Dynamic params and query strings.\n- Protected routes and auth guards.\n- Lazy loading route chunks.\n\nInterview tip: describe how client-side routing differs from server-side routing.'
+                content: 'Simple idea: React Router maps URLs to components without full page reloads.\\n\\nKey Ideas:\\n- Route definitions and nested routes.\\n- Dynamic params and query strings.\\n- Protected routes and auth guards.\\n- Lazy loading route chunks.\\n\\nInterview tip: describe how client-side routing differs from server-side routing.'
             },
             {
                 title: '26. Form Handling and Validation',
-                content: 'Reliable forms require client + server validation.\n\nBest Practices:\n- Controlled inputs and form state.\n- Schema validation (Zod/Joi/Yup).\n- Server-side revalidation for security.\n- Error display and accessibility.\n\nInterview tip: emphasize validation on the server is mandatory.'
+                content: 'Simple idea: Forms need good UX and strong validation on both client and server.\\n\\nBest Practices:\\n- Controlled inputs and form state.\\n- Schema validation (Zod/Joi/Yup).\\n- Server-side revalidation for security.\\n- Error display and accessibility.\\n\\nInterview tip: emphasize validation on the server is mandatory.'
             },
             {
                 title: '27. Real-Time Communication (WebSockets)',
-                content: 'Use WebSockets (Socket.IO) for real-time updates like chat, notifications, and live dashboards.\n\nConcepts:\n- Persistent duplex connection.\n- Rooms/namespaces for grouping.\n- Heartbeats and reconnect logic.\n- Scaling with Redis pub/sub.\n\nInterview tip: mention fallback strategies and scaling challenges.'
+                content: 'Simple idea: WebSockets enable real-time, two-way updates between client and server.\\n\\nConcepts:\\n- Persistent duplex connection.\\n- Rooms/namespaces for grouping.\\n- Heartbeats and reconnect logic.\\n- Scaling with Redis pub/sub.\\n\\nInterview tip: mention fallback strategies and scaling challenges.'
             },
             {
                 title: '28. Debugging and DevTools',
-                content: 'Debug across the stack to isolate bugs quickly.\n\nTools:\n- Chrome DevTools: network, performance, and DOM inspection.\n- React DevTools: component state and props.\n- Node inspector and logs.\n- Source maps for production debugging.\n\nInterview tip: show a systematic approach to root-cause analysis.'
+                content: 'Simple idea: Debugging uses tools and logs to find the root cause fast.\\n\\nTools:\\n- Chrome DevTools: network, performance, and DOM inspection.\\n- React DevTools: component state and props.\\n- Node inspector and logs.\\n- Source maps for production debugging.\\n\\nInterview tip: show a systematic approach to root-cause analysis.'
+            },
+            {
+                title: '29. JavaScript Event Loop',
+                content: 'Simple idea: Async JavaScript keeps the UI responsive while work completes.\n\nCore topics:\n- **setTimeout/setInterval**: schedule tasks.\n- **Callbacks**: run after an async task finishes.\n- **Callback hell**: nested callbacks reduce readability.\n- **Promises**: represent future values; chain with then/catch.\n- **async/await**: cleaner syntax over promises.\n- **Event loop**: moves tasks from queues to the call stack.\n- **Microtask vs callback queue**: promises run before timers.'
+            },
+            {
+                title: '30. Scope and Hoisting',
+                content: 'Simple idea: Scope controls visibility; hoisting affects when you can use declarations.\n\nKey ideas:\n- **Global/Block/Function scope**: where variables live.\n- **Lexical scope**: functions access outer variables.\n- **Hoisting**: declarations move to top of scope.\n- **Temporal Dead Zone**: let/const exist but are unusable before declaration.\n- **Execution context**: created per function call.\n- **Call stack**: tracks active execution contexts.'
+            },
+            {
+                title: '31. Modules and Bundling',
+                content: 'Simple idea: ES modules split code into files and reuse logic with import/export.\nBundlers (Vite/Webpack) combine modules for fast loading.'
+            },
+            {
+                title: '32. Error Handling in JavaScript',
+                content: 'Simple idea: Use try/catch and Promise .catch or async/await with try/catch for failures.\nAlways log useful context and show safe user messages.'
+            },
+            {
+                title: '33. Closures (Frequently Asked)',
+                content: 'Simple idea: A closure is a function that remembers variables from its outer scope.\n\nWhy it matters:\n- **Real usage**: counters, data hiding, and factory functions.\n- **Memory**: captured variables stay alive while the closure exists.\n- **React hooks**: closures capture state and props internally.'
+            },
+            {
+                title: '34. The this Keyword',
+                content: 'Simple idea: `this` depends on how a function is called.\n\nBehavior:\n- **Normal function**: `this` is global/undefined (strict mode).\n- **Arrow function**: `this` is lexical (from outer scope).\n- **Object method**: `this` is the object.\n- **Class**: `this` is the instance.\n- **Event listener**: `this` is the element (non-arrow handler).'
+            },
+            {
+                title: '35. Object-Oriented JavaScript',
+                content: 'Simple idea: JS uses prototypes for inheritance and reuse.\n\nKey topics:\n- **Prototype/chain**: objects inherit from other objects.\n- **Constructor functions**: create instances with `new`.\n- **Classes**: syntax over prototypes.\n- **Inheritance**: reuse and extend behavior.\n- **Encapsulation**: hide internal details behind methods.'
+            },
+            {
+                title: '36. Memory and Performance',
+                content: 'Simple idea: Manage memory to avoid slow apps and crashes.\n\nKey topics:\n- **Shallow vs deep copy**: shallow shares nested refs; deep clones them.\n- **Garbage collection**: frees unreachable objects.\n- **Memory leaks**: lingering references (timers, listeners).\n- **Debouncing**: delay frequent calls to reduce work.'
+            },
+            {
+                title: '37. ES6+ Features (Must Revise)',
+                content: 'Simple idea: ES6+ improves readability and structure.\n\nMust-know:\n- **Destructuring**: extract values from arrays/objects.\n- **Spread operator**: copy/merge arrays and objects.\n- **Template literals**: string interpolation with backticks.\n- **Modules**: import/export for code organization.\n- **Classes**: class syntax for objects.\n- **Optional chaining**: safe property access.\n- **Nullish coalescing**: default only for null/undefined.'
             }
         ],
         mcqs: [
@@ -5282,7 +5318,7 @@ export const subjects = [
             },
             {
                 title: '2. Phases of a Compiler',
-                content: 'Lexical Analysis → Syntax Analysis → Semantic Analysis → Intermediate Code Generation → Optimization → Code Generation.'
+                content: 'Lexical Analysis G�� Syntax Analysis G�� Semantic Analysis G�� Intermediate Code Generation G�� Optimization G�� Code Generation.'
             },
             {
                 title: '3. Lexical Analysis',
@@ -5602,27 +5638,27 @@ export const subjects = [
         concepts: [
             {
                 title: '1. Introduction to Algorithms',
-                content: 'An algorithm is a step-by-step procedure for solving a problem. Key properties include:\n• **Correctness**: Always produces right output.\n• **Efficiency**: Optimized time and space.\n• **Scalability**: Handles large inputs.\n\nClassification:\n• Deterministic vs Non-deterministic.\n• Sequential vs Parallel.\n• Exact vs Approximate.\n• Recursive vs Iterative.'
+                content: 'An algorithm is a step-by-step procedure for solving a problem. Key properties include:\nG�� **Correctness**: Always produces right output.\nG�� **Efficiency**: Optimized time and space.\nG�� **Scalability**: Handles large inputs.\n\nClassification:\nG�� Deterministic vs Non-deterministic.\nG�� Sequential vs Parallel.\nG�� Exact vs Approximate.\nG�� Recursive vs Iterative.'
             },
             {
                 title: '2. Asymptotic Notations',
-                content: 'Used to describe the growth rate of algorithms:\n• **Big O (O)**: Upper bound (Worst case). f(n) ≤ c·g(n).\n• **Big Omega (Ω)**: Lower bound (Best case). f(n) ≥ c·g(n).\n• **Big Theta (Θ)**: Tight bound (Average case). c1·g(n) ≤ f(n) ≤ c2·g(n).'
+                content: 'Used to describe the growth rate of algorithms:\nG�� **Big O (O)**: Upper bound (Worst case). f(n) G�� c-+g(n).\nG�� **Big Omega (+�)**: Lower bound (Best case). f(n) G�� c-+g(n).\nG�� **Big Theta (+�)**: Tight bound (Average case). c1-+g(n) G�� f(n) G�� c2-+g(n).'
             },
             {
                 title: '3. Master Theorem',
-                content: 'Formula for recurrences: T(n) = aT(n/b) + n^k log^p n\n\nCases:\n1. If a > b^k: T(n) = Θ(n^{log_b a})\n2. If a = b^k:\n   - p > -1: T(n) = Θ(n^{log_b a} log^{p+1} n)\n   - p = -1: T(n) = Θ(n^{log_b a} log log n)\n   - p < -1: T(n) = Θ(n^{log_b a})\n3. If a < b^k:\n   - p ≥ 0: T(n) = Θ(n^k log^p n)\n   - p < 0: T(n) = Θ(n^k)'
+                content: 'Formula for recurrences: T(n) = aT(n/b) + n^k log^p n\n\nCases:\n1. If a > b^k: T(n) = +�(n^{log_b a})\n2. If a = b^k:\n   - p > -1: T(n) = +�(n^{log_b a} log^{p+1} n)\n   - p = -1: T(n) = +�(n^{log_b a} log log n)\n   - p < -1: T(n) = +�(n^{log_b a})\n3. If a < b^k:\n   - p G�� 0: T(n) = +�(n^k log^p n)\n   - p < 0: T(n) = +�(n^k)'
             },
             {
                 title: '4. Complexity Matrices (Search/Sort)',
-                content: 'Sorting Efficiency:\n• **Quick Sort**: O(n log n) avg, O(n²) worst.\n• **Merge Sort**: O(n log n) stable.\n• **Heap Sort**: O(n log n) in-place.\n• **Insertion Sort**: O(n) best-case (sorted).\n• **Radix Sort**: O(nk) non-comparison based.\n\nSearching:\n• **Binary Search**: O(log n) on sorted data.\n• **Linear Search**: O(n) on unsorted data.'
+                content: 'Sorting Efficiency:\nG�� **Quick Sort**: O(n log n) avg, O(n-�) worst.\nG�� **Merge Sort**: O(n log n) stable.\nG�� **Heap Sort**: O(n log n) in-place.\nG�� **Insertion Sort**: O(n) best-case (sorted).\nG�� **Radix Sort**: O(nk) non-comparison based.\n\nSearching:\nG�� **Binary Search**: O(log n) on sorted data.\nG�� **Linear Search**: O(n) on unsorted data.'
             },
             {
                 title: '5. Divide and Conquer',
-                content: 'Steps: Divide → Conquer → Combine.\n\nKey Problems:\n• Merge Sort / Quick Sort.\n• Binary Search.\n• Strassen\'s Matrix Multiplication.\n• Closest Pair of Points.\n• Convex Hull (Graham\'s Scan).'
+                content: 'Steps: Divide G�� Conquer G�� Combine.\n\nKey Problems:\nG�� Merge Sort / Quick Sort.\nG�� Binary Search.\nG�� Strassen\'s Matrix Multiplication.\nG�� Closest Pair of Points.\nG�� Convex Hull (Graham\'s Scan).'
             },
             {
                 title: '6. Dynamic Programming (DP)',
-                content: 'Solves problems with **Overlapping Subproblems** and **Optimal Substructure**.\n\nApproaches:\n• Top-Down (Memoization): Recursive + Cache.\n• Bottom-Up (Tabulation): Iterative Table filling.\n\nProblems: Fibonacci, LCS, Knapsack (0/1), Matrix Chain Multiplication, TSP, Edit Distance.'
+                content: 'Solves problems with **Overlapping Subproblems** and **Optimal Substructure**.\n\nApproaches:\nG�� Top-Down (Memoization): Recursive + Cache.\nG�� Bottom-Up (Tabulation): Iterative Table filling.\n\nProblems: Fibonacci, LCS, Knapsack (0/1), Matrix Chain Multiplication, TSP, Edit Distance.'
             },
             {
                 title: '7. Greedy Algorithms',
@@ -5630,19 +5666,19 @@ export const subjects = [
             },
             {
                 title: '8. Graph Algorithms Complexity',
-                content: '• **BFS/DFS**: O(V + E).\n• **Dijkstra**: O((V+E) log V).\n• **Bellman-Ford**: O(VE) - handles negative weights.\n• **Floyd-Warshall**: O(V³) - all pairs shortest path.\n• **Kruskal**: O(E log E).\n• **Topological Sort**: O(V + E).'
+                content: 'G�� **BFS/DFS**: O(V + E).\nG�� **Dijkstra**: O((V+E) log V).\nG�� **Bellman-Ford**: O(VE) - handles negative weights.\nG�� **Floyd-Warshall**: O(V-�) - all pairs shortest path.\nG�� **Kruskal**: O(E log E).\nG�� **Topological Sort**: O(V + E).'
             },
             {
                 title: '9. String Algorithms',
-                content: '• **KMP**: O(n + m) using prefix function.\n• **Rabin-Karp**: O(n + m) avg using hashing.\n• **Boyer-Moore**: Sublinear avg case.\n• **Z-Algorithm**: O(n + m).\n• **Levenshtein Distance**: O(mn) using DP for edit distance.'
+                content: 'G�� **KMP**: O(n + m) using prefix function.\nG�� **Rabin-Karp**: O(n + m) avg using hashing.\nG�� **Boyer-Moore**: Sublinear avg case.\nG�� **Z-Algorithm**: O(n + m).\nG�� **Levenshtein Distance**: O(mn) using DP for edit distance.'
             },
             {
                 title: '10. NP-Completeness Classes',
-                content: '• **P**: Solvable in polynomial time (deterministic).\n• **NP**: Verifiable in polynomial time (non-deterministic).\n• **NP-Hard**: At least as hard as any problem in NP.\n• **NP-Complete**: Both in NP and NP-Hard (e.g., SAT, TSP, Vertex Cover).\n\nIf P = NP, then every verifiable problem is also efficiently solvable.'
+                content: 'G�� **P**: Solvable in polynomial time (deterministic).\nG�� **NP**: Verifiable in polynomial time (non-deterministic).\nG�� **NP-Hard**: At least as hard as any problem in NP.\nG�� **NP-Complete**: Both in NP and NP-Hard (e.g., SAT, TSP, Vertex Cover).\n\nIf P = NP, then every verifiable problem is also efficiently solvable.'
             },
             {
                 title: '11. Algorithm Formulas & Checklist',
-                content: '• **Sum of first n**: n(n+1)/2.\n• **Matrix Chains**: Catalan Number logic.\n• **Binary Tree Nodes**: 2^h - 1 max.\n• **Cycle Detection**: Floyd\'s Cycle Algo.\n• **MST Edges**: V-1 edges always.'
+                content: 'G�� **Sum of first n**: n(n+1)/2.\nG�� **Matrix Chains**: Catalan Number logic.\nG�� **Binary Tree Nodes**: 2^h - 1 max.\nG�� **Cycle Detection**: Floyd\'s Cycle Algo.\nG�� **MST Edges**: V-1 edges always.'
             },
             {
                 title: '12. Amortized Analysis',
@@ -5662,7 +5698,7 @@ export const subjects = [
             },
             {
                 title: '16. High-Frequency Interview Questions',
-                content: '1. Difference between DP and Greedy?\n2. When does QuickSort perform O(n²)?\n3. Why is MergeSort preferred for Linked Lists?\n4. Explain P vs NP in simple terms.\n5. How does Dijkstra handle negative edges? (It doesn\'t, use Bellman-Ford).'
+                content: '1. Difference between DP and Greedy?\n2. When does QuickSort perform O(n-�)?\n3. Why is MergeSort preferred for Linked Lists?\n4. Explain P vs NP in simple terms.\n5. How does Dijkstra handle negative edges? (It doesn\'t, use Bellman-Ford).'
             }
         ],
         mcqs: [
@@ -5680,7 +5716,7 @@ export const subjects = [
 
             // Worksheet 2
             { worksheet: 'Worksheet 2', question: 'Which Hash Function will create a cluster in the hash table?', options: ['h(k) = k', 'h(k) = k%m', 'Complex function', 'h(k) = (k+1)%m'], answer: 3, explanation: 'Linear probing style functions (incrementing index) create primary clustering.' },
-            { worksheet: 'Worksheet 2', question: 'Load factor for Hash Table with 25 slots and 2000 elements?', options: ['0.0125', '50000', '1.25', '80'], answer: 3, explanation: 'Load factor λ = n/m = 2000/25 = 80.' },
+            { worksheet: 'Worksheet 2', question: 'Load factor for Hash Table with 25 slots and 2000 elements?', options: ['0.0125', '50000', '1.25', '80'], answer: 3, explanation: 'Load factor ++ = n/m = 2000/25 = 80.' },
             { worksheet: 'Worksheet 2', question: 'Benefit of chaining over open addressing?', options: ['Deletion is easier', 'Space used is less', 'Search is faster', 'None'], answer: 0, explanation: 'In chaining, you simply remove from the list; in open addressing, deletion requires "deleted" markers to not break search chains.' },
             { worksheet: 'Worksheet 2', question: 'Which is the most efficient algorithm to find a cycle in a graph?', options: ['BFS', 'DFS', 'Prim\'s', 'Kruskal'], answer: 1, explanation: 'DFS uses back-edges to detect cycles in O(V+E).' },
             { worksheet: 'Worksheet 2', question: 'How is graph traversal different from tree traversal?', options: ['Uses queue', 'Inorder is recursive', 'Requires visited flag', 'All above'], answer: 2, explanation: 'Graphs can have cycles, requiring a visited array to prevent infinite loops.' },
@@ -5709,7 +5745,7 @@ export const subjects = [
             { worksheet: 'Worksheet 4', question: 'Disadvantage of Divide and Conquer?', options: ['Difficult implementation', 'Extra space (Stack/Arrays)', 'Not parallelizable', 'Low complexity'], answer: 1, explanation: 'Recursion requires stack space, and Merge sort requires extra array space.' },
             { worksheet: 'Worksheet 4', question: 'Recurrence: Problem divided into 5 subproblems of size n/5?', options: ['T(n) = 5T(n/5)', 'T(n) = T(n/5)+T(4n/5)', 'T(n) = T(n/2)+5', '5T(n)'], answer: 0, explanation: 'Standard linear recurrence.' },
             { worksheet: 'Worksheet 4', question: 'Recurrence T(n) = T(n/2) + O(n). Complexity?', options: ['O(n)', 'O(log n)', 'O(n log n)', 'O(n^2)'], answer: 0, explanation: 'Geometric series sum or Master Theorem Case 3.' },
-            { worksheet: 'Worksheet 4', question: 'Recurrence T(n) = 3T(n/4) + n^2. Complexity?', options: ['O(n)', 'O(n log n)', 'O(n^2 log n)', 'O(n^2)'], answer: 3, explanation: 'Master Theorem a=3, b=4, k=2. 3 < 16, so Θ(n^2).' },
+            { worksheet: 'Worksheet 4', question: 'Recurrence T(n) = 3T(n/4) + n^2. Complexity?', options: ['O(n)', 'O(n log n)', 'O(n^2 log n)', 'O(n^2)'], answer: 3, explanation: 'Master Theorem a=3, b=4, k=2. 3 < 16, so +�(n^2).' },
             { worksheet: 'Worksheet 4', question: 'Algorithm complexity T(n) = T(n/2) + T(n/4) + n?', options: ['O(n log n)', 'O(n^2)', 'O(n)', 'O(n^3)'], answer: 2, explanation: 'Sum of n + 3/4n + 9/16n... = 4n = O(n).' },
             { worksheet: 'Worksheet 4', question: 'Binary Search recurrence:', options: ['T(n) = T(n/2) + C', 'T(n) = 2T(n/2) + C', 'T(n) = T(n-1) + C', 'O(1)'], answer: 0, explanation: 'Problem size halves with constant work.' },
             { worksheet: 'Worksheet 4', question: 'Divide/Conquer algorithm for Matrix Mult with complexity O(n^2.81)?', options: ['Naive', 'Strassen\'s', 'Gauss', 'Binet'], answer: 1, explanation: 'Strassen reduced 8 mults to 7.' },
@@ -5875,75 +5911,75 @@ export const subjects = [
         concepts: [
             {
                 title: '1. Tell me about yourself',
-                content: 'This is usually the icebreaker. Focus on your professional journey, key achievements, and current goals. Use the **Past-Present-Future** model:\n• **Past**: Your education and previous relevant experience.\n• **Present**: Your current role/project and core skills.\n• **Future**: Why you are excited about this specific opportunity.\n\n**Assessment:** Communication skills, background, and professional focus.'
+                content: 'This is usually the icebreaker. Focus on your professional journey, key achievements, and current goals. Use the **Past-Present-Future** model:\nG�� **Past**: Your education and previous relevant experience.\nG�� **Present**: Your current role/project and core skills.\nG�� **Future**: Why you are excited about this specific opportunity.\n\n**Assessment:** Communication skills, background, and professional focus.'
             },
             {
                 title: '2. Why do you want to work for our company?',
-                content: 'Show that you’ve done your research. Align your personal values or career goals with the company’s mission.\n• Mention specific products, culture, or recent news.\n• Avoid generic answers like "It’s a big company."'
+                content: 'Show that youG��ve done your research. Align your personal values or career goals with the companyG��s mission.\nG�� Mention specific products, culture, or recent news.\nG�� Avoid generic answers like "ItG��s a big company."'
             },
             {
                 title: '3. What do you know about our company?',
-                content: 'Demonstrates initiative and research skills.\n• Discuss the company’s history, core services, notable achievements, and their position in the market.\n• Mention their tech stack or recent projects if applicable.'
+                content: 'Demonstrates initiative and research skills.\nG�� Discuss the companyG��s history, core services, notable achievements, and their position in the market.\nG�� Mention their tech stack or recent projects if applicable.'
             },
             {
                 title: '4. What are your strengths and weaknesses?',
-                content: '• **Strengths**: Choose 2-3 traits relevant to the job (e.g., problem-solving, fast learner). Provide examples.\n• **Weaknesses**: Show self-awareness. Choose a real but non-critical weakness and explain the steps you are taking to improve it.'
+                content: 'G�� **Strengths**: Choose 2-3 traits relevant to the job (e.g., problem-solving, fast learner). Provide examples.\nG�� **Weaknesses**: Show self-awareness. Choose a real but non-critical weakness and explain the steps you are taking to improve it.'
             },
             {
-                title: '5. Describe a challenging project you’ve worked on',
-                content: 'Use the **STAR** method:\n• **S**ituation: Set the scene.\n• **T**ask: What was the challenge?\n• **A**ction: What specifically did you do?\n• **R**esult: What was the positive outcome?\n\n**Assessment:** Problem-solving, technical depth, and teamwork.'
+                title: '5. Describe a challenging project youG��ve worked on',
+                content: 'Use the **STAR** method:\nG�� **S**ituation: Set the scene.\nG�� **T**ask: What was the challenge?\nG�� **A**ction: What specifically did you do?\nG�� **R**esult: What was the positive outcome?\n\n**Assessment:** Problem-solving, technical depth, and teamwork.'
             },
             {
                 title: '6. Staying Updated with Technology',
-                content: 'IT is fast-paced. Show you are a lifelong learner.\n• Mention specific sources: Tech blogs (TechCrunch, Medium), Online courses (Coursera, Udemy), Podcasts, or GitHub open source contributions.'
+                content: 'IT is fast-paced. Show you are a lifelong learner.\nG�� Mention specific sources: Tech blogs (TechCrunch, Medium), Online courses (Coursera, Udemy), Podcasts, or GitHub open source contributions.'
             },
             {
                 title: '7. Explaining Technical Concepts Simply',
-                content: 'Tests your ability to communicate with non-technical stakeholders.\n• Pick a concept from your resume (e.g., Virtual DOM, Indexing).\n• Explain it using an analogy to show true understanding.'
+                content: 'Tests your ability to communicate with non-technical stakeholders.\nG�� Pick a concept from your resume (e.g., Virtual DOM, Indexing).\nG�� Explain it using an analogy to show true understanding.'
             },
             {
                 title: '8. Deadlines and Priority Management',
-                content: 'How do you handle stress and "firefighting"?\n• Mention tools (Jira, Trello, To-do lists).\n• Explain how you evaluate urgency vs. importance (Eisenhower Matrix).\n• Discuss communication: informing stakeholders early if a deadline is at risk.'
+                content: 'How do you handle stress and "firefighting"?\nG�� Mention tools (Jira, Trello, To-do lists).\nG�� Explain how you evaluate urgency vs. importance (Eisenhower Matrix).\nG�� Discuss communication: informing stakeholders early if a deadline is at risk.'
             },
             {
                 title: '9. Handling Difficult Team Members or Clients',
-                content: 'Assesses interpersonal skills and professionalism.\n• Focus on empathy and objective communication.\n• Describe a situation where you depersonalized the conflict and focused on the project goal.'
+                content: 'Assesses interpersonal skills and professionalism.\nG�� Focus on empathy and objective communication.\nG�� Describe a situation where you depersonalized the conflict and focused on the project goal.'
             },
             {
                 title: '10. Where do you see yourself in 5 years?',
-                content: 'Shows ambition and commitment.\n• Align your growth path with the company’s opportunities.\n• Talk about mastering specific skills or taking on leadership/mentorship roles within the organization.'
+                content: 'Shows ambition and commitment.\nG�� Align your growth path with the companyG��s opportunities.\nG�� Talk about mastering specific skills or taking on leadership/mentorship roles within the organization.'
             },
             {
                 title: '11. Team Environment & Collaboration',
-                content: 'Are you a "lone wolf" or a team player?\n• Discuss how you contribute to technical discussions.\n• Mention how you support peers and value diverse perspectives for better solutions.'
+                content: 'Are you a "lone wolf" or a team player?\nG�� Discuss how you contribute to technical discussions.\nG�� Mention how you support peers and value diverse perspectives for better solutions.'
             },
             {
                 title: '12. Proficiency in Languages & Tech',
-                content: 'Be honest and specific.\n• Don’t just list names; mention *how* you used them.\n• Example: "I used Python for data scraping and React for the interactive dashboard."'
+                content: 'Be honest and specific.\nG�� DonG��t just list names; mention *how* you used them.\nG�� Example: "I used Python for data scraping and React for the interactive dashboard."'
             },
             {
                 title: '13. Learning New Tech Quickly',
-                content: 'Demonstrates adaptability.\n• Describe a time you were given a task in a language you didn’t know.\n• Explain your process: Reading docs, building a "Hello World," and seeking mentorship.'
+                content: 'Demonstrates adaptability.\nG�� Describe a time you were given a task in a language you didnG��t know.\nG�� Explain your process: Reading docs, building a "Hello World," and seeking mentorship.'
             },
             {
                 title: '14. Constructive Criticism & Code Reviews',
-                content: 'Shows humility and growth mindset.\n• Explain that you view feedback as an opportunity to improve code quality, not a personal attack.\n• Discuss how you incorporate suggestions from senior developers.'
+                content: 'Shows humility and growth mindset.\nG�� Explain that you view feedback as an opportunity to improve code quality, not a personal attack.\nG�� Discuss how you incorporate suggestions from senior developers.'
             },
             {
                 title: '15. Work Motivation',
-                content: 'What keeps you engaged?\n• Examples: Solving complex puzzles, making a positive impact on users, or the excitement of learning new frameworks.'
+                content: 'What keeps you engaged?\nG�� Examples: Solving complex puzzles, making a positive impact on users, or the excitement of learning new frameworks.'
             },
             {
                 title: '16. Recent Technology Trends',
-                content: 'Shows passion for the field.\n• Discuss something like Generative AI, Edge Computing, or Quantum Computing.\n• Explain its potential impact on the industry.'
+                content: 'Shows passion for the field.\nG�� Discuss something like Generative AI, Edge Computing, or Quantum Computing.\nG�� Explain its potential impact on the industry.'
             },
             {
                 title: '17. Stress Management in the Workplace',
-                content: 'High-pressure environments are common in IT.\n• Strategies: Breaking large tasks into smaller ones, taking short mental breaks, or practicing mindfulness and prioritization.'
+                content: 'High-pressure environments are common in IT.\nG�� Strategies: Breaking large tasks into smaller ones, taking short mental breaks, or practicing mindfulness and prioritization.'
             },
             {
                 title: '18. Professional Achievements',
-                content: 'Quantify your success if possible.\n• "I optimized a query that reduced load time by 40%" is better than "I made it faster."'
+                content: 'Quantify your success if possible.\nG�� "I optimized a query that reduced load time by 40%" is better than "I made it faster."'
             },
             {
                 title: '19. Troubleshooting & Debugging Approach',
@@ -5951,67 +5987,67 @@ export const subjects = [
             },
             {
                 title: '20. Team Role & Leadership',
-                content: 'Do you lead by example? Coordinate communication? Or provide deep technical expertise?\n• Describe your natural tendency and how you adapt to what the team needs.'
+                content: 'Do you lead by example? Coordinate communication? Or provide deep technical expertise?\nG�� Describe your natural tendency and how you adapt to what the team needs.'
             },
             {
                 title: '21. Conflict Resolution Skills',
-                content: 'Describe a specific mediation.\n• Focus on listen-first approach and finding a "win-win" solution that serves the project.'
+                content: 'Describe a specific mediation.\nG�� Focus on listen-first approach and finding a "win-win" solution that serves the project.'
             },
             {
                 title: '22. Agile & Software Methodologies',
-                content: 'Discuss your familiarity with Sprints, Stand-ups, Backlog grooming, and Retrospectives.\n• Explain how Agile helps in delivering value incrementally.'
+                content: 'Discuss your familiarity with Sprints, Stand-ups, Backlog grooming, and Retrospectives.\nG�� Explain how Agile helps in delivering value incrementally.'
             },
             {
                 title: '23. IT Industry Challenges',
-                content: 'Critical thinking exercise.\n• Mention data privacy, cybersecurity threats, or the ethical implications of AI.\n• Discuss how companies can bridge the skills gap.'
+                content: 'Critical thinking exercise.\nG�� Mention data privacy, cybersecurity threats, or the ethical implications of AI.\nG�� Discuss how companies can bridge the skills gap.'
             },
             {
                 title: '24. Cloud Computing (AWS/Azure/GCP)',
-                content: 'Discuss your experience with deployment, storage (S3), or serverless functions.\n• Understand the shift from On-Premise to Cloud (Scalability, Cost-efficiency).'
+                content: 'Discuss your experience with deployment, storage (S3), or serverless functions.\nG�� Understand the shift from On-Premise to Cloud (Scalability, Cost-efficiency).'
             },
             {
                 title: '25. Security & Secure Coding',
-                content: 'Security is everyone’s job.\n• Mention: Input validation, avoiding hardcoded secrets, and using HTTPS.\n• Familiarity with OWASP Top 10 is a huge plus.'
+                content: 'Security is everyoneG��s job.\nG�� Mention: Input validation, avoiding hardcoded secrets, and using HTTPS.\nG�� Familiarity with OWASP Top 10 is a huge plus.'
             },
             {
                 title: '26. Performance & Scalability Optimization',
-                content: 'How do you handle growth?\n• Mention: Caching (Redis), Load balancing, Indexing, and horizontal vs. vertical scaling.'
+                content: 'How do you handle growth?\nG�� Mention: Caching (Redis), Load balancing, Indexing, and horizontal vs. vertical scaling.'
             },
             {
                 title: '27. Documentation Practices',
-                content: 'Good code is documented code.\n• Discuss writing clean comments, README files, and API documentation (Swagger).'
+                content: 'Good code is documented code.\nG�� Discuss writing clean comments, README files, and API documentation (Swagger).'
             },
             {
                 title: '28. Version Control (Git)',
-                content: 'Standard industry tool.\n• Explain your workflow: Branching for features, Pull Requests for reviews, and resolving merge conflicts.'
+                content: 'Standard industry tool.\nG�� Explain your workflow: Branching for features, Pull Requests for reviews, and resolving merge conflicts.'
             },
             {
                 title: '29. CI/CD Workflows',
-                content: 'Automation in development.\n• Discuss how automated testing and deployment pipelines reduce manual errors and speed up shipping.'
+                content: 'Automation in development.\nG�� Discuss how automated testing and deployment pipelines reduce manual errors and speed up shipping.'
             },
             {
                 title: '30. Database Management (DBMS)',
-                content: 'Knowledge of SQL vs. NoSQL.\n• Explain when to use which: Relational for consistency/complex joins, NoSQL for speed/unstructured data.'
+                content: 'Knowledge of SQL vs. NoSQL.\nG�� Explain when to use which: Relational for consistency/complex joins, NoSQL for speed/unstructured data.'
             },
             {
                 title: '31. Resource Constraints & Budgeting',
-                content: 'Shows business awareness.\n• Describe a time you had to find a free/open-source alternative to solve a problem due to budget limits.'
+                content: 'Shows business awareness.\nG�� Describe a time you had to find a free/open-source alternative to solve a problem due to budget limits.'
             },
             {
                 title: '32. Giving Peer Feedback',
-                content: 'Crucial for team growth.\n• Explain how you give specific, actionable, and kind feedback during code reviews.'
+                content: 'Crucial for team growth.\nG�� Explain how you give specific, actionable, and kind feedback during code reviews.'
             },
             {
                 title: '33. Software Testing & QA',
-                content: 'Assuring quality.\n• Experience with Unit testing, Integration testing, and UAT (User Acceptance Testing).'
+                content: 'Assuring quality.\nG�� Experience with Unit testing, Integration testing, and UAT (User Acceptance Testing).'
             },
             {
                 title: '34. Handling Ambiguous Requirements',
-                content: 'Proactivity.\n• Explain how you ask clarifying questions and create prototypes to align expectations with stakeholders.'
+                content: 'Proactivity.\nG�� Explain how you ask clarifying questions and create prototypes to align expectations with stakeholders.'
             },
             {
                 title: '35. Qualities of a Successful Professional',
-                content: 'Adaptability, Curiosity, Resilience, and High Ownership.\n• Mention that technical skill is the baseline, but "soft skills" determine the ceiling.'
+                content: 'Adaptability, Curiosity, Resilience, and High Ownership.\nG�� Mention that technical skill is the baseline, but "soft skills" determine the ceiling.'
             },
             {
                 title: '36. Salary Expectations & Negotiation',
@@ -6066,5 +6102,351 @@ export const subjects = [
                 explanation: 'Professionalism and a focus on code quality are essential traits for a collaborative developer.'
             }
         ]
+    },
+    {
+        id: 'devops',
+        title: 'DevOps',
+        icon: 'Server',
+        description: 'DevOps roadmap with Docker, Kubernetes, CI/CD, Cloud, and Monitoring fundamentals.',
+        concepts: [
+            {
+                title: '1. What Is DevOps (Big Picture)',
+                content: 'Simple idea: DevOps unites development and operations to ship faster and safer.\n\nGoal:\n- Automate build, test, deploy.\n- Scale apps and monitor production.\n\nPipeline:\nCode -> Build -> Test -> Containerize -> Push -> Deploy -> Scale -> Monitor.'
+            },
+            {
+                title: '2. Linux Fundamentals (Must)',
+                content: 'Simple idea: Most DevOps tools run on Linux.\n\nCore topics:\n- File system, permissions (chmod, chown).\n- Processes, networking basics, SSH.\n- Package managers and environment variables.'
+            },
+            {
+                title: '3. Git and GitHub',
+                content: 'Simple idea: Version control is the backbone of CI/CD.\n\nRevise:\n- Branching, merging, rebase, PRs.\n- CI triggers from commits and pull requests.'
+            },
+            {
+                title: '4. Docker (Core Concepts)',
+                content: 'Simple idea: Docker packages app + dependencies into containers.\n\nKey concepts:\n- Image (blueprint), container (running instance).\n- Dockerfile, volumes, networks, Docker Hub.\n\nMust-know commands:\n- docker build, run, ps, images, stop, rm, rmi, logs, exec.'
+            },
+            {
+                title: '5. Dockerfile Deep Concepts',
+                content: 'Simple idea: Dockerfile defines how images are built.\n\nInstructions:\nFROM, WORKDIR, COPY, ADD, RUN, CMD, ENTRYPOINT, ENV, ARG, EXPOSE, VOLUME, USER, HEALTHCHECK.\n\nCMD vs ENTRYPOINT:\n- CMD is default and can be overridden.\n- ENTRYPOINT is fixed.\n\nMulti-stage build reduces image size.\n\nExample:\nFROM node:18\nWORKDIR /app\nCOPY package*.json ./\nRUN npm install\nCOPY . .\nEXPOSE 5000\nCMD ["npm", "start"]\n\nUse .dockerignore and layer caching for faster builds.'
+            },
+            {
+                title: '6. Docker Compose',
+                content: 'Simple idea: Compose runs multi-container apps together.\n\nExample stack: backend + frontend + MongoDB.\nUse one file to define services, networks, and volumes.'
+            },
+            {
+                title: '7. Kubernetes (K8s) Core Concepts',
+                content: 'Simple idea: Kubernetes manages containers at scale.\n\nMust-know:\n- Pod, Deployment, ReplicaSet, Service.\n- ConfigMap, Secret, Namespace, Ingress.\n\nYAML structure:\napiVersion: apps/v1\nkind: Deployment\nspec:\n  replicas: 3'
+            },
+            {
+                title: '8. CI/CD (Very Important)',
+                content: 'Simple idea: CI/CD automates build, test, and deployment.\n\nTools: GitHub Actions, Jenkins, GitLab CI.\nPipeline: Push -> Build -> Test -> Docker build -> Push -> Deploy.'
+            },
+            {
+                title: '9. Cloud Basics (AWS)',
+                content: 'Simple idea: Cloud hosts and scales apps on demand.\n\nMinimum topics:\n- EC2, S3, IAM, ECR, ECS, Load Balancer.'
+            },
+            {
+                title: '10. Monitoring and Logs',
+                content: 'Simple idea: Observability keeps services healthy.\n\nBasics:\n- Prometheus, Grafana, logs, and health checks.'
+            },
+            {
+                title: '11. Authentication Flow (MERN)',
+                content: 'Simple idea: Auth protects APIs and users.\n\nRevise:\n- JWT generation and verification.\n- Access vs refresh tokens.\n- bcrypt hashing.\n- Middleware protection and role-based access.'
+            },
+            {
+                title: '12. Full-Stack Flow',
+                content: 'Simple idea: Request travels end-to-end through the stack.\n\nFlow:\nFrontend -> API -> Backend -> Database -> Response -> UI update.\nBe able to explain a login request end-to-end.'
+            },
+            {
+                title: '13. Interview Level: Enough',
+                content: 'Strong interview level: Linux + Git + Docker (deep) + Dockerfile + Compose + K8s core + CI/CD + Cloud basics + Monitoring.'
+            },
+            {
+                title: '14. Exam Focus',
+                content: 'Focus on definitions, differences, short notes (JWT, Event Loop, Closures), code snippets, and diagram explanations.'
+            },
+            {
+                title: '15. DevOps Basics Checklist',
+                content: 'Linux + Git + Docker + Dockerfile + Compose + CI/CD + Cloud basics + Monitoring.\nIf you can explain each in 2-3 lines with one example, you are interview-ready for entry roles.'
+            },
+            {
+                title: '16. Networking Basics (Must)',
+                content: 'Know IP, DNS, HTTP/HTTPS, ports, firewalls, and basic load balancing.\nThese appear in Docker, Kubernetes, and cloud questions.'
+            },
+            {
+                title: '17. Shell Scripting (Automation)',
+                content: 'Simple idea: Bash scripts automate repetitive tasks.\nUse variables, loops, and conditionals to run backups, deploys, and cleanups.'
+            },
+            {
+                title: '18. Infrastructure as Code (IaC)',
+                content: 'Terraform or CloudFormation to create infra with code.\nBenefits: repeatable, versioned, and reviewable infrastructure.'
+            },
+            {
+                title: '19. Configuration Management',
+                content: 'Ansible/Puppet/Chef automate server setup and configuration.\nUseful for scaling and consistency across environments.'
+            },
+            {
+                title: '20. Kubernetes Advanced (Nice to Know)',
+                content: 'RBAC, Helm charts, HPA, StatefulSets, DaemonSets, and ConfigMap/Secret best practices.\nFocus on deployments, services, and scaling first.'
+            },
+            {
+                title: '21. Observability Advanced',
+                content: 'Metrics + logs + traces.\nKnow ELK/EFK, alerting basics, and what SLIs/SLOs mean.'
+            },
+            {
+                title: '22. DevSecOps Basics',
+                content: 'Security in the pipeline: secret scanning, dependency checks, and least-privilege access.\nUse environment variables and vaults for secrets.'
+            },
+            {
+                title: '23. Docker Deep Dive (Must)',
+                content: 'Deep topics to revise:\n- **Layers and caching**: each Dockerfile line creates a layer.\n- **Tagging and registry**: tag images and push to Docker Hub/ECR.\n- **Volumes and bind mounts**: persistent vs host-mapped storage.\n- **Networks**: bridge, host, and custom networks.\n- **Namespaces/cgroups**: isolation and resource limits.\n- **Best practices**: small base images, multi-stage builds, minimal privileges.'
+            },
+            {
+                title: '24. Kubernetes Basics (Core)',
+                content: 'Core understanding for interviews:\n- **Cluster components**: API server, scheduler, controller manager, etcd.\n- **Node components**: kubelet, kube-proxy, container runtime.\n- **Pods and labels**: selectors connect services to pods.\n- **Service types**: ClusterIP, NodePort, LoadBalancer.\n- **Config and secrets**: config files and sensitive data.'
+            },
+            {
+                title: '25. GitHub Actions (CI/CD)',
+                content: 'Must-know concepts:\n- **Workflow**: .github/workflows/*.yml\n- **Triggers**: push, pull_request, schedule, workflow_dispatch.\n- **Jobs and steps**: run on runners.\n- **Actions and marketplace**: reuse steps.\n- **Secrets and env**: secure credentials.\n- **Artifacts**: upload build outputs.'
+            },
+            {
+                title: '26. AWS EC2 (Deep Basics)',
+                content: 'Core EC2 concepts:\n- **AMI**: base image for instances.\n- **Instance types**: compute/memory optimized.\n- **Key pairs**: SSH access.\n- **Security groups**: firewall rules.\n- **EBS**: persistent storage volumes.\n- **User data**: bootstrapping scripts.\n- **Elastic IP**: static public IP.'
+            }
+        ],
+        mcqs: [
+            {
+                worksheet: 'Beginner',
+                question: 'What is DevOps primarily focused on?',
+                options: ['Only writing code', 'Only server maintenance', 'Faster, automated software delivery', 'Database design'],
+                answer: 2,
+                explanation: 'DevOps combines development and operations to automate and speed up delivery.'
+            },
+            {
+                worksheet: 'Beginner',
+                question: 'Which is a core benefit of DevOps?',
+                options: ['Slower releases', 'Manual deployments only', 'Reduced human error', 'No automation'],
+                answer: 2,
+                explanation: 'Automation reduces manual steps and mistakes.'
+            },
+            {
+                worksheet: 'Beginner',
+                question: 'CI/CD stands for:',
+                options: ['Code Integration / Code Deployment', 'Continuous Integration / Continuous Delivery or Deployment', 'Client Integration / Client Deployment', 'Compute Integration / Compute Delivery'],
+                answer: 1,
+                explanation: 'CI integrates code continuously; CD delivers or deploys continuously.'
+            },
+            {
+                worksheet: 'Beginner',
+                question: 'Continuous Delivery means:',
+                options: ['Auto deploy to production', 'Manual approval before production', 'No tests are run', 'Only build runs'],
+                answer: 1,
+                explanation: 'Continuous Delivery requires manual approval for production releases.'
+            },
+            {
+                worksheet: 'Beginner',
+                question: 'Infrastructure as Code (IaC) means:',
+                options: ['Manual server setup', 'Managing infra using code', 'Only UI scripting', 'Using spreadsheets for infra'],
+                answer: 1,
+                explanation: 'IaC uses code to define and manage infrastructure.'
+            },
+            {
+                worksheet: 'Docker',
+                question: 'What is a Docker image?',
+                options: ['A running container', 'A blueprint for a container', 'A log file', 'A network interface'],
+                answer: 1,
+                explanation: 'Images are templates used to create containers.'
+            },
+            {
+                worksheet: 'Docker',
+                question: 'What is a Docker container?',
+                options: ['A blueprint', 'A running instance of an image', 'A Dockerfile', 'A registry'],
+                answer: 1,
+                explanation: 'Containers are running instances of images.'
+            },
+            {
+                worksheet: 'Docker',
+                question: 'What does a Dockerfile contain?',
+                options: ['UI styles', 'Instructions to build an image', 'Server logs', 'Database schema'],
+                answer: 1,
+                explanation: 'Dockerfile defines how to build the image.'
+            },
+            {
+                worksheet: 'Docker',
+                question: 'CMD vs ENTRYPOINT difference is:',
+                options: ['They are identical', 'CMD is default and overridable; ENTRYPOINT is fixed', 'ENTRYPOINT is for Windows only', 'CMD runs only at build time'],
+                answer: 1,
+                explanation: 'CMD sets a default command; ENTRYPOINT is always executed.'
+            },
+            {
+                worksheet: 'Docker',
+                question: 'What is Docker Compose used for?',
+                options: ['Single container only', 'Multi-container applications', 'Database backups only', 'OS updates'],
+                answer: 1,
+                explanation: 'Compose manages multiple containers together.'
+            },
+            {
+                worksheet: 'Docker',
+                question: 'Docker volumes are used for:',
+                options: ['Temporary logs only', 'Persistent storage', 'Networking only', 'Security only'],
+                answer: 1,
+                explanation: 'Volumes persist data beyond container lifetime.'
+            },
+            {
+                worksheet: 'Docker',
+                question: 'What is a multi-stage build?',
+                options: ['Build once, run many', 'Separate build and runtime stages to reduce image size', 'Builds only on Windows', 'Builds without Dockerfile'],
+                answer: 1,
+                explanation: 'Multi-stage builds reduce final image size.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'What is Kubernetes?',
+                options: ['A programming language', 'Container orchestration system', 'A database', 'A text editor'],
+                answer: 1,
+                explanation: 'Kubernetes orchestrates containers at scale.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'What is a Pod?',
+                options: ['A node', 'Smallest deployable unit', 'A load balancer', 'A database'],
+                answer: 1,
+                explanation: 'A Pod is the smallest deployable unit in K8s.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'What does a Deployment manage?',
+                options: ['Only logs', 'Pod replicas and updates', 'DNS records', 'Secrets only'],
+                answer: 1,
+                explanation: 'Deployments manage replicas and rolling updates.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'Which Service type exposes externally?',
+                options: ['ClusterIP', 'NodePort or LoadBalancer', 'PodIP', 'ReplicaSet'],
+                answer: 1,
+                explanation: 'NodePort and LoadBalancer expose services externally.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'What is a ConfigMap used for?',
+                options: ['Storing app config', 'Storing secrets only', 'Running pods', 'Autoscaling'],
+                answer: 0,
+                explanation: 'ConfigMaps store non-sensitive configuration.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'What is a Secret used for?',
+                options: ['Public configs', 'Sensitive data', 'Service discovery', 'Logging'],
+                answer: 1,
+                explanation: 'Secrets store sensitive values like tokens.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'Rolling update means:',
+                options: ['Replace all pods at once', 'Gradually replace old pods', 'Stop all traffic', 'Only update config'],
+                answer: 1,
+                explanation: 'Rolling updates replace pods gradually.'
+            },
+            {
+                worksheet: 'Kubernetes',
+                question: 'Ingress is used for:',
+                options: ['Internal storage', 'External HTTP routing', 'Pod creation', 'Database backups'],
+                answer: 1,
+                explanation: 'Ingress manages external HTTP/HTTPS routing.'
+            },
+            {
+                worksheet: 'CI/CD',
+                question: 'What typically happens after a code push?',
+                options: ['Nothing', 'CI pipeline triggers build and tests', 'Only database is updated', 'Only docs build'],
+                answer: 1,
+                explanation: 'Push triggers CI to build and test.'
+            },
+            {
+                worksheet: 'CI/CD',
+                question: 'What is Jenkins?',
+                options: ['A container runtime', 'A CI/CD automation server', 'A database', 'A cloud provider'],
+                answer: 1,
+                explanation: 'Jenkins automates CI/CD pipelines.'
+            },
+            {
+                worksheet: 'CI/CD',
+                question: 'GitHub Actions is:',
+                options: ['A cloud VM', 'A CI/CD tool in GitHub', 'A database', 'A load balancer'],
+                answer: 1,
+                explanation: 'GitHub Actions runs workflows for CI/CD.'
+            },
+            {
+                worksheet: 'CI/CD',
+                question: 'Which is a common CI stage?',
+                options: ['Deploy only', 'Build and test', 'Only documentation', 'Only monitoring'],
+                answer: 1,
+                explanation: 'CI pipelines usually build and run tests.'
+            },
+            {
+                worksheet: 'Cloud',
+                question: 'What is EC2?',
+                options: ['Object storage', 'Virtual server in AWS', 'DNS service', 'Monitoring tool'],
+                answer: 1,
+                explanation: 'EC2 provides virtual compute instances.'
+            },
+            {
+                worksheet: 'Cloud',
+                question: 'What is S3?',
+                options: ['Object storage', 'A database', 'A load balancer', 'A container runtime'],
+                answer: 0,
+                explanation: 'S3 is object storage.'
+            },
+            {
+                worksheet: 'Cloud',
+                question: 'IAM stands for:',
+                options: ['Identity and Access Management', 'Instance and App Management', 'Image Access Module', 'Internal Auth Mechanism'],
+                answer: 0,
+                explanation: 'IAM manages users, roles, and permissions.'
+            },
+            {
+                worksheet: 'Cloud',
+                question: 'What does a Load Balancer do?',
+                options: ['Stores data', 'Distributes traffic', 'Builds images', 'Runs tests'],
+                answer: 1,
+                explanation: 'Load balancers distribute traffic across servers.'
+            },
+            {
+                worksheet: 'Cloud',
+                question: 'ECS vs EKS difference is:',
+                options: ['ECS is managed Kubernetes; EKS is AWS container service', 'ECS is AWS container service; EKS is managed Kubernetes', 'Both are databases', 'Both are CI tools'],
+                answer: 1,
+                explanation: 'ECS is AWS container service; EKS is managed Kubernetes.'
+            },
+            {
+                worksheet: 'Scenario',
+                question: 'Your app is down in production. What do you check first?',
+                options: ['Ignore logs', 'Check logs and service health', 'Rewrite code immediately', 'Delete all pods'],
+                answer: 1,
+                explanation: 'Start with logs, status, and health checks.'
+            },
+            {
+                worksheet: 'Scenario',
+                question: 'How would you deploy a MERN app using Docker?',
+                options: ['Only run frontend', 'Dockerfile for frontend/backend + Compose + DB', 'Only use S3', 'No containers needed'],
+                answer: 1,
+                explanation: 'Use Dockerfiles and Compose with MongoDB.'
+            },
+            {
+                worksheet: 'Scenario',
+                question: 'How does Kubernetes scale apps?',
+                options: ['Only vertical scaling', 'Replica count and HPA', 'By stopping pods', 'By deleting nodes'],
+                answer: 1,
+                explanation: 'Scaling uses replicas and HPA.'
+            },
+            {
+                worksheet: 'Scenario',
+                question: 'How would you secure production?',
+                options: ['Disable HTTPS', 'Use secrets, IAM/roles, least privilege', 'Share passwords in code', 'Open all ports'],
+                answer: 1,
+                explanation: 'Use HTTPS, secrets, and least-privilege access.'
+            }
+        ]
     }
 ];
+

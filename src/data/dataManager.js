@@ -3,7 +3,7 @@ import { subjects as initialSubjects } from './subjects';
 const STORAGE_KEY = 'placement_ready_data';
 const STORAGE_VERSION_KEY = 'placement_ready_data_version';
 const PROGRESS_KEY = 'placement_ready_progress';
-const DATA_VERSION = 'dbms-v20';
+const DATA_VERSION = 'dbms-v27';
 
 let progressMode = 'local';
 let progressCache = null;
