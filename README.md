@@ -8,7 +8,7 @@ A premium, high-fidelity platform designed for CS engineers to master core subje
 - **Interactive Practice**: MCQ engine with real-time feedback and explanation.
 - **GFG/W3Style Sidebar**: Professional tutorial navigation for deep learning.
 - **Developer Brand**: Integrated LinkedIn, X, and GitHub connectivity.
-
+ live chweck  https://sylablink.vercel.app/
 ---
 
 ## 🚀 Deployment Guide
