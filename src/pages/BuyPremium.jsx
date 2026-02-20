@@ -1,9 +1,12 @@
 import React, { useMemo, useState, useEffect } from 'react';
+import { useAuth } from '../context/AuthContext';
 const BUY_AMOUNT = '150';
 const APPROVAL_NUMBER = '7986614646';
 const UPI_ID = 'py562535-1@oksbi';
+const PREMIUM_EMAIL = 'princeyadav76001@gmail.com';
 
 const BuyPremium = () => {
+    const { user, loading } = useAuth();
     const [name, setName] = useState('');
     const [utr, setUtr] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
@@ -29,6 +32,99 @@ const BuyPremium = () => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappLink = `https://wa.me/${APPROVAL_NUMBER}?text=${encodedMessage}`;
     const smsLink = `sms:${APPROVAL_NUMBER}?&body=${encodedMessage}`;
+
+    const premiumNotes = useMemo(() => ([
+        'online assessment system:',
+        '',
+        'Project purpose:',
+        'This is full online test assessment platform,',
+        '- user student can take quiz.',
+        '- Admin can create, update edit, delete quizzes',
+        '- student can submit answer',
+        '- Result are stored and shown to user.',
+        'This solve the real-world need of online test and evaluation',
+        '',
+        'Technology:',
+        'Node.js, express js, MongoDB, socket.io',
+        'Frontend: React, tailwind',
+        'JWT -> JSON WEB TOKEN',
+        'bcrypt - For password hashing -> Authentication and security',
+        '',
+        'Backend architecture:',
+        'client -> HTTP request -> backend -> mongoDB',
+        '',
+        'authentication:',
+        '- user signup',
+        '- login -> generate JWT',
+        '- protect routes with JWT middleware',
+        'Just allow the server to verify identity without session',
+        '',
+        'quiz man menu:',
+        '+ Create quiz',
+        '+ Get quiz',
+        '+ Submit answer',
+        '+ Get result',
+        '',
+        'Rest API express',
+        'Socket.io for real time communication',
+        '',
+        'API design:',
+        'Post /api/signup',
+        'Post /api/login',
+        'Get /api/quiz',
+        'Post /api/quiz',
+        'Post /api/submit-quiz',
+        'Get /api/result',
+        '',
+        'StatusCode: 200, 401, 400, 404',
+        '',
+        'Backend problem:',
+        '1) Handling authentication securely -> password must be hashed (bcrypt)',
+        '2) token must be signed and verified',
+        '3) protected routes must check token validity',
+        '',
+        'New logic of question:',
+        'a) Realtime? web socket or http polling?',
+        'b) Frontend calculation? yes?',
+        'socket-id direct express se attach nhi hota',
+        'websocket work on top of http (it upgrades HTTP connection to persistent websocket connection)',
+        '',
+        'websocket:',
+        '- maintain persistent connection',
+        '- bi-directional communication',
+        '- no need to refresh page',
+        '',
+        'How does socket connection initialize',
+        'Where do you emit event',
+        'How do you handle disconnect',
+        'What happen if student refresh',
+        'Did you use rooms?',
+        '',
+        'Every new client that connections get a unique socket,',
+        'that socket is like a private communication channel',
+        '1) emit sends event to server',
+        '2) server processes it',
+        '3) server respond with another event',
+        '4) UI updates instantly',
+        '',
+        'CORS: allow cross-origin websocket communication',
+        'Frontend and backend run on different port',
+        '',
+        'Rooms: rooms allow separate quiz session',
+        '- multiple students in same quiz',
+        '- broadcasting to specific group',
+        'rooms = session isolation',
+        '',
+        'namespace: namespace separate admin socket, student socket, analytic socket',
+        '',
+        'Disconnect:',
+        '- disconnect handled',
+        '- cleaning memory',
+        '- update session',
+        '- prevent memory leak'
+    ]), []);
+
+    const canViewPremium = Boolean(user?.email && user.email.toLowerCase() === PREMIUM_EMAIL);
 
     return (
         <main style={{
@@ -216,6 +312,51 @@ const BuyPremium = () => {
                     </div>
                 </div>
             </div>
+            <section style={{ marginTop: isMobile ? '2rem' : '3rem', position: 'relative', zIndex: 1 }}>
+                <div className="container" style={{ maxWidth: '1040px' }}>
+                    <div style={{
+                        background: 'var(--bg-card)',
+                        border: '1px solid var(--border-glass)',
+                        borderRadius: '18px',
+                        padding: isMobile ? '1.25rem' : '1.75rem',
+                        boxShadow: '0 20px 50px rgba(15, 23, 42, 0.08)'
+                    }}>
+                        <div style={{ fontWeight: '900', color: 'var(--text-main)', marginBottom: '0.75rem' }}>
+                            Premium Notes (MERN)
+                        </div>
+                        {loading && (
+                            <div style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+                                Checking access...
+                            </div>
+                        )}
+                        {!loading && !user && (
+                            <div style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+                                Sign in to view these notes.
+                            </div>
+                        )}
+                        {!loading && user && !canViewPremium && (
+                            <div style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
+                                This content is restricted to the owner account.
+                            </div>
+                        )}
+                        {!loading && user && canViewPremium && (
+                            <pre style={{
+                                marginTop: '0.75rem',
+                                padding: isMobile ? '1rem' : '1.25rem',
+                                borderRadius: '14px',
+                                border: '1px solid var(--border-glass)',
+                                background: 'rgba(15, 23, 42, 0.35)',
+                                color: 'var(--text-main)',
+                                fontSize: isMobile ? '0.85rem' : '0.95rem',
+                                lineHeight: '1.7',
+                                whiteSpace: 'pre-wrap'
+                            }}>
+                                {premiumNotes.join('\n')}
+                            </pre>
+                        )}
+                    </div>
+                </div>
+            </section>
         </main>
     );
 };
