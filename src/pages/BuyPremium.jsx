@@ -34,97 +34,167 @@ const BuyPremium = () => {
     const smsLink = `sms:${APPROVAL_NUMBER}?&body=${encodedMessage}`;
 
     const premiumNotes = useMemo(() => ([
-        'online assessment system:',
-        '',
-        'Project purpose:',
-        'This is full online test assessment platform,',
-        '- user student can take quiz.',
-        '- Admin can create, update edit, delete quizzes',
-        '- student can submit answer',
-        '- Result are stored and shown to user.',
-        'This solve the real-world need of online test and evaluation',
-        '',
-        'Technology:',
-        'Node.js, express js, MongoDB, socket.io',
-        'Frontend: React, tailwind',
-        'JWT -> JSON WEB TOKEN',
-        'bcrypt - For password hashing -> Authentication and security',
-        '',
-        'Backend architecture:',
-        'client -> HTTP request -> backend -> mongoDB',
-        '',
-        'authentication:',
-        '- user signup',
-        '- login -> generate JWT',
-        '- protect routes with JWT middleware',
-        'Just allow the server to verify identity without session',
-        '',
-        'quiz man menu:',
-        '+ Create quiz',
-        '+ Get quiz',
-        '+ Submit answer',
-        '+ Get result',
-        '',
-        'Rest API express',
-        'Socket.io for real time communication',
-        '',
-        'API design:',
-        'Post /api/signup',
-        'Post /api/login',
-        'Get /api/quiz',
-        'Post /api/quiz',
-        'Post /api/submit-quiz',
-        'Get /api/result',
-        '',
-        'StatusCode: 200, 401, 400, 404',
-        '',
-        'Backend problem:',
-        '1) Handling authentication securely -> password must be hashed (bcrypt)',
-        '2) token must be signed and verified',
-        '3) protected routes must check token validity',
-        '',
-        'New logic of question:',
-        'a) Realtime? web socket or http polling?',
-        'b) Frontend calculation? yes?',
-        'socket-id direct express se attach nhi hota',
-        'websocket work on top of http (it upgrades HTTP connection to persistent websocket connection)',
-        '',
-        'websocket:',
-        '- maintain persistent connection',
-        '- bi-directional communication',
-        '- no need to refresh page',
-        '',
-        'How does socket connection initialize',
-        'Where do you emit event',
-        'How do you handle disconnect',
-        'What happen if student refresh',
-        'Did you use rooms?',
-        '',
-        'Every new client that connections get a unique socket,',
-        'that socket is like a private communication channel',
-        '1) emit sends event to server',
-        '2) server processes it',
-        '3) server respond with another event',
-        '4) UI updates instantly',
-        '',
-        'CORS: allow cross-origin websocket communication',
-        'Frontend and backend run on different port',
-        '',
-        'Rooms: rooms allow separate quiz session',
-        '- multiple students in same quiz',
-        '- broadcasting to specific group',
-        'rooms = session isolation',
-        '',
-        'namespace: namespace separate admin socket, student socket, analytic socket',
-        '',
-        'Disconnect:',
-        '- disconnect handled',
-        '- cleaning memory',
-        '- update session',
-        '- prevent memory leak'
+        {
+            title: 'Online assessment system',
+            items: [
+                'Project purpose: This is full online test assessment platform.',
+                'User student can take quiz.',
+                'Admin can create, update edit, delete quizzes.',
+                'Student can submit answer.',
+                'Result are stored and shown to user.',
+                'This solve the real-world need of online test and evaluation.'
+            ]
+        },
+        {
+            title: 'Technology',
+            items: [
+                'Node.js, express js, MongoDB, socket.io',
+                'Frontend: React, tailwind',
+                'JWT -> JSON WEB TOKEN',
+                'bcrypt - For password hashing -> Authentication and security'
+            ]
+        },
+        {
+            title: 'Backend architecture',
+            items: [
+                'client -> HTTP request -> backend -> mongoDB'
+            ]
+        },
+        {
+            title: 'Authentication',
+            items: [
+                'user signup',
+                'login -> generate JWT',
+                'protect routes with JWT middleware',
+                'Just allow the server to verify identity without session'
+            ]
+        },
+        {
+            title: 'Quiz main menu',
+            items: [
+                'Create quiz',
+                'Get quiz',
+                'Submit answer',
+                'Get result'
+            ]
+        },
+        {
+            title: 'API design',
+            items: [
+                'Post /api/signup',
+                'Post /api/login',
+                'Get /api/quiz',
+                'Post /api/quiz',
+                'Post /api/submit-quiz',
+                'Get /api/result'
+            ]
+        },
+        {
+            title: 'Status codes',
+            items: [
+                '200, 401, 400, 404'
+            ]
+        },
+        {
+            title: 'Backend problems',
+            items: [
+                'Handling authentication securely -> password must be hashed (bcrypt)',
+                'token must be signed and verified',
+                'protected routes must check token validity'
+            ]
+        },
+        {
+            title: 'Realtime and websocket',
+            items: [
+                'Realtime? web socket or http polling?',
+                'Frontend calculation? yes?',
+                'socket-id direct express se attach nhi hota',
+                'websocket work on top of http (it upgrades HTTP connection to persistent websocket connection)',
+                'maintain persistent connection',
+                'bi-directional communication',
+                'no need to refresh page',
+                'How does socket connection initialize',
+                'Where do you emit event',
+                'How do you handle disconnect',
+                'What happen if student refresh',
+                'Did you use rooms?',
+                'Every new client that connections get a unique socket, that socket is like a private communication channel',
+                'emit sends event to server',
+                'server processes it',
+                'server respond with another event',
+                'UI updates instantly'
+            ]
+        },
+        {
+            title: 'CORS, rooms, namespace, disconnect',
+            items: [
+                'CORS: allow cross-origin websocket communication',
+                'Frontend and backend run on different port',
+                'Rooms: rooms allow separate quiz session',
+                'multiple students in same quiz',
+                'broadcasting to specific group',
+                'rooms = session isolation',
+                'namespace separate admin socket, student socket, analytic socket',
+                'disconnect handled',
+                'cleaning memory',
+                'update session',
+                'prevent memory leak'
+            ]
+        },
+        {
+            title: 'JWT token',
+            items: [
+                'JWT -> JSON WEB TOKEN',
+                'public/private cryptography',
+                'from public cryptography must data encrypt that data only decrypt my with only your private key',
+                'Just also work on private cryptography',
+                'JWT - fully protected',
+                'jwt -> access-token api',
+                'stateless / stateful',
+                'stateless -> JWT',
+                'stateful -> database store at any site (place)',
+                'encryption algorithm => utf'
+            ]
+        },
+        {
+            title: 'JWT components',
+            items: [
+                'header: which algo you are using',
+                'info: payload',
+                'signature: data mapped key',
+                'JWT - made by 3 component and string format',
+                'JSON web token use on open method of authentication (claim security btw two parties)'
+            ]
+        },
+        {
+            title: 'Refresh token and flow',
+            items: [
+                'token are basically expire within 15 minute and after request that generate new one with mechanism it called refresh token',
+                'login (username/password)',
+                'server validates credential',
+                'issue JWT token',
+                'API request (JWT token)',
+                'validate token access'
+            ]
+        },
+        {
+            title: 'Authentication vs authorization',
+            items: [
+                'Authentication for login and signup -> any',
+                'Authorization: resources access like teacher portal you want admin user',
+                'uses jwt',
+                '-> authentication, authorization, communication',
+                'database'
+            ]
+        }
     ]), []);
 
     const canViewPremium = Boolean(user?.email && user.email.toLowerCase() === PREMIUM_EMAIL);
+    const premiumStats = useMemo(() => {
+        const totalSections = premiumNotes.length;
+        const totalItems = premiumNotes.reduce((sum, section) => sum + section.items.length, 0);
+        return { totalSections, totalItems };
+    }, [premiumNotes]);
 
     return (
         <main style={{
@@ -319,8 +389,16 @@ const BuyPremium = () => {
                         border: '1px solid var(--border-glass)',
                         borderRadius: '18px',
                         padding: isMobile ? '1.25rem' : '1.75rem',
-                        boxShadow: '0 20px 50px rgba(15, 23, 42, 0.08)'
+                        boxShadow: '0 20px 50px rgba(15, 23, 42, 0.08)',
+                        position: 'relative',
+                        overflow: 'hidden'
                     }}>
+                        <div style={{
+                            position: 'absolute',
+                            inset: 0,
+                            background: 'radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.12), transparent 45%)',
+                            pointerEvents: 'none'
+                        }} />
                         <div style={{ fontWeight: '900', color: 'var(--text-main)', marginBottom: '0.75rem' }}>
                             Premium Notes (MERN)
                         </div>
@@ -340,19 +418,94 @@ const BuyPremium = () => {
                             </div>
                         )}
                         {!loading && user && canViewPremium && (
-                            <pre style={{
+                            <div style={{
                                 marginTop: '0.75rem',
-                                padding: isMobile ? '1rem' : '1.25rem',
-                                borderRadius: '14px',
-                                border: '1px solid var(--border-glass)',
-                                background: 'rgba(15, 23, 42, 0.35)',
-                                color: 'var(--text-main)',
-                                fontSize: isMobile ? '0.85rem' : '0.95rem',
-                                lineHeight: '1.7',
-                                whiteSpace: 'pre-wrap'
+                                display: 'grid',
+                                gap: isMobile ? '1rem' : '1.25rem',
+                                position: 'relative',
+                                zIndex: 1
                             }}>
-                                {premiumNotes.join('\n')}
-                            </pre>
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: '0.75rem',
+                                    alignItems: 'center'
+                                }}>
+                                    <div style={{
+                                        padding: '6px 12px',
+                                        borderRadius: '999px',
+                                        background: 'rgba(16, 185, 129, 0.12)',
+                                        border: '1px solid rgba(16, 185, 129, 0.2)',
+                                        color: 'var(--primary)',
+                                        fontWeight: '900',
+                                        fontSize: '0.75rem',
+                                        letterSpacing: '0.08em',
+                                        textTransform: 'uppercase'
+                                    }}>
+                                        Access Granted
+                                    </div>
+                                    <div style={{
+                                        padding: '6px 12px',
+                                        borderRadius: '999px',
+                                        background: 'rgba(148, 163, 184, 0.12)',
+                                        border: '1px solid rgba(148, 163, 184, 0.25)',
+                                        color: 'var(--text-muted)',
+                                        fontWeight: '700',
+                                        fontSize: '0.75rem'
+                                    }}>
+                                        {premiumStats.totalSections} sections
+                                    </div>
+                                    <div style={{
+                                        padding: '6px 12px',
+                                        borderRadius: '999px',
+                                        background: 'rgba(148, 163, 184, 0.12)',
+                                        border: '1px solid rgba(148, 163, 184, 0.25)',
+                                        color: 'var(--text-muted)',
+                                        fontWeight: '700',
+                                        fontSize: '0.75rem'
+                                    }}>
+                                        {premiumStats.totalItems} points
+                                    </div>
+                                </div>
+                                <div style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))',
+                                    gap: isMobile ? '1rem' : '1.25rem'
+                                }}>
+                                {premiumNotes.map((section) => (
+                                    <div
+                                        key={section.title}
+                                        style={{
+                                            padding: isMobile ? '1rem' : '1.25rem',
+                                            borderRadius: '14px',
+                                            border: '1px solid var(--border-glass)',
+                                            background: 'rgba(15, 23, 42, 0.35)',
+                                            boxShadow: '0 16px 30px rgba(15, 23, 42, 0.08)'
+                                        }}
+                                    >
+                                        <div style={{
+                                            fontWeight: '900',
+                                            color: 'var(--text-main)',
+                                            marginBottom: '0.65rem',
+                                            fontSize: isMobile ? '0.95rem' : '1rem'
+                                        }}>
+                                            {section.title}
+                                        </div>
+                                        <ul style={{
+                                            margin: 0,
+                                            paddingLeft: '1.25rem',
+                                            color: 'var(--text-muted)',
+                                            fontSize: isMobile ? '0.85rem' : '0.95rem',
+                                            lineHeight: '1.7'
+                                        }}>
+                                            {section.items.map((item, index) => (
+                                                <li key={`${section.title}-${index}`}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                                </div>
+                            </div>
                         )}
                     </div>
                 </div>
