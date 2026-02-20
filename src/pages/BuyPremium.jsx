@@ -10,6 +10,7 @@ const BuyPremium = () => {
     const [name, setName] = useState('');
     const [utr, setUtr] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
+    const [activeSlideIndex, setActiveSlideIndex] = useState(0);
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 900);
@@ -33,168 +34,264 @@ const BuyPremium = () => {
     const whatsappLink = `https://wa.me/${APPROVAL_NUMBER}?text=${encodedMessage}`;
     const smsLink = `sms:${APPROVAL_NUMBER}?&body=${encodedMessage}`;
 
-    const premiumNotes = useMemo(() => ([
+    const premiumSlides = useMemo(() => ([
         {
-            title: 'Online assessment system',
-            items: [
-                'Project purpose: This is full online test assessment platform.',
-                'User student can take quiz.',
-                'Admin can create, update edit, delete quizzes.',
-                'Student can submit answer.',
-                'Result are stored and shown to user.',
-                'This solve the real-world need of online test and evaluation.'
+            title: 'Online Learning Management System (AstraLMS)',
+            notes: [
+                {
+                    title: 'Online assessment system',
+                    items: [
+                        'Project purpose: This is full online test assessment platform.',
+                        'User student can take quiz.',
+                        'Admin can create, update edit, delete quizzes.',
+                        'Student can submit answer.',
+                        'Result are stored and shown to user.',
+                        'This solve the real-world need of online test and evaluation.'
+                    ]
+                },
+                {
+                    title: 'Technology',
+                    items: [
+                        'Node.js, express js, MongoDB, socket.io',
+                        'Frontend: React, tailwind',
+                        'JWT -> JSON WEB TOKEN',
+                        'bcrypt - For password hashing -> Authentication and security'
+                    ]
+                },
+                {
+                    title: 'Backend architecture',
+                    items: [
+                        'client -> HTTP request -> backend -> mongoDB'
+                    ]
+                },
+                {
+                    title: 'Authentication',
+                    items: [
+                        'user signup',
+                        'login -> generate JWT',
+                        'protect routes with JWT middleware',
+                        'Just allow the server to verify identity without session'
+                    ]
+                },
+                {
+                    title: 'Quiz main menu',
+                    items: [
+                        'Create quiz',
+                        'Get quiz',
+                        'Submit answer',
+                        'Get result'
+                    ]
+                },
+                {
+                    title: 'API design',
+                    items: [
+                        'Post /api/signup',
+                        'Post /api/login',
+                        'Get /api/quiz',
+                        'Post /api/quiz',
+                        'Post /api/submit-quiz',
+                        'Get /api/result'
+                    ]
+                },
+                {
+                    title: 'Status codes',
+                    items: [
+                        '200, 401, 400, 404'
+                    ]
+                },
+                {
+                    title: 'Backend problems',
+                    items: [
+                        'Handling authentication securely -> password must be hashed (bcrypt)',
+                        'token must be signed and verified',
+                        'protected routes must check token validity'
+                    ]
+                },
+                {
+                    title: 'Realtime and websocket',
+                    items: [
+                        'Realtime? web socket or http polling?',
+                        'Frontend calculation? yes?',
+                        'socket-id direct express se attach nhi hota',
+                        'websocket work on top of http (it upgrades HTTP connection to persistent websocket connection)',
+                        'maintain persistent connection',
+                        'bi-directional communication',
+                        'no need to refresh page',
+                        'How does socket connection initialize',
+                        'Where do you emit event',
+                        'How do you handle disconnect',
+                        'What happen if student refresh',
+                        'Did you use rooms?',
+                        'Every new client that connections get a unique socket, that socket is like a private communication channel',
+                        'emit sends event to server',
+                        'server processes it',
+                        'server respond with another event',
+                        'UI updates instantly'
+                    ]
+                },
+                {
+                    title: 'CORS, rooms, namespace, disconnect',
+                    items: [
+                        'CORS: allow cross-origin websocket communication',
+                        'Frontend and backend run on different port',
+                        'Rooms: rooms allow separate quiz session',
+                        'multiple students in same quiz',
+                        'broadcasting to specific group',
+                        'rooms = session isolation',
+                        'namespace separate admin socket, student socket, analytic socket',
+                        'disconnect handled',
+                        'cleaning memory',
+                        'update session',
+                        'prevent memory leak'
+                    ]
+                },
+                {
+                    title: 'JWT token',
+                    items: [
+                        'JWT -> JSON WEB TOKEN',
+                        'public/private cryptography',
+                        'from public cryptography must data encrypt that data only decrypt my with only your private key',
+                        'Just also work on private cryptography',
+                        'JWT - fully protected',
+                        'jwt -> access-token api',
+                        'stateless / stateful',
+                        'stateless -> JWT',
+                        'stateful -> database store at any site (place)',
+                        'encryption algorithm => utf'
+                    ]
+                },
+                {
+                    title: 'JWT components',
+                    items: [
+                        'header: which algo you are using',
+                        'info: payload',
+                        'signature: data mapped key',
+                        'JWT - made by 3 component and string format',
+                        'JSON web token use on open method of authentication (claim security btw two parties)'
+                    ]
+                },
+                {
+                    title: 'Refresh token and flow',
+                    items: [
+                        'token are basically expire within 15 minute and after request that generate new one with mechanism it called refresh token',
+                        'login (username/password)',
+                        'server validates credential',
+                        'issue JWT token',
+                        'API request (JWT token)',
+                        'validate token access'
+                    ]
+                },
+                {
+                    title: 'Authentication vs authorization',
+                    items: [
+                        'Authentication for login and signup -> any',
+                        'Authorization: resources access like teacher portal you want admin user',
+                        'uses jwt',
+                        '-> authentication, authorization, communication',
+                        'database'
+                    ]
+                }
             ]
         },
         {
-            title: 'Technology',
-            items: [
-                'Node.js, express js, MongoDB, socket.io',
-                'Frontend: React, tailwind',
-                'JWT -> JSON WEB TOKEN',
-                'bcrypt - For password hashing -> Authentication and security'
-            ]
-        },
-        {
-            title: 'Backend architecture',
-            items: [
-                'client -> HTTP request -> backend -> mongoDB'
-            ]
-        },
-        {
-            title: 'Authentication',
-            items: [
-                'user signup',
-                'login -> generate JWT',
-                'protect routes with JWT middleware',
-                'Just allow the server to verify identity without session'
-            ]
-        },
-        {
-            title: 'Quiz main menu',
-            items: [
-                'Create quiz',
-                'Get quiz',
-                'Submit answer',
-                'Get result'
-            ]
-        },
-        {
-            title: 'API design',
-            items: [
-                'Post /api/signup',
-                'Post /api/login',
-                'Get /api/quiz',
-                'Post /api/quiz',
-                'Post /api/submit-quiz',
-                'Get /api/result'
-            ]
-        },
-        {
-            title: 'Status codes',
-            items: [
-                '200, 401, 400, 404'
-            ]
-        },
-        {
-            title: 'Backend problems',
-            items: [
-                'Handling authentication securely -> password must be hashed (bcrypt)',
-                'token must be signed and verified',
-                'protected routes must check token validity'
-            ]
-        },
-        {
-            title: 'Realtime and websocket',
-            items: [
-                'Realtime? web socket or http polling?',
-                'Frontend calculation? yes?',
-                'socket-id direct express se attach nhi hota',
-                'websocket work on top of http (it upgrades HTTP connection to persistent websocket connection)',
-                'maintain persistent connection',
-                'bi-directional communication',
-                'no need to refresh page',
-                'How does socket connection initialize',
-                'Where do you emit event',
-                'How do you handle disconnect',
-                'What happen if student refresh',
-                'Did you use rooms?',
-                'Every new client that connections get a unique socket, that socket is like a private communication channel',
-                'emit sends event to server',
-                'server processes it',
-                'server respond with another event',
-                'UI updates instantly'
-            ]
-        },
-        {
-            title: 'CORS, rooms, namespace, disconnect',
-            items: [
-                'CORS: allow cross-origin websocket communication',
-                'Frontend and backend run on different port',
-                'Rooms: rooms allow separate quiz session',
-                'multiple students in same quiz',
-                'broadcasting to specific group',
-                'rooms = session isolation',
-                'namespace separate admin socket, student socket, analytic socket',
-                'disconnect handled',
-                'cleaning memory',
-                'update session',
-                'prevent memory leak'
-            ]
-        },
-        {
-            title: 'JWT token',
-            items: [
-                'JWT -> JSON WEB TOKEN',
-                'public/private cryptography',
-                'from public cryptography must data encrypt that data only decrypt my with only your private key',
-                'Just also work on private cryptography',
-                'JWT - fully protected',
-                'jwt -> access-token api',
-                'stateless / stateful',
-                'stateless -> JWT',
-                'stateful -> database store at any site (place)',
-                'encryption algorithm => utf'
-            ]
-        },
-        {
-            title: 'JWT components',
-            items: [
-                'header: which algo you are using',
-                'info: payload',
-                'signature: data mapped key',
-                'JWT - made by 3 component and string format',
-                'JSON web token use on open method of authentication (claim security btw two parties)'
-            ]
-        },
-        {
-            title: 'Refresh token and flow',
-            items: [
-                'token are basically expire within 15 minute and after request that generate new one with mechanism it called refresh token',
-                'login (username/password)',
-                'server validates credential',
-                'issue JWT token',
-                'API request (JWT token)',
-                'validate token access'
-            ]
-        },
-        {
-            title: 'Authentication vs authorization',
-            items: [
-                'Authentication for login and signup -> any',
-                'Authorization: resources access like teacher portal you want admin user',
-                'uses jwt',
-                '-> authentication, authorization, communication',
-                'database'
+            title: 'DeployFlow - CI/CD Automation System (Prince CV 2)',
+            notes: [
+                {
+                    title: 'Problem statement',
+                    items: [
+                        'Developers manually trigger Jenkins pipelines and monitor builds separately, which is inefficient and lacks visibility.',
+                        'DeployFlow provides a centralized dashboard to trigger, monitor, and track CI/CD pipelines integrated with GitHub.'
+                    ]
+                },
+                {
+                    title: 'System architecture',
+                    items: [
+                        'Frontend: React + Tailwind',
+                        'Backend: Node.js + Express',
+                        'Integrations: Jenkins REST API + GitHub webhooks',
+                        'Storage (optional): MongoDB for logs/history',
+                        'Flow: frontend -> backend -> Jenkins API; GitHub webhook triggers backend'
+                    ]
+                },
+                {
+                    title: 'Backend deep understanding',
+                    items: [
+                        'Secure APIs for triggering pipelines',
+                        'Jenkins API integration using API token',
+                        'Async handling for build status and polling',
+                        'Error handling middleware and retries',
+                        'Authentication on protected routes (if implemented)'
+                    ]
+                },
+                {
+                    title: 'Hardest backend problem',
+                    items: [
+                        'Jenkins jobs execute asynchronously, so tracking build status was challenging.',
+                        'Used async/await with structured API calls and error handling for reliable status updates.',
+                        'Fallback messaging when Jenkins is down or slow.'
+                    ]
+                },
+                {
+                    title: 'DevOps concepts to know',
+                    items: [
+                        'CI, CD, pipeline, Jenkinsfile, webhook, build artifact',
+                        'Docker role in build/test environment (if used)',
+                        'Secure trigger using API tokens + auth middleware'
+                    ]
+                },
+                {
+                    title: 'Security and scaling',
+                    items: [
+                        'Secure pipeline trigger with API tokens and authenticated users only',
+                        'Scale: add job queue (Redis/BullMQ), cache recent statuses',
+                        'Horizontal scaling with load balancer'
+                    ]
+                },
+                {
+                    title: 'Compare projects',
+                    items: [
+                        'AstraLMS: real-time system complexity (JWT + Socket)',
+                        'DeployFlow: external tool integration + DevOps complexity',
+                        'Do not claim features you did not implement (queue, Redis, Docker prod)'
+                    ]
+                }
             ]
         }
     ]), []);
 
     const canViewPremium = Boolean(user?.email && user.email.toLowerCase() === PREMIUM_EMAIL);
     const premiumStats = useMemo(() => {
-        const totalSections = premiumNotes.length;
-        const totalItems = premiumNotes.reduce((sum, section) => sum + section.items.length, 0);
+        const totalSections = premiumSlides.reduce((sum, slide) => sum + slide.notes.length, 0);
+        const totalItems = premiumSlides.reduce(
+            (sum, slide) => sum + slide.notes.reduce((noteSum, note) => noteSum + note.items.length, 0),
+            0
+        );
         return { totalSections, totalItems };
-    }, [premiumNotes]);
+    }, [premiumSlides]);
+
+    const activeSlide = premiumSlides[activeSlideIndex];
+    const handleSlideChange = (index) => {
+        setActiveSlideIndex(index);
+    };
+    const slideThemes = useMemo(() => ([
+        {
+            accent: '#10b981',
+            soft: 'rgba(16, 185, 129, 0.14)',
+            glow: 'rgba(16, 185, 129, 0.28)'
+        },
+        {
+            accent: '#38bdf8',
+            soft: 'rgba(56, 189, 248, 0.16)',
+            glow: 'rgba(56, 189, 248, 0.28)'
+        }
+    ]), []);
+    const activeTheme = slideThemes[activeSlideIndex] || slideThemes[0];
+    const handlePrevSlide = () => {
+        setActiveSlideIndex((prev) => (prev - 1 + premiumSlides.length) % premiumSlides.length);
+    };
+    const handleNextSlide = () => {
+        setActiveSlideIndex((prev) => (prev + 1) % premiumSlides.length);
+    };
 
     return (
         <main style={{
@@ -387,20 +484,98 @@ const BuyPremium = () => {
                     <div style={{
                         background: 'var(--bg-card)',
                         border: '1px solid var(--border-glass)',
-                        borderRadius: '18px',
-                        padding: isMobile ? '1.25rem' : '1.75rem',
-                        boxShadow: '0 20px 50px rgba(15, 23, 42, 0.08)',
+                        borderRadius: '20px',
+                        padding: isMobile ? '1.35rem' : '2rem',
+                        boxShadow: '0 30px 70px rgba(15, 23, 42, 0.12)',
                         position: 'relative',
                         overflow: 'hidden'
                     }}>
                         <div style={{
                             position: 'absolute',
                             inset: 0,
-                            background: 'radial-gradient(circle at 85% 20%, rgba(16, 185, 129, 0.12), transparent 45%)',
+                            background: `radial-gradient(circle at 88% 15%, ${activeTheme.soft}, transparent 50%)`,
                             pointerEvents: 'none'
                         }} />
-                        <div style={{ fontWeight: '900', color: 'var(--text-main)', marginBottom: '0.75rem' }}>
-                            Premium Notes (MERN)
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: isMobile ? 'column' : 'row',
+                            alignItems: isMobile ? 'flex-start' : 'center',
+                            justifyContent: 'space-between',
+                            gap: '1.25rem',
+                            marginBottom: '1rem'
+                        }}>
+                            <div>
+                                <div style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    padding: '6px 12px',
+                                    borderRadius: '999px',
+                                    background: activeTheme.soft,
+                                    border: `1px solid ${activeTheme.glow}`,
+                                    fontSize: '0.72rem',
+                                    fontWeight: '900',
+                                    letterSpacing: '0.12em',
+                                    textTransform: 'uppercase',
+                                    color: activeTheme.accent,
+                                    marginBottom: '0.6rem'
+                                }}>
+                                    Interview Slides
+                                </div>
+                                <div style={{
+                                    fontWeight: '950',
+                                    color: 'var(--text-main)',
+                                    fontSize: isMobile ? '1.3rem' : '1.6rem'
+                                }}>
+                                    Project Deep Dive
+                                </div>
+                                <div style={{
+                                    color: 'var(--text-muted)',
+                                    fontSize: isMobile ? '0.9rem' : '0.95rem',
+                                    marginTop: '0.35rem'
+                                }}>
+                                    Switch between projects and review the key points in one focused view.
+                                </div>
+                            </div>
+                            <div style={{
+                                display: 'flex',
+                                gap: '0.75rem',
+                                flexWrap: 'wrap'
+                            }}>
+                                <div style={{
+                                    padding: '8px 12px',
+                                    borderRadius: '999px',
+                                    background: 'rgba(15, 23, 42, 0.5)',
+                                    border: '1px solid var(--border-glass)',
+                                    color: 'var(--text-main)',
+                                    fontWeight: '800',
+                                    fontSize: '0.8rem'
+                                }}>
+                                    Slide {activeSlideIndex + 1} of {premiumSlides.length}
+                                </div>
+                                <div style={{
+                                    padding: '8px 12px',
+                                    borderRadius: '999px',
+                                    background: 'rgba(15, 23, 42, 0.5)',
+                                    border: '1px solid var(--border-glass)',
+                                    color: 'var(--text-muted)',
+                                    fontWeight: '700',
+                                    fontSize: '0.8rem'
+                                }}>
+                                    {premiumStats.totalSections} sections
+                                </div>
+                                <div style={{
+                                    padding: '8px 12px',
+                                    borderRadius: '999px',
+                                    background: 'rgba(15, 23, 42, 0.5)',
+                                    border: '1px solid var(--border-glass)',
+                                    color: 'var(--text-muted)',
+                                    fontWeight: '700',
+                                    fontSize: '0.8rem'
+                                }}>
+                                    {premiumStats.totalItems} points
+                                </div>
+                            </div>
                         </div>
                         {loading && (
                             <div style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
@@ -444,66 +619,175 @@ const BuyPremium = () => {
                                     }}>
                                         Access Granted
                                     </div>
+                                </div>
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: '0.75rem',
+                                    marginTop: '0.5rem',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between'
+                                }}>
                                     <div style={{
-                                        padding: '6px 12px',
-                                        borderRadius: '999px',
-                                        background: 'rgba(148, 163, 184, 0.12)',
-                                        border: '1px solid rgba(148, 163, 184, 0.25)',
-                                        color: 'var(--text-muted)',
-                                        fontWeight: '700',
-                                        fontSize: '0.75rem'
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        gap: '0.6rem'
                                     }}>
-                                        {premiumStats.totalSections} sections
+                                        {premiumSlides.map((slide, index) => (
+                                            <button
+                                                key={slide.title}
+                                                onClick={() => handleSlideChange(index)}
+                                                type="button"
+                                                style={{
+                                                    padding: '10px 16px',
+                                                    borderRadius: '999px',
+                                                    border: activeSlideIndex === index
+                                                        ? `1px solid ${activeTheme.glow}`
+                                                        : '1px solid var(--border-glass)',
+                                                    background: activeSlideIndex === index
+                                                        ? `linear-gradient(135deg, ${activeTheme.soft}, rgba(15, 23, 42, 0.4))`
+                                                        : 'rgba(15, 23, 42, 0.35)',
+                                                    color: activeSlideIndex === index
+                                                        ? 'var(--text-main)'
+                                                        : 'var(--text-muted)',
+                                                    fontWeight: '800',
+                                                    fontSize: '0.85rem',
+                                                    cursor: 'pointer',
+                                                    boxShadow: activeSlideIndex === index
+                                                        ? `0 10px 25px ${activeTheme.soft}`
+                                                        : 'none'
+                                                }}
+                                            >
+                                                {slide.title}
+                                            </button>
+                                        ))}
                                     </div>
                                     <div style={{
-                                        padding: '6px 12px',
-                                        borderRadius: '999px',
-                                        background: 'rgba(148, 163, 184, 0.12)',
-                                        border: '1px solid rgba(148, 163, 184, 0.25)',
-                                        color: 'var(--text-muted)',
-                                        fontWeight: '700',
-                                        fontSize: '0.75rem'
+                                        display: 'flex',
+                                        gap: '0.5rem'
                                     }}>
-                                        {premiumStats.totalItems} points
+                                        <button
+                                            type="button"
+                                            onClick={handlePrevSlide}
+                                            style={{
+                                                padding: '10px 14px',
+                                                borderRadius: '12px',
+                                                border: '1px solid var(--border-glass)',
+                                                background: 'rgba(15, 23, 42, 0.45)',
+                                                color: 'var(--text-main)',
+                                                fontWeight: '800',
+                                                cursor: 'pointer'
+                                            }}
+                                        >
+                                            Prev
+                                        </button>
+                                        <button
+                                            type="button"
+                                            onClick={handleNextSlide}
+                                            style={{
+                                                padding: '10px 14px',
+                                                borderRadius: '12px',
+                                                border: `1px solid ${activeTheme.glow}`,
+                                                background: `linear-gradient(135deg, ${activeTheme.soft}, rgba(15, 23, 42, 0.4))`,
+                                                color: 'var(--text-main)',
+                                                fontWeight: '800',
+                                                cursor: 'pointer'
+                                            }}
+                                        >
+                                            Next
+                                        </button>
                                     </div>
                                 </div>
                                 <div style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))',
-                                    gap: isMobile ? '1rem' : '1.25rem'
+                                    height: '6px',
+                                    borderRadius: '999px',
+                                    background: 'rgba(148, 163, 184, 0.18)',
+                                    overflow: 'hidden'
                                 }}>
-                                {premiumNotes.map((section) => (
-                                    <div
-                                        key={section.title}
-                                        style={{
-                                            padding: isMobile ? '1rem' : '1.25rem',
-                                            borderRadius: '14px',
-                                            border: '1px solid var(--border-glass)',
-                                            background: 'rgba(15, 23, 42, 0.35)',
-                                            boxShadow: '0 16px 30px rgba(15, 23, 42, 0.08)'
-                                        }}
-                                    >
+                                    <div style={{
+                                        height: '100%',
+                                        width: `${((activeSlideIndex + 1) / premiumSlides.length) * 100}%`,
+                                        background: `linear-gradient(90deg, ${activeTheme.accent}, rgba(255, 255, 255, 0.7))`,
+                                        transition: 'width 0.35s ease'
+                                    }} />
+                                </div>
+                                <div
+                                    key={activeSlide.title}
+                                    style={{
+                                        padding: isMobile ? '1.1rem' : '1.6rem',
+                                        borderRadius: '18px',
+                                        border: `1px solid ${activeTheme.glow}`,
+                                        background: `linear-gradient(135deg, rgba(255, 255, 255, 0.65), ${activeTheme.soft})`,
+                                        marginTop: '1rem',
+                                        opacity: 1,
+                                        transform: 'translateY(0)',
+                                        transition: 'opacity 0.3s ease, transform 0.3s ease'
+                                    }}
+                                >
+                                    <div style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'space-between',
+                                        gap: '1rem',
+                                        marginBottom: '1rem'
+                                    }}>
                                         <div style={{
                                             fontWeight: '900',
                                             color: 'var(--text-main)',
-                                            marginBottom: '0.65rem',
-                                            fontSize: isMobile ? '0.95rem' : '1rem'
+                                            fontSize: isMobile ? '1rem' : '1.1rem'
                                         }}>
-                                            {section.title}
+                                            {activeSlide.title}
                                         </div>
-                                        <ul style={{
-                                            margin: 0,
-                                            paddingLeft: '1.25rem',
+                                        <div style={{
+                                            padding: '6px 12px',
+                                            borderRadius: '999px',
+                                            background: 'rgba(15, 23, 42, 0.55)',
+                                            border: '1px solid var(--border-glass)',
                                             color: 'var(--text-muted)',
-                                            fontSize: isMobile ? '0.85rem' : '0.95rem',
-                                            lineHeight: '1.7'
+                                            fontSize: '0.75rem',
+                                            fontWeight: '700'
                                         }}>
-                                            {section.items.map((item, index) => (
-                                                <li key={`${section.title}-${index}`}>{item}</li>
-                                            ))}
-                                        </ul>
+                                            {activeSlide.notes.length} sections in this slide
+                                        </div>
                                     </div>
-                                ))}
+                                    <div style={{
+                                        display: 'grid',
+                                        gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))',
+                                        gap: isMobile ? '1rem' : '1.25rem'
+                                    }}>
+                                        {activeSlide.notes.map((section) => (
+                                            <div
+                                                key={section.title}
+                                                style={{
+                                                    padding: isMobile ? '1rem' : '1.25rem',
+                                                    borderRadius: '14px',
+                                                    border: '1px solid rgba(15, 23, 42, 0.08)',
+                                                    background: 'rgba(255, 255, 255, 0.92)',
+                                                    boxShadow: '0 18px 35px rgba(15, 23, 42, 0.12)'
+                                                }}
+                                            >
+                                                <div style={{
+                                                    fontWeight: '900',
+                                                    color: '#0f172a',
+                                                    marginBottom: '0.65rem',
+                                                    fontSize: isMobile ? '0.95rem' : '1rem'
+                                                }}>
+                                                    {section.title}
+                                                </div>
+                                                <ul style={{
+                                                    margin: 0,
+                                                    paddingLeft: '1.25rem',
+                                                    color: '#334155',
+                                                    fontSize: isMobile ? '0.85rem' : '0.95rem',
+                                                    lineHeight: '1.7'
+                                                }}>
+                                                    {section.items.map((item, index) => (
+                                                        <li key={`${section.title}-${index}`}>{item}</li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         )}
