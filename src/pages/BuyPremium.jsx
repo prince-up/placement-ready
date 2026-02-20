@@ -11,6 +11,7 @@ const BuyPremium = () => {
     const [utr, setUtr] = useState('');
     const [isMobile, setIsMobile] = useState(window.innerWidth < 900);
     const [activeSlideIndex, setActiveSlideIndex] = useState(0);
+    const [activeSlideMode, setActiveSlideMode] = useState('project');
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth < 900);
@@ -37,6 +38,78 @@ const BuyPremium = () => {
     const premiumSlides = useMemo(() => ([
         {
             title: 'Online Learning Management System (AstraLMS)',
+            questions: [
+                {
+                    title: 'Part 1 - Basic',
+                    items: [
+                        'What problem does AstraLMS solve?',
+                        'Why MongoDB over SQL?',
+                        'Explain your folder structure (routes, controllers, models, middleware, server.js).',
+                        'How does JWT work?',
+                        'Authentication vs authorization?',
+                        'How do you protect routes?',
+                        'What is middleware?',
+                        'How does Socket.IO work?',
+                        'What happens when user disconnects?',
+                        'Where do you store JWT?'
+                    ]
+                },
+                {
+                    title: 'Part 2 - Intermediate',
+                    items: [
+                        'How do you handle multiple students at the same time?',
+                        'How do you keep score consistent?',
+                        'WebSocket vs HTTP?',
+                        'What if socket drops?',
+                        'How do you prevent cheating?',
+                        'How do you validate input?',
+                        'Explain the Node.js event loop.',
+                        'How do you handle concurrent DB writes?',
+                        'What schema changes help scalability?',
+                        'How do you implement pagination?'
+                    ]
+                },
+                {
+                    title: 'Part 3 - Advanced',
+                    items: [
+                        'How would you scale WebSocket?',
+                        'How do you prevent memory leaks?',
+                        'How do you avoid race conditions?',
+                        'Stateless vs stateful auth?',
+                        'JWT structure?',
+                        'What if a token is stolen?',
+                        'How do refresh tokens work?',
+                        'How would you build a real-time leaderboard?',
+                        'Indexing strategies for performance?',
+                        'How would you handle 10,000 users?'
+                    ]
+                },
+                {
+                    title: 'Part 4 - Killer (General)',
+                    items: [
+                        'How would you break into microservices?',
+                        'Where are your bottlenecks?',
+                        'Security vulnerabilities you must fix?',
+                        'What makes it production ready?',
+                        'Explain CAP theorem in distributed systems.',
+                        'Why does WebSocket run over TCP?',
+                        'Process vs thread?',
+                        'Node.js concurrency model?',
+                        'What if MongoDB crashes?',
+                        'How do you apply rate limiting?'
+                    ]
+                },
+                {
+                    title: 'Bonus',
+                    items: [
+                        'Biggest mistake you made?',
+                        'What would you improve next?',
+                        'Most challenging part?',
+                        'If not MongoDB, what would you use?',
+                        'How would you handle 1 lakh users?'
+                    ]
+                }
+            ],
             notes: [
                 {
                     title: 'Online assessment system',
@@ -195,6 +268,76 @@ const BuyPremium = () => {
         },
         {
             title: 'DeployFlow - CI/CD Automation System (Prince CV 2)',
+            questions: [
+                {
+                    title: 'Part 1 - Basic',
+                    items: [
+                        'What is CI/CD?',
+                        'What is Jenkins?',
+                        'What is a Jenkins pipeline?',
+                        'How does a webhook work?',
+                        'How did you trigger Jenkins?',
+                        'What happens when build fails?',
+                        'What is async/await?',
+                        'Why Node.js for this project?'
+                    ]
+                },
+                {
+                    title: 'Part 2 - Intermediate',
+                    items: [
+                        'How did you authenticate with Jenkins?',
+                        'What happens if Jenkins is down?',
+                        'How do you handle async pipelines?',
+                        'How would you scale this system?',
+                        'How do you track build logs?',
+                        'What is idempotency and why it matters here?',
+                        'How do you prevent duplicate triggers?',
+                        'What is Docker role in CI/CD?',
+                        'Build vs deploy?',
+                        'Webhook internal flow end-to-end?'
+                    ]
+                },
+                {
+                    title: 'Part 3 - Advanced',
+                    items: [
+                        'What is HTTP upgrade for WebSocket?',
+                        'Why use a job queue like BullMQ?',
+                        'How do you handle backpressure?',
+                        'How do you handle duplicate webhooks?',
+                        'How do you verify GitHub webhook signature?',
+                        'How would you add RBAC?',
+                        'How would you containerize the system?',
+                        'How do you secure tokens?',
+                        'How do you apply load balancing?',
+                        'How do you design logging and monitoring?'
+                    ]
+                },
+                {
+                    title: 'Part 4 - Killer (General)',
+                    items: [
+                        'How would you break into microservices?',
+                        'Where are your bottlenecks?',
+                        'Security vulnerabilities you must fix?',
+                        'What makes it production ready?',
+                        'Explain CAP theorem in distributed systems.',
+                        'Why does WebSocket run over TCP?',
+                        'Process vs thread?',
+                        'Node.js concurrency model?',
+                        'What if MongoDB crashes?',
+                        'How do you apply rate limiting?'
+                    ]
+                },
+                {
+                    title: 'Bonus',
+                    items: [
+                        'Biggest mistake you made?',
+                        'What would you improve next?',
+                        'Most challenging part?',
+                        'If not MongoDB, what would you use?',
+                        'How would you handle 1 lakh users?'
+                    ]
+                }
+            ],
             notes: [
                 {
                     title: 'Problem statement',
@@ -483,17 +626,17 @@ const BuyPremium = () => {
                 <div className="container" style={{ maxWidth: '1040px' }}>
                     <div style={{
                         background: 'var(--bg-card)',
-                        border: '1px solid var(--border-glass)',
-                        borderRadius: '20px',
-                        padding: isMobile ? '1.35rem' : '2rem',
-                        boxShadow: '0 30px 70px rgba(15, 23, 42, 0.12)',
+                        border: '1px solid rgba(148, 163, 184, 0.3)',
+                        borderRadius: '22px',
+                        padding: isMobile ? '1.4rem' : '2.2rem',
+                        boxShadow: '0 30px 80px rgba(15, 23, 42, 0.14)',
                         position: 'relative',
                         overflow: 'hidden'
                     }}>
                         <div style={{
                             position: 'absolute',
                             inset: 0,
-                            background: `radial-gradient(circle at 88% 15%, ${activeTheme.soft}, transparent 50%)`,
+                            background: `radial-gradient(circle at 85% 10%, ${activeTheme.soft}, transparent 55%)`,
                             pointerEvents: 'none'
                         }} />
                         <div style={{
@@ -511,9 +654,9 @@ const BuyPremium = () => {
                                     gap: '8px',
                                     padding: '6px 12px',
                                     borderRadius: '999px',
-                                    background: activeTheme.soft,
+                                    background: 'rgba(255, 255, 255, 0.75)',
                                     border: `1px solid ${activeTheme.glow}`,
-                                    fontSize: '0.72rem',
+                                    fontSize: '0.7rem',
                                     fontWeight: '900',
                                     letterSpacing: '0.12em',
                                     textTransform: 'uppercase',
@@ -524,13 +667,14 @@ const BuyPremium = () => {
                                 </div>
                                 <div style={{
                                     fontWeight: '950',
-                                    color: 'var(--text-main)',
-                                    fontSize: isMobile ? '1.3rem' : '1.6rem'
+                                    color: '#0f172a',
+                                    fontSize: isMobile ? '1.35rem' : '1.8rem',
+                                    letterSpacing: '-0.02em'
                                 }}>
                                     Project Deep Dive
                                 </div>
                                 <div style={{
-                                    color: 'var(--text-muted)',
+                                    color: '#475569',
                                     fontSize: isMobile ? '0.9rem' : '0.95rem',
                                     marginTop: '0.35rem'
                                 }}>
@@ -545,9 +689,9 @@ const BuyPremium = () => {
                                 <div style={{
                                     padding: '8px 12px',
                                     borderRadius: '999px',
-                                    background: 'rgba(15, 23, 42, 0.5)',
-                                    border: '1px solid var(--border-glass)',
-                                    color: 'var(--text-main)',
+                                    background: 'rgba(255, 255, 255, 0.9)',
+                                    border: '1px solid rgba(148, 163, 184, 0.3)',
+                                    color: '#0f172a',
                                     fontWeight: '800',
                                     fontSize: '0.8rem'
                                 }}>
@@ -556,9 +700,9 @@ const BuyPremium = () => {
                                 <div style={{
                                     padding: '8px 12px',
                                     borderRadius: '999px',
-                                    background: 'rgba(15, 23, 42, 0.5)',
-                                    border: '1px solid var(--border-glass)',
-                                    color: 'var(--text-muted)',
+                                    background: 'rgba(255, 255, 255, 0.9)',
+                                    border: '1px solid rgba(148, 163, 184, 0.3)',
+                                    color: '#475569',
                                     fontWeight: '700',
                                     fontSize: '0.8rem'
                                 }}>
@@ -567,9 +711,9 @@ const BuyPremium = () => {
                                 <div style={{
                                     padding: '8px 12px',
                                     borderRadius: '999px',
-                                    background: 'rgba(15, 23, 42, 0.5)',
-                                    border: '1px solid var(--border-glass)',
-                                    color: 'var(--text-muted)',
+                                    background: 'rgba(255, 255, 255, 0.9)',
+                                    border: '1px solid rgba(148, 163, 184, 0.3)',
+                                    color: '#475569',
                                     fontWeight: '700',
                                     fontSize: '0.8rem'
                                 }}>
@@ -631,7 +775,11 @@ const BuyPremium = () => {
                                     <div style={{
                                         display: 'flex',
                                         flexWrap: 'wrap',
-                                        gap: '0.6rem'
+                                        gap: '0.6rem',
+                                        padding: '6px',
+                                        borderRadius: '999px',
+                                        background: 'rgba(255, 255, 255, 0.85)',
+                                        border: '1px solid rgba(148, 163, 184, 0.3)'
                                     }}>
                                         {premiumSlides.map((slide, index) => (
                                             <button
@@ -639,22 +787,22 @@ const BuyPremium = () => {
                                                 onClick={() => handleSlideChange(index)}
                                                 type="button"
                                                 style={{
-                                                    padding: '10px 16px',
+                                                    padding: '10px 18px',
                                                     borderRadius: '999px',
                                                     border: activeSlideIndex === index
                                                         ? `1px solid ${activeTheme.glow}`
-                                                        : '1px solid var(--border-glass)',
+                                                        : '1px solid transparent',
                                                     background: activeSlideIndex === index
-                                                        ? `linear-gradient(135deg, ${activeTheme.soft}, rgba(15, 23, 42, 0.4))`
-                                                        : 'rgba(15, 23, 42, 0.35)',
+                                                        ? `linear-gradient(135deg, ${activeTheme.soft}, rgba(255, 255, 255, 0.85))`
+                                                        : 'rgba(255, 255, 255, 0.2)',
                                                     color: activeSlideIndex === index
-                                                        ? 'var(--text-main)'
-                                                        : 'var(--text-muted)',
+                                                        ? '#0f172a'
+                                                        : '#475569',
                                                     fontWeight: '800',
                                                     fontSize: '0.85rem',
                                                     cursor: 'pointer',
                                                     boxShadow: activeSlideIndex === index
-                                                        ? `0 10px 25px ${activeTheme.soft}`
+                                                        ? `0 10px 22px rgba(15, 23, 42, 0.12)`
                                                         : 'none'
                                                 }}
                                             >
@@ -670,11 +818,11 @@ const BuyPremium = () => {
                                             type="button"
                                             onClick={handlePrevSlide}
                                             style={{
-                                                padding: '10px 14px',
+                                                padding: '10px 16px',
                                                 borderRadius: '12px',
-                                                border: '1px solid var(--border-glass)',
-                                                background: 'rgba(15, 23, 42, 0.45)',
-                                                color: 'var(--text-main)',
+                                                border: '1px solid rgba(148, 163, 184, 0.35)',
+                                                background: 'rgba(255, 255, 255, 0.85)',
+                                                color: '#0f172a',
                                                 fontWeight: '800',
                                                 cursor: 'pointer'
                                             }}
@@ -685,11 +833,11 @@ const BuyPremium = () => {
                                             type="button"
                                             onClick={handleNextSlide}
                                             style={{
-                                                padding: '10px 14px',
+                                                padding: '10px 16px',
                                                 borderRadius: '12px',
                                                 border: `1px solid ${activeTheme.glow}`,
-                                                background: `linear-gradient(135deg, ${activeTheme.soft}, rgba(15, 23, 42, 0.4))`,
-                                                color: 'var(--text-main)',
+                                                background: `linear-gradient(135deg, ${activeTheme.soft}, rgba(255, 255, 255, 0.9))`,
+                                                color: '#0f172a',
                                                 fontWeight: '800',
                                                 cursor: 'pointer'
                                             }}
@@ -699,9 +847,60 @@ const BuyPremium = () => {
                                     </div>
                                 </div>
                                 <div style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: '0.6rem',
+                                    marginTop: '0.5rem'
+                                }}>
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveSlideMode('project')}
+                                        style={{
+                                            padding: '8px 14px',
+                                            borderRadius: '999px',
+                                            border: activeSlideMode === 'project'
+                                                ? `1px solid ${activeTheme.glow}`
+                                                : '1px solid rgba(148, 163, 184, 0.35)',
+                                            background: activeSlideMode === 'project'
+                                                ? `linear-gradient(135deg, ${activeTheme.soft}, rgba(255, 255, 255, 0.9))`
+                                                : 'rgba(255, 255, 255, 0.7)',
+                                            color: activeSlideMode === 'project'
+                                                ? '#0f172a'
+                                                : '#475569',
+                                            fontWeight: '800',
+                                            fontSize: '0.8rem',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        Project Slide
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={() => setActiveSlideMode('questions')}
+                                        style={{
+                                            padding: '8px 14px',
+                                            borderRadius: '999px',
+                                            border: activeSlideMode === 'questions'
+                                                ? `1px solid ${activeTheme.glow}`
+                                                : '1px solid rgba(148, 163, 184, 0.35)',
+                                            background: activeSlideMode === 'questions'
+                                                ? `linear-gradient(135deg, ${activeTheme.soft}, rgba(255, 255, 255, 0.9))`
+                                                : 'rgba(255, 255, 255, 0.7)',
+                                            color: activeSlideMode === 'questions'
+                                                ? '#0f172a'
+                                                : '#475569',
+                                            fontWeight: '800',
+                                            fontSize: '0.8rem',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        Questions Slide
+                                    </button>
+                                </div>
+                                <div style={{
                                     height: '6px',
                                     borderRadius: '999px',
-                                    background: 'rgba(148, 163, 184, 0.18)',
+                                    background: 'rgba(148, 163, 184, 0.25)',
                                     overflow: 'hidden'
                                 }}>
                                     <div style={{
@@ -711,84 +910,146 @@ const BuyPremium = () => {
                                         transition: 'width 0.35s ease'
                                     }} />
                                 </div>
-                                <div
-                                    key={activeSlide.title}
-                                    style={{
-                                        padding: isMobile ? '1.1rem' : '1.6rem',
-                                        borderRadius: '18px',
-                                        border: `1px solid ${activeTheme.glow}`,
-                                        background: `linear-gradient(135deg, rgba(255, 255, 255, 0.65), ${activeTheme.soft})`,
-                                        marginTop: '1rem',
-                                        opacity: 1,
-                                        transform: 'translateY(0)',
-                                        transition: 'opacity 0.3s ease, transform 0.3s ease'
-                                    }}
-                                >
-                                    <div style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'space-between',
-                                        gap: '1rem',
-                                        marginBottom: '1rem'
-                                    }}>
+                                {activeSlideMode === 'project' ? (
+                                    <div
+                                        key={`${activeSlide.title}-project`}
+                                        style={{
+                                            padding: isMobile ? '1.1rem' : '1.6rem',
+                                            borderRadius: '18px',
+                                            border: `1px solid ${activeTheme.glow}`,
+                                            background: `linear-gradient(135deg, rgba(255, 255, 255, 0.65),
+                                             ${activeTheme.soft})`,
+                                            marginTop: '1rem',
+                                            opacity: 1,
+                                            transform: 'translateY(0)',
+                                            transition: 'opacity 0.3s ease, transform 0.3s ease'
+                                        }}
+                                    >
+                                        <div style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                            gap: '1rem',
+                                            marginBottom: '1rem'
+                                        }}>
+                                            <div style={{
+                                                fontWeight: '900',
+                                                color: '#0f172a',
+                                                fontSize: isMobile ? '1rem' : '1.1rem'
+                                            }}>
+                                                {activeSlide.title}
+                                            </div>
+                                            <div style={{
+                                                padding: '6px 12px',
+                                                borderRadius: '999px',
+                                                background: 'rgba(255, 255, 255, 0.9)',
+                                                border: '1px solid rgba(148, 163, 184, 0.3)',
+                                                color: '#475569',
+                                                fontSize: '0.75rem',
+                                                fontWeight: '700'
+                                            }}>
+                                                {activeSlide.notes.length} sections in this slide
+                                            </div>
+                                        </div>
+                                        <div style={{
+                                            display: 'grid',
+                                            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))',
+                                            gap: isMobile ? '1rem' : '1.25rem'
+                                        }}>
+                                            {activeSlide.notes.map((section) => (
+                                                <div
+                                                    key={section.title}
+                                                    style={{
+                                                        padding: isMobile ? '1rem' : '1.25rem',
+                                                        borderRadius: '14px',
+                                                        border: '1px solid rgba(15, 23, 42, 0.08)',
+                                                        background: 'rgba(255, 255, 255, 0.92)',
+                                                        boxShadow: '0 18px 35px rgba(15, 23, 42, 0.12)'
+                                                    }}
+                                                >
+                                                    <div style={{
+                                                        fontWeight: '900',
+                                                        color: '#0f172a',
+                                                        marginBottom: '0.65rem',
+                                                        fontSize: isMobile ? '0.95rem' : '1rem'
+                                                    }}>
+                                                        {section.title}
+                                                    </div>
+                                                    <ul style={{
+                                                        margin: 0,
+                                                        paddingLeft: '1.25rem',
+                                                        color: '#334155',
+                                                        fontSize: isMobile ? '0.85rem' : '0.95rem',
+                                                        lineHeight: '1.7'
+                                                    }}>
+                                                        {section.items.map((item, index) => (
+                                                            <li key={`${section.title}-${index}`}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <div
+                                        key={`${activeSlide.title}-questions`}
+                                        style={{
+                                            padding: isMobile ? '1.1rem' : '1.6rem',
+                                            borderRadius: '18px',
+                                            border: `1px solid ${activeTheme.glow}`,
+                                            background: `linear-gradient(135deg, rgba(255, 255, 255, 0.7), ${activeTheme.soft})`,
+                                            marginTop: '1rem',
+                                            display: 'grid',
+                                            gap: '0.75rem'
+                                        }}
+                                    >
                                         <div style={{
                                             fontWeight: '900',
-                                            color: 'var(--text-main)',
+                                            color: '#0f172a',
                                             fontSize: isMobile ? '1rem' : '1.1rem'
                                         }}>
-                                            {activeSlide.title}
+                                            Interview Questions
                                         </div>
                                         <div style={{
-                                            padding: '6px 12px',
-                                            borderRadius: '999px',
-                                            background: 'rgba(15, 23, 42, 0.55)',
-                                            border: '1px solid var(--border-glass)',
-                                            color: 'var(--text-muted)',
-                                            fontSize: '0.75rem',
-                                            fontWeight: '700'
+                                            display: 'grid',
+                                            gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))',
+                                            gap: isMobile ? '1rem' : '1.25rem'
                                         }}>
-                                            {activeSlide.notes.length} sections in this slide
+                                            {activeSlide.questions.map((section) => (
+                                                <div
+                                                    key={`${activeSlide.title}-questions-${section.title}`}
+                                                    style={{
+                                                        padding: isMobile ? '1rem' : '1.25rem',
+                                                        borderRadius: '14px',
+                                                        border: '1px solid rgba(15, 23, 42, 0.08)',
+                                                        background: 'rgba(255, 255, 255, 0.94)',
+                                                        boxShadow: '0 18px 35px rgba(15, 23, 42, 0.12)'
+                                                    }}
+                                                >
+                                                    <div style={{
+                                                        fontWeight: '900',
+                                                        color: '#0f172a',
+                                                        marginBottom: '0.65rem',
+                                                        fontSize: isMobile ? '0.95rem' : '1rem'
+                                                    }}>
+                                                        {section.title}
+                                                    </div>
+                                                    <ul style={{
+                                                        margin: 0,
+                                                        paddingLeft: '1.25rem',
+                                                        color: '#334155',
+                                                        fontSize: isMobile ? '0.85rem' : '0.95rem',
+                                                        lineHeight: '1.7'
+                                                    }}>
+                                                        {section.items.map((item, index) => (
+                                                            <li key={`${section.title}-${index}`}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+                                            ))}
                                         </div>
                                     </div>
-                                    <div style={{
-                                        display: 'grid',
-                                        gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(260px, 1fr))',
-                                        gap: isMobile ? '1rem' : '1.25rem'
-                                    }}>
-                                        {activeSlide.notes.map((section) => (
-                                            <div
-                                                key={section.title}
-                                                style={{
-                                                    padding: isMobile ? '1rem' : '1.25rem',
-                                                    borderRadius: '14px',
-                                                    border: '1px solid rgba(15, 23, 42, 0.08)',
-                                                    background: 'rgba(255, 255, 255, 0.92)',
-                                                    boxShadow: '0 18px 35px rgba(15, 23, 42, 0.12)'
-                                                }}
-                                            >
-                                                <div style={{
-                                                    fontWeight: '900',
-                                                    color: '#0f172a',
-                                                    marginBottom: '0.65rem',
-                                                    fontSize: isMobile ? '0.95rem' : '1rem'
-                                                }}>
-                                                    {section.title}
-                                                </div>
-                                                <ul style={{
-                                                    margin: 0,
-                                                    paddingLeft: '1.25rem',
-                                                    color: '#334155',
-                                                    fontSize: isMobile ? '0.85rem' : '0.95rem',
-                                                    lineHeight: '1.7'
-                                                }}>
-                                                    {section.items.map((item, index) => (
-                                                        <li key={`${section.title}-${index}`}>{item}</li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </div>
+                                )}
                             </div>
                         )}
                     </div>
